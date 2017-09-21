@@ -8,8 +8,8 @@
 # Wwise project folder
 /MGP2wwise/
 *.pdb.meta
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset.meta
+Assets/Wwise/Editor/ProjectData/*
+Assets/Wwise/Editor/ProjectData.*
 Assets/StreamingAssets/**/DecodedBanks*
 
 # Visual Studio 2015 cache directory
