@@ -6,12 +6,17 @@ public class testSound : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AkSoundEngine.PostEvent ("test", gameObject); 
+		AkSoundEngine.PostEvent ("test1", gameObject); 
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKey (KeyCode.A)) {
+			AkSoundEngine.SetRTPCValue ("testparameter", 0); 
+		} else {
+			AkSoundEngine.SetRTPCValue ("testparameter", 100); 
+		}
 		
 	}
 }
