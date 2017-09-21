@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a9d92f4c1b843608e13d87e9283eb0, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  CurrentPluginConfig: 
+  EventWwu:
+  - PhysicalPath: Events/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{2C8D0658-9DAD-4451-8132-38D8431D58E8}'
+    m_lastTimePsrt1: 524990336
+    m_lastTimePart2: -1999306514
+    List:
+    - Name: test
+      Path: Default Work Unit/test
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: test
+        ObjectType: 3
+      ID: -1137964055
+      Guid: bba76ea19702ca48af46c4a9ad48ca35
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{365910A3-1993-4E63-9282-628A1D01F3A9}'
+    m_lastTimePsrt1: -1350042368
+    m_lastTimePart2: -1999306516
+    List: []
+  StateWwu:
+  - PhysicalPath: States/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{2A3662CA-E50C-49F5-B037-5046CBFDAA8D}'
+    m_lastTimePsrt1: -1350042368
+    m_lastTimePart2: -1999306516
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{3C32E35C-1ACE-4F1F-9CFA-5B6C00993A5F}'
+    m_lastTimePsrt1: -1350042368
+    m_lastTimePart2: -1999306516
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{71F40503-1DF8-46F3-B0D1-3FD5224BE2DF}'
+    m_lastTimePsrt1: 524990336
+    m_lastTimePart2: -1999306514
+    List:
+    - Name: SoundbankA
+      Path: Default Work Unit/SoundbankA
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SoundbankA
+        ObjectType: 7
+      ID: 1647770673
+      Guid: aa76b8f919101b43a1ce3243b08f1222
+  RtpcWwu:
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{5EEE3746-11D9-48DF-A636-52C0AB515057}'
+    m_lastTimePsrt1: -1350042368
+    m_lastTimePart2: -1999306516
+    List: []
+  - PhysicalPath: Game Parameters/Factory SoundSeed Air Game Syncs.wwu
+    ParentPhysicalPath: 
+    Guid: '{3B167755-FB42-458B-98BF-96F557AFB3B9}'
+    m_lastTimePsrt1: 68304768
+    m_lastTimePart2: -1999312681
+    List:
+    - Name: SS_Air_Fear
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fear
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fear
+        ObjectType: 13
+      ID: 1351367891
+      Guid: 59062ef746431c4ea1b1dab46a05101e
+    - Name: SS_Air_Freefall
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Freefall
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Freefall
+        ObjectType: 13
+      ID: -1292209176
+      Guid: 37fe2d2f9e4f944d83d853cca39781ad
+    - Name: SS_Air_Fury
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fury
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fury
+        ObjectType: 13
+      ID: 1029930033
+      Guid: dc79aea23acaba4696529986c322a87b
+    - Name: SS_Air_Month
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Month
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Month
+        ObjectType: 13
+      ID: -1646418679
+      Guid: 45b4e209a3c47f44b3ca818a1d925ef7
+    - Name: SS_Air_Presence
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Presence
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Presence
+        ObjectType: 13
+      ID: -447042342
+      Guid: 1a81b7e32f7b0f49b44f5fe51b468041
+    - Name: SS_Air_RPM
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_RPM
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_RPM
+        ObjectType: 13
+      ID: 822163944
+      Guid: ab9048a3d5b92645a64d5290c43ef2dc
+    - Name: SS_Air_Size
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Size
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Size
+        ObjectType: 13
+      ID: -1220270574
+      Guid: efeb291393a12e47a38c64668b494879
+    - Name: SS_Air_Storm
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Storm
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Storm
+        ObjectType: 13
+      ID: -579304704
+      Guid: db8c3fe9d1063747acaf7cd44bbed783
+    - Name: SS_Air_TimeOfDay
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_TimeOfDay
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_TimeOfDay
+        ObjectType: 13
+      ID: -1091570167
+      Guid: 2ca76f537e8c8b4cae03ef34fdadc314
+    - Name: SS_Air_Turbulence
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Turbulence
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Turbulence
+        ObjectType: 13
+      ID: -134719478
+      Guid: 197ba8edaa73a0409f192073606db710
+  TriggerWwu:
+  - PhysicalPath: Triggers/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{2E1FB5BC-D33F-4BA4-8B13-2E0BFC468CD9}'
+    m_lastTimePsrt1: -1350042368
+    m_lastTimePart2: -1999306516
+    List: []
+  ExpandedItems:
+  - /MGP2
+  m_lastPopulateTimePsrt1: 0
+  m_lastPopulateTimePart2: 0
+  autoPopulateEnabled: 1
+  basePath: Audio/GeneratedSoundBanks
+  language: English(US)
+  defaultPoolSize: 4096
+  lowerPoolSize: 2048
+  streamingPoolSize: 1024
+  preparePoolSize: 0
+  memoryCutoffThreshold: 0.95
+  callbackManagerBufferSize: 4

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="80">
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Attenuations\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Audio Devices\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Control Surface Sessions\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Conversion Settings\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Conversion Settings\Factory Conversion Settings.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Dynamic Dialogue\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Effects\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Effects\Factory Auro Headphone.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Effects\Factory Effects.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Effects\Factory McDSP Effects.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Events\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Game Parameters\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\MGP2.crossover.wsettings" DateLow="2546700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\MGP2.wproj" DateLow="1581733504" DateHigh="30618326"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Mixing Sessions\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Modulators\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Presets\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Queries\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Queries\Factory Queries.wwu" DateLow="3785047936" DateHigh="30612159"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\SoundBanks\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Soundcaster Sessions\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\States\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Switches\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Triggers\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Virtual Acoustics\Default Work Unit.wwu" DateLow="2366700800" DateHigh="30618325"/>
+	<ValidationCacheItem File="Y:\Desktop\DADIU\MGP2\MGP2\MGP2\Virtual Acoustics\Factory Reflect Acoustic Textures.wwu" DateLow="3785047936" DateHigh="30612159"/>
+</ValidationCache>
