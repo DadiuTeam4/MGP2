@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A022ED2F-9F01-4C55-B6A1-7D019B9288A3}" SchemaVersion="80" RootDocumentID="{FECD1A7E-396F-4CE9-A11C-F97F98FAD770}">
+	<AudioObjects>
+		<WorkUnit Name="test" ID="{A022ED2F-9F01-4C55-B6A1-7D019B9288A3}" OwnerID="{FECD1A7E-396F-4CE9-A11C-F97F98FAD770}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="3 sek_ udkast row2" ID="{2FC87D94-E306-43D9-A99A-ED7F1040844D}" ShortID="1011652727">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{96C799DE-BC3F-4953-BF58-FBFAED11D80A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{365910A3-1993-4E63-9282-628A1D01F3A9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="3 sek_ udkast row2" ID="{3B28D1D2-E58A-472F-99A5-1A998420A768}" ShortID="544317462">
+							<Language>SFX</Language>
+							<AudioFile>3 sek. udkast row2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="3 sek_ udkast row2" ID="{3B28D1D2-E58A-472F-99A5-1A998420A768}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
