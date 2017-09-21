@@ -49,3 +49,6 @@ ProjectSettings/ProjectVersion\.txt
 # IDE specific files
 \.vscode/
 *.swp
+
+# ReSharper output
+inspectCodeOutput.md
