@@ -1,6 +1,7 @@
 # Author: Mathias Dam Hedelund
 # Contributors: 
 import os
+import csv
 import xml.etree.ElementTree as ET
 
 # Constant filenames
@@ -9,8 +10,11 @@ MDFILENAME = "inspectCodeOutput.md"
 IGNOREDFILENAME = "ignoredIssues.csv"
 
 # Issues set to be ignored
-ignoredIssues = open(IGNOREDFILENAME).read()
-ignoredIssues = str(ignoredIssues).split(',')
+ignoredIssues = []
+with open(IGNOREDFILENAME) as csvfile:
+    ignoredIssueReader = csv.reader(csvfile, delimiter = ',', quotechar = '"')
+    for issues in ignoredIssueReader:
+        ignoredIssues = issues
 
 # Run ReSharper
 os.system("inspectcode.exe .\MGP2.sln -o=\"" + XMLFILENAME + "\"")
@@ -19,18 +23,22 @@ os.system("inspectcode.exe .\MGP2.sln -o=\"" + XMLFILENAME + "\"")
 tree = ET.parse(XMLFILENAME)
 root = tree.getroot()
 issues = root.find('Issues')
-issueArray = issues.find('Project').findall('Issue')
+if (len(issues) > 0):
+    issueArray = issues.find('Project').findall('Issue')
+else:
+    print("No issues found")
+    exit()
 
 # Open .md file and initialize variables
 outputFile = open(MDFILENAME, 'w')
 issueCounter = 0
-outString = ""
+outStrings = {}
 
 # Loop through issues and write them
 for child in issueArray:
     # Ignore issue if included in ignoredIssues
     typeId = child.get('TypeId')
-    if (typeId in ignoredIssues):
+    if (typeId.strip() in ignoredIssues):
         pass
 
     fileName = child.get('File')
@@ -39,18 +47,26 @@ for child in issueArray:
         line = "1"
     message = child.get('Message')
 
+    # Add filename to dictionary
+    if (fileName not in outStrings):
+        outStrings[fileName] = []
+
     # Format issue nicely
-    outString += "**" + fileName + "**\n"
-    outString += "*Issue type: " + typeId + "*\n"
+    outString = "*Issue type: " + typeId + "*\n"
     outString += "*Line: " + line + "*\n"
     outString += "Message: " + message + "\n"
     outString += "\n"
+
+    outStrings[fileName].append(outString)
 
     issueCounter += 1
 
 # Write to file and close
 outputFile.write("Issues: " + str(issueCounter) + "\n\n")
-outputFile.write(outString)
+for name, array in outStrings.items():
+    outputFile.write("**" + name + "**\n")
+    for issue in array:
+        outputFile.write(issue)
 outputFile.close()
 
 # Clean up XML file
