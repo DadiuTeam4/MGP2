@@ -6,33 +6,15 @@ using UnityEngine.Events;
 //Event Manager can register listeners by startListening
 //Event Manager can remove listeners by stopListening
 //Trigger the event and all specific method.
-public class EventManager : MonoBehaviour
+public class EventManager : Singleton<EventManager>
 {
     private Dictionary<string, UnityEvent> eventDictionary;
 
-    private static EventManager eventManager;
-    public static EventManager instance
+    void Awake()
     {
-        get
-        {
-            if (!eventManager)
-            {
-                eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
-                if (!eventManager)
-                {
-                    Debug.LogError("There needs to be active EventManager script on a GameObject in your scene");
-                }
-                else
-                {
-                    eventManager.init();
-                }
-            }
-
-            return eventManager;
-        }
+        Init();
     }
-
-    void init()
+    void Init()
     {
         if (eventDictionary == null)
         {
@@ -40,10 +22,10 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void startListening(string eventName, UnityAction listener)
+    public static void StartListening(string eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.AddListener(listener);
         }
@@ -51,27 +33,27 @@ public class EventManager : MonoBehaviour
         {
             thisEvent = new UnityEvent();
             thisEvent.AddListener(listener);
-            instance.eventDictionary.Add(eventName, thisEvent);
+            Instance.eventDictionary.Add(eventName, thisEvent);
         }
     }
 
-    public static void stopListening(string eventName, UnityAction listener)
+    public static void StopListening(string eventName, UnityAction listener)
     {
-        if (eventManager == null)
+        if (instance == null)
         {
             return;
         }
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.RemoveListener(listener);
         }
     }
 
-    public static void triggerEvent(string eventName)
+    public static void TriggerEvent(string eventName)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke();
         }
