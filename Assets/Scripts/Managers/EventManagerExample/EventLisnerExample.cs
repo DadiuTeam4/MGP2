@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,6 +30,6 @@ public class EventLisnerExample : MonoBehaviour
 
     void someFunction()
     {
-		Debug.Log("Some function is called!");
+	    Debug.Log("Some function is called!");
     }
 }
