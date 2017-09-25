@@ -8,7 +8,8 @@ and which levels hae been complited
 using System.Collections;
 using System.Collections.Generic;
 
-public class ResourceManager {
+public class ResourceManager 
+{
 	
 	static private string currentSceneName = "IntroLevel";
 	static private List<int> listOfPickedUpNumbers;

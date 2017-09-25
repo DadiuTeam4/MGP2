@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Author: Mathias Dam Hedelund
+// Contributors:
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +11,41 @@ public class InputManager : Singleton<InputManager>
 	private void Update() 
 	{
 		Touch[] touches = GetTouches();
+		foreach (Touch touch in touches) 
+		{
+			switch (touch.phase) 
+			{
+				case (TouchPhase.Began):
+				{
+					TouchBegan(touch);
+					break;	
+				}
+
+				case (TouchPhase.Stationary):
+				{
+					TouchStationary(touch);
+					break;
+				}
+
+				case (TouchPhase.Moved):
+				{
+					TouchMoved(touch);
+					break;
+				}
+
+				case (TouchPhase.Ended):
+				{
+					TouchEnded(touch);
+					break;
+				}
+
+				case (TouchPhase.Canceled):
+				{
+					TouchCanceled(touch);
+					break;
+				}
+			}
+		}
 	}
 
 	private Touch[] GetTouches() 
@@ -19,6 +56,44 @@ public class InputManager : Singleton<InputManager>
 			touches[i] = Input.GetTouch(i);
 		}
 		return touches;
+	}
+
+	private void TouchBegan(Touch touch) 
+	{
+		Interactable interactable = CastRayFromTouch(touch);
+		interactable.Tap();
+	}
+
+	private void TouchStationary(Touch touch)
+	{
+
+	}
+
+	private void TouchMoved(Touch touch) 
+	{
+
+	}
+
+	private void TouchEnded(Touch touch) 
+	{
+		
+	}
+
+	private void TouchCanceled(Touch touch) 
+	{
+
+	}
+
+	private Interactable CastRayFromTouch(Touch touch)
+	{
+		Interactable interactableHit = null;
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(touch.position);
+		if (Physics.Raycast(ray, out hit)) 
+		{
+			interactableHit = GetComponent<Interactable>();
+		}
+		return interactableHit;
 	}
 
 	#region DEBUG
@@ -35,7 +110,7 @@ public class InputManager : Singleton<InputManager>
 		{
 			if (!interactables.Contains(interactable)) 
 			{
-				print("Interactable \" + " + interactable.gameObject.name + " + \" not referenced in editor");
+				print("Interactable \"" + interactable.name + "\" not referenced in editor");
 			}
 		}
 	}
