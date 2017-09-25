@@ -11,7 +11,7 @@ public class EventManager : MonoBehaviour
     private Dictionary<string, UnityEvent> eventDictionary;
 
     private static EventManager eventManager;
-    public static EventManager instance
+    public static EventManager Instance
     {
         get
         {
@@ -24,7 +24,7 @@ public class EventManager : MonoBehaviour
                 }
                 else
                 {
-                    eventManager.init();
+                    eventManager.Init();
                 }
             }
 
@@ -32,7 +32,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    void init()
+    void Init()
     {
         if (eventDictionary == null)
         {
@@ -40,10 +40,10 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void startListening(string eventName, UnityAction listener)
+    public static void StartListening(string eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.AddListener(listener);
         }
@@ -51,27 +51,27 @@ public class EventManager : MonoBehaviour
         {
             thisEvent = new UnityEvent();
             thisEvent.AddListener(listener);
-            instance.eventDictionary.Add(eventName, thisEvent);
+            Instance.eventDictionary.Add(eventName, thisEvent);
         }
     }
 
-    public static void stopListening(string eventName, UnityAction listener)
+    public static void StopListening(string eventName, UnityAction listener)
     {
         if (eventManager == null)
         {
             return;
         }
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.RemoveListener(listener);
         }
     }
 
-    public static void triggerEvent(string eventName)
+    public static void TriggerEvent(string eventName)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke();
         }
