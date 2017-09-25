@@ -54,7 +54,7 @@ public class CameraMovement : MonoBehaviour {
 			}
 		}
 
-		Quaternion resultantRotation = Quaternion.AngleAxis(y * speed, Vector3.up) * Quaternion.AngleAxis(x * speed, Vector3.right);
+		Quaternion resultantRotation = Quaternion.AngleAxis(y, Vector3.up) * Quaternion.AngleAxis(x, Vector3.right);
 		transform.rotation = resultantRotation;
 	}
 
