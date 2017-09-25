@@ -464,7 +464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadZone: 0.11
-  speed: 0.5
+  speed: 5
+  boundsX: 5
+  boundsY: 5
 --- !u!1 &1144099409
 GameObject:
   m_ObjectHideFlags: 0

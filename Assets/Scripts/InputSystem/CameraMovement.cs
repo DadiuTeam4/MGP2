@@ -11,6 +11,14 @@ public class CameraMovement : MonoBehaviour {
 	[Range(0.1f, 5.0f)]
 	public float speed = 0.5f;
 
+	[Tooltip("The allowed movement range for the camera in X")]
+	[Range(0.1f, 5.0f)]
+	public float boundsX = 1.0f;
+
+	[Tooltip("The allowed movement range for the camera in Y")]
+	[Range(0.1f, 5.0f)]
+	public float boundsY = 1.0f;
+
 	private Vector3 startPosition;
 	private float currentDeviceRotationX, currentDeviceRotationY;
 
@@ -30,24 +38,29 @@ public class CameraMovement : MonoBehaviour {
 	{
 		float x = 0;
 		float y = 0;
-		if(currentDeviceRotationX > deadZone || currentDeviceRotationX < -deadZone)
+		if (transform.rotation.x > -boundsX && transform.rotation.x < boundsX)
 		{
-			y = currentDeviceRotationX;
+			if (currentDeviceRotationX > deadZone || currentDeviceRotationX < -deadZone)
+			{
+				x = currentDeviceRotationX;
+			}
 		}
 		
-		if(currentDeviceRotationY > deadZone || currentDeviceRotationY < -deadZone)
+		if (transform.rotation.y > -boundsY && transform.rotation.y < boundsY)
 		{
-			x = currentDeviceRotationY;
+			if (currentDeviceRotationY > deadZone || currentDeviceRotationY < -deadZone)
+			{
+				y = currentDeviceRotationY;
+			}
 		}
 
-		transform.Rotate(x, y, 0.0f);
-		Quaternion quaternionRotation = transform.rotation;
-		transform.eulerAngles = new Vector3(quaternionRotation.eulerAngles.x, quaternionRotation.eulerAngles.y, 0.0f);
+		Quaternion resultantRotation = Quaternion.AngleAxis(y * speed, Vector3.up) * Quaternion.AngleAxis(x * speed, Vector3.right);
+		transform.rotation = resultantRotation;
 	}
 
 	private void UpdateDeviceRotations()
 	{
-		currentDeviceRotationX = Input.acceleration.x;
-		currentDeviceRotationY = Input.acceleration.y;
+		currentDeviceRotationX = Input.acceleration.y;
+		currentDeviceRotationY = Input.acceleration.x;
 	}
 }
