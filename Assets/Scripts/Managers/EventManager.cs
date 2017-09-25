@@ -39,7 +39,7 @@ public class EventManager : Singleton<EventManager>
 
     public static void StopListening(string eventName, UnityAction listener)
     {
-        if (eventManager == null)
+        if (instance == null)
         {
             return;
         }
