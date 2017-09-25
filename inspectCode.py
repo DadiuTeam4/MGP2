@@ -39,7 +39,8 @@ for child in issueArray:
     # Ignore issue if included in ignoredIssues
     typeId = child.get('TypeId')
     if (typeId.strip() in ignoredIssues):
-        pass
+        print("Ignoring issue: " + typeId.strip())
+        continue
 
     fileName = child.get('File')
     line = child.get('Line')
@@ -62,7 +63,7 @@ for child in issueArray:
     issueCounter += 1
 
 # Write to file and close
-outputFile.write("Issues: " + str(issueCounter) + "\n\n")
+outputFile.write("**Issues: " + str(issueCounter) + "**\n\n")
 for name, array in outStrings.items():
     outputFile.write("**" + name + "**\n")
     for issue in array:
