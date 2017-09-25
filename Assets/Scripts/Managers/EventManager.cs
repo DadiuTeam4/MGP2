@@ -6,32 +6,14 @@ using UnityEngine.Events;
 //Event Manager can register listeners by startListening
 //Event Manager can remove listeners by stopListening
 //Trigger the event and all specific method.
-public class EventManager : MonoBehaviour
+public class EventManager : Singleton<EventManager>
 {
     private Dictionary<string, UnityEvent> eventDictionary;
 
-    private static EventManager eventManager;
-    public static EventManager Instance
+    void Awake()
     {
-        get
-        {
-            if (!eventManager)
-            {
-                eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
-                if (!eventManager)
-                {
-                    Debug.LogError("There needs to be active EventManager script on a GameObject in your scene");
-                }
-                else
-                {
-                    eventManager.Init();
-                }
-            }
-
-            return eventManager;
-        }
+        Init();
     }
-
     void Init()
     {
         if (eventDictionary == null)
