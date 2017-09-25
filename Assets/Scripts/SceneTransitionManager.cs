@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneTransition : MonoBehaviour {
+public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 
 	// Use this for initialization
 	void Start () {
