@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SceneTransitionManager : Singleton<SceneTransitionManager>
 {
 	AsyncOperation[] asyncOperationArray;
 
+	private UnityAction sceneTriggerListener;
+
 	void Awake()
 	{
 		DontDestroyOnLoad(transform.gameObject);
 		asyncOperationArray = new AsyncOperation[SceneManager.sceneCount];
+		sceneTriggerListener = new UnityAction(ChangeScene);
 	}
 	
 	void Update ()
@@ -28,8 +32,8 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 		asyncOperationArray[id].allowSceneActivation = true;
 	}
 
-	public void ChangeScene(int id)
+	public void ChangeScene()
 	{
-		SceneManager.LoadScene(id);
+		SceneManager.LoadScene(1);
 	}
 }
