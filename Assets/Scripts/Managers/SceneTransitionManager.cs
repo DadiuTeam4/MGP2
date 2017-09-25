@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransitionManager : Singleton<SceneTransitionManager> {
+public class SceneTransitionManager : Singleton<SceneTransitionManager>
+{
 	AsyncOperation[] asyncOperationArray;
 
 	void Awake()
@@ -23,7 +22,14 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 		asyncOperationArray[id].allowSceneActivation = false;
 	} 
 
-	public void ActivateAsyncronousScene(int id){
+	public void ActivateAsyncronousScene(int id)
+	{
+		Debug.Assert(asyncOperationArray[id] != null, "SceneTransitionManager: asyncOperation is null");
 		asyncOperationArray[id].allowSceneActivation = true;
+	}
+
+	public void ChangeScene(int id)
+	{
+		SceneManager.LoadScene(id);
 	}
 }
