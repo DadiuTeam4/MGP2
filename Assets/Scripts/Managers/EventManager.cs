@@ -24,7 +24,7 @@ public class EventManager : MonoBehaviour
                 }
                 else
                 {
-                    eventManager.init();
+                    eventManager.Init();
                 }
             }
 
@@ -32,7 +32,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    void init()
+    void Init()
     {
         if (eventDictionary == null)
         {
