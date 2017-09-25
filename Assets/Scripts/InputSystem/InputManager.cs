@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class InputManager : Singleton<InputManager>
 {
-	[SerializeField]
-	private List<Interactable> interactables;
+	private List<Interactable> heldLastFrame = new List<Interactable>();
+	private List<Interactable> heldThisFrame = new List<Interactable>();
+
+	#region UPDATE_LOOP
 	private void Update() 
 	{
+		// Resolve all touches
 		Touch[] touches = GetTouches();
 		foreach (Touch touch in touches) 
 		{
@@ -18,7 +21,7 @@ public class InputManager : Singleton<InputManager>
 				case (TouchPhase.Began):
 				{
 					TouchBegan(touch);
-					break;	
+					break;
 				}
 
 				case (TouchPhase.Stationary):
@@ -46,7 +49,10 @@ public class InputManager : Singleton<InputManager>
 				}
 			}
 		}
+		heldLastFrame = heldThisFrame;
+		heldThisFrame.Clear();
 	}
+	#endregion
 
 	private Touch[] GetTouches() 
 	{
@@ -61,27 +67,40 @@ public class InputManager : Singleton<InputManager>
 	private void TouchBegan(Touch touch) 
 	{
 		Interactable interactable = CastRayFromTouch(touch);
-		interactable.Tap();
+		if (interactable) 
+		{
+			interactable.OnTouchBegin();
+		}
 	}
 
 	private void TouchStationary(Touch touch)
 	{
-
+		heldThisFrame = heldLastFrame;
 	}
 
 	private void TouchMoved(Touch touch) 
 	{
-
+		Interactable interactable = CastRayFromTouch(touch);
+		if (interactable) 
+		{
+			heldThisFrame.Add(interactable);
+		}
 	}
 
 	private void TouchEnded(Touch touch) 
 	{
-		
+		foreach (Interactable interactable in heldLastFrame) 
+		{
+			interactable.OnTouchReleased();
+		}
 	}
 
 	private void TouchCanceled(Touch touch) 
 	{
-
+		foreach (Interactable interactable in heldLastFrame) 
+		{
+			interactable.OnTouchReleased();
+		}
 	}
 
 	private Interactable CastRayFromTouch(Touch touch)
@@ -96,6 +115,18 @@ public class InputManager : Singleton<InputManager>
 		return interactableHit;
 	}
 
+	private void CallHeldObjects()
+	{
+		foreach (Interactable interactable in heldLastFrame) 
+		{
+			if (heldThisFrame.Contains(interactable)) 
+			{
+				interactable.timeHeld += Time.deltaTime;
+				interactable.OnTouchHold();
+			}
+		}
+	}
+
 	#region DEBUG
 	#if UNITY_EDITOR
 	private void Awake() 
@@ -108,10 +139,10 @@ public class InputManager : Singleton<InputManager>
 		Interactable[] missingInteractables = FindObjectsOfType(typeof(Interactable)) as Interactable[];
 		foreach (Interactable interactable in missingInteractables) 
 		{
-			if (!interactables.Contains(interactable)) 
-			{
-				print("Interactable \"" + interactable.name + "\" not referenced in editor");
-			}
+			// if (!interactables.Contains(interactable)) 
+			// {
+			// 	print("Interactable \"" + interactable.name + "\" not referenced in editor");
+			// }
 		}
 	}
 	#endif

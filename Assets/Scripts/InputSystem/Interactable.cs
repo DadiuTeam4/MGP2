@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-	public virtual void Tap() {}
-	public virtual void Hold(float timeHeld) {}
-	public virtual void Released() {}
+	public float timeHeld;
+	public virtual void OnTouchBegin() {}
+	public virtual void OnTouchHold() {}
+	public virtual void OnTouchReleased() {}
 }
