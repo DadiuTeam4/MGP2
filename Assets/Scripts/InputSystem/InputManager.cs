@@ -110,7 +110,7 @@ public class InputManager : Singleton<InputManager>
 		Ray ray = Camera.main.ScreenPointToRay(touch.position);
 		if (Physics.Raycast(ray, out hit)) 
 		{
-			interactableHit = GetComponent<Interactable>();
+			interactableHit = hit.collider.GetComponent<Interactable>();
 		}
 		return interactableHit;
 	}
