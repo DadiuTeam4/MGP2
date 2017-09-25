@@ -11,7 +11,7 @@ public class EventTriggerExample : MonoBehaviour
     {
         if (Input.GetKeyDown("q"))
         {
-			EventManager.triggerEvent("test");
+			EventManager.TriggerEvent("test");
         }
     }
 }

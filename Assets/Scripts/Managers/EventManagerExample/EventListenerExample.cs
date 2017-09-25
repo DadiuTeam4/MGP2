@@ -1,6 +1,4 @@
-﻿  using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 //Init the listener On Awake.
@@ -9,7 +7,7 @@ using UnityEngine.Events;
 //If there is a listener like Destrory
 //Remember to invoke stopListening just to make sure
 //the listening is stopped.
-public class EventLisnerExample : MonoBehaviour
+public class EventListenerExample : MonoBehaviour
 {
     private UnityAction someListener;
 
@@ -20,16 +18,16 @@ public class EventLisnerExample : MonoBehaviour
 
     void OnEnable()
     {
-		EventManager.startListening("test", someListener);
+		EventManager.StartListening("test", someListener);
     }
 
     void OnDisable()
     {
-		EventManager.stopListening("test", someListener);
+		EventManager.StopListening("test", someListener);
     }
 
     void someFunction()
     {
-	    Debug.Log("Some function is called!");
+		Debug.Log("Some function is called!");
     }
 }
