@@ -49,7 +49,9 @@ public class InputManager : Singleton<InputManager>
 				}
 			}
 		}
-		heldLastFrame = heldThisFrame;
+        CallHeldObjects();
+
+        heldLastFrame = heldThisFrame;
 		heldThisFrame.Clear();
 	}
 	#endregion
@@ -75,8 +77,12 @@ public class InputManager : Singleton<InputManager>
 
 	private void TouchStationary(Touch touch)
 	{
-		heldThisFrame = heldLastFrame;
-	}
+        Interactable interactable = CastRayFromTouch(touch);
+        if (interactable)
+        {
+            heldThisFrame.Add(interactable);
+        }
+    }
 
 	private void TouchMoved(Touch touch) 
 	{
