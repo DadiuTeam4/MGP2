@@ -61,7 +61,7 @@ public class InputManager : Singleton<InputManager>
 	private void TouchBegan(Touch touch) 
 	{
 		Interactable interactable = CastRayFromTouch(touch);
-		interactable.Tap();
+		EventManager.instance.AddListener();
 	}
 
 	private void TouchStationary(Touch touch)
