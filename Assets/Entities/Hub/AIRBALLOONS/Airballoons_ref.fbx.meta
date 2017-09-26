@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: 72f6540eb6e02164a8a915c7794f4af1
-timeCreated: 1506417513
+guid: 0ad965e2fb1f37847a6ad356d487eb12
+timeCreated: 1506423386
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: television_GEO
+    100002: geo_airballoon
     400000: //RootNode
-    400002: television_GEO
-    2300000: television_GEO
-    3300000: television_GEO
-    4300000: television_GEO
+    400002: geo_airballoon
+    2300000: geo_airballoon
+    3300000: geo_airballoon
+    4300000: geo_airballoon
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +82,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
