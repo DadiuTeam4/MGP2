@@ -17,6 +17,7 @@ public class InputManager : Singleton<InputManager>
 	#endif
 	#endregion
 
+
 	#region UPDATE_LOOP
 	private void Update() 
 	{
