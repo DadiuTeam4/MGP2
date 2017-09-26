@@ -73,5 +73,5 @@ public class EventManager : Singleton<EventManager>
 public enum EventName
 {
     Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, 
-    LangEnglish, LangDanish, KitchenSceneLoaded
+    LangEnglish, LangDanish, KitchenSceneLoaded, LanguageSelected
 }

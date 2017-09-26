@@ -26,6 +26,7 @@ public class IntroSceneController : MonoBehaviour
     private void StartGame()
     {
 		Debug.Log("Game Should Start Now");
+		EventManager.TriggerEvent(EventName.LanguageSelected);
     }
 
 }
