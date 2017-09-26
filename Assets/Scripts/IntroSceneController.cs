@@ -9,20 +9,9 @@ public class IntroSceneController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        EventManager.StartListening(EventName.LangEnglish, StartGameWithEnglish);
-        EventManager.StartListening(EventName.LangDanish, StartGameWithDanish);
+        EventManager.StartListening(EventName.LangEnglish, StartGame);
+        EventManager.StartListening(EventName.LangDanish, StartGame);
     }
-
-    private void StartGameWithEnglish()
-    {
-        StartGame();
-    }
-
-    private void StartGameWithDanish()
-    {
-        StartGame();
-    }
-
     private void StartGame()
     {
 		Debug.Log("Game Should Start Now");
