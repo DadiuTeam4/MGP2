@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Author: You Wu
+//Contributor:
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +10,8 @@ using UnityEngine.Events;
 //Trigger the event and all specific method.
 public class EventManager : Singleton<EventManager>
 {
-    private Dictionary<string, UnityEvent> eventDictionary;
+    //use the value of Enum as its id. Just use (int)EventName.Name
+    private Dictionary<int, UnityEvent> eventDictionary;
 
     void Awake()
     {
@@ -19,11 +22,11 @@ public class EventManager : Singleton<EventManager>
         DontDestroyOnLoad(transform.gameObject);
         if (eventDictionary == null)
         {
-            eventDictionary = new Dictionary<string, UnityEvent>();
+            eventDictionary = new Dictionary<int, UnityEvent>();
         }
     }
 
-    public static void StartListening(string eventName, UnityAction listener)
+    public static void StartListening(int eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
@@ -38,7 +41,7 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
-    public static void StopListening(string eventName, UnityAction listener)
+    public static void StopListening(int eventName, UnityAction listener)
     {
         if (instance == null)
         {
@@ -51,7 +54,7 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
-    public static void TriggerEvent(string eventName)
+    public static void TriggerEvent(int eventName)
     {
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
@@ -64,4 +67,12 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
+}
+
+//Add all the event name here
+//Use (int) to convert event name to its id
+//Id starts from 0, 1, 2 ...
+public enum EventName 
+{
+    Test, NumberThreePickedUp, OpenDoorClicked
 }

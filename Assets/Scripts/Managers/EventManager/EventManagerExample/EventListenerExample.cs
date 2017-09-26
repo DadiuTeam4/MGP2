@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Author: You Wu
+//Contributor:
+using UnityEngine;
 using UnityEngine.Events;
 
 //Init the listener On Awake.
@@ -18,12 +20,12 @@ public class EventListenerExample : MonoBehaviour
 
     void OnEnable()
     {
-		EventManager.StartListening("test", someListener);
+		EventManager.StartListening((int)EventName.Test, someListener);
     }
 
     void OnDisable()
     {
-		EventManager.StopListening("test", someListener);
+		EventManager.StopListening((int)EventName.Test, someListener);
     }
 
     void someFunction()
