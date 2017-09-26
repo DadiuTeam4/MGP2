@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
-	[Tooltip("The amount of movement needed before anything happens, at 0 the system is very sensible, at 1 no movement would be enough")]
-	[Range(0.0f, 0.5f)]
-	public float sensitivity = 0.1f;
-
 	[Tooltip("The allowed movement range for the camera in X")]
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsX = 30.0f;
@@ -63,15 +59,15 @@ public class CameraMovement : MonoBehaviour {
 		flippedX = Input.acceleration.y;
 		flippedY = Input.acceleration.x;
 
-		movingAverageX = PushBack(flippedX, movingAverageX);
-		movingAverageY = PushBack(flippedY, movingAverageY);
+		PushBack(flippedX, ref movingAverageX);
+		PushBack(flippedY, ref movingAverageY);
 
-		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
-		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
+		currentDeviceRotationX = CalculateMovingAverage(flippedX, movingAverageX);			
+		currentDeviceRotationY = CalculateMovingAverage(flippedY, movingAverageY);
 		
 	}
 
-	private float CalculateMovingAverage(float value, ref float[] array)
+	private float CalculateMovingAverage(float value, float[] array)
 	{
 		//array = PushBack(value, array);
 		return Average(array);
@@ -88,9 +84,9 @@ public class CameraMovement : MonoBehaviour {
 		return sum /= array.Length;
 	}
 
-	private float[] PushBack(float value, float[] array)
+	private float[] PushBack(float value, ref float[] array)
 	{
-		for (int i = array.Length-1; i > 1; i--)
+		for (int i = array.Length-1; i > 0; i--)
 		{
 			array[i] = array[i - 1];
 		}
