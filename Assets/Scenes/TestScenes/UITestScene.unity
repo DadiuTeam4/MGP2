@@ -307,10 +307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d1e7a48cbd39b4082eb0fb8b5a2db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1000882838707004, guid: aa5ac84be87a5e84da88dc2be1190e33, type: 2}
+  button: {fileID: 1925236299203278, guid: 7a905878bd3f84447912f0132765ced8, type: 2}
   heightOfButton: 70
   widthOfButton: 30
-  relativeButtonSize: 0.02
+  relativeButtonSize: 1
 --- !u!114 &1964639539
 MonoBehaviour:
   m_ObjectHideFlags: 0
