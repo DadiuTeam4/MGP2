@@ -33,7 +33,8 @@ public class GlobalSoundManager : MonoBehaviour {
 	}
 			void DoSomething()
 	{
-		
+		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 100); 
+		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 0);
 	}
 			
 		

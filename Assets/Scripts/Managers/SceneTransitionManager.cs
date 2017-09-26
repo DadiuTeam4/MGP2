@@ -19,5 +19,6 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 	void ChangeToKitchenScene()
     {
         SceneManager.LoadScene("KitchenScene");
+        EventManager.TriggerEvent(EventName.KitchenSceneLoaded);
     }
 }
