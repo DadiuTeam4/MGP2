@@ -40,19 +40,19 @@ public class ResourceManager : Singleton<ResourceManager>
 		 resourceManagerListenerForNumber1 = new UnityAction(AddNumber1ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber2 = new UnityAction(AddNumber2ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber3 = new UnityAction(AddNumber3ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber4 = new UnityAction(AddNumber4ToListOfPickedUpNumbers);
+		/* resourceManagerListenerForNumber4 = new UnityAction(AddNumber4ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber5 = new UnityAction(AddNumber5ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber6 = new UnityAction(AddNumber6ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber7 = new UnityAction(AddNumber7ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber8 = new UnityAction(AddNumber8ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber9 = new UnityAction(AddNumber9ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber10 = new UnityAction(AddNumber10ToListOfPickedUpNumbers);
+		 resourceManagerListenerForNumber10 = new UnityAction(AddNumber10ToListOfPickedUpNumbers);*/
 
 
-		/*EventManager.StartListening("number1HasBeenPickedUp", resourceManagerListenerForNumber1);
-		EventManager.StartListening("number2HasBeenPickedUp", resourceManagerListenerForNumber2);
-		EventManager.StartListening("number3HasBeenPickedUp", resourceManagerListenerForNumber3);
-		EventManager.StartListening("number4HasBeenPickedUp", resourceManagerListenerForNumber4);
+		EventManager.StartListening(EventName.NumberOnePickedUp, resourceManagerListenerForNumber1);
+		EventManager.StartListening(EventName.NumberTwoPickedUp, resourceManagerListenerForNumber2);
+		EventManager.StartListening(EventName.NumberThreePickedUp, resourceManagerListenerForNumber3);
+		/*EventManager.StartListening("number4HasBeenPickedUp", resourceManagerListenerForNumber4);
 		EventManager.StartListening("number5HasBeenPickedUp", resourceManagerListenerForNumber5);
 		EventManager.StartListening("number6HasBeenPickedUp", resourceManagerListenerForNumber6);
 		EventManager.StartListening("number7HasBeenPickedUp", resourceManagerListenerForNumber7);
@@ -91,15 +91,21 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		//print(" 1 has been picked up");
 		listOfPickedUpNumbers.Add(1);
+		EventManager.TriggerEvent(EventName.UIUpdate);
+
 		//SceneManager.LoadScene("ResourceManagerTestScene2");
 	}
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
 		listOfPickedUpNumbers.Add(2);
+		EventManager.TriggerEvent(EventName.UIUpdate);
+
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
 		listOfPickedUpNumbers.Add(3);
+		EventManager.TriggerEvent(EventName.UIUpdate);
+
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{

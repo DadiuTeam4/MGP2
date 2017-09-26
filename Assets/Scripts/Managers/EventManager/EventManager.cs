@@ -75,7 +75,10 @@ public class EventManager : Singleton<EventManager>
 public enum EventName 
 {
     Test, 
+    NumberOnePickedUp,
+    NumberTwoPickedUp,
     NumberThreePickedUp, 
+    UIUpdate,
     KitchenDoorClicked,
     HubDoorClicked,
 }
