@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class InputManager : Singleton<InputManager>
 {
-	public List<Interactable> heldLastFrame = new List<Interactable>();
-	public List<Interactable> heldThisFrame = new List<Interactable>();
+	private readonly List<Interactable> heldLastFrame = new List<Interactable>();
+	private readonly List<Interactable> heldThisFrame = new List<Interactable>();
 
 	#region DEBUG
 	#if UNITY_EDITOR
@@ -19,7 +19,7 @@ public class InputManager : Singleton<InputManager>
 
 
 	#region UPDATE_LOOP
-	private void Update() 
+	private void Update()
 	{
 		// Resolve all touches
 		Touch[] touches = GetTouches();
@@ -47,13 +47,13 @@ public class InputManager : Singleton<InputManager>
 
 				case (TouchPhase.Ended):
 				{
-					TouchEnded(touch);
+					TouchEnded();
 					break;
 				}
 
 				case (TouchPhase.Canceled):
 				{
-					TouchCanceled(touch);
+					TouchCanceled();
 					break;
 				}
 			}
@@ -134,7 +134,7 @@ public class InputManager : Singleton<InputManager>
 		}
 	}
 
-	private void TouchEnded(Touch touch) 
+	private void TouchEnded() 
 	{
 		foreach (Interactable interactable in heldLastFrame) 
 		{
@@ -142,7 +142,7 @@ public class InputManager : Singleton<InputManager>
 		}
 	}
 
-	private void TouchCanceled(Touch touch) 
+	private void TouchCanceled() 
 	{
 		foreach (Interactable interactable in heldLastFrame) 
 		{
