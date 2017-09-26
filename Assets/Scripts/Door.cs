@@ -6,7 +6,6 @@ public class Door : Interactable {
 
     private bool isOpen = false;
 
-	// Use this for initialization
 	void Start ()
     {
         EventManager.StartListening(((int)EventName.NumberThreePickedUp), OpenDoor);
@@ -23,18 +22,10 @@ public class Door : Interactable {
             Debug.Log("Door closed");
         }
     }
-
-    public override void OnTouchHold()
-    {
-    }
-
-    public override void OnTouchReleased()
-    {
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
+    void OnMouseDown()
+	{
+        Debug.Log("Door clicked");
+        OnTouchBegin();
 	}
 
     void OpenDoor()
