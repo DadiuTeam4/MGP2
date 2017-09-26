@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : Interactable {
+public class Door : Interactable 
+{
 
     private bool isOpen = false;
 
@@ -17,7 +18,8 @@ public class Door : Interactable {
         {
             EventManager.TriggerEvent((int)EventName.OpenDoorClicked);
             Debug.Log("Door open");
-        } else
+        } 
+        else
         {
             Debug.Log("Door closed");
         }

@@ -71,10 +71,5 @@ public class ResourceManager
 	public void AddLevelToListOfScenesCompleted(string addThisScene)
 	{
 		listOfScenesCompleted.Add(addThisScene);
-	}
-
-
-
-
-	
+	}	
 }
