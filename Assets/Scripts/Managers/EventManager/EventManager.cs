@@ -74,5 +74,8 @@ public class EventManager : Singleton<EventManager>
 //Id starts from 0, 1, 2 ...
 public enum EventName 
 {
-    Test, NumberThreePickedUp, OpenDoorClicked
+    Test, 
+    NumberThreePickedUp, 
+    KitchenDoorClicked,
+    HubDoorClicked,
 }
