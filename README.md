@@ -26,3 +26,31 @@ Simply run the *inspectCode.py* script by double-clicking it, or by running
 
 #### Configuration
 If the script produces irrelevant issues or otherwise unusable issues, you can add them to *ignoredIssues.csv*. Then they will be ignored when running the inspection script.
+
+### Input system
+The input system consists of a single instance (singleton) of the InputManager class. It handles all incoming touches on the screen and activates the game objects that are touched. 
+
+#### Usage
+To make the input system recognize and activate your game object, you need to make its class inherit from the class *Interactable*. Then you can implement the three virtual methods, *OnTouchBegin()*, *OnTouchHold()*, and *OnTouchReleased()*. 
+Example: 
+```clike=
+public class Door : Interactable 
+{
+    public override void OnTouchBegin()
+    {
+        // Do something when the door is touched
+     
+    }
+ 
+    public override void OnTouchHold()
+    {
+        // Do something while the door is being touched
+        // Use variable timeHeld to know how long the touch has lasted
+    }
+ 
+    public override void OnTouchReleased()
+    {
+        // Do something when the touch on the door is released
+    }    
+}
+```
