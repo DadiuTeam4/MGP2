@@ -18,16 +18,16 @@ public class EventListenerExample : MonoBehaviour
 
     void OnEnable()
     {
-		EventManager.StartListening("test", someListener);
+	    	EventManager.StartListening("test", someListener);
     }
 
     void OnDisable()
     {
-		EventManager.StopListening("test", someListener);
+		    EventManager.StopListening("test", someListener);
     }
 
     void someFunction()
     {
-		Debug.Log("Some function is called!");
+		    Debug.Log("Some function is called!");
     }
 }

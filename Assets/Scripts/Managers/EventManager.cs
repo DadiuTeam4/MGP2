@@ -59,7 +59,7 @@ public class EventManager : Singleton<EventManager>
         }
         else
         {
-            Debug.LogError("The event name " + eventName + " is not exist");
+            Debug.LogError("The event name " + eventName + " does not exist");
         }
     }
 
