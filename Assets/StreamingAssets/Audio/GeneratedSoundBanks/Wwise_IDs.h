@@ -13,12 +13,17 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID TEST = 3157003241U;
-        static const AkUniqueID TEST1 = 576110586U;
+        static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
+        static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID ONSCREENCLICK = 4238747602U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID KITCHEN_VOLUME = 4227318060U;
+        static const AkUniqueID LIVINGROOM_VOLUME = 2602545984U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;
@@ -40,9 +45,17 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
+        static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MASTER_SECONDARY_BUS = 805203703U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB_KITCHEN = 1290916568U;
+        static const AkUniqueID REVERB_LIVINGROOM = 400405326U;
+    } // namespace AUX_BUSSES
 
 }// namespace AK
 
