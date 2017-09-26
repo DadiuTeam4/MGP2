@@ -1,11 +1,18 @@
 Event	ID	Name			Wwise Object Path	Notes
-	576110586	test1			\Default Work Unit\test1	
-	3157003241	test			\Default Work Unit\test	
+	1710825164	Ambience_kitchen			\Default Work Unit\Ambience\Ambience_kitchen	
+	3642974746	Ambience_livingroom			\Default Work Unit\Ambience\Ambience_livingroom	
+	3991942870	Music			\Default Work Unit\Music\Music	
+	4238747602	OnScreenClick			\Default Work Unit\SoundDesign\OnScreenClick	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	2010788230	testparameter			\Default Work Unit\testparameter	
+	1006694123	Music_volume			\Default Work Unit\Music_volume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	544317462	3 sek_ udkast row2	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\3 sek. udkast row2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\test\3 sek_ udkast row2		2304064
-	564873371	3 sek_ udkast	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\3 sek. udkast_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\test\3 sek_ udkast		2304064
+	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_2CD47484.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		35454
+	92169222	MGP2_SD_OnScreenClick(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_FC48F3F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)		42338
+	306863275	MGP2_SD_OnScreenClick(P)_03	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C96E2B5F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_03		28574
+	329108900	MGP2_SD_OnScreenClick(P)_02	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_3B8FC966.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_02		26606
+	492601204	MGP2_music_throwout2(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_music_throwout2(P)_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MGP2_music_throwout1(P)\MGP2_music_throwout2(P)		1843264
+	933262447	mgp2_ambience_livingRoom(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\mgp2_ambience_livingRoom(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_livingRoom(P)		19169344
+	967338969	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\mgp2_ambience_kitchen(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		6635584
 
