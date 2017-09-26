@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Door : Interactable 
 {
-
+    public EventName triggeredEvent = EventName.HubDoorClicked;
     private bool isOpen = false;
 
-	void Start ()
+	void Start()
     {
-        EventManager.StartListening(((int)EventName.NumberThreePickedUp), OpenDoor);
+        EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
 	}
 
     public override void OnTouchBegin()
     {
         if (this.isOpen)
         {
-            EventManager.TriggerEvent((int)EventName.OpenDoorClicked);
+            EventManager.TriggerEvent(triggeredEvent);
             Debug.Log("Door open");
         } 
         else

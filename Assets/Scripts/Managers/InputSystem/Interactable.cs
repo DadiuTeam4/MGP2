@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+	[HideInInspector]
 	public float timeHeld;
 	public virtual void OnTouchBegin() {}
 	public virtual void OnTouchHold() {}

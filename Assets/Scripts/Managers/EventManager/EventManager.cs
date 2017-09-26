@@ -11,7 +11,7 @@ using UnityEngine.Events;
 public class EventManager : Singleton<EventManager>
 {
     //use the value of Enum as its id. Just use (int)EventName.Name
-    private Dictionary<int, UnityEvent> eventDictionary;
+    private Dictionary<EventName, UnityEvent> eventDictionary;
 
     void Awake()
     {
@@ -22,11 +22,11 @@ public class EventManager : Singleton<EventManager>
         DontDestroyOnLoad(transform.gameObject);
         if (eventDictionary == null)
         {
-            eventDictionary = new Dictionary<int, UnityEvent>();
+            eventDictionary = new Dictionary<EventName, UnityEvent>();
         }
     }
 
-    public static void StartListening(int eventName, UnityAction listener)
+    public static void StartListening(EventName eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
@@ -41,7 +41,7 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
-    public static void StopListening(int eventName, UnityAction listener)
+    public static void StopListening(EventName eventName, UnityAction listener)
     {
         if (instance == null)
         {
@@ -54,7 +54,7 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
-    public static void TriggerEvent(int eventName)
+    public static void TriggerEvent(EventName eventName)
     {
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
@@ -74,5 +74,8 @@ public class EventManager : Singleton<EventManager>
 //Id starts from 0, 1, 2 ...
 public enum EventName 
 {
-    Test, NumberThreePickedUp, OpenDoorClicked
+    Test, 
+    NumberThreePickedUp, 
+    KitchenDoorClicked,
+    HubDoorClicked,
 }
