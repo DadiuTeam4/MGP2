@@ -15,15 +15,26 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
 		//Music
 		AkSoundEngine.PostEvent ("Music", gameObject); 
+		EventManager.StartListening (EventName.KitchenSceneLoaded, DoSomething);   
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey (KeyCode.A)) {
+	void Update () 
+	{
+		if (Input.GetKey (KeyCode.A)) 
+		{
 			AkSoundEngine.SetRTPCValue ("Deaf_parameter", 0); 
-		} else {
+		} 
+		else 
+		{
 			AkSoundEngine.SetRTPCValue ("Deaf_parameter", 100); 
 		}
-
 	}
+			void DoSomething()
+	{
+		
+	}
+			
+		
 }
