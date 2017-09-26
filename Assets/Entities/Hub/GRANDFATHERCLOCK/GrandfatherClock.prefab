@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1295679894878298}
+  m_RootGameObject: {fileID: 1121114467061770}
   m_IsPrefabParent: 1
---- !u!1 &1295679894878298
+--- !u!1 &1121114467061770
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4091276441062352}
-  - component: {fileID: 95178951050362272}
+  - component: {fileID: 4600806854156552}
+  - component: {fileID: 95807551503849004}
   m_Layer: 0
-  m_Name: Gramophone
+  m_Name: GrandfatherClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1703700359588322
+--- !u!1 &1838575272636088
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4850120944240440}
-  - component: {fileID: 33776191923670138}
-  - component: {fileID: 23505300962101748}
+  - component: {fileID: 4142858153687672}
+  - component: {fileID: 33662008617673518}
+  - component: {fileID: 23033957700097514}
   m_Layer: 0
-  m_Name: geo_gramophone
+  m_Name: geo_grandfatherClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4091276441062352
+--- !u!4 &4142858153687672
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4850120944240440}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4850120944240440
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
+  m_GameObject: {fileID: 1838575272636088}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4091276441062352}
+  m_Father: {fileID: 4600806854156552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23505300962101748
+--- !u!4 &4600806854156552
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121114467061770}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4142858153687672}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23033957700097514
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
+  m_GameObject: {fileID: 1838575272636088}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -103,22 +103,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33776191923670138
+--- !u!33 &33662008617673518
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
-  m_Mesh: {fileID: 4300000, guid: 6299b27e622753549a91e64a8fe385bb, type: 3}
---- !u!95 &95178951050362272
+  m_GameObject: {fileID: 1838575272636088}
+  m_Mesh: {fileID: 4300000, guid: e560a3b59b0bb3c40b76821d751e634b, type: 3}
+--- !u!95 &95807551503849004
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
+  m_GameObject: {fileID: 1121114467061770}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6299b27e622753549a91e64a8fe385bb, type: 3}
+  m_Avatar: {fileID: 9000000, guid: e560a3b59b0bb3c40b76821d751e634b, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0

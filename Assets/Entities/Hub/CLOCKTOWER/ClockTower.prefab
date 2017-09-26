@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1295679894878298}
+  m_RootGameObject: {fileID: 1558639596782442}
   m_IsPrefabParent: 1
---- !u!1 &1295679894878298
+--- !u!1 &1163233571008190
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4091276441062352}
-  - component: {fileID: 95178951050362272}
+  - component: {fileID: 4969629261220520}
+  - component: {fileID: 33773700345066032}
+  - component: {fileID: 23324031664985876}
   m_Layer: 0
-  m_Name: Gramophone
+  m_Name: geo_clockTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1703700359588322
+--- !u!1 &1558639596782442
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4850120944240440}
-  - component: {fileID: 33776191923670138}
-  - component: {fileID: 23505300962101748}
+  - component: {fileID: 4241929609336098}
+  - component: {fileID: 95807377846338290}
   m_Layer: 0
-  m_Name: geo_gramophone
+  m_Name: ClockTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4091276441062352
+--- !u!4 &4241929609336098
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
+  m_GameObject: {fileID: 1558639596782442}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4850120944240440}
+  - {fileID: 4969629261220520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4850120944240440
+--- !u!4 &4969629261220520
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
+  m_GameObject: {fileID: 1163233571008190}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 1.40512, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4091276441062352}
+  m_Father: {fileID: 4241929609336098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23505300962101748
+--- !u!23 &23324031664985876
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
+  m_GameObject: {fileID: 1163233571008190}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -103,22 +103,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33776191923670138
+--- !u!33 &33773700345066032
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703700359588322}
-  m_Mesh: {fileID: 4300000, guid: 6299b27e622753549a91e64a8fe385bb, type: 3}
---- !u!95 &95178951050362272
+  m_GameObject: {fileID: 1163233571008190}
+  m_Mesh: {fileID: 4300000, guid: 4ca2c16f1a617e14582445ffda9ec8f3, type: 3}
+--- !u!95 &95807377846338290
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
+  m_GameObject: {fileID: 1558639596782442}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6299b27e622753549a91e64a8fe385bb, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 4ca2c16f1a617e14582445ffda9ec8f3, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
