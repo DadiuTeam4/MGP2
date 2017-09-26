@@ -13,18 +13,22 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
     void Start()
     {
         EventManager.StartListening(EventName.HubDoorClicked, ChangeToKitchenScene);
-        EventManager.StartListening(EventName.LanguageSelected, ChangeToHubScene);
-        Debug.Log("Should change to KitchenScenenow!");
-    }
+		Debug.Log("Should change to KitchenScene now!");
 
+		EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToHubScene);
+
+        EventManager.StartListening(EventName.LanguageSelected, ChangeToHubScene);
+	}
+	
     void ChangeToKitchenScene()
     {
         SceneManager.LoadScene("KitchenScene");
         EventManager.TriggerEvent(EventName.KitchenSceneLoaded);
     }
 
-    void ChangeToHubScene()
+	void ChangeToHubScene()
     {
         SceneManager.LoadScene("HubScene");
+        EventManager.TriggerEvent(EventName.HubSceneLoaded);
     }
 }

@@ -69,9 +69,9 @@ public class EventManager : Singleton<EventManager>
 
 }
 
-//Add all the event name here
+//Add all the event names here.
 public enum EventName
 {
-    Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, 
-    LangEnglish, LangDanish, KitchenSceneLoaded, LanguageSelected
+    Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, KitchenSceneLoaded, HubSceneLoaded,
+    LangEnglish, LangDanish, LanguageSelected
 }

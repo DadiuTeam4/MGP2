@@ -7,13 +7,20 @@ public class Door : Interactable
     public EventName triggeredEvent = EventName.HubDoorClicked;
     private bool isOpen = false;
 
-	void Start()
+ 	void Start()
     {
         EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
 	}
 
     public override void OnTouchBegin()
     {
+
+        if (triggeredEvent == EventName.KitchenDoorClicked)
+        {
+            EventManager.TriggerEvent(EventName.KitchenDoorClicked);
+        }
+
+        Debug.Log(triggeredEvent);
         if (this.isOpen)
         {
             EventManager.TriggerEvent(triggeredEvent);
@@ -24,11 +31,6 @@ public class Door : Interactable
             Debug.Log("Door closed");
         }
     }
-    void OnMouseDown()
-	{
-        Debug.Log("Door clicked");
-        OnTouchBegin();
-	}
 
     void OpenDoor()
     {
