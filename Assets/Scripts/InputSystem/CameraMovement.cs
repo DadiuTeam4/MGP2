@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour {
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsY = 30.0f;
 
-	private Quaternion startRotation;
+	private Vector3 startRotation;
 	private float minX, maxX, minY, maxY;
 	private float currentDeviceRotationX = 0.0f, currentDeviceRotationY = 0.0f;
 
@@ -23,19 +23,20 @@ public class CameraMovement : MonoBehaviour {
 
 	void Awake () 
 	{
-		startRotation = transform.rotation;
+		startRotation = transform.rotation.eulerAngles;
 
 		minX = startRotation.x - rotaryBoundsX;
 		maxX = startRotation.x + rotaryBoundsX;
 
 		minY = startRotation.y - rotaryBoundsY;
 		maxY = startRotation.y + rotaryBoundsY;
+
 	}
 	
 	void Update ()
 	{
 		UpdateDeviceRotations();
-	
+
 		UpdateRotation();
 	}
 
@@ -59,17 +60,14 @@ public class CameraMovement : MonoBehaviour {
 		flippedX = Input.acceleration.y;
 		flippedY = Input.acceleration.x;
 
-		PushBack(flippedX, ref movingAverageX);
-		PushBack(flippedY, ref movingAverageY);
-
-		currentDeviceRotationX = CalculateMovingAverage(flippedX, movingAverageX);			
-		currentDeviceRotationY = CalculateMovingAverage(flippedY, movingAverageY);
+		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
+		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
 		
 	}
 
-	private float CalculateMovingAverage(float value, float[] array)
+	private float CalculateMovingAverage(float value, ref float[] array)
 	{
-		//array = PushBack(value, array);
+		array = PushBack(value, array);
 		return Average(array);
 	}
 
@@ -84,7 +82,7 @@ public class CameraMovement : MonoBehaviour {
 		return sum /= array.Length;
 	}
 
-	private float[] PushBack(float value, ref float[] array)
+	private float[] PushBack(float value, float[] array)
 	{
 		for (int i = array.Length-1; i > 0; i--)
 		{
