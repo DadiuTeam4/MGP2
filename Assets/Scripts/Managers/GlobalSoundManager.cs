@@ -19,6 +19,11 @@ public class GlobalSoundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKey (KeyCode.A)) {
+			AkSoundEngine.SetRTPCValue ("Deaf_parameter", 0); 
+		} else {
+			AkSoundEngine.SetRTPCValue ("Deaf_parameter", 100); 
+		}
+
 	}
 }
