@@ -11,7 +11,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 		DontDestroyOnLoad(transform.gameObject);
 	}
 	void Start () {
-        EventManager.StartListening("OpenDoorClicked", ChangeToKitchenScene);
+        EventManager.StartListening((int) EventName.OpenDoorClicked, ChangeToKitchenScene);
 		Debug.Log("Should change to KitchenScenenow!");
 	}
 	
