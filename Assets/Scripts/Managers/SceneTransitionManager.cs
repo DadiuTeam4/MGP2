@@ -12,7 +12,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 	}
 	void Start () 
 	{
-        EventManager.StartListening((int) EventName.KitchenDoorClicked, ChangeToKitchenScene);
+        EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToKitchenScene);
 		Debug.Log("Should change to KitchenScenenow!");
 	}
 	

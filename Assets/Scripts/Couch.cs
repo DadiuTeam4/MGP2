@@ -7,7 +7,7 @@ public class Couch : Interactable {
     public override void OnTouchBegin()
     {
         Debug.Log("Couch clicked");
-        EventManager.TriggerEvent((int)EventName.NumberThreePickedUp);
+        EventManager.TriggerEvent(EventName.NumberThreePickedUp);
     }
 
     /*void OnMouseDown()

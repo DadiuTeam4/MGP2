@@ -9,14 +9,14 @@ public class Door : Interactable
 
 	void Start()
     {
-        EventManager.StartListening(((int)EventName.NumberThreePickedUp), OpenDoor);
+        EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
 	}
 
     public override void OnTouchBegin()
     {
         if (this.isOpen)
         {
-            EventManager.TriggerEvent((int)triggeredEvent);
+            EventManager.TriggerEvent(triggeredEvent);
             Debug.Log("Door open");
         } 
         else
