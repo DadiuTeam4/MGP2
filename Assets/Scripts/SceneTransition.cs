@@ -11,7 +11,7 @@ public class SceneTransition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(transform.gameObject);
-        EventManager.StartListening("OpenDoorClicked", ChangeToKitchenScene);
+        EventManager.StartListening((int)EventName.OpenDoorClicked, ChangeToKitchenScene);
 	}
 
     void ChangeToKitchenScene()
