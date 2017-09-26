@@ -4,8 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInteractable : Interactable {
-
+public class TestInteractable : Interactable 
+{
 	public override void OnTouchBegin() 
 	{
 		print("Touch begin");
