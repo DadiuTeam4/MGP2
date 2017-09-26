@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Author: Itai Yavin
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,12 +37,12 @@ public class CameraMovement : MonoBehaviour {
 	
 	void Update ()
 	{
-		UpdateDeviceRotations();
+		UpdateDeviceRotationValues();
 
-		UpdateRotation();
+		UpdateTransformRotation();
 	}
 
-	private void UpdateRotation()
+	private void UpdateTransformRotation()
 	{
 		lerpX = ClampValueForLerp(currentDeviceRotationX);
 		lerpY = ClampValueForLerp(currentDeviceRotationY);
@@ -54,7 +56,7 @@ public class CameraMovement : MonoBehaviour {
 		transform.rotation = resultantRotation;
 	}
 
-	private void UpdateDeviceRotations()
+	private void UpdateDeviceRotationValues()
 	{
 		float flippedX, flippedY;
 		flippedX = Input.acceleration.y;
@@ -82,14 +84,14 @@ public class CameraMovement : MonoBehaviour {
 		return sum /= array.Length;
 	}
 
-	private float[] PushBack(float value, float[] array)
+	private float[] PushBack(float pushedBackValue, float[] array)
 	{
 		for (int i = array.Length-1; i > 0; i--)
 		{
 			array[i] = array[i - 1];
 		}
 
-		array[0] = value;
+		array[0] = pushedBackValue;
 
 		return array;
 	}
