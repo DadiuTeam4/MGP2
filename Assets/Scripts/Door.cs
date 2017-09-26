@@ -34,5 +34,7 @@ public class Door : Interactable
     {
         isOpen = true;
         Debug.Log("Door is Opened!");
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
+
     }
 }

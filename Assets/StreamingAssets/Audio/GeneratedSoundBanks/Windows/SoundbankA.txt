@@ -14,6 +14,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3082250963	Play_MGP2_SD_Glass			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Glass	
 	3148382178	Play_MGP2_SD_Fridge			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge	
 	3249430620	Play_MGP2_SD_Rubberduck			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck	
+	3256411401	Play_MGP2_SD_DoorUnlock			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_DoorUnlock	
 	3642974746	Ambience_livingroom			\Default Work Unit\Ambience\Ambience_livingroom	
 	3711983261	Play_MGP2_SD_WindowOpen			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_WindowOpen	
 	3735495899	Play_MGP2_SD_Vinyl			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl	
@@ -50,9 +51,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	626491883	120329__cemagar__kitchen-cabinet	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\120329__cemagar__kitchen-cabinet_31AA3BD2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Cabinet_Close\120329__cemagar__kitchen-cabinet		183740
 	790497178	MGP2_SD_SinkFill	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\117296__swiftoid__fill-the-sink_745F4EA3.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_SinkFill		2100824
 	803791863	MGP2_SD_TV	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\340020__iesp__sounds-from-a-tv_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_TV		8064060
-	806349091	MMGP2_SD_Porcelain	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E1C78330.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MMGP2_SD_Porcelain		360804
+	806349091	MGP2_SD_Porcelain	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E1C78330.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Porcelain		360804
 	933262447	mgp2_ambience_livingRoom(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\mgp2_ambience_livingRoom(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_livingRoom(P)		19169344
 	979179134	MGP2_SD_DrippingWater	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_DrippingWater_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_DrippingWater		6635584
 	994290101	MGP2_SD_Fridge	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Fridge_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fridge		6635584
 	1004531354	MGP2_SD_WindowOpen	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\60399__uwesoundboiz__window-open-double-glazed-outside-noise-001_915C4F83.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_WindowOpen		361614
+	1070167829	MGP2_SD_DoorUnlock	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\158625__mrauralization__door-unlock_A3449B35.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_DoorUnlock		88408
 

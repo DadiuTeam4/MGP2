@@ -29,6 +29,7 @@
 				<Event Id="2300991670" Name="Play_MGP2_SD_Cabinet_Open" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open"/>
 				<Event Id="2814308616" Name="Play_MGP2_SD_Chandelier" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Chandelier"/>
 				<Event Id="2310237967" Name="Play_MGP2_SD_Cookie" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cookie"/>
+				<Event Id="3256411401" Name="Play_MGP2_SD_DoorUnlock" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_DoorUnlock"/>
 				<Event Id="314431553" Name="Play_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrippingWater"/>
 				<Event Id="3148382178" Name="Play_MGP2_SD_Fridge" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge"/>
 				<Event Id="2467296834" Name="Play_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Garden"/>
@@ -149,6 +150,10 @@
 				<File Id="1004531354" Language="SFX">
 					<ShortName>60399__uwesoundboiz__window-open-double-glazed-outside-noise-001.wav</ShortName>
 					<Path>SFX/60399__uwesoundboiz__window-open-double-glazed-outside-noise-001_915C4F83.wem</Path>
+				</File>
+				<File Id="1070167829" Language="SFX">
+					<ShortName>158625__mrauralization__door-unlock.wav</ShortName>
+					<Path>SFX/158625__mrauralization__door-unlock_A3449B35.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
