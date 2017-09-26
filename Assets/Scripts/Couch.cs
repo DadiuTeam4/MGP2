@@ -10,9 +10,9 @@ public class Couch : Interactable {
         EventManager.TriggerEvent((int)EventName.NumberThreePickedUp);
     }
 
-    void OnMouseDown()
+    /*void OnMouseDown()
 	{
         Debug.Log("Couch clicked");
         EventManager.TriggerEvent("NumberThreePickedUp");
-	}
+	}*/
 }
