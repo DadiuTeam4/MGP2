@@ -17,10 +17,30 @@ namespace AK
         static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ONSCREENCLICK = 4238747602U;
+        static const AkUniqueID PLAY_MGP2_SD_CABINET_CLOSE = 1943834466U;
+        static const AkUniqueID PLAY_MGP2_SD_CABINET_OPEN = 2300991670U;
+        static const AkUniqueID PLAY_MGP2_SD_CHANDELIER = 2814308616U;
+        static const AkUniqueID PLAY_MGP2_SD_COOKIE = 2310237967U;
+        static const AkUniqueID PLAY_MGP2_SD_DRIPPINGWATER = 314431553U;
+        static const AkUniqueID PLAY_MGP2_SD_FRIDGE = 3148382178U;
+        static const AkUniqueID PLAY_MGP2_SD_GARDEN = 2467296834U;
+        static const AkUniqueID PLAY_MGP2_SD_GLASS = 3082250963U;
+        static const AkUniqueID PLAY_MGP2_SD_KETTLE = 4096018196U;
+        static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
+        static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
+        static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
+        static const AkUniqueID PLAY_MGP2_SD_TABURET = 1039446908U;
+        static const AkUniqueID PLAY_MGP2_SD_TV = 1119214915U;
+        static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
+        static const AkUniqueID PLAY_MGP2_SD_VOODOO = 3797089235U;
+        static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
+        static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
+        static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID DEAF_PARAMETER = 3979854329U;
         static const AkUniqueID KITCHEN_VOLUME = 4227318060U;
         static const AkUniqueID LIVINGROOM_VOLUME = 2602545984U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
@@ -35,6 +55,7 @@ namespace AK
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
         static const AkUniqueID TESTPARAMETER = 2010788230U;
+        static const AkUniqueID VINYL_PITCH = 3014445900U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
