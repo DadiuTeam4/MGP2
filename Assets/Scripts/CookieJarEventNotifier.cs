@@ -13,7 +13,7 @@ public class CookieJarEventNotifier : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        EventManager.StartListening((int)EventName.CookieJarTouched, AddNumber2);
+        EventManager.StartListening(EventName.CookieJarTouched, AddNumber2);
         number2Text = gameObject.GetComponent<Text>();
         number2Count = 0;
     }
