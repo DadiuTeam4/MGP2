@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 	[Tooltip("The amount of movement needed before anything happens, at 0 the system is very sensible, at 1 no movement would be enough")]
-	[Range(0.0f, 1.0f)]
-	public float deadZone = 0.3f;
-
-	[Tooltip("This scalar controls how fast the camera movement is")]
-	[Range(0.1f, 5.0f)]
-	public float speed = 0.5f;
+	[Range(0.0f, 0.5f)]
+	public float sensitivity = 0.1f;
 
 	[Tooltip("The allowed movement range for the camera in X")]
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsX = 30.0f;
 
 	[Tooltip("The allowed movement range for the camera in Y")]
-	[Range(0.1f, 5.0f)]
+	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsY = 30.0f;
 
 	private Quaternion startRotation;
 	private float minX, maxX, minY, maxY;
-	private float currentDeviceRotationX, currentDeviceRotationY;
-	private float previousValidDeviceRotationX, previousValidDeviceRotationY;
+	private float currentDeviceRotationX = 0.0f, currentDeviceRotationY = 0.0f;
 
 	private float lerpX = 0.5f;
 	private float lerpY = 0.5f;
+
+	private float[] movingAverageX = new float[5];
+	private float[] movingAverageY = new float[5];
 
 	void Awake () 
 	{
@@ -50,14 +48,58 @@ public class CameraMovement : MonoBehaviour {
 		lerpX = ClampValueForLerp(currentDeviceRotationX);
 		lerpY = ClampValueForLerp(currentDeviceRotationY);
 
-		
-		
+		float angleX, angleY;
+
+		angleX = Mathf.Lerp(minX, maxX, lerpX);
+		angleY = Mathf.Lerp(minY, maxY, lerpY);
+
+		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
+		transform.rotation = resultantRotation;
 	}
 
 	private void UpdateDeviceRotations()
 	{
-		currentDeviceRotationX = Input.acceleration.y;
-		currentDeviceRotationY = Input.acceleration.x;
+		float flippedX, flippedY;
+		flippedX = Input.acceleration.y;
+		flippedY = Input.acceleration.x;
+
+		movingAverageX = PushBack(flippedX, movingAverageX);
+		movingAverageY = PushBack(flippedY, movingAverageY);
+
+		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
+		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
+		
+	}
+
+	private float CalculateMovingAverage(float value, ref float[] array)
+	{
+		//array = PushBack(value, array);
+		return Average(array);
+	}
+
+	private float Average(float[] array)
+	{
+		float sum = 0;
+		for  (int i = 0; i < array.Length; i++)
+		{
+			sum += array[i];
+		}
+
+		return sum /= array.Length;
+	}
+
+	private float[] PushBack(float value, float[] array)
+	{
+		for (int i = array.Length-1; i > 1; i--)
+		{
+			array[i] = array[i - 1];
+		}
+
+		array[0] = value;
+
+		SingleLinePrintArray(array);
+
+		return array;
 	}
 
 	private float ClampValueForLerp(float x)
@@ -68,23 +110,16 @@ public class CameraMovement : MonoBehaviour {
 
 		return result;
 	}
+
+	private void SingleLinePrintArray<T>(T[] array)
+	{
+		string message = "";
+
+		for (int i = 0; i < array.Length; i++)
+		{
+			message += " " + i + ": " + array[i];
+		}
+
+		Debug.Log(message);
+	}
 }
-
-
-/*
-		float x = 0;
-		float y = 0;
-
-		if (currentDeviceRotationX > deadZone || currentDeviceRotationX < -deadZone)
-		{
-			x = currentDeviceRotationX;
-		}
-		
-		if (currentDeviceRotationY > deadZone || currentDeviceRotationY < -deadZone)
-		{
-			y = currentDeviceRotationY;
-		}
-
-		Quaternion resultantRotation = Quaternion.AngleAxis(y, Vector3.up) * Quaternion.AngleAxis(x, Vector3.right);
-		transform.rotation = resultantRotation;
-		*/

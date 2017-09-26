@@ -463,10 +463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952fa7a82dbfad4384bcab2943d82a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: 0.11
-  speed: 5
-  boundsX: 5
-  boundsY: 5
+  sensitivity: 0.05
+  rotaryBoundsX: 20
+  rotaryBoundsY: 20
 --- !u!1 &1144099409
 GameObject:
   m_ObjectHideFlags: 0
