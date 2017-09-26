@@ -1,4 +1,4 @@
-﻿//Author: You Wu
+﻿	//Author: You Wu
 //Contributor:
 using System.Collections;
 using System.Collections.Generic;
@@ -72,5 +72,6 @@ public class EventManager : Singleton<EventManager>
 //Add all the event names here.
 public enum EventName
 {
-    Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, KitchenSceneLoaded, HubSceneLoaded
+    Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, KitchenSceneLoaded, HubSceneLoaded,
+    LangEnglish, LangDanish, LanguageSelected
 }
