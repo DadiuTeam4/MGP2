@@ -15,7 +15,9 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
 		//Music
 		AkSoundEngine.PostEvent ("Music", gameObject); 
-		EventManager.StartListening (EventName.KitchenSceneLoaded, DoSomething);   
+		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
+		EventManager.StartListening (EventName.KitchenDoorClicked, KitchenDoorOpen);   
+
 
 	}
 	
@@ -31,11 +33,18 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.SetRTPCValue ("Deaf_parameter", 100); 
 		}
 	}
-			void DoSomething()
+			void SwitchToKitchen()
 	{
 		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 100); 
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 0);
 	}
+
+	void KitchenDoorOpen()
+	{
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
+		print ("DOORSOUND"); 
+	}
+
 			
 		
 }
