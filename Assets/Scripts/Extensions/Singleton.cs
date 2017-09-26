@@ -27,9 +27,4 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             return instance;
         }
     }
-
-    private void Awake() 
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
 }

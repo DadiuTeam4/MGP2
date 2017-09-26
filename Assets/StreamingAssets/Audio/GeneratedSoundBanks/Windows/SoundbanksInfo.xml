@@ -21,17 +21,39 @@
 			<ShortName>SoundbankA</ShortName>
 			<Path>SoundbankA.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3157003241" Name="test" ObjectPath="\Events\Default Work Unit\test"/>
-				<Event Id="576110586" Name="test1" ObjectPath="\Events\Default Work Unit\test1"/>
+				<Event Id="1710825164" Name="Ambience_kitchen" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_kitchen"/>
+				<Event Id="3642974746" Name="Ambience_livingroom" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_livingroom"/>
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music\Music"/>
+				<Event Id="4238747602" Name="OnScreenClick" ObjectPath="\Events\Default Work Unit\SoundDesign\OnScreenClick"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="544317462" Language="SFX">
-					<ShortName>3 sek. udkast row2.wav</ShortName>
-					<Path>SFX/3 sek. udkast row2_1C9C67B2.wem</Path>
+				<File Id="7591784" Language="SFX">
+					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
+					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_2CD47484.wem</Path>
 				</File>
-				<File Id="564873371" Language="SFX">
-					<ShortName>3 sek. udkast.wav</ShortName>
-					<Path>SFX/3 sek. udkast_1C9C67B2.wem</Path>
+				<File Id="92169222" Language="SFX">
+					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
+					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_FC48F3F0.wem</Path>
+				</File>
+				<File Id="306863275" Language="SFX">
+					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
+					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C96E2B5F.wem</Path>
+				</File>
+				<File Id="329108900" Language="SFX">
+					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
+					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_3B8FC966.wem</Path>
+				</File>
+				<File Id="492601204" Language="SFX">
+					<ShortName>MGP2_music_throwout2(P).wav</ShortName>
+					<Path>SFX/MGP2_music_throwout2(P)_F17FB28C.wem</Path>
+				</File>
+				<File Id="933262447" Language="SFX">
+					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
+					<Path>SFX/mgp2_ambience_livingRoom(P)_F17FB28C.wem</Path>
+				</File>
+				<File Id="967338969" Language="SFX">
+					<ShortName>mgp2_ambience_kitchen(P).wav</ShortName>
+					<Path>SFX/mgp2_ambience_kitchen(P)_F17FB28C.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
