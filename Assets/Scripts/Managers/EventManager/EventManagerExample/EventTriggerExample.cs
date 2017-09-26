@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Author: You Wu
+//Contributor:
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +13,7 @@ public class EventTriggerExample : MonoBehaviour
     {
         if (Input.GetKeyDown("q"))
         {
-			EventManager.TriggerEvent("test");
+			EventManager.TriggerEvent((int)EventName.Test);
         }
     }
 }
