@@ -93,8 +93,6 @@ public class CameraMovement : MonoBehaviour {
 
 		array[0] = value;
 
-		SingleLinePrintArray(array);
-
 		return array;
 	}
 
