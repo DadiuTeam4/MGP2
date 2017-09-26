@@ -1,4 +1,4 @@
-﻿//Author: UUUUU
+﻿//Author: You Wu
 //Contributor:
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +9,6 @@ public class CookieJar : Interactable
     public override void OnTouchBegin()
     {
 		Debug.Log("CookieJar Cliked");
-		EventManager.TriggerEvent((int)EventName.CookieJarTouched);
+		EventManager.TriggerEvent(EventName.CookieJarTouched);
     }
 }
