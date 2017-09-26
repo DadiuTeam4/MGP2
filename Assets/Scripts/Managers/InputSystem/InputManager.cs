@@ -6,12 +6,20 @@ using UnityEngine;
 
 public class InputManager : Singleton<InputManager>
 {
-	private List<Interactable> heldLastFrame = new List<Interactable>();
-	private List<Interactable> heldThisFrame = new List<Interactable>();
+	private readonly List<Interactable> heldLastFrame = new List<Interactable>();
+	private readonly List<Interactable> heldThisFrame = new List<Interactable>();
+
+	#region DEBUG
+	#if UNITY_EDITOR
+	// MOUSE DEBUGGING
+	// NOT COMPILED IN BUILDS
+	bool mouseDownLastFrame;
+	#endif
+	#endregion
 
 
 	#region UPDATE_LOOP
-	private void Update() 
+	private void Update()
 	{
 		// Resolve all touches
 		Touch[] touches = GetTouches();
@@ -39,21 +47,53 @@ public class InputManager : Singleton<InputManager>
 
 				case (TouchPhase.Ended):
 				{
-					TouchEnded(touch);
+					TouchEnded();
 					break;
 				}
 
 				case (TouchPhase.Canceled):
 				{
-					TouchCanceled(touch);
+					TouchCanceled();
 					break;
 				}
 			}
 		}
-        CallHeldObjects();
+		
+		#region DEBUG
+		#if UNITY_EDITOR
+		// MOUSE DEBUGGING
+		// NOT COMPILED IN BUILDS
+		if (Input.GetMouseButton(0)) 
+		{
+			Vector2 mousePos = Input.mousePosition;
+			Interactable interactable = CastRayFromMousePos(mousePos);
+			if (interactable)
+			{
+				heldThisFrame.Add(interactable);
+				if (Input.GetMouseButtonDown(0)) 
+				{
+					if (!mouseDownLastFrame)
+					{
+						interactable.OnTouchBegin();
+					}
+				}
+			}
+			mouseDownLastFrame = true;
+		}
+		else if (Input.GetMouseButtonUp(0))
+		{
+			Vector2 mousePos = Input.mousePosition;
+			Interactable interactable = CastRayFromMousePos(mousePos);
+			if (interactable)
+			{
+				interactable.OnTouchReleased();
+				mouseDownLastFrame = false;
+			}
+		}
+		#endif
+		#endregion
 
-        heldLastFrame = heldThisFrame;
-		heldThisFrame.Clear();
+        CallHeldObjects();
 	}
 	#endregion
 
@@ -94,7 +134,7 @@ public class InputManager : Singleton<InputManager>
 		}
 	}
 
-	private void TouchEnded(Touch touch) 
+	private void TouchEnded() 
 	{
 		foreach (Interactable interactable in heldLastFrame) 
 		{
@@ -102,7 +142,7 @@ public class InputManager : Singleton<InputManager>
 		}
 	}
 
-	private void TouchCanceled(Touch touch) 
+	private void TouchCanceled() 
 	{
 		foreach (Interactable interactable in heldLastFrame) 
 		{
@@ -124,33 +164,44 @@ public class InputManager : Singleton<InputManager>
 
 	private void CallHeldObjects()
 	{
-		foreach (Interactable interactable in heldLastFrame) 
+		// Check if interactables are held
+		foreach (Interactable interactable in heldThisFrame)
 		{
-			if (heldThisFrame.Contains(interactable)) 
+			if (heldLastFrame.Contains(interactable))
 			{
 				interactable.timeHeld += Time.deltaTime;
 				interactable.OnTouchHold();
 			}
+			else
+			{
+				interactable.timeHeld = 0;
+			}
 		}
+
+		// Reset held interactables
+		heldLastFrame.Clear();
+		foreach (Interactable interactable in heldThisFrame) 
+		{
+			heldLastFrame.Add(interactable);
+		}
+
+		heldThisFrame.Clear();
 	}
 
 	#region DEBUG
 	#if UNITY_EDITOR
-	private void Awake() 
+	// MOUSE DEBUGGING
+	// NOT COMPILED IN BUILDS
+	private Interactable CastRayFromMousePos(Vector2 pos) 
 	{
-		// Check that all interactables have been referenced
-		CheckForMissingInteractables();
-	}
-	private void CheckForMissingInteractables()
-	{
-		Interactable[] missingInteractables = FindObjectsOfType(typeof(Interactable)) as Interactable[];
-		foreach (Interactable interactable in missingInteractables) 
+		Interactable interactableHit = null;
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(pos);
+		if (Physics.Raycast(ray, out hit))
 		{
-			// if (!interactables.Contains(interactable)) 
-			// {
-			// 	print("Interactable \"" + interactable.name + "\" not referenced in editor");
-			// }
+			interactableHit = hit.collider.GetComponent<Interactable>();
 		}
+		return interactableHit;
 	}
 	#endif
 	#endregion
