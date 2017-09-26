@@ -20,22 +20,19 @@ public class Door : Interactable
             EventManager.TriggerEvent(EventName.KitchenDoorClicked);
         }
 
-        Debug.Log(triggeredEvent);
+
         if (this.isOpen)
         {
             EventManager.TriggerEvent(triggeredEvent);
-            Debug.Log("Door open");
         } 
         else
         {
-            Debug.Log("Door closed");
         }
     }
 
     void OpenDoor()
     {
         isOpen = true;
-        Debug.Log("Door is Opened!");
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
 
     }

@@ -19,7 +19,7 @@ public class EventManager : Singleton<EventManager>
     }
     void Init()
     {
-        DontDestroyOnLoad(transform.gameObject);
+
         if (eventDictionary == null)
         {
             eventDictionary = new Dictionary<EventName, UnityEvent>();
