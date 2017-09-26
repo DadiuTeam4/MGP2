@@ -8,11 +8,11 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_volume			\Default Work Unit\Music_volume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_2CD47484.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		35454
-	92169222	MGP2_SD_OnScreenClick(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_FC48F3F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)		42338
-	306863275	MGP2_SD_OnScreenClick(P)_03	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C96E2B5F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_03		28574
-	329108900	MGP2_SD_OnScreenClick(P)_02	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_3B8FC966.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_02		26606
-	492601204	MGP2_music_throwout2(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_music_throwout2(P)_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MGP2_music_throwout1(P)\MGP2_music_throwout2(P)		1843264
+	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C02F82B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		35454
+	92169222	MGP2_SD_OnScreenClick(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_41746F20.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\OnScreenClick\MGP2_SD_OnScreenClick(P)		42338
+	180643768	MGP2_music_throwout2(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Music_throwout2.1(P)_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MGP2_music_throwout1(P)\MGP2_music_throwout2(P)		3686464
+	306863275	MGP2_SD_OnScreenClick(P)_03	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_1F019424.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\OnScreenClick\MGP2_SD_OnScreenClick(P)_03		28574
+	329108900	MGP2_SD_OnScreenClick(P)_02	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_5D6CA845.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\OnScreenClick\MGP2_SD_OnScreenClick(P)_02		26606
 	933262447	mgp2_ambience_livingRoom(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\mgp2_ambience_livingRoom(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_livingRoom(P)		19169344
 	967338969	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\mgp2_ambience_kitchen(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		6635584
 

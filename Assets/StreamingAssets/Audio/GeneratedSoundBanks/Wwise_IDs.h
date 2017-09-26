@@ -21,6 +21,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID DEAF_PARAMETER = 3979854329U;
         static const AkUniqueID KITCHEN_VOLUME = 4227318060U;
         static const AkUniqueID LIVINGROOM_VOLUME = 2602545984U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
@@ -35,6 +36,7 @@ namespace AK
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
         static const AkUniqueID TESTPARAMETER = 2010788230U;
+        static const AkUniqueID VINYL_PITCH = 3014445900U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
