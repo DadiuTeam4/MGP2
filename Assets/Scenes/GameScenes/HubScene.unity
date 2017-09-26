@@ -1169,6 +1169,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4931d3bef7964214aabe029b7d929f2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &2022099925
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.0062122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.10890198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.2924223
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254926528238774, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3c599b398c867a84194f5e02c6f3896d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &2080921273 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4195716707212488, guid: def8fac81c6e34ad2a27dc4f0493e508,
