@@ -72,7 +72,7 @@ public class EventManager : Singleton<EventManager>
 //Add all the event name here
 //Use (int) to convert event name to its id
 //Id starts from 0, 1, 2 ...
-public enum EventName 
+public enum EventName
 {
-    Test, NumberThreePickedUp, OpenDoorClicked
+    Test, NumberThreePickedUp, OpenDoorClicked, CookieJarTouched
 }

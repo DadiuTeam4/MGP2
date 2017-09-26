@@ -10,8 +10,9 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 	{
 		DontDestroyOnLoad(transform.gameObject);
 	}
-	void Start () {
-        EventManager.StartListening((int) EventName.OpenDoorClicked, ChangeToKitchenScene);
+	void Start () 
+	{
+        EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToKitchenScene);
 		Debug.Log("Should change to KitchenScenenow!");
 	}
 	
@@ -19,5 +20,4 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
     {
         SceneManager.LoadScene("KitchenScene");
     }
-
 }
