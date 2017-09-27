@@ -8,6 +8,7 @@ public class Couch : Interactable {
     {
         Debug.Log("Couch clicked");
         EventManager.TriggerEvent(EventName.NumberThreePickedUp);
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_Bed", gameObject); 
     }
 
     /*void OnMouseDown()
