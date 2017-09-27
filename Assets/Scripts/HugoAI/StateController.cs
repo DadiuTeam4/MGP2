@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace HugoAI 
 {
+	[RequireComponent(typeof(Navigator))]
 	public class StateController : MonoBehaviour 
 	{
 		public List<Transform> idleWaypoints;
@@ -27,9 +28,12 @@ namespace HugoAI
 
 		public void TransitionToState(State nextState)
 		{
-			previousState = currentState;
-			currentState = nextState;
-			OnExitState();
+			if (nextState != currentState) 
+			{
+				previousState = currentState;
+				currentState = nextState;
+				OnExitState();
+			}
 		}
 
 		public void ReturnToPreviousState() 
@@ -43,7 +47,6 @@ namespace HugoAI
 			{
 				return;
 			}
-			stateTimeElapsed += Time.deltaTime;
 			currentState.UpdateState(this);
 		}
 
@@ -53,9 +56,14 @@ namespace HugoAI
 			return (stateTimeElapsed >= duration);
 		}
 
-		private void OnExitState()
+		public void ResetStateTimer() 
 		{
 			stateTimeElapsed = 0;
+		}
+
+		private void OnExitState()
+		{
+			ResetStateTimer();
 		}
 	}
 }
