@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class OnGameMenuController : MonoBehaviour
 {
-
+    private bool isOptionPanelActive;
     public GameObject optionPanel;
+
+    void Start()
+    {
+        isOptionPanelActive = false;
+    }
     public void ExitGame()
     {
         Debug.Log("Exit the game");
@@ -20,12 +25,26 @@ public class OnGameMenuController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ShowOptions()
+    public void EnableOrDisableOptions()
     {
-		if(optionPanel == null)
-		{
-			Debug.Log("The option panel is null");
-		}
-        optionPanel.SetActive(true);
+        if (isOptionPanelActive == false)
+        {
+            Debug.Log("Enable Option Panel");
+            optionPanel.SetActive(true);
+            isOptionPanelActive = true;
+        }
+        else
+        {
+            Debug.Log("Disable Option Panel");
+            optionPanel.SetActive(false);
+            isOptionPanelActive = false;
+        }
+
     }
+
+    public void ChangeLanguage()
+    {
+        Debug.Log("Change language here");
+    }
+
 }
