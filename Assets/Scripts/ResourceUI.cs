@@ -76,7 +76,6 @@ public class ResourceUI : MonoBehaviour {
 			temp.localPosition = new Vector3((i * widthOfButton - widthOfCanvas/2) + widthOfButton/2, heightOfCanvas/2 - heightOfButton/2, 0);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 			g.GetComponent<ButtonController>().eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
-			g.GetComponent<BoxCollider>().size = new Vector3 (temp.sizeDelta.x, temp.sizeDelta.y, 1.0f);
 		}
 
 		currentButtonAmount = amountOfCollectedNumbers;
