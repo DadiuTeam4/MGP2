@@ -23,27 +23,37 @@
 			<IncludedEvents>
 				<Event Id="1710825164" Name="Ambience_kitchen" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_kitchen"/>
 				<Event Id="3642974746" Name="Ambience_livingroom" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_livingroom"/>
+				<Event Id="18727311" Name="Break_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_Fireplace" MaxAttenuation="0.000000"/>
+				<Event Id="2186198650" Name="Break_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_RockingChair" MaxAttenuation="0.000000"/>
 				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music\Music"/>
 				<Event Id="4238747602" Name="OnScreenClick" ObjectPath="\Events\Default Work Unit\SoundDesign\OnScreenClick"/>
+				<Event Id="1477792038" Name="Play_MGP2_SD_Bed" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed"/>
 				<Event Id="1943834466" Name="Play_MGP2_SD_Cabinet_Close" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Close"/>
 				<Event Id="2300991670" Name="Play_MGP2_SD_Cabinet_Open" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open"/>
 				<Event Id="2814308616" Name="Play_MGP2_SD_Chandelier" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Chandelier"/>
 				<Event Id="2310237967" Name="Play_MGP2_SD_Cookie" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cookie"/>
+				<Event Id="2853539135" Name="Play_MGP2_SD_CurtainClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainClose"/>
+				<Event Id="334444633" Name="Play_MGP2_SD_CurtainOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainOpen"/>
 				<Event Id="3256411401" Name="Play_MGP2_SD_DoorUnlock" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_DoorUnlock"/>
 				<Event Id="314431553" Name="Play_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrippingWater"/>
+				<Event Id="2613328266" Name="Play_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Fireplace"/>
 				<Event Id="3148382178" Name="Play_MGP2_SD_Fridge" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge"/>
+				<Event Id="1797766868" Name="Play_MGP2_SD_Fryingpan1" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan1"/>
+				<Event Id="1797766871" Name="Play_MGP2_SD_Fryingpan2" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2"/>
+				<Event Id="1797766870" Name="Play_MGP2_SD_Fryingpan3" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan3"/>
 				<Event Id="2467296834" Name="Play_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Garden"/>
+				<Event Id="2088074314" Name="Play_MGP2_SD_Ghost" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Ghost"/>
 				<Event Id="3082250963" Name="Play_MGP2_SD_Glass" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Glass"/>
+				<Event Id="803864683" Name="Play_MGP2_SD_Herbs" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs"/>
 				<Event Id="4096018196" Name="Play_MGP2_SD_Kettle" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Kettle"/>
 				<Event Id="967135245" Name="Play_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair"/>
 				<Event Id="3249430620" Name="Play_MGP2_SD_Rubberduck" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck"/>
 				<Event Id="304130839" Name="Play_MGP2_SD_SinkFill" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_SinkFill"/>
-				<Event Id="1039446908" Name="Play_MGP2_SD_Taburet" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Taburet"/>
 				<Event Id="1119214915" Name="Play_MGP2_SD_TV" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV"/>
 				<Event Id="3735495899" Name="Play_MGP2_SD_Vinyl" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl"/>
 				<Event Id="3797089235" Name="Play_MGP2_SD_Voodoo" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo"/>
-				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_WindowClose"/>
-				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_WindowOpen"/>
+				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
+				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -51,9 +61,13 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C02F82B7.wem</Path>
 				</File>
+				<File Id="73123222" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan2.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan2_1C9C67B2.wem</Path>
+				</File>
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
-					<Path>SFX/197563__dheming__glass-bottles-02_A20649F5.wem</Path>
+					<Path>SFX/197563__dheming__glass-bottles-02_C61EA662.wem</Path>
 				</File>
 				<File Id="92169222" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
@@ -61,7 +75,11 @@
 				</File>
 				<File Id="106766393" Language="SFX">
 					<ShortName>239005__squashy555__kettle-boiling.wav</ShortName>
-					<Path>SFX/239005__squashy555__kettle-boiling_027D7906.wem</Path>
+					<Path>SFX/239005__squashy555__kettle-boiling_77C60125.wem</Path>
+				</File>
+				<File Id="132533713" Language="SFX">
+					<ShortName>AgoShaker2A.wav.wav</ShortName>
+					<Path>SFX/AgoShaker2A.wav_1C9C67B2.wem</Path>
 				</File>
 				<File Id="180643768" Language="SFX">
 					<ShortName>MGP2_Music_throwout2.1(P).wav</ShortName>
@@ -69,15 +87,15 @@
 				</File>
 				<File Id="211387590" Language="SFX">
 					<ShortName>387967__chrillz3r__opening-closing-cookie-jar-metal.wav</ShortName>
-					<Path>SFX/387967__chrillz3r__opening-closing-cookie-jar-metal_DABF63ED.wem</Path>
-				</File>
-				<File Id="215086006" Language="SFX">
-					<ShortName>Chia vinyl crackle sample 4.wav</ShortName>
-					<Path>SFX/Chia vinyl crackle sample 4_9F80200C.wem</Path>
+					<Path>SFX/387967__chrillz3r__opening-closing-cookie-jar-metal_C5578CF9.wem</Path>
 				</File>
 				<File Id="226094369" Language="SFX">
 					<ShortName>mgp2_rockingChair(P).wav</ShortName>
-					<Path>SFX/mgp2_rockingChair(P)_1C9C67B2.wem</Path>
+					<Path>SFX/mgp2_rockingChair(P)_0E7F5F2E.wem</Path>
+				</File>
+				<File Id="252441943" Language="SFX">
+					<ShortName>MGP2_SD_Gramophone.wav</ShortName>
+					<Path>SFX/MGP2_SD_Gramophone_1C9C67B2.wem</Path>
 				</File>
 				<File Id="306863275" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
@@ -85,7 +103,7 @@
 				</File>
 				<File Id="322261170" Language="SFX">
 					<ShortName>65705__noisecollector__voodoo-lp-loop3.wav</ShortName>
-					<Path>SFX/65705__noisecollector__voodoo-lp-loop3_7018670C.wem</Path>
+					<Path>SFX/65705__noisecollector__voodoo-lp-loop3_14A7DFC3.wem</Path>
 				</File>
 				<File Id="329108900" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
@@ -97,35 +115,51 @@
 				</File>
 				<File Id="423764443" Language="SFX">
 					<ShortName>130014__ermfilm__ruber-duck-big-1.wav</ShortName>
-					<Path>SFX/130014__ermfilm__ruber-duck-big-1_B60C09DD.wem</Path>
+					<Path>SFX/130014__ermfilm__ruber-duck-big-1_76C49AB0.wem</Path>
 				</File>
 				<File Id="432721043" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
-					<Path>SFX/120329__cemagar__kitchen-cabinet_E09EBFC7.wem</Path>
+					<Path>SFX/120329__cemagar__kitchen-cabinet_ABCA4529.wem</Path>
+				</File>
+				<File Id="436613960" Language="SFX">
+					<ShortName>142301__fryzu82__curtain-opening.wav</ShortName>
+					<Path>SFX/142301__fryzu82__curtain-opening_85BBF7D4.wem</Path>
 				</File>
 				<File Id="448724314" Language="SFX">
 					<ShortName>124202__robinhood76__02408-chair-stone-floor-brawl.wav</ShortName>
-					<Path>SFX/124202__robinhood76__02408-chair-stone-floor-brawl_FD05AF10.wem</Path>
+					<Path>SFX/124202__robinhood76__02408-chair-stone-floor-brawl_00877CC5.wem</Path>
+				</File>
+				<File Id="489143399" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan3_1C9C67B2.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
 					<Path>SFX/MGP2_Ambience_Kitchen.1(P)_F17FB28C.wem</Path>
 				</File>
+				<File Id="571641950" Language="SFX">
+					<ShortName>142301__fryzu82__curtain-opening.wav</ShortName>
+					<Path>SFX/142301__fryzu82__curtain-opening_832BE7A1.wem</Path>
+				</File>
 				<File Id="591599028" Language="SFX">
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
-					<Path>SFX/320416__yadronoff__shivering-chandelier_5E7E4BF9.wem</Path>
+					<Path>SFX/320416__yadronoff__shivering-chandelier_4CD27AC0.wem</Path>
 				</File>
 				<File Id="623925728" Language="SFX">
 					<ShortName>60398__uwesoundboiz__window-open-double-glazed-001.wav</ShortName>
-					<Path>SFX/60398__uwesoundboiz__window-open-double-glazed-001_40A27C28.wem</Path>
+					<Path>SFX/60398__uwesoundboiz__window-open-double-glazed-001_297273B8.wem</Path>
 				</File>
 				<File Id="626491883" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
-					<Path>SFX/120329__cemagar__kitchen-cabinet_31AA3BD2.wem</Path>
+					<Path>SFX/120329__cemagar__kitchen-cabinet_CB79FEB9.wem</Path>
+				</File>
+				<File Id="636675681" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan1_1C9C67B2.wem</Path>
 				</File>
 				<File Id="790497178" Language="SFX">
 					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
-					<Path>SFX/117296__swiftoid__fill-the-sink_745F4EA3.wem</Path>
+					<Path>SFX/117296__swiftoid__fill-the-sink_7E8CF9C2.wem</Path>
 				</File>
 				<File Id="803791863" Language="SFX">
 					<ShortName>340020__iesp__sounds-from-a-tv.wav</ShortName>
@@ -133,7 +167,11 @@
 				</File>
 				<File Id="806349091" Language="SFX">
 					<ShortName>360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor.wav</ShortName>
-					<Path>SFX/360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E1C78330.wem</Path>
+					<Path>SFX/360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E0234685.wem</Path>
+				</File>
+				<File Id="932824895" Language="SFX">
+					<ShortName>344347__amholma__squeaking-bed.wav</ShortName>
+					<Path>SFX/344347__amholma__squeaking-bed_5B130435.wem</Path>
 				</File>
 				<File Id="933262447" Language="SFX">
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
@@ -150,6 +188,10 @@
 				<File Id="1004531354" Language="SFX">
 					<ShortName>60399__uwesoundboiz__window-open-double-glazed-outside-noise-001.wav</ShortName>
 					<Path>SFX/60399__uwesoundboiz__window-open-double-glazed-outside-noise-001_915C4F83.wem</Path>
+				</File>
+				<File Id="1005144570" Language="SFX">
+					<ShortName>60568__robinhood76__00370-fireplace-1.wav</ShortName>
+					<Path>SFX/60568__robinhood76__00370-fireplace-1_200DC22C.wem</Path>
 				</File>
 				<File Id="1070167829" Language="SFX">
 					<ShortName>158625__mrauralization__door-unlock.wav</ShortName>

@@ -86,5 +86,10 @@ public enum EventName
     LanguageSelected,
     UIUpdate,
     NumberOneClicked,
-    NumberTwoClicked
+    NumberTwoClicked,
+    FaucetRunning,
+    LightswitchClicked,
+    InteractableClicked,
+    ShowOnGamOptions
+
 }

@@ -1,7 +1,12 @@
 ﻿/*Author:Tilemachos
+Co-author: Jonathan (worked on this Wednesday)
 This script holds the current level the player is on,
 which number he/she has collected
 and which levels hae been complited
+
+NOTICE: The ResourceManager has been appointed the
+place for keeping ALL STATE, this is what is currently
+being implemented.
 
  */
 
@@ -14,7 +19,7 @@ using UnityEngine.SceneManagement;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-	
+	//To do: Implement enums instead of string for CurrentSceneName
 	static private string currentSceneName = "IntroLevel";
 	static public List<int> listOfPickedUpNumbers;
 	static private List<string> listOfScenesCompleted;
@@ -28,6 +33,11 @@ public class ResourceManager : Singleton<ResourceManager>
 	private UnityAction resourceManagerListenerForNumber8;
 	private UnityAction resourceManagerListenerForNumber9;
 	private UnityAction resourceManagerListenerForNumber10;
+
+	// State holder variables.
+	public static bool doorToKitchenOpen;
+	public static bool kitchenSinkFull;
+	public static bool kitchenLightOn;
 
 
 	 void Start()
@@ -59,6 +69,10 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.StartListening("number8HasBeenPickedUp", resourceManagerListenerForNumber8);
 		EventManager.StartListening("number9HasBeenPickedUp", resourceManagerListenerForNumber9);
 		EventManager.StartListening("number10HasBeenPickedUp", resourceManagerListenerForNumber10);*/
+
+		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
+		kitchenLightOn = true;
 	 }
 
 
@@ -71,8 +85,6 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		currentSceneName = newSceneName;
 	}
-
-
 
 
 	public static List<int> GetListOfPickedUpNumbers()
@@ -90,53 +102,102 @@ public class ResourceManager : Singleton<ResourceManager>
 	private static void AddNumber1ToListOfPickedUpNumbers()
 	{
 		//print(" 1 has been picked up");
-		listOfPickedUpNumbers.Add(1);
+		if (!listOfPickedUpNumbers.Contains(1))
+		{
+			listOfPickedUpNumbers.Add(1);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 		//SceneManager.LoadScene("ResourceManagerTestScene2");
 	}
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(2);
+
+		if (!listOfPickedUpNumbers.Contains(2))
+		{
+			listOfPickedUpNumbers.Add(2);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(3);
+		if (!listOfPickedUpNumbers.Contains(3))
+		{
+			listOfPickedUpNumbers.Add(3);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
-
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(4);
+
+		if (!listOfPickedUpNumbers.Contains(4))
+		{
+			listOfPickedUpNumbers.Add(4);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber5ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(5);
+
+		if (!listOfPickedUpNumbers.Contains(5))
+		{
+			listOfPickedUpNumbers.Add(5);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber6ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(6);
+
+		if (!listOfPickedUpNumbers.Contains(6))
+		{
+			listOfPickedUpNumbers.Add(6);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber7ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(7);
+
+		if (!listOfPickedUpNumbers.Contains(7))
+		{
+			listOfPickedUpNumbers.Add(7);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber8ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(8);
+
+		if (!listOfPickedUpNumbers.Contains(8))
+		{
+			listOfPickedUpNumbers.Add(8);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber9ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(9);
+
+		if (!listOfPickedUpNumbers.Contains(9))
+		{
+			listOfPickedUpNumbers.Add(9);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber10ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(10);
+
+		if (!listOfPickedUpNumbers.Contains(10))
+		{
+			listOfPickedUpNumbers.Add(10);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
-
-
 
 	public static List<string> GetListOfScenesCompleted()
 	{
@@ -154,9 +215,4 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		listOfScenesCompleted.Add(addThisScene);
 	}
-
-
-
-
-	
 }

@@ -16,17 +16,17 @@ public class ResourceUI : MonoBehaviour {
 	public float heightOfButton = 70, widthOfButton = 70;
 	private int amountOfCollectedNumbers = 0;
 	private float canvasRatio;
-	[Range(0.01f, 1)]
-	public float relativeButtonSize = 0.02f;
+	private GraphicRaycaster graphicRaycaster;
 	
 	// Use this for initialization
-	void Awake ()
+	void Start ()
 	{
 
 		UIListener = new UnityAction(UpdateUI);
 		EventManager.StartListening(EventName.UIUpdate, UIListener);
 
 		canvasRectTransform = GetComponent<RectTransform>();
+		graphicRaycaster = GetComponent<GraphicRaycaster>();
 
 		heightOfCanvas = canvasRectTransform.rect.height;
 
@@ -68,17 +68,22 @@ public class ResourceUI : MonoBehaviour {
 	private void GenerateButtons()
 	{
 		GameObject g;
-		RectTransform temp;
+		RectTransform rectTransform;
+		ButtonController buttonController;
 		for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
 		{
 			g = Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
 			g.transform.SetParent(transform);
-			temp = g.GetComponent<RectTransform>();
-			temp.sizeDelta = new Vector2(widthOfButton, heightOfButton);
-			temp.localPosition = new Vector3((i * widthOfButton - widthOfCanvas/2) + widthOfButton/2, heightOfCanvas/2 - heightOfButton/2, 0);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
-			g.GetComponent<ButtonController>().eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
-			g.GetComponent<BoxCollider>().size = new Vector3 (temp.sizeDelta.x, temp.sizeDelta.y, 1.0f);
+			
+			rectTransform = g.GetComponent<RectTransform>();
+			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);
+			rectTransform.localPosition = new Vector3((i * widthOfButton - widthOfCanvas/2) + widthOfButton/2, heightOfCanvas/2 - heightOfButton/2, 0);
+			
+			buttonController = g.GetComponent<ButtonController>();
+			buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
+			buttonController.canvasRect = canvasRectTransform;
+			buttonController.graphicRayCaster = graphicRaycaster;
 		}
 
 		currentButtonAmount = amountOfCollectedNumbers;
@@ -86,7 +91,7 @@ public class ResourceUI : MonoBehaviour {
 
 	private void CalculateButtonSize()
 	{
-		widthOfButton *= canvasRatio * relativeButtonSize;
+		widthOfButton *= canvasRatio;
 		heightOfButton = widthOfButton;
 	}
 
