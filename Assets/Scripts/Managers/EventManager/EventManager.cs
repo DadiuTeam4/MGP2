@@ -1,4 +1,4 @@
-﻿//Author: You Wu
+﻿	//Author: You Wu
 //Contributor:
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ public class EventManager : Singleton<EventManager>
     }
     void Init()
     {
-        DontDestroyOnLoad(transform.gameObject);
+
         if (eventDictionary == null)
         {
             eventDictionary = new Dictionary<EventName, UnityEvent>();
@@ -69,16 +69,12 @@ public class EventManager : Singleton<EventManager>
 
 }
 
-//Add all the event name here
-//Use (int) to convert event name to its id
-//Id starts from 0, 1, 2 ...
-public enum EventName 
+//Add all the event names here.
+public enum EventName
 {
-    Test, 
     NumberOnePickedUp,
     NumberTwoPickedUp,
-    NumberThreePickedUp, 
+    Test, NumberThreePickedUp, KitchenDoorClicked, HubDoorClicked, CookieJarTouched, KitchenSceneLoaded, HubSceneLoaded,
+    LangEnglish, LangDanish, LanguageSelected
     UIUpdate,
-    KitchenDoorClicked,
-    HubDoorClicked,
 }

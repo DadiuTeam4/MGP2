@@ -4,20 +4,27 @@ using UnityEngine.Events;
 
 public class SceneTransitionManager : Singleton<SceneTransitionManager>
 {
-	private UnityAction sceneTriggerListener;
+    private UnityAction sceneTriggerListener;
 
-	void Awake()
-	{
-		DontDestroyOnLoad(transform.gameObject);
-	}
-	void Start () 
-	{
-        EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToKitchenScene);
-		Debug.Log("Should change to KitchenScenenow!");
+ 
+    void Start()
+    {
+        EventManager.StartListening(EventName.HubDoorClicked, ChangeToKitchenScene);
+
+		EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToHubScene);
+
+        EventManager.StartListening(EventName.LanguageSelected, ChangeToHubScene);
 	}
 	
-	void ChangeToKitchenScene()
+    void ChangeToKitchenScene()
     {
         SceneManager.LoadScene("KitchenScene");
+        EventManager.TriggerEvent(EventName.KitchenSceneLoaded);
+    }
+
+	void ChangeToHubScene()
+    {
+        SceneManager.LoadScene("HubScene");
+        EventManager.TriggerEvent(EventName.HubSceneLoaded);
     }
 }

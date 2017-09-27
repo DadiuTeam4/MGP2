@@ -27,6 +27,6 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1290916568	Reverb_kitchen			\Default Work Unit\Master Secondary Bus\Reverb_kitchen	
 
 Effect plug-ins	ID	Name	Type				Notes
-	602546716	Room_Large	Wwise RoomVerb			
 	1159390747	Room_Medium_Tiled	Wwise RoomVerb			
+	1990128658	Room_Medium	Wwise RoomVerb			
 
