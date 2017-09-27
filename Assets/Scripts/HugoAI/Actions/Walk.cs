@@ -25,7 +25,7 @@ namespace HugoAI
 		{
 			if (random) 
 			{
-				int randomWayPoint = Random.Range(0, controller.idleWaypoints.Count);
+				int randomWayPoint = Random.Range(0, controller.idleWaypoints.Length);
 				destination = controller.idleWaypoints[randomWayPoint].position;
 			}
 			else 

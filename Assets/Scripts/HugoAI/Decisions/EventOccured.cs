@@ -3,33 +3,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace HugoAI 
 {
 	[CreateAssetMenu(menuName = "HugoAI/Decisions/EventOccured")]
 	public class EventOccured : Decision 
 	{
-		public EventName eventName;
-		[Range(0.0f, 1.0f)] public float chanceOfReacting;
+		[Header("This is the index of the event in the State Controller on Hugo")]
+		public int eventIndex;
+		[Range(0.0f, 1.0f)] public float chanceOfReacting = 1.0f;
 
+		private bool initialized;
 		private bool eventOccured;
-		private UnityAction eventOccuredCallback;
-
-		private void Start() 
-		{
-			eventOccuredCallback = new UnityAction(EventCallback);
-			EventManager.StartListening(eventName, eventOccuredCallback);
-		}
-
-		private void EventCallback()
-		{
-			eventOccured = true;
-		}
 
 		public override bool Decide(StateController controller)
 		{
-			if (!eventOccured) 
+			if (!controller.triggeredEvents[eventIndex]) 
 			{
 				return false;
 			}

@@ -3,27 +3,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace HugoAI 
 {
 	[RequireComponent(typeof(Navigator))]
 	public class StateController : MonoBehaviour 
 	{
-		public List<Transform> idleWaypoints;
-		public List<Transform> purposeWaypoints;
+		public Transform[] idleWaypoints;
+		[Header("Sequence of events will directly map to the sequence of the purpose waypoints below.")]
+		public EventName[] numberEvents;
+		public Transform[] purposeWaypoints;
 		public State currentState;
 		public bool active = true;
 
-		private State previousState;
-
 		[HideInInspector] public Navigator navigator;
 		[HideInInspector] public Animator animator;
-		private float stateTimeElapsed;
+		[HideInInspector] public bool[] triggeredEvents;
 
-		void Awake()
+		private State previousState;
+		private float stateTimeElapsed;
+		private int eventNumber;
+		private UnityAction<int>[] eventOccurredCallbacks;
+
+		private void Awake()
 		{
 			//animator = GetComponent<Animator>();
 			navigator = GetComponent<Navigator>();
+		}
+
+		private void Start()
+		{
+			triggeredEvents = new bool[numberEvents.Length];
+			eventOccurredCallbacks = new UnityAction<int>[numberEvents.Length];
+			for (int i = 0; i < numberEvents.Length; i++) 
+			{
+				UnityAction<int> action = EventCallback;
+				eventOccurredCallbacks[i] = action;
+				EventManager.StartListening(numberEvents[i], action, i);
+			}
+		}
+
+		private void EventCallback(int number)
+		{
+			triggeredEvents[number] = true;
 		}
 
 		public void TransitionToState(State nextState)
