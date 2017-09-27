@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieJar : Interactable
+public class CookieJar : NumberFoundInteractable
 {
     public override void OnTouchBegin()
     {

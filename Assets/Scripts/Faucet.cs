@@ -4,13 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Faucet : Interactable
+public class Faucet : NumberFoundInteractable
 {
-    private Renderer render;
 
     void Start()
     {
-        render = GetComponent<Renderer>();
     }
 
     void Update()
@@ -20,11 +18,11 @@ public class Faucet : Interactable
             changeColor();
             //Fire a event here
         }
+
     }
     
     private void changeColor()
     {
-        render.material.color = Color.green;
         enabled = false;
     }
 

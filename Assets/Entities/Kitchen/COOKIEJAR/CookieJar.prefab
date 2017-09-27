@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeHeld: 0
+  eventToFire: 6
+  fireAfterSeconds: 1
 --- !u!136 &136865258469972598
 CapsuleCollider:
   m_ObjectHideFlags: 1
