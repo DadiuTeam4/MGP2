@@ -39,7 +39,7 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	// public bool kitchenLightOn = true;
 
-	public static bool kitchenSinkFull = false;
+	public static bool kitchenSinkFull;
 
 	 void Start()
 	 {
@@ -72,6 +72,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.StartListening("number10HasBeenPickedUp", resourceManagerListenerForNumber10);*/
 
 		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
 	 }
 
 
