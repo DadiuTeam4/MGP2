@@ -1,7 +1,12 @@
 ﻿/*Author:Tilemachos
+Co-author: Jonathan (worked on this Wednesday)
 This script holds the current level the player is on,
 which number he/she has collected
 and which levels hae been complited
+
+NOTICE: The ResourceManager has been appointed the
+place for keeping ALL STATE, this is what is currently
+being implemented.
 
  */
 
@@ -14,7 +19,7 @@ using UnityEngine.SceneManagement;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-	
+	//To do: Implement enums instead of string for CurrentSceneName
 	static private string currentSceneName = "IntroLevel";
 	static public List<int> listOfPickedUpNumbers;
 	static private List<string> listOfScenesCompleted;
@@ -29,6 +34,12 @@ public class ResourceManager : Singleton<ResourceManager>
 	private UnityAction resourceManagerListenerForNumber9;
 	private UnityAction resourceManagerListenerForNumber10;
 
+	// State holder variables.
+	public static bool doorToKitchenOpen;
+
+	// public bool kitchenLightOn = true;
+
+	public static bool kitchenSinkFull = false;
 
 	 void Start()
 	 {
@@ -59,6 +70,8 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.StartListening("number8HasBeenPickedUp", resourceManagerListenerForNumber8);
 		EventManager.StartListening("number9HasBeenPickedUp", resourceManagerListenerForNumber9);
 		EventManager.StartListening("number10HasBeenPickedUp", resourceManagerListenerForNumber10);*/
+
+		doorToKitchenOpen = false;
 	 }
 
 
@@ -71,8 +84,6 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		currentSceneName = newSceneName;
 	}
-
-
 
 
 	public static List<int> GetListOfPickedUpNumbers()
@@ -154,9 +165,4 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		listOfScenesCompleted.Add(addThisScene);
 	}
-
-
-
-
-	
 }

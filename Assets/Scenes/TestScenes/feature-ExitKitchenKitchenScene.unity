@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207d08540b7af4159b875ab9895dc70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePath: Audio/GeneratedSoundBanks
+  basePath: Audio\GeneratedSoundBanks
   language: English(US)
   defaultPoolSize: 4096
   lowerPoolSize: 2048
@@ -1057,6 +1057,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b26b73b1b4d64730aebbb22700695f0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1221327656 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1103593249472042, guid: 6b26b73b1b4d64730aebbb22700695f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1221327655}
+--- !u!114 &1221327657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221327656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935ae14c998c8174a8c155afdff64886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
 --- !u!1001 &1260185015
 Prefab:
   m_ObjectHideFlags: 0
