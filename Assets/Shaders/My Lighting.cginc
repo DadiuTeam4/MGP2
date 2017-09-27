@@ -13,6 +13,7 @@ float4 _MainTex_ST, _DetailTex_ST;
 sampler2D _ShadowTex;
 sampler2D _ShadowNoise;
 float _ShadowTiling;
+float _ShadowInMainTex;
 
 sampler2D _NormalMap, _DetailNormalMap;
 float _BumpScale, _DetailBumpScale;
@@ -291,11 +292,9 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		CreateLight(i), CreateIndirectLight(i, viewDir)
 	);
 	color.rgb += GetEmission(i);
-    //color = orginalAlbedo;
+    color = color * (shadow * _ShadowInMainTex) + (color * (1 - _ShadowInMainTex));
     
     float4 shadowColor = orginalAlbedo * (1 - atten) - (shadow * (1 - atten) * 0.65); //=(shadow * 0.2) * (1 - atten);
-
-    //color += (shadow * 0.2) * (1 - atten);
 
     return shadowColor + color;
 }

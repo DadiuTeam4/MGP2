@@ -9,27 +9,28 @@ Shader "Custom/Shadow and Cel" {
 		[NoScaleOffset] _NormalMap ("Normals", 2D) = "bump" {}
 		_BumpScale ("Bump Scale", Float) = 1
 
-		[NoScaleOffset] _MetallicMap ("Metallic", 2D) = "white" {}
-		[Gamma] _Metallic ("Metallic", Range(0, 1)) = 0
+		//[NoScaleOffset] _MetallicMap ("Metallic", 2D) = "white" {}
+		//[Gamma] _Metallic ("Metallic", Range(0, 1)) = 0
 		_Smoothness ("Smoothness", Range(0, 1)) = 0.1
 
-		[NoScaleOffset] _OcclusionMap ("Occlusion", 2D) = "white" {}
-		_OcclusionStrength("Occlusion Strength", Range(0, 1)) = 1
+		//[NoScaleOffset] _OcclusionMap ("Occlusion", 2D) = "white" {}
+		//_OcclusionStrength("Occlusion Strength", Range(0, 1)) = 1
 
-		[NoScaleOffset] _EmissionMap ("Emission", 2D) = "black" {}
-		_Emission ("Emission", Color) = (0, 0, 0)
+		//[NoScaleOffset] _EmissionMap ("Emission", 2D) = "black" {}
+		//_Emission ("Emission", Color) = (0, 0, 0)
 
-		[NoScaleOffset] _DetailMask ("Detail Mask", 2D) = "white" {}
+		//[NoScaleOffset] _DetailMask ("Detail Mask", 2D) = "white" {}
 		//_DetailTex ("Detail Albedo", 2D) = "gray" {}
-		[NoScaleOffset] _DetailNormalMap ("Detail Normals", 2D) = "bump" {}
-		_DetailBumpScale ("Detail Bump Scale", Float) = 1
+		//[NoScaleOffset] _DetailNormalMap ("Detail Normals", 2D) = "bump" {}
+		//_DetailBumpScale ("Detail Bump Scale", Float) = 1
 
 		_ShadowTex		("Shadow", 2D) = "white" {}
 		_ShadowNoise	("Shadow Noise", 2D) = "white" {}
 		_ShadowTiling	("Shadow Tiling", Range (0.1,100)) = 10
+		_ShadowInMainTex ("Shadow in Albedo", Range (0,1)) = 0.1
 
 		_OutlineColor	("Outline Color", Color) = (0,0,0,1)
-		_Outline		("Outline width", Range (0.0, 0.1)) = .005
+		_Outline		("Outline width", Range (0.0, 0.1)) = .05
 	}
 
 	CGINCLUDE
