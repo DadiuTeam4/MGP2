@@ -17,8 +17,6 @@ public class Lightswitch : Interactable
 		Debug.Log("Lightswitch touched");
         render.material.color = Color.green;
 		EventManager.TriggerEvent(EventName.LightswitchClicked);
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_LightSwitch", gameObject); 
     }	
-
-		
-
 }
