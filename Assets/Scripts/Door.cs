@@ -9,6 +9,7 @@ public class Door : Interactable
 
  	void Start()
     {
+        getDoorState();
         EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
 	}
 
@@ -30,9 +31,21 @@ public class Door : Interactable
         }
     }
 
+    void getDoorState()
+    {
+        if (ResourceManager.doorToKitchenOpen == true)
+        {
+            Debug.Log("Kitchen door state is: Open");
+        }
+        else{
+            Debug.Log("Kitchen door state is: Closed");
+        }
+    }
+
     void OpenDoor()
     {
         isOpen = true;
+        ResourceManager.doorToKitchenOpen = true;
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
 
     }
