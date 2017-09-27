@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace HugoAI 
 {
+	[RequireComponent(typeof(Navigator))]
 	public class StateController : MonoBehaviour 
 	{
 		public List<Transform> idleWaypoints;

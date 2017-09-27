@@ -1,31 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
+	[HideInInspector]
+	public RectTransform canvasRect;
+	[HideInInspector]
+	public GraphicRaycaster graphicRayCaster;
 	
-	private RectTransform canvasRect;
+	private PointerEventData pointerEventData = new PointerEventData(null);
+	private List<RaycastResult> raycastResults = new List<RaycastResult>();
 	private RectTransform buttonRect;
 	private bool buttonHeld = false;
-	private Vector3 newPos = Vector3.zero;
 
 
 	void Awake()
 	{
 		buttonRect = GetComponent<RectTransform>();
+
 	}
 
 	void Update()
 	{
-		/*if (buttonHeld)
+		if (buttonHeld)
 		{
-			if (RectTransformUtility.ScreenPointToLocalPointInRectangle( new Vector2(Input.mousePosition.x, Input.mousePosition.y), Camera.main, out newPos))
+			pointerEventData.position = Input.mousePosition;
+			graphicRayCaster.Raycast(pointerEventData, raycastResults);
+			for (int i = 0; i < raycastResults.Count; i++)
 			{
-				buttonRect.localPosition =  newPos;
+				buttonRect.anchoredPosition = new Vector2(raycastResults[i].screenPosition.x, raycastResults[i].screenPosition.y - canvasRect.rect.height);
 			}
-		}*/
+		}
 	}
 	
 	public void OnPointerDown()
