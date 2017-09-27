@@ -77,6 +77,7 @@ public class ResourceUI : MonoBehaviour {
 			temp.sizeDelta = new Vector2(widthOfButton, heightOfButton);
 			temp.localPosition = new Vector3((i * widthOfButton - widthOfCanvas/2) + widthOfButton/2, heightOfCanvas/2 - heightOfButton/2, 0);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
+			g.GetComponent<ButtonController>().eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
 			g.GetComponent<BoxCollider>().size = new Vector3 (temp.sizeDelta.x, temp.sizeDelta.y, 1.0f);
 		}
 
@@ -92,6 +93,25 @@ public class ResourceUI : MonoBehaviour {
 	private void CalculateCanvasRatio()
 	{
 		canvasRatio = heightOfCanvas/widthOfCanvas;
+	}
+
+	private EventName SetButtonEnum(int index)
+	{
+		switch(index)
+		{
+			case 1:
+				return EventName.NumberOneClicked;
+				break;
+		
+			case 2:
+				return EventName.NumberTwoClicked;
+				break;
+
+			default:
+				Debug.LogError("ResourceUI: INDEX OUT OF SWITCH CASE RANGE");
+				return EventName.Test;
+				break;
+		}
 	}
 
 }
