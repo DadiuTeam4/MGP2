@@ -87,5 +87,9 @@ public enum EventName
     UIUpdate,
     NumberOneClicked,
     NumberTwoClicked,
+    FaucetRunning,
+    LightswitchClicked,
+    InteractableClicked,
     ShowOnGamOptions
+
 }

@@ -36,10 +36,9 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	// State holder variables.
 	public static bool doorToKitchenOpen;
+	public static bool kitchenSinkFull;
+	public static bool kitchenLightOn;
 
-	// public bool kitchenLightOn = true;
-
-	public static bool kitchenSinkFull = false;
 
 	 void Start()
 	 {
@@ -72,6 +71,8 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.StartListening("number10HasBeenPickedUp", resourceManagerListenerForNumber10);*/
 
 		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
+		kitchenLightOn = true;
 	 }
 
 

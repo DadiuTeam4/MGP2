@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Faucet : Interactable
 {
@@ -10,6 +11,7 @@ public class Faucet : Interactable
 
     void Start()
     {
+        
         render = GetComponent<Renderer>();
     }
 
@@ -18,6 +20,7 @@ public class Faucet : Interactable
         if(timeHeld > 2)
         {
             changeColor();
+            EventManager.TriggerEvent(EventName.FaucetRunning);
             //Fire a event here
         }
     }
