@@ -39,7 +39,7 @@ public class ButtonController : MonoBehaviour {
 	
 	public void OnPointerDown()
 	{
-        //EventManager.TriggerEvent(eventName);
+        EventManager.TriggerEvent(eventName);
 		buttonHeld = true;
 	}
 
