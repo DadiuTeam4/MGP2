@@ -189,13 +189,42 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091276441062352, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 23505300962101748, guid: 1a33755766ce24509832eb4b282379d0,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 63276c4468872499298e9c9db48c64ef, type: 2}
+    - target: {fileID: 33776191923670138, guid: 1a33755766ce24509832eb4b282379d0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 59b8ced80d3b05a42b78f1cedf7505d9, type: 3}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.78622097
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6179455
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 103.66701
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850120944240440, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a33755766ce24509832eb4b282379d0, type: 2}
   m_IsPrefabParent: 0
@@ -338,7 +367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4526723037997618, guid: 4cb18d281ca031e4cb6bbd5606f27ee2, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 23448913997360316, guid: 4cb18d281ca031e4cb6bbd5606f27ee2,
         type: 2}
