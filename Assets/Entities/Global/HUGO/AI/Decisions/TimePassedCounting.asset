@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3903f609ca4a95a48b7d62df5a6499b9, type: 3}
   m_Name: TimePassedCounting
   m_EditorClassIdentifier: 
-  time: 10
-  chanceOfReacting: 0.6
+  time: 3
+  chanceOfReacting: 0.7
