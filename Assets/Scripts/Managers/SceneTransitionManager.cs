@@ -6,14 +6,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 {
     private UnityAction sceneTriggerListener;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
+ 
     void Start()
     {
         EventManager.StartListening(EventName.HubDoorClicked, ChangeToKitchenScene);
-		Debug.Log("Should change to KitchenScene now!");
 
 		EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToHubScene);
 
