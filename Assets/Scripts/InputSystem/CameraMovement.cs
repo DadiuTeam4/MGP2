@@ -77,8 +77,10 @@ public class CameraMovement : MonoBehaviour {
 		{
 			sum += element;
 		}
+		
+		sum /= array.Length;
 
-		return sum /= array.Length;
+		return sum;
 	}
 
 	private float[] PushBack(float pushedBackValue, float[] array)
@@ -95,8 +97,7 @@ public class CameraMovement : MonoBehaviour {
 
 	private float ClampValueForLerp(float x)
 	{
-		float result = 0;
-		result = (x + 1) / 2;
+		float result = (x + 1) / 2;
 		result = result > 1 ? 1 : result;
 
 		return result;
