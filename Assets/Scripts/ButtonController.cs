@@ -7,11 +7,13 @@ using UnityEngine.EventSystems;
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
+	[HideInInspector]
+	public RectTransform canvasRect;
+	[HideInInspector]
+	public GraphicRaycaster graphicRayCaster;
 	
-	private GraphicRaycaster graphicRayCaster;
 	private PointerEventData pointerEventData = new PointerEventData(null);
 	private List<RaycastResult> raycastResults = new List<RaycastResult>();
-	private RectTransform canvasRect;
 	private RectTransform buttonRect;
 	private bool buttonHeld = false;
 
@@ -19,8 +21,7 @@ public class ButtonController : MonoBehaviour {
 	void Awake()
 	{
 		buttonRect = GetComponent<RectTransform>();
-		canvasRect = transform.parent.GetComponent<RectTransform>();
-		graphicRayCaster = transform.GetComponentInParent<GraphicRaycaster>();
+
 	}
 
 	void Update()
