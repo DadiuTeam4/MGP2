@@ -1,18 +1,15 @@
 fileFormatVersion: 2
-guid: 1ce086da4f40cfd46853cca6485687eb
-timeCreated: 1506423066
+guid: 59b8ced80d3b05a42b78f1cedf7505d9
+timeCreated: 1506497321
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: geo_cupboard
     400000: //RootNode
-    400002: geo_cupboard
-    2300000: geo_cupboard
-    3300000: geo_cupboard
-    4300000: geo_cupboard
-    9500000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: prp_gramophone_GEO
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

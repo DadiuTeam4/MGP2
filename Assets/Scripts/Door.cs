@@ -5,11 +5,12 @@ using UnityEngine;
 public class Door : Interactable 
 {
     public EventName triggeredEvent = EventName.HubDoorClicked;
-    private bool isOpen = false;
 
  	void Start()
     {
-        EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
+        getDoorState();
+        EventManager.StartListening((EventName.NumberOneClicked), OpenDoor);
+
 	}
 
     public override void OnTouchBegin()
@@ -20,22 +21,32 @@ public class Door : Interactable
             EventManager.TriggerEvent(EventName.KitchenDoorClicked);
         }
 
-        Debug.Log(triggeredEvent);
-        if (this.isOpen)
+
+        if (ResourceManager.doorToKitchenOpen == true)
         {
             EventManager.TriggerEvent(triggeredEvent);
-            Debug.Log("Door open");
         } 
         else
         {
-            Debug.Log("Door closed");
+        }
+    }
+
+    void getDoorState()
+    {
+        if (ResourceManager.doorToKitchenOpen == true)
+        {
+            Debug.Log("Kitchen door state is: Open");
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+        else{
+            Debug.Log("Kitchen door state is: Closed");
         }
     }
 
     void OpenDoor()
     {
-        isOpen = true;
-        Debug.Log("Door is Opened!");
+        ResourceManager.doorToKitchenOpen = true;
+        getDoorState();
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
 
     }

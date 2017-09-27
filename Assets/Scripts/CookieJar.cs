@@ -8,7 +8,9 @@ public class CookieJar : Interactable
 {
     public override void OnTouchBegin()
     {
-		Debug.Log("CookieJar Cliked");
+
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = Color.green;
 		EventManager.TriggerEvent(EventName.CookieJarTouched);
     }
 }
