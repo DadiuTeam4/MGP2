@@ -6,6 +6,7 @@ public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	
+	private RectTransform canvasRect;
 	private RectTransform buttonRect;
 	private bool buttonHeld = false;
 	private Vector3 newPos = Vector3.zero;
@@ -20,7 +21,7 @@ public class ButtonController : MonoBehaviour {
 	{
 		if (buttonHeld)
 		{
-			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(buttonRect, new Vector2(Input.mousePosition.x, Input.mousePosition.y), Camera.main, out newPos))
+			if (RectTransformUtility.ScreenPointToLocalPointInRectangle( new Vector2(Input.mousePosition.x, Input.mousePosition.y), Camera.main, out newPos))
 			{
 				buttonRect.localPosition =  newPos;
 			}
