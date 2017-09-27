@@ -6,7 +6,7 @@ public class Couch : Interactable {
 
     public override void OnTouchBegin()
     {
-        EventManager.TriggerEvent(EventName.NumberThreePickedUp);
+        EventManager.TriggerEvent(EventName.NumberOnePickedUp);
     }
 
     /*void OnMouseDown()
