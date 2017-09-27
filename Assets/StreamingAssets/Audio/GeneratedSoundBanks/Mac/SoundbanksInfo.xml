@@ -161,10 +161,6 @@
 					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
 					<Path>SFX/117296__swiftoid__fill-the-sink_7E8CF9C2.wem</Path>
 				</File>
-				<File Id="803791863" Language="SFX">
-					<ShortName>340020__iesp__sounds-from-a-tv.wav</ShortName>
-					<Path>SFX/340020__iesp__sounds-from-a-tv_1C9C67B2.wem</Path>
-				</File>
 				<File Id="806349091" Language="SFX">
 					<ShortName>360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor.wav</ShortName>
 					<Path>SFX/360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E0234685.wem</Path>
@@ -176,6 +172,10 @@
 				<File Id="933262447" Language="SFX">
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
 					<Path>SFX/mgp2_ambience_livingRoom(P)_F17FB28C.wem</Path>
+				</File>
+				<File Id="952484127" Language="SFX">
+					<ShortName>354019__kleber-kgf__tv-static-sound-by-kleber-kgf.wav</ShortName>
+					<Path>SFX/354019__kleber-kgf__tv-static-sound-by-kleber-kgf_7C287DB7.wem</Path>
 				</File>
 				<File Id="979179134" Language="SFX">
 					<ShortName>MGP2_SD_DrippingWater.wav</ShortName>
