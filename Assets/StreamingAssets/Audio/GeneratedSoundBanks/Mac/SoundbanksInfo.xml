@@ -38,6 +38,9 @@
 				<Event Id="314431553" Name="Play_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrippingWater"/>
 				<Event Id="2613328266" Name="Play_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Fireplace"/>
 				<Event Id="3148382178" Name="Play_MGP2_SD_Fridge" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge"/>
+				<Event Id="1797766868" Name="Play_MGP2_SD_Fryingpan1" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan1"/>
+				<Event Id="1797766871" Name="Play_MGP2_SD_Fryingpan2" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2"/>
+				<Event Id="1797766870" Name="Play_MGP2_SD_Fryingpan3" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan3"/>
 				<Event Id="2467296834" Name="Play_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Garden"/>
 				<Event Id="2088074314" Name="Play_MGP2_SD_Ghost" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Ghost"/>
 				<Event Id="3082250963" Name="Play_MGP2_SD_Glass" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Glass"/>
@@ -57,6 +60,10 @@
 				<File Id="7591784" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C02F82B7.wem</Path>
+				</File>
+				<File Id="73123222" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan2.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan2_1C9C67B2.wem</Path>
 				</File>
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
@@ -122,6 +129,10 @@
 					<ShortName>124202__robinhood76__02408-chair-stone-floor-brawl.wav</ShortName>
 					<Path>SFX/124202__robinhood76__02408-chair-stone-floor-brawl_00877CC5.wem</Path>
 				</File>
+				<File Id="489143399" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan3_1C9C67B2.wem</Path>
+				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
 					<Path>SFX/MGP2_Ambience_Kitchen.1(P)_F17FB28C.wem</Path>
@@ -141,6 +152,10 @@
 				<File Id="626491883" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
 					<Path>SFX/120329__cemagar__kitchen-cabinet_CB79FEB9.wem</Path>
+				</File>
+				<File Id="636675681" Language="SFX">
+					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
+					<Path>SFX/MGP2_SD_Fryingpan1_1C9C67B2.wem</Path>
 				</File>
 				<File Id="790497178" Language="SFX">
 					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
