@@ -5,7 +5,6 @@ using UnityEngine;
 public class Door : Interactable 
 {
     public EventName triggeredEvent = EventName.HubDoorClicked;
-    private bool isOpen = false;
 
  	void Start()
     {
@@ -22,7 +21,7 @@ public class Door : Interactable
         }
 
 
-        if (this.isOpen)
+        if (ResourceManager.doorToKitchenOpen == true)
         {
             EventManager.TriggerEvent(triggeredEvent);
         } 
@@ -44,7 +43,6 @@ public class Door : Interactable
 
     void OpenDoor()
     {
-        isOpen = true;
         ResourceManager.doorToKitchenOpen = true;
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
 
