@@ -23,6 +23,7 @@ public class Couch : Interactable {
 		}
 	}
 
+
     /*void OnMouseDown()
 	{
         Debug.Log("Couch clicked");

@@ -24,16 +24,11 @@ public class Lightswitch : Interactable
 
 	private void renderLightswitch()
 	{
-		if (ResourceManager.kitchenLightOn == true)
-		{
+		if (ResourceManager.kitchenLightOn == true) {
 			render.material.color = Color.green;
-		}
-		{
-		else
-		}
+		} else {
 			render.material.color = Color.red;
+		}
 	}
-
-		
-
 }
+

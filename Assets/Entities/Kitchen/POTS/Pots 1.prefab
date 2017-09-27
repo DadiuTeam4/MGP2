@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33609407523391074}
   - component: {fileID: 136354570497363196}
   - component: {fileID: 23770192979525708}
+  - component: {fileID: 114127502594465996}
   m_Layer: 0
   m_Name: OvenMits (1)
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 33752093772749074}
   - component: {fileID: 136189878750794748}
   - component: {fileID: 23694887454596502}
+  - component: {fileID: 114431713421626172}
   m_Layer: 0
   m_Name: OvenMits (1)
   m_TagString: Untagged
@@ -106,6 +108,7 @@ GameObject:
   - component: {fileID: 33670077506105582}
   - component: {fileID: 136531172773258286}
   - component: {fileID: 23451376853854530}
+  - component: {fileID: 114545510398305630}
   m_Layer: 0
   m_Name: OvenMits (1)
   m_TagString: Untagged
@@ -588,6 +591,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114127502594465996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018171320225756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb519bd6effef4cf999fc9b2cd30eba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
+  eventName: Play_MGP2_SD_Fryingpan2
+--- !u!114 &114431713421626172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181821573294520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb519bd6effef4cf999fc9b2cd30eba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
+  eventName: Play_MGP2_SD_Fryingpan1
+--- !u!114 &114545510398305630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602422286944752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb519bd6effef4cf999fc9b2cd30eba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
+  eventName: Play_MGP2_SD_Fryingpan3
 --- !u!136 &136189878750794748
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -48,6 +48,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
+        static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

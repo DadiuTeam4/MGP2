@@ -56,6 +56,7 @@
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
 				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
+				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="7591784" Language="SFX">
@@ -64,7 +65,7 @@
 				</File>
 				<File Id="73123222" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan2.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan2_1C9C67B2.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan2_7A418F20.wem</Path>
 				</File>
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
@@ -132,7 +133,7 @@
 				</File>
 				<File Id="489143399" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan3_1C9C67B2.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan3_5B250CDF.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
@@ -156,7 +157,7 @@
 				</File>
 				<File Id="636675681" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan1_1C9C67B2.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan1_668C9EC5.wem</Path>
 				</File>
 				<File Id="771422714" Language="SFX">
 					<ShortName>50634__cbakos__newwallswitchoff.wav</ShortName>
