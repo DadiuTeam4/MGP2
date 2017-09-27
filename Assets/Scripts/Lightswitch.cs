@@ -10,14 +10,27 @@ public class Lightswitch : Interactable
 	void Start ()
 	{
 		render = GetComponent<Renderer>();
+		renderLightswitch();
 		
 	}
     public override void OnTouchBegin()
     {
 		Debug.Log("Lightswitch touched");
-        render.material.color = Color.green;
+		renderLightswitch();
 		EventManager.TriggerEvent(EventName.LightswitchClicked);
-    }	
+    }
+
+	private void renderLightswitch()
+	{
+		if (ResourceManager.kitchenLightOn == true)
+		{
+			render.material.color = Color.green;
+		}
+		else
+		{
+			render.material.color = Color.red;
+		}
+	}
 
 		
 
