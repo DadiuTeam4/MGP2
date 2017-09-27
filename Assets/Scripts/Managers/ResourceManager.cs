@@ -102,53 +102,102 @@ public class ResourceManager : Singleton<ResourceManager>
 	private static void AddNumber1ToListOfPickedUpNumbers()
 	{
 		//print(" 1 has been picked up");
-		listOfPickedUpNumbers.Add(1);
+		if (!listOfPickedUpNumbers.Contains(1))
+		{
+			listOfPickedUpNumbers.Add(1);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 		//SceneManager.LoadScene("ResourceManagerTestScene2");
 	}
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(2);
+
+		if (!listOfPickedUpNumbers.Contains(2))
+		{
+			listOfPickedUpNumbers.Add(2);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(3);
+		if (!listOfPickedUpNumbers.Contains(3))
+		{
+			listOfPickedUpNumbers.Add(3);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
-
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(4);
+
+		if (!listOfPickedUpNumbers.Contains(4))
+		{
+			listOfPickedUpNumbers.Add(4);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber5ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(5);
+
+		if (!listOfPickedUpNumbers.Contains(5))
+		{
+			listOfPickedUpNumbers.Add(5);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber6ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(6);
+
+		if (!listOfPickedUpNumbers.Contains(6))
+		{
+			listOfPickedUpNumbers.Add(6);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber7ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(7);
+
+		if (!listOfPickedUpNumbers.Contains(7))
+		{
+			listOfPickedUpNumbers.Add(7);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber8ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(8);
+
+		if (!listOfPickedUpNumbers.Contains(8))
+		{
+			listOfPickedUpNumbers.Add(8);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber9ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(9);
+
+		if (!listOfPickedUpNumbers.Contains(9))
+		{
+			listOfPickedUpNumbers.Add(9);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber10ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(10);
+
+		if (!listOfPickedUpNumbers.Contains(10))
+		{
+			listOfPickedUpNumbers.Add(10);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
-
-
 
 	public static List<string> GetListOfScenesCompleted()
 	{

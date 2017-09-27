@@ -20,33 +20,33 @@ namespace HugoAI
 
 		private void DoActions(StateController controller)
 		{
-			for (int i = 0; i < actions.Length; i++) 
+			foreach (Action action in actions) 
 			{
-				actions[i].Act(controller);
+				action.Act(controller);
 			}
 		}
 
 		private void CheckTransitions(StateController controller)
     	{
-			for (int i = 0; i < transitions.Length; i++) 
+			foreach (Transition transition in transitions) 
 			{
-				bool decisionSucceeded = transitions[i].decision.Decide(controller);
+				bool decisionSucceeded = transition.decision.Decide(controller);
 
 				if (decisionSucceeded)
 				{
-					if (transitions[i].returnToPreviousState) 
+					if (transition.returnToPreviousState) 
 					{
 						controller.ReturnToPreviousState();
 					}
 					else 
 					{
-						controller.TransitionToState(transitions[i].trueState);
+						controller.TransitionToState(transition.trueState);
 					}
 					break;
 				}
 				else 
 				{
-					controller.TransitionToState(transitions[i].falseState);
+					controller.TransitionToState(transition.falseState);
 				}
 			}
 		}

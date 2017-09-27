@@ -88,5 +88,7 @@ public enum EventName
     NumberOneClicked,
     NumberTwoClicked,
     FaucetRunning,
-    LightswitchClicked
+    LightswitchClicked,
+    InteractableClicked
+
 }
