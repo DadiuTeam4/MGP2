@@ -20,7 +20,7 @@ public class ResourceUI : MonoBehaviour {
 	public float relativeButtonSize = 0.02f;
 	
 	// Use this for initialization
-	void Awake ()
+	void Start ()
 	{
 
 		UIListener = new UnityAction(UpdateUI);
