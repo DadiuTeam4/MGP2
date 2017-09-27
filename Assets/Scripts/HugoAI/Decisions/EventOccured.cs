@@ -19,7 +19,7 @@ namespace HugoAI
 		private void Start() 
 		{
 			eventOccuredCallback = new UnityAction(EventCallback);
-			EventManager.StartListening(EventName.InteractableWasClicked, eventOccuredCallback);
+			EventManager.StartListening(eventName, eventOccuredCallback);
 		}
 
 		private void EventCallback()
