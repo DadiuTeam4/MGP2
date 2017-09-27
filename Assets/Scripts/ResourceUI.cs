@@ -109,8 +109,15 @@ public class ResourceUI : MonoBehaviour {
 		
 			case 2:
 				return EventName.NumberTwoClicked;
-
-			default:
+            case 3:
+                return EventName.NumberThreeClicked;
+            case 4:
+                return EventName.NumberFourClicked;
+            case 5:
+                return EventName.NumberFiveClicked;
+            case 6:
+                return EventName.NumberSixClicked;
+            default:
 				Debug.LogError("ResourceUI: INDEX OUT OF SWITCH CASE RANGE");
 				return EventName.Test;
 		}
