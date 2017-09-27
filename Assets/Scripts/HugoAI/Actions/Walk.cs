@@ -14,7 +14,6 @@ namespace HugoAI
 		[Tooltip("Ignored if set to random")]
 		public int waypointIndex;
 
-		private bool waypointSet;
 		private Vector3 destination;
 
 		public override void Act(StateController controller)
