@@ -73,9 +73,9 @@ public class CameraMovement : MonoBehaviour {
 	private float Average(float[] array)
 	{
 		float sum = 0;
-		foreach (float i in array)
+		foreach (float element in array)
 		{
-			sum += array[i];
+			sum += element;
 		}
 
 		return sum /= array.Length;
