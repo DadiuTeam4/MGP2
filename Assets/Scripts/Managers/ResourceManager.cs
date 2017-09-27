@@ -36,10 +36,9 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	// State holder variables.
 	public static bool doorToKitchenOpen;
-
-	// public bool kitchenLightOn = true;
-
 	public static bool kitchenSinkFull;
+	public static bool kitchenLightOn;
+
 
 	 void Start()
 	 {
@@ -73,6 +72,7 @@ public class ResourceManager : Singleton<ResourceManager>
 
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
+		kitchenLightOn = true;
 	 }
 
 
