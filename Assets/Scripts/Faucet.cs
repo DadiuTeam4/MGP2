@@ -17,17 +17,13 @@ public class Faucet : NumberFoundInteractable
     {
         if(timeHeld > 2)
         {
-            changeColor();
             EventManager.TriggerEvent(EventName.FaucetRunning);
             //Fire a event here
         }
 
     }
     
-    private void changeColor()
-    {
-        enabled = false;
-    }
+
 
 
 }
