@@ -14,7 +14,7 @@ public class ResourceUI : MonoBehaviour {
 	private RectTransform canvasRectTransform;
 	private float heightOfCanvas, widthOfCanvas;
 	public float heightOfButton = 70, widthOfButton = 70;
-	private int amountOfCollectedNumbers = 0;
+	private int amountOfCollectedNumbers;
 	private float canvasRatio;
 	private GraphicRaycaster graphicRaycaster;
 	
@@ -106,16 +106,13 @@ public class ResourceUI : MonoBehaviour {
 		{
 			case 1:
 				return EventName.NumberOneClicked;
-				break;
 		
 			case 2:
 				return EventName.NumberTwoClicked;
-				break;
 
 			default:
 				Debug.LogError("ResourceUI: INDEX OUT OF SWITCH CASE RANGE");
 				return EventName.Test;
-				break;
 		}
 	}
 

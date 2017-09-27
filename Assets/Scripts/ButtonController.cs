@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour {
 	private PointerEventData pointerEventData = new PointerEventData(null);
 	private List<RaycastResult> raycastResults = new List<RaycastResult>();
 	private RectTransform buttonRect;
-	private bool buttonHeld = false;
+	private bool buttonHeld;
 
 
 	void Awake()
