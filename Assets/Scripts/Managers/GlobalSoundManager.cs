@@ -13,7 +13,6 @@ public class GlobalSoundManager : MonoBehaviour {
 		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
 		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
-
 	}
 
 	void Update () 

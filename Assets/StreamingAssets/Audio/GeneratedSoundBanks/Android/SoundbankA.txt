@@ -13,6 +13,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1797766870	Play_MGP2_SD_Fryingpan3			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan3	
 	1797766871	Play_MGP2_SD_Fryingpan2			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2	
 	1943834466	Play_MGP2_SD_Cabinet_Close			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Close	
+	2060405955	Play_MGP2_SD_LightSwitch			\Default Work Unit\Play_MGP2_SD_LightSwitch	
 	2088074314	Play_MGP2_SD_Ghost			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Ghost	
 	2186198650	Break_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_RockingChair	
 	2300991670	Play_MGP2_SD_Cabinet_Open			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open	
@@ -29,6 +30,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3711983261	Play_MGP2_SD_WindowOpen			\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen	
 	3735495899	Play_MGP2_SD_Vinyl			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl	
 	3797089235	Play_MGP2_SD_Voodoo			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo	
+	3922064915	Stop_MGP2_SD_DrippingWater			\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater	
 	3938267759	Play_MMGP2_SD_Porcelain			\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain	
 	3991942870	Music			\Default Work Unit\Music\Music	
 	4096018196	Play_MGP2_SD_Kettle			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Kettle	
@@ -41,7 +43,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C02F82B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		35454
-	73123222	MGP2_SD_Fryingpan2	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan2		368704
+	73123222	MGP2_SD_Fryingpan2	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan2_7A418F20.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan2		94040
 	82622083	MGP2_SD_Glass	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\197563__dheming__glass-bottles-02_C61EA662.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Glass\MGP2_SD_Glass		91326
 	92169222	MGP2_SD_OnScreenClick(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_41746F20.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)		42338
 	106766393	MGP2_SD_Kettle	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\239005__squashy555__kettle-boiling_77C60125.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Kettle		3596660
@@ -58,18 +60,19 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	432721043	120329__cemagar__kitchen-cabinet	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\120329__cemagar__kitchen-cabinet_ABCA4529.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Cabinet_Open\120329__cemagar__kitchen-cabinet		200436
 	436613960	MGP2_SD_CurtainOpen	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\142301__fryzu82__curtain-opening_85BBF7D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_CurtainOpen		40836
 	448724314	124202__robinhood76__02408-chair-stone-floor-brawl	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\124202__robinhood76__02408-chair-stone-floor-brawl_00877CC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Ghost\124202__robinhood76__02408-chair-stone-floor-brawl		279996
-	489143399	MGP2_SD_Fryingpan3	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan3_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan3		368704
+	489143399	MGP2_SD_Fryingpan3	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan3_5B250CDF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan3		83956
 	492814952	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_Ambience_Kitchen.1(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		6635584
 	571641950	MGP2_SD_CurtainClose	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\142301__fryzu82__curtain-opening_832BE7A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_CurtainClose		34082
 	591599028	MGP2_SD_Chandelier	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\320416__yadronoff__shivering-chandelier_4CD27AC0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Chandelier		982736
 	623925728	MGP2_SD_WindowClose	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\60398__uwesoundboiz__window-open-double-glazed-001_297273B8.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_WindowClose		123140
 	626491883	120329__cemagar__kitchen-cabinet	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\120329__cemagar__kitchen-cabinet_CB79FEB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Cabinet_Close\120329__cemagar__kitchen-cabinet		183740
-	636675681	MGP2_SD_Fryingpan1	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan1_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan1		368704
+	636675681	MGP2_SD_Fryingpan1	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fryingpan1_668C9EC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan1		67420
+	771422714	MGP2_SD_LightSwitch	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\50634__cbakos__newwallswitchoff_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_LightSwitch		74762
 	790497178	MGP2_SD_SinkFill	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\117296__swiftoid__fill-the-sink_7E8CF9C2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_SinkFill		2100824
-	803791863	MGP2_SD_TV	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\340020__iesp__sounds-from-a-tv_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_TV		8064060
 	806349091	MGP2_SD_Porcelain	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E0234685.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Porcelain		360804
 	932824895	MGP2_SD_Bed	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\344347__amholma__squeaking-bed_5B130435.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Bed\MGP2_SD_Bed		219844
 	933262447	mgp2_ambience_livingRoom(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\mgp2_ambience_livingRoom(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_livingRoom(P)		19169344
+	952484127	MGP2_SD_TV	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\354019__kleber-kgf__tv-static-sound-by-kleber-kgf_7C287DB7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_TV		425324
 	979179134	MGP2_SD_DrippingWater	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_DrippingWater_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_DrippingWater		6635584
 	994290101	MGP2_SD_Fridge	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\MGP2_SD_Fridge_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fridge		6635584
 	1004531354	MGP2_SD_WindowOpen	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Android\SFX\60399__uwesoundboiz__window-open-double-glazed-outside-noise-001_915C4F83.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_WindowOpen		361614

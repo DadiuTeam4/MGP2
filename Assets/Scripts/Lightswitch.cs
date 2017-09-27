@@ -19,20 +19,16 @@ public class Lightswitch : Interactable
 		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;
 		renderLightswitch();
 		EventManager.TriggerEvent(EventName.LightswitchClicked);
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_LightSwitch", gameObject); 
     }
 
 	private void renderLightswitch()
 	{
-		if (ResourceManager.kitchenLightOn == true)
-		{
+		if (ResourceManager.kitchenLightOn == true) {
 			render.material.color = Color.green;
-		}
-		else
-		{
+		} else {
 			render.material.color = Color.red;
 		}
 	}
-
-		
-
 }
+
