@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33594098551157040}
   - component: {fileID: 64700716021556156}
   - component: {fileID: 23287854176486244}
+  - component: {fileID: 114710169689215734}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103593249472042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5149, y: 1.5805, z: 3.478}
+  m_LocalPosition: {x: -2.5149, y: 1.5805, z: 5.87}
   m_LocalScale: {x: 0.13385198, y: 0.15404971, z: 0.15823224}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,3 +96,15 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114710169689215734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1103593249472042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1826f177bfc244ea7845621a9c48d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
