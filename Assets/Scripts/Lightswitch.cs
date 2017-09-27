@@ -16,6 +16,7 @@ public class Lightswitch : Interactable
     public override void OnTouchBegin()
     {
 		Debug.Log("Lightswitch touched");
+		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;
 		renderLightswitch();
 		EventManager.TriggerEvent(EventName.LightswitchClicked);
     }
