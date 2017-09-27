@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: PurposeWalking
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c3cf7392083ef6c4c9173dda485c4b6c, type: 2}
   transitions:
-  - decision: {fileID: 0}
-    trueState: {fileID: 0}
+  - decision: {fileID: 11400000, guid: 43c28636aba8fcd409181d8895a7bb46, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: 06a4e8b678fa84a48a6fc6f90f6fbee3, type: 2}
     falseState: {fileID: 11400000}
