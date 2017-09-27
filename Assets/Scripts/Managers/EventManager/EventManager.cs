@@ -94,5 +94,9 @@ public enum EventName
     NumberFourClicked,
     NumberFiveClicked,
     NumberSixClicked,
+    FaucetRunning,
+    LightswitchClicked,
+    InteractableClicked,
     ShowOnGamOptions
+
 }

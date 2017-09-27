@@ -3,12 +3,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Faucet : NumberFoundInteractable
 {
 
     void Start()
     {
+
     }
 
     void Update()
@@ -16,6 +18,7 @@ public class Faucet : NumberFoundInteractable
         if(timeHeld > 2)
         {
             changeColor();
+            EventManager.TriggerEvent(EventName.FaucetRunning);
             //Fire a event here
         }
 
