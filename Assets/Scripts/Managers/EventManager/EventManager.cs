@@ -84,5 +84,7 @@ public enum EventName
     LangEnglish, 
     LangDanish, 
     LanguageSelected,
-    UIUpdate
+    UIUpdate,
+    NumberOneClicked,
+    NumberTwoClicked
 }
