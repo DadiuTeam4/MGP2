@@ -11,5 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac354adf0dc41e4bae3a7730161aa43, type: 3}
   m_Name: IdleWalking
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: b0f18102df4da6247b0886dd24eac0d2, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 43c28636aba8fcd409181d8895a7bb46, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: cfc1cabf9a54dd44395fd24c5804a451, type: 2}
+    falseState: {fileID: 11400000}
+  - decision: {fileID: 11400000, guid: eab339910bd987c46bd725b18be4a5a9, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: 9b3fa2c886d0b1742866cee3921a8a9f, type: 2}
+    falseState: {fileID: 11400000}
+  - decision: {fileID: 11400000, guid: a6cb4d4536d616542afabb32e95620ed, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: efc08b6f0a03b844cbef47919de69c49, type: 2}
+    falseState: {fileID: 11400000}
