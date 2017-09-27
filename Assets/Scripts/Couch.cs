@@ -6,8 +6,8 @@ public class Couch : Interactable {
 
     public override void OnTouchBegin()
     {
-        EventManager.TriggerEvent(EventName.NumberThreePickedUp);
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_Bed", gameObject); 
+        EventManager.TriggerEvent(EventName.NumberOnePickedUp);
     }
 
     /*void OnMouseDown()
