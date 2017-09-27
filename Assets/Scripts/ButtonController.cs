@@ -18,24 +18,23 @@ public class ButtonController : MonoBehaviour {
 
 	void Update()
 	{
-		if (buttonHeld)
+		/*if (buttonHeld)
 		{
 			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(buttonRect, new Vector2(Input.mousePosition.x, Input.mousePosition.y), Camera.main, out newPos))
 			{
 				buttonRect.localPosition =  newPos;
 			}
-		}
+		}*/
 	}
 	
 	public void OnPointerDown()
 	{
-		Debug.Log("Down");
+        EventManager.TriggerEvent(eventName);
 		buttonHeld = true;
 	}
 
 	public void OnPointerUp()
 	{
-		Debug.Log("Up");
 		buttonHeld = false;
 	}
 }
