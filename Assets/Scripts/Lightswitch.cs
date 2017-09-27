@@ -10,7 +10,7 @@ public class Lightswitch : Interactable
 	void Start ()
 	{
 		render = GetComponent<Renderer>();
-		renderLightswitch;
+		renderLightswitch();
 		
 	}
     public override void OnTouchBegin()
