@@ -9,7 +9,8 @@ public class Door : Interactable
  	void Start()
     {
         getDoorState();
-        EventManager.StartListening((EventName.NumberThreePickedUp), OpenDoor);
+        EventManager.StartListening((EventName.NumberOneClicked), OpenDoor);
+
 	}
 
     public override void OnTouchBegin()
