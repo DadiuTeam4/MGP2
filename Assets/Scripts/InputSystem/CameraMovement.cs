@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour {
 
 	private Vector3 startRotation;
 	private float minX, maxX, minY, maxY;
-	private float currentDeviceRotationX = 0.0f, currentDeviceRotationY = 0.0f;
+	private float currentDeviceRotationX, currentDeviceRotationY;
 
 	private float lerpX = 0.5f;
 	private float lerpY = 0.5f;
@@ -47,10 +47,8 @@ public class CameraMovement : MonoBehaviour {
 		lerpX = ClampValueForLerp(currentDeviceRotationX);
 		lerpY = ClampValueForLerp(currentDeviceRotationY);
 
-		float angleX, angleY;
-
-		angleX = Mathf.Lerp(minX, maxX, lerpX);
-		angleY = Mathf.Lerp(minY, maxY, lerpY);
+		float angleX = Mathf.Lerp(minX, maxX, lerpX);
+		float angleY = Mathf.Lerp(minY, maxY, lerpY);
 
 		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
 		transform.rotation = resultantRotation;
@@ -58,9 +56,8 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateDeviceRotationValues()
 	{
-		float flippedX, flippedY;
-		flippedX = Input.acceleration.y;
-		flippedY = Input.acceleration.x;
+		float flippedX = Input.acceleration.y;
+		float flippedY = Input.acceleration.x;
 
 		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
 		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
@@ -76,7 +73,7 @@ public class CameraMovement : MonoBehaviour {
 	private float Average(float[] array)
 	{
 		float sum = 0;
-		for  (int i = 0; i < array.Length; i++)
+		foreach (float i in array)
 		{
 			sum += array[i];
 		}
