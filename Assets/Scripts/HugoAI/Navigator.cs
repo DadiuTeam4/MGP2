@@ -10,6 +10,7 @@ namespace HugoAI
 	public class Navigator : MonoBehaviour 
 	{
 		private NavMeshAgent navMeshAgent;
+		private bool waypointSet;
 
 		private void Awake() 
 		{
@@ -18,7 +19,11 @@ namespace HugoAI
 
 		public void SetDestination(Vector3 destination) 
 		{
-			navMeshAgent.SetDestination(destination);
+			if (!waypointSet) 
+			{
+				navMeshAgent.SetDestination(destination);
+				waypointSet = true;
+			}
 		}
 
 		public bool CheckDestinationReached() 
@@ -29,6 +34,7 @@ namespace HugoAI
 				{
 					if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
 					{
+						waypointSet = false;
 						return true;
 					}
 				}
