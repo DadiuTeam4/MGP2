@@ -13,9 +13,6 @@ namespace HugoAI
 		public float time;
 		[Range(0.0f, 1.0f)] public float chanceOfReacting;
 
-		private bool timerStarted;
-		private bool timeElapsed;
-
 		public override bool Decide(StateController controller)
 		{
 			if (!controller.CheckIfCountDownElapsed(time)) 
@@ -36,7 +33,7 @@ namespace HugoAI
 			}
 			else 
 			{
-				time += time;
+				controller.ResetStateTimer();
 				return false;
 			}
 		}
