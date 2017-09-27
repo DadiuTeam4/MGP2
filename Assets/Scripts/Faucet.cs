@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Faucet : Interactable
+public class Faucet : NumberFoundInteractable
 {
-    private Renderer render;
 
     void Start()
     {
@@ -25,11 +24,11 @@ public class Faucet : Interactable
 			AkSoundEngine.PostEvent ("Stop_MGP2_SD_DrippingWater", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_SinkFill", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
         }
+
     }
     
     private void changeColor()
     {
-        render.material.color = Color.green;
         enabled = false;
     }
 

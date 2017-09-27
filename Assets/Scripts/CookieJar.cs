@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CookieJar : Interactable
+public class CookieJar : NumberFoundInteractable
 {
 	private bool isBeingPlayed; 
 
