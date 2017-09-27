@@ -14,6 +14,8 @@ sampler2D _ShadowTex;
 sampler2D _ShadowNoise;
 float _ShadowTiling;
 float _ShadowInMainTex;
+//float _ShadowInMainTexBrightness;
+float _ShadowBrightness;
 
 sampler2D _NormalMap, _DetailNormalMap;
 float _BumpScale, _DetailBumpScale;
@@ -176,8 +178,6 @@ UnityLight CreateLight (Interpolators i) {
 
 	UNITY_LIGHT_ATTENUATION(attenuation, i, i.worldPos);
 
-    float noise = tex2D(_ShadowNoise, i.uv.xy * 10);
-
     light.color = _LightColor0.rgb * attenuation;
 	light.ndotl = DotClamped(i.normal, light.dir);
 	return light;
@@ -279,9 +279,9 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
     
     float4 orginalAlbedo = tex2D(_MainTex, i.uv.xy);
     float4 shadow = tex2D(_ShadowTex, i.uv.xy * _ShadowTiling);
-    float noise = tex2D(_ShadowNoise, i.uv.xy*10);
+    float4 noise = tex2D(_ShadowNoise, i.uv.xy * 1);
 
-    shadow = shadow * noise + shadow;
+    shadow =  shadow * noise.r + shadow;
 
     fixed4 atten = SHADOW_ATTENUATION(i);
     
@@ -291,12 +291,17 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		i.normal, viewDir,
 		CreateLight(i), CreateIndirectLight(i, viewDir)
 	);
+
+    float4 mask = float4(albedo.r, albedo.g, albedo.b, 1);
+
 	color.rgb += GetEmission(i);
+    
     color = color * (shadow * _ShadowInMainTex) + (color * (1 - _ShadowInMainTex));
     
-    float4 shadowColor = orginalAlbedo * (1 - atten) - (shadow * (1 - atten) * 0.65); //=(shadow * 0.2) * (1 - atten);
+    float4 shadowColor = mask * (1 - atten) * (1 - mask) - (shadow * (1 - atten) * (1 - _ShadowBrightness));
 
-    return shadowColor + color;
+    return     color + shadowColor; //  +shadowColor; //atten * color + shadowColor * (1 - atten); //color + shadowColor;
+
 }
 
 #endif
