@@ -39,7 +39,7 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	// public bool kitchenLightOn = true;
 
-	// public bool kitchenTabRunning = false;
+	public static bool kitchenSinkFull = false;
 
 	 void Start()
 	 {
