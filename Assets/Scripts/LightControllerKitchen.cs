@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Author: Jonathan
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,13 +10,7 @@ public class LightControllerKitchen : MonoBehaviour
 	void Start ()
 	{
 		lt = GetComponent<Light>();
-		EventManager.StartListening(EventName.LightswitchClicked, SwitchLight);	
-		SetLight();
-	}
-	
-	private void SwitchLight()
-	{
-		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;
+		EventManager.StartListening(EventName.LightswitchClicked, SetLight);	
 		SetLight();
 	}
 
