@@ -6,30 +6,32 @@ public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	
+	private RectTransform canvasRect;
 	private RectTransform buttonRect;
 	private bool buttonHeld = false;
-	private Vector3 newPos = Vector3.zero;
+	private Vector2 newPos = Vector2.zero;
 
 
 	void Awake()
 	{
 		buttonRect = GetComponent<RectTransform>();
+		canvasRect = transform.GetComponentInParent<RectTransform>();
 	}
 
 	void Update()
 	{
-		/*if (buttonHeld)
+		if (buttonHeld)
 		{
-			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(buttonRect, new Vector2(Input.mousePosition.x, Input.mousePosition.y), Camera.main, out newPos))
+			if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, null, out newPos))
 			{
-				buttonRect.localPosition =  newPos;
+				buttonRect.anchoredPosition =  newPos;
 			}
-		}*/
+		}
 	}
 	
 	public void OnPointerDown()
 	{
-        EventManager.TriggerEvent(eventName);
+        //EventManager.TriggerEvent(eventName);
 		buttonHeld = true;
 	}
 

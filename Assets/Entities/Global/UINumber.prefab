@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 222155288225214956}
   - component: {fileID: 114875668207974080}
   - component: {fileID: 114131375595787488}
-  - component: {fileID: 65570622432404160}
   - component: {fileID: 114135569032269948}
   m_Layer: 5
   m_Name: UINumber
@@ -48,18 +47,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &65570622432404160
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1925236299203278}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114131375595787488
 MonoBehaviour:
   m_ObjectHideFlags: 1

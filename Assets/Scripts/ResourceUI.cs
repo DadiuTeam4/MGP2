@@ -16,8 +16,6 @@ public class ResourceUI : MonoBehaviour {
 	public float heightOfButton = 70, widthOfButton = 70;
 	private int amountOfCollectedNumbers = 0;
 	private float canvasRatio;
-	[Range(0.01f, 1)]
-	public float relativeButtonSize = 0.02f;
 	
 	// Use this for initialization
 	void Start ()
@@ -86,7 +84,7 @@ public class ResourceUI : MonoBehaviour {
 
 	private void CalculateButtonSize()
 	{
-		widthOfButton *= canvasRatio * relativeButtonSize;
+		widthOfButton *= canvasRatio;
 		heightOfButton = widthOfButton;
 	}
 
