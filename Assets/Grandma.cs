@@ -9,7 +9,6 @@ public class Grandma : Interactable {
 	public void Update()
 	{
 		AkSoundEngine.SetRTPCValue ("Deaf_parameter", fadeValue); 
-		Debug.Log (fadeValue); 
 	}
 
 	public override void OnTouchHold()
