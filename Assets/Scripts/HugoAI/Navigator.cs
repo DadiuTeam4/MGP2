@@ -20,5 +20,20 @@ namespace HugoAI
 		{
 			navMeshAgent.SetDestination(destination);
 		}
+
+		public bool CheckDestinationReached() 
+		{
+			if (!navMeshAgent.pathPending)
+			{
+				if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+				{
+					if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
 	}
 }

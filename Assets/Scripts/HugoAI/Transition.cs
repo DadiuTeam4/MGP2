@@ -10,6 +10,8 @@ namespace HugoAI
 	public class Transition 
 	{
 		public Decision decision;
+		public bool returnToPreviousState;
+		[Tooltip("Ignored if Return To Previous State is true")]
 		public State trueState;
 		public State falseState;
 	}

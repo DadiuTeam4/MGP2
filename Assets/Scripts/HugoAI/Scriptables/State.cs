@@ -31,11 +31,19 @@ namespace HugoAI
 			for (int i = 0; i < transitions.Length; i++) 
 			{
 				bool decisionSucceeded = transitions[i].decision.Decide(controller);
+				bool returnToPreviousState = transitions[i].returnToPreviousState;
 
-				if (decisionSucceeded) 
+				if (decisionSucceeded)
 				{
-					controller.TransitionToState(transitions[i].trueState);
-				} 
+					if (returnToPreviousState) 
+					{
+						controller.ReturnToPreviousState();
+					}
+					else 
+					{
+						controller.TransitionToState(transitions[i].trueState);
+					}
+				}
 				else 
 				{
 					controller.TransitionToState(transitions[i].falseState);

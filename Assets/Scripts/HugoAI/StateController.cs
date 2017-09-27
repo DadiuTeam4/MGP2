@@ -8,15 +8,16 @@ namespace HugoAI
 {
 	public class StateController : MonoBehaviour 
 	{
-		[Header("Customizable fields for Hugo's AI")]
-		public List<Transform> waypoints;
+		public List<Transform> idleWaypoints;
+		public List<Transform> purposeWaypoints;
 		public State currentState;
-		public State remainState;
 		public bool active = true;
 
+		private State previousState;
+
 		[HideInInspector] public Navigator navigator;
+		[HideInInspector] public Animator animator;
 		private float stateTimeElapsed;
-		private Animator animator;
 
 		void Awake()
 		{
@@ -26,11 +27,14 @@ namespace HugoAI
 
 		public void TransitionToState(State nextState)
 		{
-			if (nextState != remainState) 
-			{
-				currentState = nextState;
-				OnExitState ();
-			}
+			previousState = currentState;
+			currentState = nextState;
+			OnExitState();
+		}
+
+		public void ReturnToPreviousState() 
+		{
+			TransitionToState(previousState);
 		}
 
 		private void Update()
@@ -49,14 +53,9 @@ namespace HugoAI
 			return (stateTimeElapsed >= duration);
 		}
 
-		public void ResetStateTimeElapsed() 
-		{
-			stateTimeElapsed = 0;
-		}
-
 		private void OnExitState()
 		{
-			ResetStateTimeElapsed();
+			stateTimeElapsed = 0;
 		}
 	}
 }

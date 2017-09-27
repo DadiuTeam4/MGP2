@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d6b3c60eba1d841b0e5dae6013e661, type: 3}
-  m_Name: Walk
+  m_Script: {fileID: 11500000, guid: 633c4256646be1548b75d397b4f67d95, type: 3}
+  m_Name: WalkToNumber
   m_EditorClassIdentifier: 
-  walkCooldown: 30
+  random: 0
+  waypointIndex: 0

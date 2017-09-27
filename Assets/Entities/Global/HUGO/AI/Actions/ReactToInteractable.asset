@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e989d8f29d94f049ab8107c0dd29419, type: 3}
-  m_Name: React
+  m_Script: {fileID: 11500000, guid: 5480526a2854d2344b79d96df0d74706, type: 3}
+  m_Name: ReactToInteractable
   m_EditorClassIdentifier: 
-  chanceOfReacting: 0.81
+  countingAnimation: {fileID: 0}
