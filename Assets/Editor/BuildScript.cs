@@ -13,8 +13,7 @@ using System.Collections.Generic;
 public class BuildScript : MonoBehaviour
 
 {
-    private static string[] scenesNames = new[] { "Assets/Scenes/HubScene.unity", 
-                                                  "Assets/Scenes/KitchenScene.unity" };
+    private static string[] scenesNames = GetSceneNames();
 
     [MenuItem("MyTools/Jenkins build test")]
     public static void PerformBuild()
@@ -33,5 +32,20 @@ public class BuildScript : MonoBehaviour
 
         BuildPipeline.BuildPlayer(buildPlayerOptions);
 
+    }
+
+    private static string[] GetSceneNames()
+    {
+        EditorBuildSettingsScene[] buildScenes = EditorBuildSettings.scenes;
+        string[] names = new string[buildScenes.Length];
+        int index = 0;
+        IEnumerator enumerator = buildScenes.GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            EditorBuildSettingsScene scene = (EditorBuildSettingsScene)enumerator.Current;
+            names[index] = scene.path;
+            index++;
+        }
+        return names;
     }
 }
