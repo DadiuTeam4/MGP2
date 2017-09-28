@@ -27,6 +27,8 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_CURTAINCLOSE = 2853539135U;
         static const AkUniqueID PLAY_MGP2_SD_CURTAINOPEN = 334444633U;
         static const AkUniqueID PLAY_MGP2_SD_DOORUNLOCK = 3256411401U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWERCLOSE = 3398036754U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWEROPEN = 230869702U;
         static const AkUniqueID PLAY_MGP2_SD_DRIPPINGWATER = 314431553U;
         static const AkUniqueID PLAY_MGP2_SD_FIREPLACE = 2613328266U;
         static const AkUniqueID PLAY_MGP2_SD_FRIDGE = 3148382178U;
@@ -49,6 +51,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
+        static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
