@@ -19,13 +19,16 @@ public class Grandma : Interactable {
 	public override void OnTouchReleased()
 	{
 		fadeValue = 100f; 
+		AkSoundEngine.PostEvent ("Stop_MGP2_SD_Tinnitus", gameObject); 
+
 	}
 
 	void FadeIn()	
 	{
 		if (fadeValue > 0) 
 		{
-		 fadeValue -= fadeRate; 
+		 fadeValue -= fadeRate;
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_Tinnitus", gameObject); 
 		}
 	}
 }
