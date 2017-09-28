@@ -35,6 +35,8 @@
 				<Event Id="2853539135" Name="Play_MGP2_SD_CurtainClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainClose"/>
 				<Event Id="334444633" Name="Play_MGP2_SD_CurtainOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainOpen"/>
 				<Event Id="3256411401" Name="Play_MGP2_SD_DoorUnlock" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_DoorUnlock"/>
+				<Event Id="3398036754" Name="Play_MGP2_SD_DrawerClose" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_DrawerClose"/>
+				<Event Id="230869702" Name="Play_MGP2_SD_DrawerOpen" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_DrawerOpen"/>
 				<Event Id="314431553" Name="Play_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrippingWater"/>
 				<Event Id="2613328266" Name="Play_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Fireplace"/>
 				<Event Id="3148382178" Name="Play_MGP2_SD_Fridge" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge"/>
@@ -84,6 +86,10 @@
 					<ShortName>AgoShaker2A.wav.wav</ShortName>
 					<Path>SFX/AgoShaker2A.wav_1C9C67B2.wem</Path>
 				</File>
+				<File Id="147093774" Language="SFX">
+					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_87D0D554.wem</Path>
+				</File>
 				<File Id="180643768" Language="SFX">
 					<ShortName>MGP2_Music_throwout2.1(P).wav</ShortName>
 					<Path>SFX/MGP2_Music_throwout2.1(P)_F17FB28C.wem</Path>
@@ -95,6 +101,10 @@
 				<File Id="226094369" Language="SFX">
 					<ShortName>mgp2_rockingChair(P).wav</ShortName>
 					<Path>SFX/mgp2_rockingChair(P)_21598FD9.wem</Path>
+				</File>
+				<File Id="231098878" Language="SFX">
+					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_0F716F9C.wem</Path>
 				</File>
 				<File Id="252441943" Language="SFX">
 					<ShortName>MGP2_SD_Gramophone.wav</ShortName>

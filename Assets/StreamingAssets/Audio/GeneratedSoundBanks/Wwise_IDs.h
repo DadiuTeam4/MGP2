@@ -27,6 +27,8 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_CURTAINCLOSE = 2853539135U;
         static const AkUniqueID PLAY_MGP2_SD_CURTAINOPEN = 334444633U;
         static const AkUniqueID PLAY_MGP2_SD_DOORUNLOCK = 3256411401U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWERCLOSE = 3398036754U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWEROPEN = 230869702U;
         static const AkUniqueID PLAY_MGP2_SD_DRIPPINGWATER = 314431553U;
         static const AkUniqueID PLAY_MGP2_SD_FIREPLACE = 2613328266U;
         static const AkUniqueID PLAY_MGP2_SD_FRIDGE = 3148382178U;
