@@ -17,15 +17,21 @@ public class ButtonController : MonoBehaviour {
 	private bool buttonHeld;
 	private bool active = true;
 	private Vector3 originalPosition;
+	public Collider targetCollider;
 
 	void Awake()
 	{
 		buttonRect = GetComponent<RectTransform>();
+		GameObject targetGameObject;
+		targetGameObject = GameObject.Find("Cube");
+		targetCollider = targetGameObject.GetComponent<Collider>();
+		//getcomponent<collider>();
+
 	}
 
 	void Update()
 	{
-		if (buttonHeld)
+		if (buttonHeld && active)
 		{
 			pointerEventData.position = Input.mousePosition;
 			graphicRayCaster.Raycast(pointerEventData, raycastResults);
@@ -33,6 +39,18 @@ public class ButtonController : MonoBehaviour {
 			{
 				buttonRect.anchoredPosition = new Vector2(raycastResults[i].screenPosition.x, raycastResults[i].screenPosition.y - canvasRect.rect.height);
 			}
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (targetCollider.Raycast(ray, out hit, 100.0F))
+			{
+				active = false;
+				buttonRect.localPosition = originalPosition;
+				var color = GetComponent<Image> ().color;
+				color = Color.red;
+				GetComponent<Image> ().color = color;
+			}
+
 		}
 	}
 	
