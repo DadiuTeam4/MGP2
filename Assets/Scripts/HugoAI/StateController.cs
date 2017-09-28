@@ -63,6 +63,9 @@ namespace HugoAI
 		{
 			if (nextState != currentState) 
 			{
+				// print("Switching state");
+				// print("From " + currentState);
+				// print("To " + nextState);
 				previousState = currentState;
 				currentState = nextState;
 				OnExitState();
@@ -87,7 +90,7 @@ namespace HugoAI
 		{
 			Debug.Log(stateTimeElapsed);
 			stateTimeElapsed += Time.deltaTime;
-			return (stateTimeElapsed >= duration);
+			return stateTimeElapsed >= duration;
 		}
 
 		public void ResetStateTimer() 
