@@ -19,15 +19,17 @@ public class ButtonController : MonoBehaviour {
 	private Vector3 originalPosition;
 	public Collider targetCollider;
 
-	void Awake()
+	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
-		targetGameObject = GameObject.Find("Cube");
+		targetGameObject = GameObject.Find("Grandma");
 		targetCollider = targetGameObject.GetComponent<Collider>();
 		//getcomponent<collider>();
 
 	}
+
+
 
 	void Update()
 	{
