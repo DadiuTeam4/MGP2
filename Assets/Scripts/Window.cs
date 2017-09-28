@@ -7,7 +7,7 @@ public class Window : Interactable {
 	private bool isBeingPlayed = false;
 	private bool windowsOpen = false; 
 
-	public override void OnTouchBegin()
+	public override void OnTouchBegin(Vector2 position)
 	{	
 		if (isBeingPlayed == false && windowsOpen == false)
 		{

@@ -10,7 +10,7 @@ public class Gramophone : Interactable {
 
 	//public uint Play_MGP2_SD_VinylID; 
 
-	public override void OnTouchBegin()
+	public override void OnTouchBegin(Vector2 position)
 	{	
 		if (isBeingPlayed == false) 
 		{
