@@ -13,7 +13,7 @@ public class Lightswitch : Interactable
 		renderLightswitch();
 		
 	}
-    public override void OnTouchBegin()
+    public override void OnTouchBegin(Vector2 position)
     {
 		Debug.Log("Lightswitch touched");
 		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;

@@ -26,11 +26,11 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
-	public virtual void OnTouchBegin() {}
+	public virtual void OnTouchBegin(Vector2 position) {}
 	public virtual void OnTouchHold() {}
 	public virtual void OnTouchReleased() {}
 
-	private IEnumerator Boom() 
+	private IEnumerator Boom()
 	{
 		Vector3 originalScale = transform.localScale;
 		Vector3 boomedScale = originalScale * boomMagnitude;

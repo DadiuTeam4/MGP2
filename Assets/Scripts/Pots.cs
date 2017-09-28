@@ -11,7 +11,7 @@ public class Pots : Interactable {
 		eventName = string.Concat ("", eventName, ""); 
 	}
 
-	public override void OnTouchBegin()
+	public override void OnTouchBegin(Vector2 position)
 	{
 		AkSoundEngine.PostEvent (eventName, gameObject);
 	}

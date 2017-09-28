@@ -13,7 +13,7 @@ public class Door : Interactable
 
 	}
 
-    public override void OnTouchBegin()
+    public override void OnTouchBegin(Vector2 position)
     {
 
         if (triggeredEvent == EventName.KitchenDoorClicked)
