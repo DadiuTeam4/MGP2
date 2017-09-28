@@ -49,6 +49,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_VOODOO = 3797089235U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_SD_MUMSSMAAKAGER = 1000868684U;
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
