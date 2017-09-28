@@ -16,6 +16,7 @@ public class Ghost : MonoBehaviour
         collider.enabled = false;
 
         EventManager.StartListening(EventName.LightswitchClicked, RenderTheGhostOrNot);
+
     }
 
     private void RenderTheGhostOrNot()
