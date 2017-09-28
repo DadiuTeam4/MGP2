@@ -11,17 +11,16 @@ public class ButtonController : MonoBehaviour {
 	public RectTransform canvasRect;
 	[HideInInspector]
 	public GraphicRaycaster graphicRayCaster;
-	
 	private PointerEventData pointerEventData = new PointerEventData(null);
 	private List<RaycastResult> raycastResults = new List<RaycastResult>();
 	private RectTransform buttonRect;
 	private bool buttonHeld;
-
+	private bool active = true;
+	private Vector3 originalPosition;
 
 	void Awake()
 	{
 		buttonRect = GetComponent<RectTransform>();
-
 	}
 
 	void Update()
@@ -39,12 +38,21 @@ public class ButtonController : MonoBehaviour {
 	
 	public void OnPointerDown()
 	{
-        EventManager.TriggerEvent(eventName);
-		buttonHeld = true;
+		if (active)
+		{
+			EventManager.TriggerEvent(eventName);
+			buttonHeld = true;
+		}
+        
 	}
 
+	public void SetOriginalPosition(Vector3 localOriginalPosition)
+	{
+		originalPosition = localOriginalPosition;
+	}
 	public void OnPointerUp()
 	{
 		buttonHeld = false;
+		buttonRect.localPosition = originalPosition;
 	}
 }
