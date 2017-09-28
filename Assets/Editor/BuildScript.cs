@@ -13,7 +13,7 @@ using System.Collections.Generic;
 public class BuildScript : MonoBehaviour
 
 {
-    private static string[] scenesNames = ToStringArray();
+    private static string[] scenesNames = GetSceneNames();
 
     [MenuItem("MyTools/Jenkins build test")]
     public static void PerformBuild()
@@ -34,7 +34,7 @@ public class BuildScript : MonoBehaviour
 
     }
 
-    private static string[] ToStringArray()
+    private static string[] GetSceneNames()
     {
         EditorBuildSettingsScene[] buildScenes = EditorBuildSettings.scenes;
         string[] names = new string[buildScenes.Length];
