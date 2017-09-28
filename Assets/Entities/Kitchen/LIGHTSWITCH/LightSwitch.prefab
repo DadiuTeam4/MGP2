@@ -9,20 +9,16 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1395955166498328}
+  m_RootGameObject: {fileID: 1836563790679498}
   m_IsPrefabParent: 1
---- !u!1 &1395955166498328
+--- !u!1 &1836563790679498
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4685607502788972}
-  - component: {fileID: 33270233825164190}
-  - component: {fileID: 65016065910784614}
-  - component: {fileID: 23644180610089320}
-  - component: {fileID: 114665741685068278}
+  - component: {fileID: 4067927823291410}
   m_Layer: 0
   m_Name: LightSwitch
   m_TagString: Untagged
@@ -30,25 +26,58 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4685607502788972
+--- !u!1 &1999651139700632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4491855520831024}
+  - component: {fileID: 33723534141418812}
+  - component: {fileID: 65853765286116112}
+  - component: {fileID: 23643138023300910}
+  - component: {fileID: 114629620665929816}
+  m_Layer: 0
+  m_Name: PLACEHOLDER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4067927823291410
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395955166498328}
+  m_GameObject: {fileID: 1836563790679498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.718, y: 1.896, z: 0.19}
-  m_LocalScale: {x: 0.33225718, y: 0.3962579, z: 0.3529289}
-  m_Children: []
+  m_LocalPosition: {x: -1.67, y: 2.21, z: 0.053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4491855520831024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23644180610089320
+--- !u!4 &4491855520831024
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999651139700632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.624, y: -0.07, z: 0.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4067927823291410}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23643138023300910
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395955166498328}
+  m_GameObject: {fileID: 1999651139700632}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -75,34 +104,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33270233825164190
+--- !u!33 &33723534141418812
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395955166498328}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65016065910784614
+  m_GameObject: {fileID: 1999651139700632}
+  m_Mesh: {fileID: 4300000, guid: 0960c83f86152754eb3e3fb5c7145773, type: 3}
+--- !u!65 &65853765286116112
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395955166498328}
+  m_GameObject: {fileID: 1999651139700632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114665741685068278
+--- !u!114 &114629620665929816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395955166498328}
+  m_GameObject: {fileID: 1999651139700632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf3f900c4f20b74f910fcbaddd2f27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boomMagnitude: 1.08
+  boomTime: 0.1
   timeHeld: 0

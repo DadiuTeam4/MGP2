@@ -17,6 +17,7 @@ public class OnGameMenuController : MonoBehaviour
     {
         Debug.Log("Exit the game");
         Application.Quit();
+		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
     }
 
     public void RestartGame()
@@ -24,6 +25,7 @@ public class OnGameMenuController : MonoBehaviour
         Debug.Log("Restart the game");
         optionPanel.SetActive(false);
         SceneManager.LoadScene(0);
+		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
     }
 
     public void EnableOrDisableOptions()

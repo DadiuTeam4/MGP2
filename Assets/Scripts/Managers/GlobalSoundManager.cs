@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class GlobalSoundManager : MonoBehaviour {
 
-	void Awake()
-	{
-		DontDestroyOnLoad(transform.gameObject); 
-	}
 
 	void Start () 
 	{
@@ -40,5 +36,11 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_Fireplace", gameObject);
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
 	}
+
+	public void OnClickSound()
+	{
+		AkSoundEngine.PostEvent ("OnScreenClick", gameObject); 
+	}
+
 
 }
