@@ -5,6 +5,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
+	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
+	[Range(0.0f, 1.0f)]
+	public float deadZone = 0.3f;
+
+	[Tooltip("The speed of which the camera will rotate")]
+	[Range(0.1f, 5.0f)]
+	public float speed = 1.0f;
+
+	[Tooltip ("The minimum difference in movement read")]
+	[Range(0.0f, 1.0f)]
+	public float sensitivity = 0.05f;
+
 	[Tooltip("The allowed movement range for the camera in X")]
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsX = 30.0f;
@@ -15,24 +27,14 @@ public class CameraMovement : MonoBehaviour {
 
 	private Vector3 startRotation;
 	private float minX, maxX, minY, maxY;
-	private float currentDeviceRotationX = 0.0f, currentDeviceRotationY = 0.0f;
-
-	private float lerpX = 0.5f;
-	private float lerpY = 0.5f;
-
-	private float[] movingAverageX = new float[5];
-	private float[] movingAverageY = new float[5];
+	private float currentDeviceRotationX, currentDeviceRotationY;
+	private Vector2 currentDirection = Vector2.zero;
 
 	void Awake () 
 	{
 		startRotation = transform.rotation.eulerAngles;
 
-		minX = startRotation.x - rotaryBoundsX;
-		maxX = startRotation.x + rotaryBoundsX;
-
-		minY = startRotation.y - rotaryBoundsY;
-		maxY = startRotation.y + rotaryBoundsY;
-
+		CalculateBounds();
 	}
 	
 	void Update ()
@@ -44,76 +46,92 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateTransformRotation()
 	{
-		lerpX = ClampValueForLerp(currentDeviceRotationX);
-		lerpY = ClampValueForLerp(currentDeviceRotationY);
+		Quaternion currentRotation = transform.rotation;
 
-		float angleX, angleY;
+		float angleY = currentRotation.eulerAngles.y + (currentDirection.y * speed);
+		float angleX = currentRotation.eulerAngles.x + (currentDirection.x * speed);
 
-		angleX = Mathf.Lerp(minX, maxX, lerpX);
-		angleY = Mathf.Lerp(minY, maxY, lerpY);
-
+		angleY = AngleClamp(angleY, minY, maxY);
+		angleX = AngleClamp(angleX, minX, maxX);
+		
 		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
+
 		transform.rotation = resultantRotation;
 	}
 
 	private void UpdateDeviceRotationValues()
 	{
-		float flippedX, flippedY;
-		flippedX = Input.acceleration.y;
-		flippedY = Input.acceleration.x;
-
-		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
-		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
-		
-	}
-
-	private float CalculateMovingAverage(float value, ref float[] array)
-	{
-		array = PushBack(value, array);
-		return Average(array);
-	}
-
-	private float Average(float[] array)
-	{
-		float sum = 0;
-		for  (int i = 0; i < array.Length; i++)
+		float flippedX = Input.acceleration.y;
+		float flippedY = Input.acceleration.x;
+	
+		if (flippedX > deadZone || flippedX < -deadZone)
 		{
-			sum += array[i];
+			currentDeviceRotationX = flippedX;
+		}
+		else
+		{
+			currentDeviceRotationX = 0.0f;
 		}
 
-		return sum /= array.Length;
-	}
-
-	private float[] PushBack(float pushedBackValue, float[] array)
-	{
-		for (int i = array.Length-1; i > 0; i--)
+		if (flippedY > deadZone || flippedY < -deadZone)
 		{
-			array[i] = array[i - 1];
+			currentDeviceRotationY = flippedY;
+		}
+		else
+		{
+			currentDeviceRotationY = 0.0f;
 		}
 
-		array[0] = pushedBackValue;
-
-		return array;
+		UpdateDirection();
 	}
 
-	private float ClampValueForLerp(float x)
+	private void UpdateDirection()
 	{
-		float result = 0;
-		result = (x + 1) / 2;
-		result = result > 1 ? 1 : result;
-
-		return result;
-	}
-
-	private void SingleLinePrintArray<T>(T[] array)
-	{
-		string message = "";
-
-		for (int i = 0; i < array.Length; i++)
+		if (currentDeviceRotationX > 0.0f)
 		{
-			message += " " + i + ": " + array[i];
+			currentDirection.x = 1.0f;
+		}
+		else if (currentDeviceRotationX < 0.0f)
+		{
+			currentDirection.x = -1.0f;
+		}
+		else
+		{
+			currentDirection.x = 0.0f;
 		}
 
-		Debug.Log(message);
+		if (currentDeviceRotationY > 0.0f)
+		{
+			currentDirection.y = 1.0f;
+		}
+		else if (currentDeviceRotationY < 0.0f)
+		{
+			currentDirection.y = -1.0f;
+		}
+		else
+		{
+			currentDirection.y = 0.0f;
+		}
+	}
+
+	private float AngleClamp(float value, float min, float max)
+	{
+		value = value > 180 ? value - 360 : value;
+
+		value = Mathf.Clamp(value, min, max);
+
+		return value;
+	}
+
+	private void CalculateBounds()
+	{
+		float startX = startRotation.x > 180 ? startRotation.x - 360 : startRotation.x;
+		float startY = startRotation.y > 180 ? startRotation.y - 360 : startRotation.y;
+
+		minX = startX - rotaryBoundsX;
+		maxX = startX + rotaryBoundsX;
+
+		minY = startY - rotaryBoundsY;
+		maxY = startY + rotaryBoundsY;
 	}
 }
