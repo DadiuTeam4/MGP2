@@ -25,10 +25,12 @@ public class CameraMovement : MonoBehaviour {
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsY = 30.0f;
 
-	private Vector3 startRotation;
-	private float minX, maxX, minY, maxY;
 	private float currentDeviceRotationX, currentDeviceRotationY;
+	private float minX, maxX, minY, maxY;
+
+	private Vector2 calibratedDevicePosition = Vector2.zero;
 	private Vector2 currentDirection = Vector2.zero;
+	private Vector3 startRotation;
 
 	void Awake () 
 	{
@@ -61,8 +63,9 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateDeviceRotationValues()
 	{
-		float flippedX = Input.acceleration.y;
-		float flippedY = Input.acceleration.x;
+		Vector2 calibratedInput = CalculateCalibratedRotationValues();
+		float flippedX = calibratedInput.y;
+		float flippedY = calibratedInput.x;
 	
 		if (flippedX > deadZone || flippedX < -deadZone)
 		{
@@ -83,6 +86,22 @@ public class CameraMovement : MonoBehaviour {
 		}
 
 		UpdateDirection();
+	}
+
+	public void Calibrate()
+	{
+		calibratedDevicePosition.x = Input.acceleration.y;
+		calibratedDevicePosition.y = Input.acceleration.y;
+	}
+
+	private Vector2 CalculateCalibratedRotationValues()
+	{
+		Vector2 calibratedInput;
+
+		calibratedInput.x = Input.acceleration.x - calibratedDevicePosition.x;
+		calibratedInput.y = Input.acceleration.y - calibratedDevicePosition.y;
+
+		return calibratedInput;
 	}
 
 	private void UpdateDirection()
