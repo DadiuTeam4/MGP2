@@ -13,8 +13,9 @@ using System.Collections.Generic;
 public class BuildScript : MonoBehaviour
 
 {
-    private static string[] scenesNames = new[] { "Assets/Scenes/HubScene.unity", 
-                                                  "Assets/Scenes/KitchenScene.unity" };
+    private static string[] scenesNames = new[] { "Assets/Scenes/GameScenes/IntroScene.unity",
+                                                  "Assets/Scenes/GameScenes/HubScene.unity", 
+                                                  "Assets/Scenes/GameScenes/KitchenScene.unity" };
 
     [MenuItem("MyTools/Jenkins build test")]
     public static void PerformBuild()
