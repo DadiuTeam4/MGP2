@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4316274547004288}
   m_Layer: 0
-  m_Name: Drawers 1
+  m_Name: Drawers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,4 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c6466fe0c994016868020d7a3e8c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boomMagnitude: 1.08
+  boomTime: 0.1
   timeHeld: 0
