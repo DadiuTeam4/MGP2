@@ -6,7 +6,7 @@ public class Television : Interactable {
 
 	private bool isBeingPlayed = false;
 
-	public override void OnTouchBegin()
+	public override void OnTouchBegin(Vector2 position)
 	{	
 		if (isBeingPlayed == false) 
 		{

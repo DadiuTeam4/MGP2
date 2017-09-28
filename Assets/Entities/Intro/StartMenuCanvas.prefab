@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 114474719761862420}
   - component: {fileID: 114726192770345428}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: StartMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +216,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114331547344874990, guid: ff1777f9d12eba14290e0720ab4b65e3,
+          type: 2}
+        m_MethodName: OnClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114263300504648550
@@ -291,6 +303,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114263300504648550}
         m_MethodName: setEnglish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114331547344874990, guid: ff1777f9d12eba14290e0720ab4b65e3,
+          type: 2}
+        m_MethodName: OnClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
