@@ -34,11 +34,7 @@ public class CameraMovement : MonoBehaviour {
 	{
 		startRotation = transform.rotation.eulerAngles;
 
-		minX = startRotation.x - rotaryBoundsX;
-		maxX = startRotation.x + rotaryBoundsX;
-
-		minY = startRotation.y - rotaryBoundsY;
-		maxY = startRotation.y + rotaryBoundsY;
+		CalculateBounds();
 	}
 	
 	void Update ()
@@ -55,13 +51,13 @@ public class CameraMovement : MonoBehaviour {
 		float angleY = currentRotation.eulerAngles.y + (currentDirection.y * speed);
 		float angleX = currentRotation.eulerAngles.x + (currentDirection.x * speed);
 
-		Mathf.Clamp(angleY, minY, maxY);
-		Mathf.Clamp(angleX, minX, maxX);
-
+		angleY = AngleClamp(angleY, minY, maxY);
+		angleX = AngleClamp(angleX, minX, maxX);
+		
 		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
+
 		transform.rotation = resultantRotation;
 	}
-
 
 	private void UpdateDeviceRotationValues()
 	{
@@ -118,11 +114,24 @@ public class CameraMovement : MonoBehaviour {
 		}
 	}
 
-	private float ClampValueForLerp(float x)
+	private float AngleClamp(float value, float min, float max)
 	{
-		float result = (x + 1) / 2;
-		result = result > 1 ? 1 : result;
+		value = value > 180 ? value - 360 : value;
 
-		return result;
+		value = Mathf.Clamp(value, min, max);
+
+		return value;
+	}
+
+	private void CalculateBounds()
+	{
+		float startX = startRotation.x > 180 ? startRotation.x - 360 : startRotation.x;
+		float startY = startRotation.y > 180 ? startRotation.y - 360 : startRotation.y;
+
+		minX = startX - rotaryBoundsX;
+		maxX = startX + rotaryBoundsX;
+
+		minY = startY - rotaryBoundsY;
+		maxY = startY + rotaryBoundsY;
 	}
 }
