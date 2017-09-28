@@ -6,11 +6,26 @@ public class Gramophone : Interactable {
 
 	// Use this for initialization
 
-	public override void OnTouchBegin()
+	private bool isBeingPlayed = false;
+
+	//public uint Play_MGP2_SD_VinylID; 
+
+	public override void OnTouchBegin(Vector2 position)
 	{	
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_Vinyl", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_Vinyl", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1); 
+			isBeingPlayed = true;
+		}
 	}
 
+	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
+	{
+		if (in_type == AkCallbackType.AK_EndOfEvent)
+		{
+			isBeingPlayed = false; 
+		}
+	}
 }
 
 	

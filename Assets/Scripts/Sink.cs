@@ -9,7 +9,8 @@ public class Sink : Interactable
 
 	void Start ()
 	{
-		getSinkState();
+		GetSinkState();
+        EventManager.StartListening(EventName.FaucetRunning, FillSink);
 		
 	}
 	
@@ -17,7 +18,7 @@ public class Sink : Interactable
 		
 	}
 
-	void getSinkState()
+	void GetSinkState()
     {
         if (ResourceManager.kitchenSinkFull == true)
         {
@@ -28,9 +29,10 @@ public class Sink : Interactable
         }
     }
 
-    void fillSink()
+    void FillSink()
     {
-        ResourceManager.kitchenSinkFull = true; 
+        ResourceManager.kitchenSinkFull = true;
+        GetSinkState();
 
     }
 }

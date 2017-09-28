@@ -9,11 +9,11 @@ public class Door : Interactable
  	void Start()
     {
         getDoorState();
-        EventManager.StartListening((EventName.NumberOneClicked), OpenDoor);
+        EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
 
 	}
 
-    public override void OnTouchBegin()
+    public override void OnTouchBegin(Vector2 position)
     {
 
         if (triggeredEvent == EventName.KitchenDoorClicked)

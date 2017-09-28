@@ -112,6 +112,9 @@ public enum EventName
     NumberOnePickedUp,
     NumberTwoPickedUp,
     NumberThreePickedUp,
+    NumberFourPickedUp,
+    NumberFivePickedUp,
+    NumberSixPickedUp,
     KitchenDoorClicked, 
     HubDoorClicked, 
     CookieJarTouched, 
@@ -123,5 +126,13 @@ public enum EventName
     UIUpdate,
     NumberOneClicked,
     NumberTwoClicked,
-    InteractableClicked
+    NumberThreeClicked,
+    NumberFourClicked,
+    NumberFiveClicked,
+    NumberSixClicked,
+    FaucetRunning,
+    LightswitchClicked,
+    InteractableClicked,
+    ShowOnGamOptions
+
 }
