@@ -3,23 +3,23 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-public class SceneSwticher : MonoBehaviour
+public class SceneSwitcher : MonoBehaviour
 {
-    [MenuItem("MyTools/SceneSwticher/IntroScene")]
+    [MenuItem("MyTools/SceneSwitcher/IntroScene")]
     static void IntroScene()
     {
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
         EditorSceneManager.OpenScene("Assets/Scenes/GameScenes/IntroScene.unity");
     }
 
-	[MenuItem("MyTools/SceneSwticher/HubScene")]
+	[MenuItem("MyTools/SceneSwitcher/HubScene")]
     static void HubScene()
     {
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
         EditorSceneManager.OpenScene("Assets/Scenes/GameScenes/HubScene.unity");
     }
 
-	[MenuItem("MyTools/SceneSwticher/KitchenScene")]
+	[MenuItem("MyTools/SceneSwitcher/KitchenScene")]
     static void KitchenScene()
     {
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
