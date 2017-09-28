@@ -9,7 +9,7 @@ public class CookieJar : NumberFoundInteractable
 {
 	private bool isBeingPlayed; 
 
-    public override void OnTouchBegin()
+    public override void OnTouchBegin(Vector2 position)
     {
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = Color.green;
