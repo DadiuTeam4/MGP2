@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grandma : Interactable {
 	private float fadeValue = 100f; 
-	private float fadeRate = 2.5f; 
+	private float fadeRate = 4.5f; 
 
 	public void Update()
 	{

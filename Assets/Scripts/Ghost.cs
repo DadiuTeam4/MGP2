@@ -12,6 +12,7 @@ public class Ghost : MonoBehaviour
     {
         render = gameObject.GetComponent<Renderer>();
         EventManager.StartListening(EventName.LightswitchClicked, RenderTheGhostOrNot);
+
     }
 
     private void RenderTheGhostOrNot()
@@ -19,6 +20,7 @@ public class Ghost : MonoBehaviour
         if (ResourceManager.kitchenLightOn == true)
         {
             render.enabled = false;
+
         }
         else
         {
