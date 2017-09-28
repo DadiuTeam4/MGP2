@@ -1,5 +1,5 @@
 ﻿//Author: You Wu
-//Contributor:
+//Contributor: Kristian 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +37,7 @@ public class Faucet : NumberFoundInteractable
 		if (in_type == AkCallbackType.AK_EndOfEvent)
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_DrippingWater", gameObject); 
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_Rubberduck", gameObject); 
 		}
 	}
 }

@@ -57,8 +57,12 @@
 				<Event Id="3797089235" Name="Play_MGP2_SD_Voodoo" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo"/>
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
 				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
+				<Event Id="2486577875" Name="Play_MGP2_SD_Yarn" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Yarn"/>
+				<Event Id="3508605423" Name="Play_MGP2_Speak_HugoTryk" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_HugoTryk"/>
+				<Event Id="3279096707" Name="Play_MGP2_Speak_SD_FnisKilder" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SD_FnisKilder"/>
 				<Event Id="1000868684" Name="Play_MGP2_Speak_SD_MumsSmaakager" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SD_MumsSmaakager"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
+				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000"/>
 				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
 				<Event Id="2380106136" Name="Stop_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
@@ -81,7 +85,7 @@
 				</File>
 				<File Id="106766393" Language="SFX">
 					<ShortName>239005__squashy555__kettle-boiling.wav</ShortName>
-					<Path>SFX/239005__squashy555__kettle-boiling_77C60125.wem</Path>
+					<Path>SFX/239005__squashy555__kettle-boiling_B6B3C062.wem</Path>
 				</File>
 				<File Id="132533713" Language="SFX">
 					<ShortName>AgoShaker2A.wav.wav</ShortName>
@@ -127,6 +131,10 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_5D6CA845.wem</Path>
 				</File>
+				<File Id="333309766" Language="SFX">
+					<ShortName>MGP2_Speak_EjStop.wav</ShortName>
+					<Path>SFX/MGP2_Speak_EjStop_1C9C67B2.wem</Path>
+				</File>
 				<File Id="368361044" Language="SFX">
 					<ShortName>242955__acollier123__garden-lawn-mower.wav</ShortName>
 					<Path>SFX/242955__acollier123__garden-lawn-mower_28066F16.wem</Path>
@@ -163,6 +171,10 @@
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
 					<Path>SFX/320416__yadronoff__shivering-chandelier_4CD27AC0.wem</Path>
 				</File>
+				<File Id="609955242" Language="SFX">
+					<ShortName>MGP2_Speak_SD_FnisKilder.wav</ShortName>
+					<Path>SFX/MGP2_Speak_SD_FnisKilder_1C9C67B2.wem</Path>
+				</File>
 				<File Id="623925728" Language="SFX">
 					<ShortName>60398__uwesoundboiz__window-open-double-glazed-001.wav</ShortName>
 					<Path>SFX/60398__uwesoundboiz__window-open-double-glazed-001_297273B8.wem</Path>
@@ -181,11 +193,15 @@
 				</File>
 				<File Id="790497178" Language="SFX">
 					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
-					<Path>SFX/117296__swiftoid__fill-the-sink_7E8CF9C2.wem</Path>
+					<Path>SFX/117296__swiftoid__fill-the-sink_9F7B2354.wem</Path>
 				</File>
 				<File Id="806349091" Language="SFX">
 					<ShortName>360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor.wav</ShortName>
 					<Path>SFX/360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E0234685.wem</Path>
+				</File>
+				<File Id="908517910" Language="SFX">
+					<ShortName>MGP2_Speak_Strikketoej.wav</ShortName>
+					<Path>SFX/MGP2_Speak_Strikketoej_1C9C67B2.wem</Path>
 				</File>
 				<File Id="932824895" Language="SFX">
 					<ShortName>344347__amholma__squeaking-bed.wav</ShortName>
@@ -218,6 +234,10 @@
 				<File Id="1070167829" Language="SFX">
 					<ShortName>158625__mrauralization__door-unlock.wav</ShortName>
 					<Path>SFX/158625__mrauralization__door-unlock_A3449B35.wem</Path>
+				</File>
+				<File Id="1071497012" Language="SFX">
+					<ShortName>MGP2_Speak_Hehehe.wav</ShortName>
+					<Path>SFX/MGP2_Speak_Hehehe_1C9C67B2.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
