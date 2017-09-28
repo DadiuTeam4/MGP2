@@ -9,7 +9,7 @@ public class Door : Interactable
  	void Start()
     {
         getDoorState();
-        EventManager.StartListening(EventName.NumberOneClicked, OpenDoor);
+        EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
 
 	}
 
