@@ -7,6 +7,7 @@ public class FantasyObject : MonoBehaviour {
     public EventName spawnOnEvent;
 	// Use this for initialization
 	void Start () {
+		DeactivateFantasyObject ();
         EventManager.StartListening(spawnOnEvent, ActivateFantasyObject);
 	}
 	
