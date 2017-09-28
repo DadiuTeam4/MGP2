@@ -5,6 +5,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
+	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
+	[Range(0.0f, 1.0f)]
+	public float deadZone = 0.3f;
+
+	[Tooltip("The speed of which the camera will rotate")]
+	[Range(0.1f, 5.0f)]
+	public float speed = 1.0f;
+
+	[Tooltip ("The minimum difference in movement read")]
+	[Range(0.0f, 1.0f)]
+	public float sensitivity = 0.05f;
+
 	[Tooltip("The allowed movement range for the camera in X")]
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsX = 30.0f;
@@ -16,12 +28,7 @@ public class CameraMovement : MonoBehaviour {
 	private Vector3 startRotation;
 	private float minX, maxX, minY, maxY;
 	private float currentDeviceRotationX, currentDeviceRotationY;
-
-	private float lerpX = 0.5f;
-	private float lerpY = 0.5f;
-
-	private float[] movingAverageX = new float[5];
-	private float[] movingAverageY = new float[5];
+	private Vector2 currentDirection = Vector2.zero;
 
 	void Awake () 
 	{
@@ -32,7 +39,6 @@ public class CameraMovement : MonoBehaviour {
 
 		minY = startRotation.y - rotaryBoundsY;
 		maxY = startRotation.y + rotaryBoundsY;
-
 	}
 	
 	void Update ()
@@ -44,55 +50,72 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateTransformRotation()
 	{
-		lerpX = ClampValueForLerp(currentDeviceRotationX);
-		lerpY = ClampValueForLerp(currentDeviceRotationY);
+		Quaternion currentRotation = transform.rotation;
 
-		float angleX = Mathf.Lerp(minX, maxX, lerpX);
-		float angleY = Mathf.Lerp(minY, maxY, lerpY);
+		float angleY = currentRotation.eulerAngles.y + (currentDirection.y * speed);
+		float angleX = currentRotation.eulerAngles.x + (currentDirection.x * speed);
+
+		Mathf.Clamp(angleY, minY, maxY);
+		Mathf.Clamp(angleX, minX, maxX);
 
 		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
 		transform.rotation = resultantRotation;
 	}
 
+
 	private void UpdateDeviceRotationValues()
 	{
 		float flippedX = Input.acceleration.y;
 		float flippedY = Input.acceleration.x;
-
-		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
-		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
-		
-	}
-
-	private float CalculateMovingAverage(float value, ref float[] array)
-	{
-		array = PushBack(value, array);
-		return Average(array);
-	}
-
-	private float Average(float[] array)
-	{
-		float sum = 0;
-		foreach (float element in array)
+	
+		if (flippedX > deadZone || flippedX < -deadZone)
 		{
-			sum += element;
+			currentDeviceRotationX = flippedX;
 		}
-		
-		sum /= array.Length;
-
-		return sum;
-	}
-
-	private float[] PushBack(float pushedBackValue, float[] array)
-	{
-		for (int i = array.Length-1; i > 0; i--)
+		else
 		{
-			array[i] = array[i - 1];
+			currentDeviceRotationX = 0.0f;
 		}
 
-		array[0] = pushedBackValue;
+		if (flippedY > deadZone || flippedY < -deadZone)
+		{
+			currentDeviceRotationY = flippedY;
+		}
+		else
+		{
+			currentDeviceRotationY = 0.0f;
+		}
 
-		return array;
+		UpdateDirection();
+	}
+
+	private void UpdateDirection()
+	{
+		if (currentDeviceRotationX > 0.0f)
+		{
+			currentDirection.x = 1.0f;
+		}
+		else if (currentDeviceRotationX < 0.0f)
+		{
+			currentDirection.x = -1.0f;
+		}
+		else
+		{
+			currentDirection.x = 0.0f;
+		}
+
+		if (currentDeviceRotationY > 0.0f)
+		{
+			currentDirection.y = 1.0f;
+		}
+		else if (currentDeviceRotationY < 0.0f)
+		{
+			currentDirection.y = -1.0f;
+		}
+		else
+		{
+			currentDirection.y = 0.0f;
+		}
 	}
 
 	private float ClampValueForLerp(float x)
@@ -101,17 +124,5 @@ public class CameraMovement : MonoBehaviour {
 		result = result > 1 ? 1 : result;
 
 		return result;
-	}
-
-	private void SingleLinePrintArray<T>(T[] array)
-	{
-		string message = "";
-
-		for (int i = 0; i < array.Length; i++)
-		{
-			message += " " + i + ": " + array[i];
-		}
-
-		Debug.Log(message);
 	}
 }
