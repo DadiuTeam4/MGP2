@@ -82,6 +82,7 @@ public class ResourceUI : MonoBehaviour {
 			
 			buttonController = g.GetComponent<ButtonController>();
 			buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
+			buttonController.SetOriginalPosition(rectTransform.localPosition);
 			buttonController.canvasRect = canvasRectTransform;
 			buttonController.graphicRayCaster = graphicRaycaster;
 		}
