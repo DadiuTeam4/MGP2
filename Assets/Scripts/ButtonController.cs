@@ -15,17 +15,21 @@ public class ButtonController : MonoBehaviour {
 	private List<RaycastResult> raycastResults = new List<RaycastResult>();
 	private RectTransform buttonRect;
 	private bool buttonHeld;
-	private bool active = true;
+	private bool active;
 	private Vector3 originalPosition;
 	public Collider targetCollider;
+	private string currentScene;
+	private string nameOfSceneThatHugoCanCount = "HubScene";
 
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
-		targetGameObject = GameObject.Find("Grandma");
+		targetGameObject = GameObject.Find("Hugo");
 		targetCollider = targetGameObject.GetComponent<Collider>();
 		//getcomponent<collider>();
+
+		currentScene = ResourceManager.GetCurrentSceneName();
 
 	}
 
@@ -46,12 +50,21 @@ public class ButtonController : MonoBehaviour {
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
-				active = false;
-				buttonRect.localPosition = originalPosition;
-				var color = GetComponent<Image> ().color;
-				color = Color.red;
-				GetComponent<Image> ().color = color;
-				EventManager.TriggerEvent(eventName);
+				if (currentScene == nameOfSceneThatHugoCanCount)
+				{
+					active = false;
+					buttonRect.localPosition = originalPosition;
+					var color = GetComponent<Image> ().color;
+					color = Color.red;
+					GetComponent<Image> ().color = color;
+					EventManager.TriggerEvent(eventName);
+				}
+				else
+				{
+					print(" Hey! Let me count it for grandma");
+				}
+
+
 			}
 
 		}
@@ -69,6 +82,16 @@ public class ButtonController : MonoBehaviour {
 	public void SetOriginalPosition(Vector3 localOriginalPosition)
 	{
 		originalPosition = localOriginalPosition;
+	}
+	public void SetActiveBool(bool myState)
+	{
+		active = myState;
+		if (!active)
+		{
+			var color = GetComponent<Image> ().color;
+			color = Color.red;
+			GetComponent<Image> ().color = color;
+		}
 	}
 	public void OnPointerUp()
 	{
