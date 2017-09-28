@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33365487195341100}
   - component: {fileID: 64000303926182986}
   - component: {fileID: 23323400107225288}
+  - component: {fileID: 65081013058985428}
+  - component: {fileID: 114597592461454852}
   m_Layer: 0
   m_Name: UpperCupboard
   m_TagString: Untagged
@@ -35,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403359815095336}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.885, y: 4.53, z: 1.16}
-  m_LocalScale: {x: 0.2028689, y: 0.1540497, z: 0.16745384}
+  m_LocalRotation: {x: -0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.885, y: 4.53, z: 0.8009998}
+  m_LocalScale: {x: 0.20286901, y: 0.15404975, z: 0.11371872}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,3 +97,27 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65081013058985428
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403359815095336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.000002, y: 2.2204466e-16, z: 10.000001}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114597592461454852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403359815095336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76b037bb48694014acb3a97ae5d944b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeHeld: 0
