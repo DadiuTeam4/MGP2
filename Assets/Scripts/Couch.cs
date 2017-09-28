@@ -8,7 +8,7 @@ public class Couch : Interactable {
 
     public override void OnTouchBegin()
     {
-        EventManager.TriggerEvent(EventName.NumberOnePickedUp);
+        //EventManager.TriggerEvent(EventName.NumberOnePickedUp);
 		if (isBeingPlayed == false) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_Bed", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
