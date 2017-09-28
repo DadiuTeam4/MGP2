@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GlobalSoundManager : MonoBehaviour {
 
+	void Awake()
+	{
+		DontDestroyOnLoad(transform.gameObject); 
+	}
+
 	void Start () 
 	{
 

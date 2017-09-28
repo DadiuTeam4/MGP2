@@ -10,6 +10,7 @@ public class Faucet : NumberFoundInteractable
 
     void Start()
     {
+        base.Start();
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_DrippingWater", gameObject); 
     }
 
