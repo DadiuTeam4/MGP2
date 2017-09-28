@@ -57,7 +57,6 @@
 				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
 				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
-				<Event Id="2380106136" Name="Stop_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="7591784" Language="SFX">
@@ -66,7 +65,7 @@
 				</File>
 				<File Id="73123222" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan2.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan2_DE9BCED0.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan2_7A418F20.wem</Path>
 				</File>
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
@@ -94,7 +93,7 @@
 				</File>
 				<File Id="226094369" Language="SFX">
 					<ShortName>mgp2_rockingChair(P).wav</ShortName>
-					<Path>SFX/mgp2_rockingChair(P)_21598FD9.wem</Path>
+					<Path>SFX/mgp2_rockingChair(P)_0E7F5F2E.wem</Path>
 				</File>
 				<File Id="252441943" Language="SFX">
 					<ShortName>MGP2_SD_Gramophone.wav</ShortName>
@@ -126,7 +125,7 @@
 				</File>
 				<File Id="436613960" Language="SFX">
 					<ShortName>142301__fryzu82__curtain-opening.wav</ShortName>
-					<Path>SFX/142301__fryzu82__curtain-opening_643D87B7.wem</Path>
+					<Path>SFX/142301__fryzu82__curtain-opening_85BBF7D4.wem</Path>
 				</File>
 				<File Id="448724314" Language="SFX">
 					<ShortName>124202__robinhood76__02408-chair-stone-floor-brawl.wav</ShortName>
@@ -134,7 +133,7 @@
 				</File>
 				<File Id="489143399" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan3_54584653.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan3_5B250CDF.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
@@ -142,7 +141,7 @@
 				</File>
 				<File Id="571641950" Language="SFX">
 					<ShortName>142301__fryzu82__curtain-opening.wav</ShortName>
-					<Path>SFX/142301__fryzu82__curtain-opening_2A2FADE4.wem</Path>
+					<Path>SFX/142301__fryzu82__curtain-opening_832BE7A1.wem</Path>
 				</File>
 				<File Id="591599028" Language="SFX">
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
@@ -158,7 +157,7 @@
 				</File>
 				<File Id="636675681" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan1_BFF22BDB.wem</Path>
+					<Path>SFX/MGP2_SD_Fryingpan1_668C9EC5.wem</Path>
 				</File>
 				<File Id="771422714" Language="SFX">
 					<ShortName>50634__cbakos__newwallswitchoff.wav</ShortName>
@@ -174,7 +173,7 @@
 				</File>
 				<File Id="932824895" Language="SFX">
 					<ShortName>344347__amholma__squeaking-bed.wav</ShortName>
-					<Path>SFX/344347__amholma__squeaking-bed_7E22F427.wem</Path>
+					<Path>SFX/344347__amholma__squeaking-bed_5B130435.wem</Path>
 				</File>
 				<File Id="933262447" Language="SFX">
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
@@ -182,7 +181,7 @@
 				</File>
 				<File Id="952484127" Language="SFX">
 					<ShortName>354019__kleber-kgf__tv-static-sound-by-kleber-kgf.wav</ShortName>
-					<Path>SFX/354019__kleber-kgf__tv-static-sound-by-kleber-kgf_AD9989D0.wem</Path>
+					<Path>SFX/354019__kleber-kgf__tv-static-sound-by-kleber-kgf_7C287DB7.wem</Path>
 				</File>
 				<File Id="979179134" Language="SFX">
 					<ShortName>MGP2_SD_DrippingWater.wav</ShortName>
@@ -198,7 +197,7 @@
 				</File>
 				<File Id="1005144570" Language="SFX">
 					<ShortName>60568__robinhood76__00370-fireplace-1.wav</ShortName>
-					<Path>SFX/60568__robinhood76__00370-fireplace-1_D571E59E.wem</Path>
+					<Path>SFX/60568__robinhood76__00370-fireplace-1_200DC22C.wem</Path>
 				</File>
 				<File Id="1070167829" Language="SFX">
 					<ShortName>158625__mrauralization__door-unlock.wav</ShortName>
