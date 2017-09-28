@@ -51,6 +51,7 @@ public class ButtonController : MonoBehaviour {
 				var color = GetComponent<Image> ().color;
 				color = Color.red;
 				GetComponent<Image> ().color = color;
+				EventManager.TriggerEvent(eventName);
 			}
 
 		}
@@ -60,7 +61,6 @@ public class ButtonController : MonoBehaviour {
 	{
 		if (active)
 		{
-			EventManager.TriggerEvent(eventName);
 			buttonHeld = true;
 		}
         
