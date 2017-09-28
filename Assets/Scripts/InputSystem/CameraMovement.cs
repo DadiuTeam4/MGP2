@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
 	[Range(0.0f, 1.0f)]
-	public float deadZone = 0.3f;
+	public float deadZone = 0.1f;
 
 	[Tooltip("The speed of which the camera will rotate")]
 	[Range(0.1f, 5.0f)]
@@ -45,8 +45,6 @@ public class CameraMovement : MonoBehaviour {
 	
 	void Update ()
 	{
-		Debug.Log(Input.gyro.attitude);
-
 		UpdateDeviceRotationValues();
 
 		UpdateTransformRotation();
@@ -70,22 +68,22 @@ public class CameraMovement : MonoBehaviour {
 	private void UpdateDeviceRotationValues()
 	{
 		Vector2 calibratedInput = CalculateCalibratedRotationValues();
-		float flippedX = calibratedInput.y;
-		float flippedY = calibratedInput.x;
+		float inputX = calibratedInput.x;
+		float inputY = calibratedInput.y;
 
 
-		if (flippedX > deadZone || flippedX < -deadZone)
+		if (inputX > deadZone || inputX < -deadZone)
 		{
-			currentDeviceRotationX = flippedX;
+			currentDeviceRotationX = inputX;
 		}
 		else
 		{
 			currentDeviceRotationX = 0.0f;
 		}
 
-		if (flippedY > deadZone || flippedY < -deadZone)
+		if (inputY > deadZone || inputY < -deadZone)
 		{
-			currentDeviceRotationY = flippedY;
+			currentDeviceRotationY = inputY;
 		}
 		else
 		{
@@ -97,16 +95,16 @@ public class CameraMovement : MonoBehaviour {
 
 	public void Calibrate()
 	{
-		calibratedDevicePosition.x = Input.acceleration.x;
-		calibratedDevicePosition.y = Input.acceleration.y;
+		calibratedDevicePosition.x = Input.gyro.attitude.x;
+		calibratedDevicePosition.y = Input.gyro.attitude.y;
 	}
 
 	private Vector2 CalculateCalibratedRotationValues()
 	{
 		Vector2 calibratedInput;
 
-		calibratedInput.x = calibratedDevicePosition.x - Input.acceleration.x;
-		calibratedInput.y = calibratedDevicePosition.y - Input.acceleration.y;
+		calibratedInput.x = calibratedDevicePosition.x - Input.gyro.attitude.x;
+		calibratedInput.y = calibratedDevicePosition.y - Input.gyro.attitude.y;
 
 		return calibratedInput;
 	}
