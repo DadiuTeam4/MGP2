@@ -11,6 +11,8 @@ public class ResourceUI : MonoBehaviour {
 	public GameObject button;
 	private int currentButtonAmount;
 	private List<int> listOfPickedUpNumbers;
+	static public List<bool> listOfPickedUpNumbersState;
+
 	private RectTransform canvasRectTransform;
 	private float heightOfCanvas, widthOfCanvas;
 	public float heightOfButton = 70, widthOfButton = 70;
@@ -43,6 +45,7 @@ public class ResourceUI : MonoBehaviour {
 	private void UpdateUI()
 	{
 		listOfPickedUpNumbers = ResourceManager.GetListOfPickedUpNumbers();
+		listOfPickedUpNumbersState = ResourceManager.GetListOfPickedUpNumbersState();
 
 		if (listOfPickedUpNumbers != null)
 		{
@@ -83,6 +86,7 @@ public class ResourceUI : MonoBehaviour {
 			buttonController = g.GetComponent<ButtonController>();
 			buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
 			buttonController.SetOriginalPosition(rectTransform.localPosition);
+			buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
 			buttonController.canvasRect = canvasRectTransform;
 			buttonController.graphicRayCaster = graphicRaycaster;
 		}
