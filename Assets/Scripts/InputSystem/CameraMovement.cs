@@ -13,10 +13,6 @@ public class CameraMovement : MonoBehaviour {
 	[Range(0.1f, 5.0f)]
 	public float speed = 1.0f;
 
-	[Tooltip ("The minimum difference in movement read")]
-	[Range(0.0f, 1.0f)]
-	public float sensitivity = 0.05f;
-
 	[Tooltip("The allowed movement range for the camera in X")]
 	[Range(0.1f, 90.0f)]
 	public float rotaryBoundsX = 30.0f;
