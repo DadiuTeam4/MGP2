@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198939344966710706}
   - component: {fileID: 199411297689213054}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: TapRingPar_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
