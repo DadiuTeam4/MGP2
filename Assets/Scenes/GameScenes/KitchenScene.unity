@@ -147,7 +147,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136747744763436134, guid: ae14684d763d443ecba8527fe623f7ad, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ae14684d763d443ecba8527fe623f7ad, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &47358314 stripped
@@ -279,11 +280,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.03
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.00006170224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.00006170224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.010000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802062278954028, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65488357522845702, guid: 3cb6c76783c354bbdbc7c0485549ac59, type: 2}
@@ -709,8 +734,8 @@ MonoBehaviour:
   deadZone: 0.1
   speed: 1
   sensitivity: 0.05
-  rotaryBoundsX: 10
-  rotaryBoundsY: 10
+  rotaryBoundsX: 5
+  rotaryBoundsY: 5
 --- !u!1 &344516049 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1222620412039238, guid: 5e849859e382142a29189b052f11bfcf,

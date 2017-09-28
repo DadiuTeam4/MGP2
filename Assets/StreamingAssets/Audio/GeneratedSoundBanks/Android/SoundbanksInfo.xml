@@ -52,6 +52,7 @@
 				<Event Id="967135245" Name="Play_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair"/>
 				<Event Id="3249430620" Name="Play_MGP2_SD_Rubberduck" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck"/>
 				<Event Id="304130839" Name="Play_MGP2_SD_SinkFill" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_SinkFill"/>
+				<Event Id="2569931419" Name="Play_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Tinnitus"/>
 				<Event Id="1119214915" Name="Play_MGP2_SD_TV" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV"/>
 				<Event Id="3735495899" Name="Play_MGP2_SD_Vinyl" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl"/>
 				<Event Id="3797089235" Name="Play_MGP2_SD_Voodoo" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo"/>
@@ -65,6 +66,7 @@
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000"/>
 				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
 				<Event Id="2380106136" Name="Stop_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden" MaxAttenuation="0.000000"/>
+				<Event Id="2932857561" Name="Stop_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Stop_MGP2_SD_Tinnitus" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="7591784" Language="SFX">
@@ -85,7 +87,7 @@
 				</File>
 				<File Id="106766393" Language="SFX">
 					<ShortName>239005__squashy555__kettle-boiling.wav</ShortName>
-					<Path>SFX/239005__squashy555__kettle-boiling_B6B3C062.wem</Path>
+					<Path>SFX/239005__squashy555__kettle-boiling_E0EF19DA.wem</Path>
 				</File>
 				<File Id="132533713" Language="SFX">
 					<ShortName>AgoShaker2A.wav.wav</ShortName>
@@ -93,7 +95,7 @@
 				</File>
 				<File Id="147093774" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
-					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_87D0D554.wem</Path>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_A526B4CE.wem</Path>
 				</File>
 				<File Id="161142710" Language="SFX">
 					<ShortName>MGP2_Speak_SD_MumsSmaakager.wav</ShortName>
@@ -113,7 +115,7 @@
 				</File>
 				<File Id="231098878" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
-					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_0F716F9C.wem</Path>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_4EF4A78D.wem</Path>
 				</File>
 				<File Id="252441943" Language="SFX">
 					<ShortName>MGP2_SD_Gramophone.wav</ShortName>
@@ -155,6 +157,10 @@
 					<ShortName>124202__robinhood76__02408-chair-stone-floor-brawl.wav</ShortName>
 					<Path>SFX/124202__robinhood76__02408-chair-stone-floor-brawl_00877CC5.wem</Path>
 				</File>
+				<File Id="475962076" Language="SFX">
+					<ShortName>MGP2_SD_Tinnitus.wav</ShortName>
+					<Path>SFX/MGP2_SD_Tinnitus_1C9C67B2.wem</Path>
+				</File>
 				<File Id="489143399" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
 					<Path>SFX/MGP2_SD_Fryingpan3_54584653.wem</Path>
@@ -193,7 +199,7 @@
 				</File>
 				<File Id="790497178" Language="SFX">
 					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
-					<Path>SFX/117296__swiftoid__fill-the-sink_9F7B2354.wem</Path>
+					<Path>SFX/117296__swiftoid__fill-the-sink_51507DDC.wem</Path>
 				</File>
 				<File Id="806349091" Language="SFX">
 					<ShortName>360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor.wav</ShortName>
