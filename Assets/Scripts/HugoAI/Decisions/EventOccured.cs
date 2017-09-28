@@ -9,16 +9,15 @@ namespace HugoAI
 	[CreateAssetMenu(menuName = "HugoAI/Decisions/EventOccured")]
 	public class EventOccured : Decision 
 	{
-		[Header("This is the index of the event in the State Controller on Hugo")]
-		public int eventIndex;
+		public EventName eventName;
 		[Range(0.0f, 1.0f)] public float chanceOfReacting = 1.0f;
 
-		private bool initialized;
 		private bool eventOccured;
 
 		public override bool Decide(StateController controller)
 		{
-			if (!controller.triggeredEvents[eventIndex]) 
+			eventOccured = controller.CheckEventOccured(eventName);
+			if (!eventOccured)
 			{
 				return false;
 			}

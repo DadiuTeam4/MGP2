@@ -22,7 +22,7 @@ MonoBehaviour:
     returnToPreviousState: 0
     trueState: {fileID: 11400000, guid: 9b3fa2c886d0b1742866cee3921a8a9f, type: 2}
     falseState: {fileID: 11400000}
-  - decision: {fileID: 11400000, guid: a6cb4d4536d616542afabb32e95620ed, type: 2}
+  - decision: {fileID: 11400000, guid: ae10342a3363bf04c82c08784ec15d46, type: 2}
     returnToPreviousState: 0
     trueState: {fileID: 11400000, guid: efc08b6f0a03b844cbef47919de69c49, type: 2}
     falseState: {fileID: 11400000}

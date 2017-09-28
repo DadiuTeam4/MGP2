@@ -18,7 +18,7 @@ namespace HugoAI
 
 		private void ReactToEvent(StateController controller) 
 		{
-			// Set and start animation
+			//Debug.Log("Reacting");
 		}
 	}
 }

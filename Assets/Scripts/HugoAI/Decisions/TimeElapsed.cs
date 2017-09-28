@@ -22,6 +22,7 @@ namespace HugoAI
 
 			if (chanceOfReacting == 1.0f)
 			{
+				Debug.Log("Returning true");
 				return true;
 			}
 

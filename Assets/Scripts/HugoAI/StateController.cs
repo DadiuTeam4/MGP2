@@ -19,8 +19,9 @@ namespace HugoAI
 
 		[HideInInspector] public Navigator navigator;
 		[HideInInspector] public Animator animator;
-		[HideInInspector] public bool[] triggeredEvents;
+		[HideInInspector] public Dictionary<EventName, bool> triggeredEvents;
 
+		private Dictionary<int, EventName> eventIndexes;
 		private State previousState;
 		private float stateTimeElapsed;
 		private int eventNumber;
@@ -34,19 +35,28 @@ namespace HugoAI
 
 		private void Start()
 		{
-			triggeredEvents = new bool[numberEvents.Length];
+			triggeredEvents = new Dictionary<EventName, bool>();
+			eventIndexes = new Dictionary<int, EventName>();
 			eventOccurredCallbacks = new UnityAction<int>[numberEvents.Length];
 			for (int i = 0; i < numberEvents.Length; i++) 
 			{
+				triggeredEvents.Add(numberEvents[i], false);
+				eventIndexes.Add(i, numberEvents[i]);
+
 				UnityAction<int> action = EventCallback;
 				eventOccurredCallbacks[i] = action;
 				EventManager.StartListening(numberEvents[i], action, i);
 			}
 		}
 
+		public bool CheckEventOccured(EventName eventName) 
+		{
+			return triggeredEvents[eventName];
+		}
+
 		private void EventCallback(int number)
 		{
-			triggeredEvents[number] = true;
+			triggeredEvents[eventIndexes[number]] = true;
 		}
 
 		public void TransitionToState(State nextState)
@@ -75,6 +85,7 @@ namespace HugoAI
 
 		public bool CheckIfCountDownElapsed(float duration)
 		{
+			Debug.Log(stateTimeElapsed);
 			stateTimeElapsed += Time.deltaTime;
 			return (stateTimeElapsed >= duration);
 		}

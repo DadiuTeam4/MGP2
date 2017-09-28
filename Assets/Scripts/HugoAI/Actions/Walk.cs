@@ -15,6 +15,8 @@ namespace HugoAI
 		public int waypointIndex;
 
 		private Vector3 destination;
+		private int randomWayPoint;
+		private bool waypointSet;
 
 		public override void Act(StateController controller)
 		{
@@ -23,14 +25,18 @@ namespace HugoAI
 
 		private void SetWaypoint(StateController controller) 
 		{
-			if (random) 
+			if (!waypointSet)
 			{
-				int randomWayPoint = Random.Range(0, controller.idleWaypoints.Length);
-				destination = controller.idleWaypoints[randomWayPoint].position;
-			}
-			else 
-			{
-				destination = controller.purposeWaypoints[waypointIndex].position;
+				if (random)
+				{
+					randomWayPoint = Random.Range(0, controller.idleWaypoints.Length);
+					destination = controller.idleWaypoints[randomWayPoint].position;
+				}
+				else
+				{
+					destination = controller.purposeWaypoints[waypointIndex].position;
+				}
+				waypointSet = true;
 			}
 			controller.navigator.SetDestination(destination);
 		}
