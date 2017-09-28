@@ -22,7 +22,6 @@ public class OnGameMenuController : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Restart the game");
-        optionPanel.SetActive(false);
         SceneManager.LoadScene(0);
     }
 

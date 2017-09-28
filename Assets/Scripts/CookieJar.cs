@@ -17,7 +17,6 @@ public class CookieJar : NumberFoundInteractable
 		if (isBeingPlayed == false) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_Cookie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SD_MumsSmaakager", gameObject); 
 			isBeingPlayed = true; 
 		}
 	}

@@ -37,8 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4343101795545082}
   - component: {fileID: 95493780956364780}
-  - component: {fileID: 114610892614844072}
-  - component: {fileID: 65968646437115900}
   m_Layer: 0
   m_Name: Cupboard_ref
   m_TagString: Untagged
@@ -65,14 +63,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856094480597002}
-  m_LocalRotation: {x: -0, y: -0.9999375, z: -0, w: -0.011182806}
-  m_LocalPosition: {x: 2.8, y: 2.8245944e-16, z: 0.6}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4196534007142566}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -181.28099, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23875711716501968
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -86,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 25dc9f395b16743e0bdb2c5919a561de, type: 2}
+  - {fileID: 2100000, guid: 914de0688aa3c644f83081e74dc48d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,18 +110,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627882684010326}
   m_Mesh: {fileID: 4300000, guid: 3a81f87f5d970f94e9299dc30842c250, type: 3}
---- !u!65 &65968646437115900
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856094480597002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.4267397, z: 0.60802287}
-  m_Center: {x: 2.3121133e-10, y: 0.8268094, z: -0.03771626}
 --- !u!95 &95493780956364780
 Animator:
   serializedVersion: 3
@@ -141,15 +127,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114610892614844072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856094480597002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba5e8c93512847aea26579be46be286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeHeld: 0
