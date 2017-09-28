@@ -34,6 +34,10 @@ public class CameraMovement : MonoBehaviour {
 
 	void Awake () 
 	{
+		Input.gyro.enabled = true;
+
+		EventManager.StartListening(EventName.CalibrateCameraGyroscope, Calibrate);
+
 		startRotation = transform.rotation.eulerAngles;
 
 		CalculateBounds();
@@ -41,6 +45,8 @@ public class CameraMovement : MonoBehaviour {
 	
 	void Update ()
 	{
+		Debug.Log(Input.gyro.attitude);
+
 		UpdateDeviceRotationValues();
 
 		UpdateTransformRotation();
@@ -66,7 +72,8 @@ public class CameraMovement : MonoBehaviour {
 		Vector2 calibratedInput = CalculateCalibratedRotationValues();
 		float flippedX = calibratedInput.y;
 		float flippedY = calibratedInput.x;
-	
+
+
 		if (flippedX > deadZone || flippedX < -deadZone)
 		{
 			currentDeviceRotationX = flippedX;
@@ -90,7 +97,7 @@ public class CameraMovement : MonoBehaviour {
 
 	public void Calibrate()
 	{
-		calibratedDevicePosition.x = Input.acceleration.y;
+		calibratedDevicePosition.x = Input.acceleration.x;
 		calibratedDevicePosition.y = Input.acceleration.y;
 	}
 
@@ -98,8 +105,8 @@ public class CameraMovement : MonoBehaviour {
 	{
 		Vector2 calibratedInput;
 
-		calibratedInput.x = Input.acceleration.x - calibratedDevicePosition.x;
-		calibratedInput.y = Input.acceleration.y - calibratedDevicePosition.y;
+		calibratedInput.x = calibratedDevicePosition.x - Input.acceleration.x;
+		calibratedInput.y = calibratedDevicePosition.y - Input.acceleration.y;
 
 		return calibratedInput;
 	}

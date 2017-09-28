@@ -97,6 +97,7 @@ public enum EventName
     FaucetRunning,
     LightswitchClicked,
     InteractableClicked,
-    ShowOnGamOptions
+    ShowOnGamOptions,
+    CalibrateCameraGyroscope
 
 }
