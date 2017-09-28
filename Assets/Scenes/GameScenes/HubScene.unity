@@ -608,11 +608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952fa7a82dbfad4384bcab2943d82a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: 0.3
-  speed: 1
+  deadZone: 0.1
+  speed: 0.1
   sensitivity: 0.05
-  rotaryBoundsX: 2
-  rotaryBoundsY: 2
+  rotaryBoundsX: 1.5
+  rotaryBoundsY: 1.5
 --- !u!1001 &260177897
 Prefab:
   m_ObjectHideFlags: 0
