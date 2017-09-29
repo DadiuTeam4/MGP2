@@ -2932,14 +2932,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51d1e742f3c84f95ad3f8473ab500c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualFeedback: 1
+  visualFeedback: 0
   boomMagnitude: 1.08
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventToFire: 0
-  fireAfterSeconds: 0
-  shake: 1
+  eventToFire: 3
+  fireAfterSeconds: 1
+  shake: 0
   speed: 60
   shakeMagnitude: 0.01
   onHoldParticleSystem: {fileID: 0}
@@ -3139,7 +3139,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1334199780
+  randomSeed: 773759289
   InitialModule:
     serializedVersion: 3
     enabled: 1
