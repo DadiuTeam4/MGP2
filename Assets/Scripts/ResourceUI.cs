@@ -19,7 +19,8 @@ public class ResourceUI : MonoBehaviour {
 	private int amountOfCollectedNumbers;
 	private float canvasRatio;
 	private GraphicRaycaster graphicRaycaster;
-	
+	public Sprite[] spriteForUI = new Sprite[6];
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -95,6 +96,8 @@ public class ResourceUI : MonoBehaviour {
 			g.transform.SetParent(transform);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
+			Image myImageComponent = g.GetComponent<Image>(); 
+			myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
 			
 			rectTransform = g.GetComponent<RectTransform>();
 			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);

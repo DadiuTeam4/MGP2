@@ -21,6 +21,7 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 
+
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
