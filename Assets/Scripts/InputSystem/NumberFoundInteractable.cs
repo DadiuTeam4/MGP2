@@ -12,15 +12,21 @@ public class NumberFoundInteractable : Interactable
     public float speed = 60;
     [Range(0.0f, 0.1f)]
     public float shakeMagnitude = 0.01f;
-
-    public ParticleSystem particleOnHold;
+    
+    public ParticleSystem onHoldParticleSystem;
 
     private bool fired;
     private Vector3 originalPosition;
+    private Vector2 mousePositionOnTouchBegin;
 
     protected void Start()
     {
         originalPosition = transform.position;
+    }
+
+    public override void OnTouchBegin(Vector2 position)
+    {
+        mousePositionOnTouchBegin = position;
     }
 
     public override void OnTouchHold()
@@ -31,35 +37,37 @@ public class NumberFoundInteractable : Interactable
             Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
             transform.position = newPos;
 
+            if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
+            {
+                onHoldParticleSystem.transform.position = ScreenSpaceToWorldSpace(mousePositionOnTouchBegin);
+                onHoldParticleSystem.Play();
+            }
+
             if (timeHeld > fireAfterSeconds)
             {
                 FireEvent();
                 fired = true;
                 transform.position = originalPosition;
-                if (particleOnHold != null && particleOnHold.isEmitting)
-                {
-                    particleOnHold.Stop();
-                }
             }
-        }
-
-        if (particleOnHold != null && !particleOnHold.isEmitting && !fired)
-        {
-            particleOnHold.transform.position = transform.position;
-            particleOnHold.Play();
         }
     }
 
     public override void OnTouchReleased()
     {
-        if (particleOnHold != null && particleOnHold.isEmitting)
+        if (onHoldParticleSystem != null && onHoldParticleSystem.isPlaying)
         {
-            particleOnHold.Stop();
+            onHoldParticleSystem.Stop();
+            onHoldParticleSystem.Clear();
         }
     }
 
     void FireEvent()
     {
+        if (onHoldParticleSystem != null)
+        {
+            onHoldParticleSystem.Stop();
+            onHoldParticleSystem.Clear();
+        }
         EventManager.TriggerEvent(eventToFire);
     }
 
