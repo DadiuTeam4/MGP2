@@ -9,6 +9,8 @@ public class MenuHoldingController : MonoBehaviour
     private bool buttonHeld;
     private Vector2 mouseOffSet;
 
+    private float holdTime;
+
     void Start()
     {
         Rect buttonRect = gameObject.GetComponent<RectTransform>().rect;
@@ -21,17 +23,22 @@ public class MenuHoldingController : MonoBehaviour
         if (buttonHeld)
         {
             transform.position = new Vector2(Input.mousePosition.x + mouseOffSet.x, Input.mousePosition.y + mouseOffSet.y);
-        }   
+        }
     }
 
     public void ButonClicked()
     {
+        holdTime = Time.time;
         buttonHeld = true;
     }
 
     public void ButonReleased()
     {
         buttonHeld = false;
+        if (Time.time > holdTime + 0.5f)
+        {
+            EventManager.TriggerEvent(EventName.EnableOrDisableOptionMenu);
+        }
     }
 
 }

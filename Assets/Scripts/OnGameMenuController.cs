@@ -11,6 +11,7 @@ public class OnGameMenuController : MonoBehaviour
 
     void Start()
     {
+        EventManager.StartListening(EventName.EnableOrDisableOptionMenu, EnableOrDisableOptions);
         isOptionPanelActive = false;
     }
     public void ExitGame()
