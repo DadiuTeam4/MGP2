@@ -3,7 +3,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace HugoAI 
 {
@@ -11,25 +10,14 @@ namespace HugoAI
 	public class EventOccured : Decision 
 	{
 		public EventName eventName;
-		[Range(0.0f, 1.0f)] public float chanceOfReacting;
+		[Range(0.0f, 1.0f)] public float chanceOfReacting = 1.0f;
 
 		private bool eventOccured;
-		private UnityAction eventOccuredCallback;
-
-		private void Start() 
-		{
-			eventOccuredCallback = new UnityAction(EventCallback);
-			EventManager.StartListening(eventName, eventOccuredCallback);
-		}
-
-		private void EventCallback()
-		{
-			eventOccured = true;
-		}
 
 		public override bool Decide(StateController controller)
 		{
-			if (!eventOccured) 
+			eventOccured = controller.CheckEventOccured(eventName);
+			if (!eventOccured)
 			{
 				return false;
 			}

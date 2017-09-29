@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d47803593954db498a3ae46958582ab, type: 3}
-  m_Name: NumberThreePickedUp
+  m_Name: NumberPickedUp
   m_EditorClassIdentifier: 
   eventName: 1
   chanceOfReacting: 1

@@ -111,7 +111,7 @@ public class InputManager : Singleton<InputManager>
 	private void TouchBegan(Touch touch) 
 	{
 		Interactable interactable = CastRayFromTouch(touch);
-		if (interactable) 
+		if (interactable)
 		{
 			interactable.OnTouchBegin(touch.position);
 			interactable.GiveTouchFeedback(touch.position);

@@ -215,14 +215,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4683089798650964}
-  - component: {fileID: 33426793165686094}
   - component: {fileID: 65248101980303474}
-  - component: {fileID: 23098804091712674}
   - component: {fileID: 195534824672205504}
   - component: {fileID: 114687134265660832}
   - component: {fileID: 114077587124645668}
   - component: {fileID: 114050988964896234}
-  - component: {fileID: 114489728511696688}
   m_Layer: 0
   m_Name: Hugo
   m_TagString: Untagged
@@ -2411,14 +2408,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140761801968062}
-  m_LocalRotation: {x: -0, y: 0.3168089, z: -0, w: 0.9484894}
-  m_LocalPosition: {x: 8.17, y: 0.39, z: 9.89}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686682196932210}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 36.940002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4684443975031716
 Transform:
   m_ObjectHideFlags: 1
@@ -2725,38 +2722,6 @@ Transform:
   m_Father: {fileID: 4189694911788636}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23098804091712674
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140761801968062}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 6a5b77456ea8b46dfad6cdde09453a7e, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23109523083592140
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2899,13 +2864,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162989116638664}
   m_Mesh: {fileID: 4300002, guid: d273678c97af5284c906dec1a22e58fa, type: 3}
---- !u!33 &33426793165686094
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140761801968062}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33610201686761814
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2927,7 +2885,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140761801968062}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2974,17 +2932,7 @@ MonoBehaviour:
   boomMagnitude: 1.08
   boomTime: 0.1
   timeHeld: 0
---- !u!114 &114489728511696688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140761801968062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdeab92995053fe408a27a25b0720c72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  particleOnClick: {fileID: 0}
 --- !u!114 &114687134265660832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3000,11 +2948,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  purposeWaypoints: []
+  - {fileID: 0}
+  numberEvents: 0200000003000000040000000500000006000000070000000100000019000000
+  purposeWaypoints:
+  - {fileID: 0}
   currentState: {fileID: 11400000, guid: 8601d6a2556a940429bceda468c7e481, type: 2}
   active: 1
   navigator: {fileID: 0}
   animator: {fileID: 0}
+  currentNumberWaypoint: {fileID: 0}
+  debugInfo: 
 --- !u!137 &137781855740342888
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
