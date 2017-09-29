@@ -11,6 +11,7 @@ public class OnGameMenuController : MonoBehaviour
 
     void Start()
     {
+        EventManager.StartListening(EventName.EnableOrDisableOptionMenu, EnableOrDisableOptions);
         isOptionPanelActive = false;
     }
     public void ExitGame()
@@ -22,7 +23,6 @@ public class OnGameMenuController : MonoBehaviour
 
     public void RestartGame()
     {
-        Debug.Log("Restart the game");
         optionPanel.SetActive(false);
         SceneManager.LoadScene(0);
 		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
@@ -32,13 +32,11 @@ public class OnGameMenuController : MonoBehaviour
     {
         if (isOptionPanelActive == false)
         {
-            Debug.Log("Enable Option Panel");
             optionPanel.SetActive(true);
             isOptionPanelActive = true;
         }
         else
         {
-            Debug.Log("Disable Option Panel");
             optionPanel.SetActive(false);
             isOptionPanelActive = false;
         }

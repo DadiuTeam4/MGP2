@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Author: Do not known
+//Contributor: You Wu
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,21 +12,13 @@ public class FantasyObject : MonoBehaviour {
 		DeactivateFantasyObject ();
         EventManager.StartListening(spawnOnEvent, ActivateFantasyObject);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void ActivateFantasyObject()
     {
-        gameObject.GetComponent<Renderer>().enabled = true;
-        gameObject.GetComponent<Collider>().enabled = true;
+        gameObject.GetComponentInChildren<Renderer>().enabled = true;
     }
 
     void DeactivateFantasyObject()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
-        gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.GetComponentInChildren<Renderer>().enabled = false;
     }
 }
