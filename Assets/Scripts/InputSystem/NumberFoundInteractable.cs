@@ -41,7 +41,6 @@ public class NumberFoundInteractable : Interactable
     void FireEvent()
     {
         EventManager.TriggerEvent(eventToFire);
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_Yarn", gameObject); 
     }
 
     private Vector3 ShakeSimple(float time, float speed, float magnitude)
