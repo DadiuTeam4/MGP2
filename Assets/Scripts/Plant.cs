@@ -14,7 +14,7 @@ public class Plant : Interactable
 	private Vector3 grownScale;
 	private bool growing;
 
-	public override void GiveTouchFeedback(Vector2 position)
+	public override void GiveTouchFeedback()
 	{
 		if (!growing)
 		{

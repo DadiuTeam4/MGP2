@@ -12,15 +12,14 @@ public class Interactable : MonoBehaviour
 	public float boomMagnitude = 1.08f;
 	[Range(0.0f, 0.5f)]
 	public float boomTime = 0.1f;
+	public ParticleSystem particleSystem;
 
 	[HideInInspector]
 	public float timeHeld;
-
+	
 	private bool booming;
 
-    public ParticleSystem particleOnClick;
-
-	public virtual void GiveTouchFeedback(Vector2 screenPos) 
+	public virtual void GiveTouchFeedback() 
 	{
 		if (visualFeedback)
 		{
@@ -30,13 +29,14 @@ public class Interactable : MonoBehaviour
 				booming = true;
 			}	
 		}
-		if (particleOnClick)
+		if (particleSystem)
 		{
-			EmitParticle(screenPos);
+			Vector3 position = InputManager.GetLastRayHit();
+			EmitParticle(position);
 		}
 	}
 
-	public virtual void OnTouchBegin(Vector2 position) {}
+	public virtual void OnTouchBegin() {}
 	public virtual void OnTouchHold() {}
 	public virtual void OnTouchReleased() {}
 
@@ -63,22 +63,9 @@ public class Interactable : MonoBehaviour
 		booming = false;
 	}
 
-    void EmitParticle(Vector2 screenPos)
+    void EmitParticle(Vector3 position)
     {
-        Vector3 worldPos = ScreenSpaceToWorldSpace(screenPos);
-        Vector3 direction = Camera.main.ScreenPointToRay(screenPos).direction;
-        particleOnClick.gameObject.transform.position = worldPos - direction;
-        particleOnClick.Emit(1);
-    }
-
-    protected Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
-    {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(xy);
-        if (Physics.Raycast(ray, out hit))
-        {
-            return hit.point;
-        }
-        return new Vector3();
+        particleSystem.gameObject.transform.position = position;
+        particleSystem.Emit(1);
     }
 }
