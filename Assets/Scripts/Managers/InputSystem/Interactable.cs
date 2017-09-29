@@ -28,7 +28,7 @@ public class Interactable : MonoBehaviour
 		}
         if (particleOnClick)
         {
-            EmitParticle(screenPos);
+           EmitParticle(screenPos);
         }
 	}
 
@@ -63,8 +63,8 @@ public class Interactable : MonoBehaviour
     {
         Vector3 worldPos = ScreenSpaceToWorldSpace(screenPos);
         Vector3 direction = Camera.main.ScreenPointToRay(screenPos).direction;
-        particleOnClick.gameObject.transform.position = worldPos - direction;
-        particleOnClick.Emit(1);
+        //particleOnClick.gameObject.transform.position = worldPos - direction;
+        particleOnClick.Emit(10);
     }
 
     Vector3 ScreenSpaceToWorldSpace(Vector2 xy)

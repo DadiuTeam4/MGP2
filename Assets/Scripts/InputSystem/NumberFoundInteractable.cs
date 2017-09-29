@@ -12,7 +12,9 @@ public class NumberFoundInteractable : Interactable
     public float speed = 60;
     [Range(0.0f, 0.1f)]
     public float shakeMagnitude = 0.01f;
-    
+
+    public ParticleSystem particleOnHold;
+
     private bool fired;
     private Vector3 originalPosition;
 
@@ -34,7 +36,24 @@ public class NumberFoundInteractable : Interactable
                 FireEvent();
                 fired = true;
                 transform.position = originalPosition;
+                if (particleOnHold.isEmitting)
+                {
+                    particleOnHold.Stop();
+                }
             }
+        }
+
+        if (!particleOnHold.isEmitting && !fired)
+        {
+            particleOnHold.Play();
+        }
+    }
+
+    public override void OnTouchReleased()
+    {
+        if (particleOnHold.isEmitting)
+        {
+            particleOnHold.Stop();
         }
     }
 
