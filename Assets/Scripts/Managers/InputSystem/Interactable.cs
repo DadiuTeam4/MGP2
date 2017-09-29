@@ -71,7 +71,7 @@ public class Interactable : MonoBehaviour
         particleOnClick.Emit(1);
     }
 
-    Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
+    protected Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(xy);
