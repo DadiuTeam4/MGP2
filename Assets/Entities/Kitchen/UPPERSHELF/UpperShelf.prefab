@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4999342029368998}
   m_Layer: 0
-  m_Name: Uppershelf
+  m_Name: UpperShelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
