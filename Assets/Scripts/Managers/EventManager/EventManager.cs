@@ -137,7 +137,7 @@ public enum EventName
     ShowOnGamOptions,
     InverseCameraGyroScopeX,
     EnableOrDisableOptionMenu,
-    InverseCameraGyroScopeY
+    InverseCameraGyroScopeY,
     HugoParticleFeedbackOn,
     HugoParticleFeedbackOff
 

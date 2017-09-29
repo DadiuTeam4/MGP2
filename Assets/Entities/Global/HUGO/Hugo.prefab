@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 114050988964896234}
   - component: {fileID: 199673686086614242}
   - component: {fileID: 198525209148226396}
-  - component: {fileID: 114108596348789068}
+  - component: {fileID: 114190128072537318}
   m_Layer: 0
   m_Name: Hugo
   m_TagString: Untagged
@@ -2943,7 +2943,7 @@ MonoBehaviour:
   speed: 60
   shakeMagnitude: 0.01
   onHoldParticleSystem: {fileID: 0}
---- !u!114 &114108596348789068
+--- !u!114 &114190128072537318
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3139,7 +3139,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1394000595
+  randomSeed: -1334199780
   InitialModule:
     serializedVersion: 3
     enabled: 1
