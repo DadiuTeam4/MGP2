@@ -6,7 +6,7 @@ using UnityEngine;
 public class HugoButtonFeedback : MonoBehaviour {
 	private ParticleSystem hugoParticleSystem;
 
-	void Awake()
+	void Start()
 	{
 		hugoParticleSystem = GetComponent<ParticleSystem>();
 		EventManager.StartListening(EventName.HugoParticleFeedbackOn, StartParticles);
