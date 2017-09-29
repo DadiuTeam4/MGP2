@@ -24,9 +24,9 @@ public class NumberFoundInteractable : Interactable
         originalPosition = transform.position;
     }
 
-    public override void OnTouchBegin(Vector2 position)
+    public override void OnTouchBegin()
     {
-        mousePositionOnTouchBegin = position;
+        mousePositionOnTouchBegin = InputManager.GetLastRayHit();
     }
 
     public override void OnTouchHold()
@@ -39,7 +39,7 @@ public class NumberFoundInteractable : Interactable
 
             if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
             {
-                onHoldParticleSystem.transform.position = ScreenSpaceToWorldSpace(mousePositionOnTouchBegin);
+                onHoldParticleSystem.transform.position = InputManager.GetLastRayHit();
                 onHoldParticleSystem.Play();
             }
 
