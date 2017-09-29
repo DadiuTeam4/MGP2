@@ -2408,8 +2408,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140761801968062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: 0.3168089, z: -0, w: 0.9484894}
+  m_LocalPosition: {x: 8.17, y: 0.39, z: 12.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686682196932210}
@@ -2929,10 +2929,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51d1e742f3c84f95ad3f8473ab500c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
   timeHeld: 0
   particleOnClick: {fileID: 0}
+  eventToFire: 3
+  fireAfterSeconds: 1
+  shake: 0
+  speed: 60
+  shakeMagnitude: 0.01
+  onHoldParticleSystem: {fileID: 0}
 --- !u!114 &114687134265660832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2957,6 +2964,7 @@ MonoBehaviour:
   navigator: {fileID: 0}
   animator: {fileID: 0}
   currentNumberWaypoint: {fileID: 0}
+  aiDebugging: 0
   debugInfo: 
 --- !u!137 &137781855740342888
 SkinnedMeshRenderer:
