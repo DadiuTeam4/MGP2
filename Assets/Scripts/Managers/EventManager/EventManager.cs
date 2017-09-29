@@ -135,8 +135,9 @@ public enum EventName
     LightswitchClicked,
     InteractableClicked,
     ShowOnGamOptions,
-    CalibrateCameraGyroscope,
+    InverseCameraGyroScopeX,
     EnableOrDisableOptionMenu,
+    InverseCameraGyroScopeY
     HugoParticleFeedbackOn,
     HugoParticleFeedbackOff
 
