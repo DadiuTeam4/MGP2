@@ -45,6 +45,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	public static bool doorToKitchenOpen;
 	public static bool kitchenSinkFull;
 	public static bool kitchenLightOn;
+	public static bool isFantasyObjectActivated;
 	static private string currentSceneName = "HubScene";
 	static public List<int> listOfPickedUpNumbers;
 	static public List<bool> listOfPickedUpNumbersState;
@@ -96,6 +97,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
+		isFantasyObjectActivated = false;		
 	 }
 
 
