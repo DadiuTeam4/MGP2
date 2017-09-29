@@ -7,7 +7,7 @@ public class Drawer : Interactable {
 	private bool isBeingPlayed = false;
 	private bool drawerOpen = false; 
 
-	public override void OnTouchBegin(Vector2 position)
+	public override void OnTouchBegin()
 	{	
 		if (isBeingPlayed == false && drawerOpen == false)
 		{

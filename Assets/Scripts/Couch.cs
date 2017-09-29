@@ -6,7 +6,7 @@ public class Couch : Interactable {
 
 	private bool isBeingPlayed = false; 
 
-    public override void OnTouchBegin(Vector2 position)
+    public override void OnTouchBegin()
     {
         //EventManager.TriggerEvent(EventName.NumberOnePickedUp);
 		if (isBeingPlayed == false) 
