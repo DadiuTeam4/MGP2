@@ -7,6 +7,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
 	[Header("Visual feedback on touch")]
+	public bool visualFeedback = true;
 	[Range(1.01f, 1.2f)]
 	public float boomMagnitude = 1.08f;
 	[Range(0.0f, 0.5f)]
@@ -21,15 +22,18 @@ public class Interactable : MonoBehaviour
 
 	public virtual void GiveTouchFeedback(Vector2 screenPos) 
 	{
-		if (!booming)
+		if (visualFeedback)
 		{
-			StartCoroutine(Boom());
-			booming = true;
+			if (!booming)
+			{
+				StartCoroutine(Boom());
+				booming = true;
+			}	
 		}
-        if (particleOnClick)
-        {
-            EmitParticle(screenPos);
-        }
+		if (particleOnClick)
+		{
+			EmitParticle(screenPos);
+		}
 	}
 
 	public virtual void OnTouchBegin(Vector2 position) {}
@@ -67,7 +71,7 @@ public class Interactable : MonoBehaviour
         particleOnClick.Emit(1);
     }
 
-    Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
+    protected Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(xy);
