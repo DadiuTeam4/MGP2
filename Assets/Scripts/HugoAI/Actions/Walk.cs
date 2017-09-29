@@ -27,7 +27,7 @@ namespace HugoAI
 			}
 			else
 			{
-				controller.navigator.SetDestination(controller.purposeWaypoints[waypointIndex].position);
+				controller.navigator.SetDestination(controller.currentNumberWaypoint.position);
 			}
 		}
 	}

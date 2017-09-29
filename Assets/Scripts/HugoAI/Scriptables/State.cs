@@ -34,7 +34,6 @@ namespace HugoAI
 
 				if (decisionSucceeded)
 				{
-					Debug.Log(transition.decision);
 					if (transition.returnToPreviousState) 
 					{
 						controller.ReturnToPreviousState();

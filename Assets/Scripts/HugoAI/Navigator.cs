@@ -9,8 +9,6 @@ namespace HugoAI
 {
 	public class Navigator : MonoBehaviour 
 	{
-		public GameObject destinationCheckerPrefab;
-
 		private NavMeshAgent navMeshAgent;
 		private GameObject checker;
 		private bool checkerSpawned;
@@ -36,41 +34,28 @@ namespace HugoAI
 
 		public void SetDestination(Vector3 destination) 
 		{
-			if (!checkerSpawned) 
-			{
-				checker = Instantiate(destinationCheckerPrefab, destination, Quaternion.identity);
-				checkerSpawned = true;
-			}
-			else if (checker != null)
-			{
-				checker.transform.position = destination;
-			}
 			navMeshAgent.SetDestination(destination);
 		}
 
-		public bool CheckDestinationReached()
+		public Vector3 GetDestination()
 		{
-			if (destinationReached)
-			{
-				destinationReached = false;
-				checkerSpawned = false;
-				randomSet = false;
-				return true;
-			}
-			else 
-			{
-				return false;
-			}
+			return navMeshAgent.destination;
 		}
 
-		private void OnTriggerEnter(Collider other) 
+		public bool CheckDestinationReached() 
 		{
-			print(other.gameObject.tag);
-			if (other.gameObject.tag == "DestinationChecker") 
+			if (!navMeshAgent.pathPending)
 			{
-				Destroy(other.gameObject);
-				destinationReached = true;	
+				if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+				{
+					if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
+					{
+						randomSet = false;
+						return true;
+					}
+				}
 			}
+			return false;
 		}
 	}
 }

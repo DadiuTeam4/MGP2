@@ -11,6 +11,7 @@ public class TriggerOnePickedUp : MonoBehaviour
 		if (Input.GetKeyDown("q")) 
 		{
 			EventManager.TriggerEvent(EventName.NumberOnePickedUp);
-		}		
+			EventManager.TriggerEvent(EventName.NumberPickedUp);
+		}
 	}
 }

@@ -20,6 +20,7 @@ namespace HugoAI
 		[HideInInspector] public Navigator navigator;
 		[HideInInspector] public Animator animator;
 		[HideInInspector] public Dictionary<EventName, bool> triggeredEvents;
+		[HideInInspector] public Transform currentNumberWaypoint;
 
 		private Dictionary<int, EventName> eventIndexes;
 		private State previousState;
@@ -28,7 +29,7 @@ namespace HugoAI
 		private UnityAction<int>[] eventOccurredCallbacks;
 
 		private void Awake()
-		{
+		{ 
 			//animator = GetComponent<Animator>();
 			navigator = GetComponent<Navigator>();
 		}
@@ -51,21 +52,40 @@ namespace HugoAI
 
 		public bool CheckEventOccured(EventName eventName) 
 		{
-			return triggeredEvents[eventName];
+			bool eventOccured = triggeredEvents[eventName];
+			triggeredEvents[eventName] = false; 
+			return eventOccured;
 		}
 
 		private void EventCallback(int number)
 		{
-			triggeredEvents[eventIndexes[number]] = true;
+			EventName triggeredEvent;
+			if (eventIndexes.TryGetValue(number, out triggeredEvent)) 
+			{
+				bool eventValue;
+				if (triggeredEvents.TryGetValue(triggeredEvent, out eventValue)) 
+				{
+					triggeredEvents[eventIndexes[number]] = true;
+				}
+				else 
+				{
+					print("Event " + triggeredEvent + " does not exist");
+				}
+			}
+			else 
+			{
+				print("Event number " + number + " does not exist");
+			}
+			if (triggeredEvent != EventName.InteractableClicked && triggeredEvent != EventName.NumberPickedUp)
+			{
+				currentNumberWaypoint = purposeWaypoints[number];
+			}
 		}
 
 		public void TransitionToState(State nextState)
 		{
 			if (nextState != currentState) 
 			{
-				// print("Switching state");
-				// print("From " + currentState);
-				// print("To " + nextState);
 				previousState = currentState;
 				currentState = nextState;
 				OnExitState();
@@ -88,7 +108,6 @@ namespace HugoAI
 
 		public bool CheckIfCountDownElapsed(float duration)
 		{
-			Debug.Log(stateTimeElapsed);
 			stateTimeElapsed += Time.deltaTime;
 			return stateTimeElapsed >= duration;
 		}

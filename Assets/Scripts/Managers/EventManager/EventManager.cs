@@ -109,6 +109,7 @@ public class EventManager : Singleton<EventManager>
 public enum EventName
 {
     Test, 
+    NumberPickedUp,
     NumberOnePickedUp,
     NumberTwoPickedUp,
     NumberThreePickedUp,
