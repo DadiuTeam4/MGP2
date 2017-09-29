@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grandma : Interactable {
 	private float fadeValue = 100f; 
-	private float fadeRate = 2.5f; 
+	private float fadeRate = 4.5f; 
 
 	public void Update()
 	{
@@ -19,13 +19,16 @@ public class Grandma : Interactable {
 	public override void OnTouchReleased()
 	{
 		fadeValue = 100f; 
+		AkSoundEngine.PostEvent ("Stop_MGP2_SD_Tinnitus", gameObject); 
+
 	}
 
 	void FadeIn()	
 	{
 		if (fadeValue > 0) 
 		{
-		 fadeValue -= fadeRate; 
+		 fadeValue -= fadeRate;
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_Tinnitus", gameObject); 
 		}
 	}
 }
