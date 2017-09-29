@@ -2,44 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : Interactable {
+public class Door : Interactable 
+{
+    public EventName triggeredEvent = EventName.HubDoorClicked;
 
-    private bool isOpen = false;
-
-	// Use this for initialization
-	void Start ()
+ 	void Start()
     {
-        EventManager.StartListening("NumberThreePickedUp", OpenDoor);
+        getDoorState();
+        EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
+
 	}
 
     public override void OnTouchBegin()
     {
-        if (this.isOpen)
+
+        if (triggeredEvent == EventName.KitchenDoorClicked)
         {
-            EventManager.TriggerEvent("OpenDoorClicked");
-            Debug.Log("Door open");
-        } else
+            EventManager.TriggerEvent(EventName.KitchenDoorClicked);
+        }
+
+
+        if (ResourceManager.doorToKitchenOpen == true)
         {
-            Debug.Log("Door closed");
+            EventManager.TriggerEvent(triggeredEvent);
+        } 
+        else
+        {
         }
     }
 
-    public override void OnTouchHold()
+    void getDoorState()
     {
+        if (ResourceManager.doorToKitchenOpen == true)
+        {
+            Debug.Log("Kitchen door state is: Open");
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+        else{
+            Debug.Log("Kitchen door state is: Closed");
+        }
     }
-
-    public override void OnTouchReleased()
-    {
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     void OpenDoor()
     {
-        isOpen = true;
-        Debug.Log("Door is Opened!");
+        ResourceManager.doorToKitchenOpen = true;
+        getDoorState();
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
+
     }
 }

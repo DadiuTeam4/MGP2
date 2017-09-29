@@ -9,7 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     protected static T instance;
 
     //Returns the instance of this singleton.
-    public static T Instance
+    protected static T Instance
     {
         get
         {
@@ -26,10 +26,5 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
             return instance;
         }
-    }
-
-    private void Awake() 
-    {
-        DontDestroyOnLoad(transform.gameObject);
     }
 }

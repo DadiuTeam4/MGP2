@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac354adf0dc41e4bae3a7730161aa43, type: 3}
+  m_Name: IdleCounting
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 1a360e319a596db4e8fd6002702ebdbb, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: b19502dc5c279a74eab3e6f18e523901, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: efc08b6f0a03b844cbef47919de69c49, type: 2}
+    falseState: {fileID: 11400000}
+  - decision: {fileID: 11400000, guid: eab339910bd987c46bd725b18be4a5a9, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: 9b3fa2c886d0b1742866cee3921a8a9f, type: 2}
+    falseState: {fileID: 11400000}
+  - decision: {fileID: 11400000, guid: dbf8b8189f6451048a6ae80c1717d395, type: 2}
+    returnToPreviousState: 0
+    trueState: {fileID: 11400000, guid: 8601d6a2556a940429bceda468c7e481, type: 2}
+    falseState: {fileID: 11400000}

@@ -13,12 +13,60 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID TEST = 3157003241U;
-        static const AkUniqueID TEST1 = 576110586U;
+        static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
+        static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
+        static const AkUniqueID BREAK_MGP2_SD_FIREPLACE = 18727311U;
+        static const AkUniqueID BREAK_MGP2_SD_ROCKINGCHAIR = 2186198650U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID ONSCREENCLICK = 4238747602U;
+        static const AkUniqueID PLAY_MGP2_SD_BED = 1477792038U;
+        static const AkUniqueID PLAY_MGP2_SD_CABINET_CLOSE = 1943834466U;
+        static const AkUniqueID PLAY_MGP2_SD_CABINET_OPEN = 2300991670U;
+        static const AkUniqueID PLAY_MGP2_SD_CHANDELIER = 2814308616U;
+        static const AkUniqueID PLAY_MGP2_SD_COOKIE = 2310237967U;
+        static const AkUniqueID PLAY_MGP2_SD_CURTAINCLOSE = 2853539135U;
+        static const AkUniqueID PLAY_MGP2_SD_CURTAINOPEN = 334444633U;
+        static const AkUniqueID PLAY_MGP2_SD_DOORUNLOCK = 3256411401U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWERCLOSE = 3398036754U;
+        static const AkUniqueID PLAY_MGP2_SD_DRAWEROPEN = 230869702U;
+        static const AkUniqueID PLAY_MGP2_SD_DRIPPINGWATER = 314431553U;
+        static const AkUniqueID PLAY_MGP2_SD_FIREPLACE = 2613328266U;
+        static const AkUniqueID PLAY_MGP2_SD_FRIDGE = 3148382178U;
+        static const AkUniqueID PLAY_MGP2_SD_FRYINGPAN1 = 1797766868U;
+        static const AkUniqueID PLAY_MGP2_SD_FRYINGPAN2 = 1797766871U;
+        static const AkUniqueID PLAY_MGP2_SD_FRYINGPAN3 = 1797766870U;
+        static const AkUniqueID PLAY_MGP2_SD_GARDEN = 2467296834U;
+        static const AkUniqueID PLAY_MGP2_SD_GHOST = 2088074314U;
+        static const AkUniqueID PLAY_MGP2_SD_GLASS = 3082250963U;
+        static const AkUniqueID PLAY_MGP2_SD_HERBS = 803864683U;
+        static const AkUniqueID PLAY_MGP2_SD_KETTLE = 4096018196U;
+        static const AkUniqueID PLAY_MGP2_SD_LIGHTSWITCH = 2060405955U;
+        static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
+        static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
+        static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
+        static const AkUniqueID PLAY_MGP2_SD_TINNITUS = 2569931419U;
+        static const AkUniqueID PLAY_MGP2_SD_TV = 1119214915U;
+        static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
+        static const AkUniqueID PLAY_MGP2_SD_VOODOO = 3797089235U;
+        static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
+        static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
+        static const AkUniqueID PLAY_MGP2_SD_YARN = 2486577875U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_HUGOTRYK = 3508605423U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_SD_FNISKILDER = 3279096707U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_SD_MUMSSMAAKAGER = 1000868684U;
+        static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
+        static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
+        static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
+        static const AkUniqueID STOP_MGP2_SD_TINNITUS = 2932857561U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID DEAF_PARAMETER = 3979854329U;
+        static const AkUniqueID KITCHEN_VOLUME = 4227318060U;
+        static const AkUniqueID LIVINGROOM_VOLUME = 2602545984U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;
@@ -30,6 +78,7 @@ namespace AK
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
         static const AkUniqueID TESTPARAMETER = 2010788230U;
+        static const AkUniqueID VINYL_PITCH = 3014445900U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -40,9 +89,17 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
+        static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MASTER_SECONDARY_BUS = 805203703U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB_KITCHEN = 1290916568U;
+        static const AkUniqueID REVERB_LIVINGROOM = 400405326U;
+    } // namespace AUX_BUSSES
 
 }// namespace AK
 

@@ -54,3 +54,11 @@ public class Door : Interactable
     }    
 }
 ```
+The position of the last touch can be retrieved by calling the static method `InputManager.GetLastRayHit()`
+
+### Event System
+The Event Manager handles all the events. It has a dictionary of <int, UnityEvent> to store all the events and trigger them when needed. The int value is a ID converted by the Enum Name of the Event. The Eum EventName is in the EventManager script. When a new event is created, all the name into the enum and use (int)Event.Name to get the id of event. 
+
+Whenever you have an event, register the event by calling EventManager.StartListening((int)EventName.Name, yourListener) to register your event. In addition, remember to stop listening when you don't need it anymore. When the condition of a certain event is achieved, invoke EventManager.TriggerEvent((int)Eventname.name) to start the event. 
+
+Code Example: EventListenerExample.cs and EventTriggerExample 
