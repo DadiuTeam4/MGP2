@@ -136,7 +136,7 @@ public enum EventName
     InteractableClicked,
     ShowOnGamOptions,
     InverseCameraGyroScopeX,
-    EnableOrDisableOptionMenu
+    EnableOrDisableOptionMenu,
     InverseCameraGyroScopeY
 
 }
