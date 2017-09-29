@@ -11,6 +11,7 @@ using UnityEngine.Events;
 public class EventManager : Singleton<EventManager>
 {
     //use the value of Enum as its id. Just use (int)EventName.Name
+    private Dictionary<EventName, IntUnityEvent> intEventDictionary;
     private Dictionary<EventName, UnityEvent> eventDictionary;
 
     void Awake()
@@ -23,6 +24,23 @@ public class EventManager : Singleton<EventManager>
         if (eventDictionary == null)
         {
             eventDictionary = new Dictionary<EventName, UnityEvent>();
+            intEventDictionary = new Dictionary<EventName, IntUnityEvent>();
+        }
+    }
+
+    public static void StartListening(EventName eventName, UnityAction<int> listener, int parameter) 
+    {
+        IntUnityEvent thisEvent = null;
+        if (Instance.intEventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            thisEvent.AddListener(listener);
+        }
+        else
+        {
+            thisEvent = new IntUnityEvent();
+            thisEvent.parameter = parameter;
+            thisEvent.AddListener(listener);
+            Instance.intEventDictionary.Add(eventName, thisEvent);
         }
     }
 
@@ -41,6 +59,19 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
+    public static void StopListening(EventName eventName, UnityAction<int> listener)
+    {
+        if (instance == null)
+        {
+            return;
+        }
+        IntUnityEvent thisEvent = null;
+        if (Instance.intEventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            thisEvent.RemoveListener(listener);
+        }
+    }
+
     public static void StopListening(EventName eventName, UnityAction listener)
     {
         if (instance == null)
@@ -56,10 +87,15 @@ public class EventManager : Singleton<EventManager>
 
     public static void TriggerEvent(EventName eventName)
     {
+        IntUnityEvent thisIntEvent = null;
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke();
+        }
+        else if (Instance.intEventDictionary.TryGetValue(eventName, out thisIntEvent)) 
+        {
+            thisIntEvent.Invoke(thisIntEvent.parameter);
         }
         else
         {
@@ -73,6 +109,7 @@ public class EventManager : Singleton<EventManager>
 public enum EventName
 {
     Test, 
+    NumberPickedUp,
     NumberOnePickedUp,
     NumberTwoPickedUp,
     NumberThreePickedUp,
@@ -97,6 +134,7 @@ public enum EventName
     FaucetRunning,
     LightswitchClicked,
     InteractableClicked,
-    ShowOnGamOptions
+    ShowOnGamOptions,
+    CalibrateCameraGyroscope
 
 }
