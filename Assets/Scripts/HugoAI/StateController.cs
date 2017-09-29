@@ -28,6 +28,8 @@ namespace HugoAI
 		private int eventNumber;
 		private UnityAction<int>[] eventOccurredCallbacks;
 
+		[HideInInspector] public string debugInfo;
+
 		private void Awake()
 		{ 
 			//animator = GetComponent<Animator>();
@@ -99,6 +101,8 @@ namespace HugoAI
 
 		private void Update()
 		{
+			debugInfo = "";
+			UpdateDebugInfo();
 			if (!active) 
 			{
 				return;
@@ -120,6 +124,24 @@ namespace HugoAI
 		private void OnExitState()
 		{
 			ResetStateTimer();
+		}
+
+		private void UpdateDebugInfo()
+		{
+			debugInfo += ("State time elapsed:\t" + stateTimeElapsed + "\n");
+			debugInfo += ("Current state:\t" + currentState.name + "\n");
+			debugInfo += ("Current waypoint:\t" + navigator.GetDestination() + "\n");
+			debugInfo += ("Current number waypoint:\t" + currentNumberWaypoint + "\n");
+			debugInfo += ("\nTriggered events:\n");
+			foreach (EventName eventName in numberEvents)
+			{
+				debugInfo += eventName + ": " + triggeredEvents[eventName] + "\n";
+			}
+		}
+
+		void OnGUI()
+		{
+			GUI.Box(new Rect(0, 0, Screen.width, Screen.height), debugInfo, "");
 		}
 	}
 }
