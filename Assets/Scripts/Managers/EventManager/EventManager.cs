@@ -135,7 +135,8 @@ public enum EventName
     LightswitchClicked,
     InteractableClicked,
     ShowOnGamOptions,
-    CalibrateCameraGyroscope,
-    EnableOrDisableOptionMenu
+    InverseCameraGyroScopeX,
+    EnableOrDisableOptionMenu,
+    InverseCameraGyroScopeY
 
 }
