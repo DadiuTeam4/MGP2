@@ -96,6 +96,6 @@ public class ButtonController : MonoBehaviour {
 	public void OnPointerUp()
 	{
 		buttonHeld = false;
-		buttonRect.localPosition = originalPosition;
+		//buttonRect.localPosition = originalPosition;
 	}
 }
