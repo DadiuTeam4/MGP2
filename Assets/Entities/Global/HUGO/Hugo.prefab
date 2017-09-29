@@ -2932,11 +2932,11 @@ MonoBehaviour:
   visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}
-  eventToFire: 3
-  fireAfterSeconds: 1
-  shake: 0
+  eventToFire: 0
+  fireAfterSeconds: 0
+  shake: 1
   speed: 60
   shakeMagnitude: 0.01
   onHoldParticleSystem: {fileID: 0}
