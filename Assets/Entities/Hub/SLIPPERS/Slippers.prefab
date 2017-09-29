@@ -89,8 +89,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411146210986152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 0.07000065}
-  m_LocalScale: {x: 0.67872, y: -0.055999998, z: 0.28}
+  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 0.54000187}
+  m_LocalScale: {x: 0.7330176, y: -0.13623379, z: 0.30240005}
   m_Children: []
   m_Father: {fileID: 4759333334811032}
   m_RootOrder: 2
@@ -102,8 +102,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191231341006358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 0.42000008}
-  m_LocalScale: {x: 0.67872, y: -0.055999998, z: 0.28}
+  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 0.8900013}
+  m_LocalScale: {x: 0.7330176, y: -0.13623379, z: 0.30240005}
   m_Children: []
   m_Father: {fileID: 4759333334811032}
   m_RootOrder: 1
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502171760631070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.69, y: 0, z: 11.15}
+  m_LocalPosition: {x: 5.29, y: 0.05, z: 17.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4878085293476090}
@@ -131,8 +131,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969764940790546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 0.8100004}
-  m_LocalScale: {x: 0.67871994, y: -0.055999994, z: 0.27999997}
+  m_LocalPosition: {x: 0.2000002, y: 0.07, z: 1.28}
+  m_LocalScale: {x: 0.73301756, y: -0.13623378, z: 0.30240002}
   m_Children: []
   m_Father: {fileID: 4759333334811032}
   m_RootOrder: 0
@@ -265,9 +265,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a01e188179961b46a68c3147019f7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boomMagnitude: 1.08
+  boomTime: 0.1
   timeHeld: 0
   eventToFire: 3
   fireAfterSeconds: 1
+  speed: 100
+  shakeMagnitude: 0.068
 --- !u!136 &136163562242443562
 CapsuleCollider:
   m_ObjectHideFlags: 1

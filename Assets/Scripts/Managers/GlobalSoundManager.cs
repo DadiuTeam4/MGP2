@@ -37,4 +37,10 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
 	}
 
+	public void OnClickSound()
+	{
+		AkSoundEngine.PostEvent ("OnScreenClick", gameObject); 
+	}
+
+
 }

@@ -7,31 +7,37 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
 	[Range(0.0f, 1.0f)]
-	public float deadZone = 0.3f;
+	public float deadZone = 0.1f;
 
 	[Tooltip("The speed of which the camera will rotate")]
-	[Range(0.1f, 5.0f)]
-	public float speed = 1.0f;
+	[Range(0.01f, 2.0f)]
+	public float speed = 0.2f;
 
 	[Tooltip ("The minimum difference in movement read")]
 	[Range(0.0f, 1.0f)]
 	public float sensitivity = 0.05f;
 
 	[Tooltip("The allowed movement range for the camera in X")]
-	[Range(0.1f, 90.0f)]
-	public float rotaryBoundsX = 30.0f;
+	[Range(0.1f, 10.0f)]
+	public float rotaryBoundsX = 1.0f;
 
 	[Tooltip("The allowed movement range for the camera in Y")]
-	[Range(0.1f, 90.0f)]
-	public float rotaryBoundsY = 30.0f;
+	[Range(0.1f, 10.0f)]
+	public float rotaryBoundsY = 1.0f;
 
-	private Vector3 startRotation;
-	private float minX, maxX, minY, maxY;
 	private float currentDeviceRotationX, currentDeviceRotationY;
+	private float minX, maxX, minY, maxY;
+
+	private Vector2 calibratedDevicePosition = Vector2.zero;
 	private Vector2 currentDirection = Vector2.zero;
+	private Vector3 startRotation;
 
 	void Awake () 
 	{
+		Input.gyro.enabled = true;
+
+		EventManager.StartListening(EventName.CalibrateCameraGyroscope, Calibrate);
+
 		startRotation = transform.rotation.eulerAngles;
 
 		CalculateBounds();
@@ -61,21 +67,23 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateDeviceRotationValues()
 	{
-		float flippedX = Input.acceleration.y;
-		float flippedY = Input.acceleration.x;
-	
-		if (flippedX > deadZone || flippedX < -deadZone)
+		Vector2 calibratedInput = CalculateCalibratedRotationValues();
+		float inputX = calibratedInput.x;
+		float inputY = calibratedInput.y;
+
+
+		if (inputX > deadZone || inputX < -deadZone)
 		{
-			currentDeviceRotationX = flippedX;
+			currentDeviceRotationX = inputX;
 		}
 		else
 		{
 			currentDeviceRotationX = 0.0f;
 		}
 
-		if (flippedY > deadZone || flippedY < -deadZone)
+		if (inputY > deadZone || inputY < -deadZone)
 		{
-			currentDeviceRotationY = flippedY;
+			currentDeviceRotationY = inputY;
 		}
 		else
 		{
@@ -83,6 +91,22 @@ public class CameraMovement : MonoBehaviour {
 		}
 
 		UpdateDirection();
+	}
+
+	public void Calibrate()
+	{
+		calibratedDevicePosition.x = Input.gyro.attitude.x;
+		calibratedDevicePosition.y = Input.gyro.attitude.y;
+	}
+
+	private Vector2 CalculateCalibratedRotationValues()
+	{
+		Vector2 calibratedInput;
+
+		calibratedInput.x = calibratedDevicePosition.x - Input.gyro.attitude.x;
+		calibratedInput.y = calibratedDevicePosition.y - Input.gyro.attitude.y;
+
+		return calibratedInput;
 	}
 
 	private void UpdateDirection()

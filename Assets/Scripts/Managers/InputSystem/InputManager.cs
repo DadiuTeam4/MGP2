@@ -75,7 +75,7 @@ public class InputManager : Singleton<InputManager>
 					if (!mouseDownLastFrame)
 					{
 						interactable.OnTouchBegin(mousePos);
-						interactable.GiveTouchFeedback();
+						interactable.GiveTouchFeedback(mousePos);
 					}
 				}
 			}
@@ -114,7 +114,7 @@ public class InputManager : Singleton<InputManager>
 		if (interactable)
 		{
 			interactable.OnTouchBegin(touch.position);
-			interactable.GiveTouchFeedback();
+			interactable.GiveTouchFeedback(touch.position);
 		}
 	}
 

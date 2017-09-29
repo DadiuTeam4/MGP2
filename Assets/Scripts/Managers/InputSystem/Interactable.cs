@@ -17,13 +17,19 @@ public class Interactable : MonoBehaviour
 
 	private bool booming;
 
-	public virtual void GiveTouchFeedback() 
+    public ParticleSystem particleOnClick;
+
+	public virtual void GiveTouchFeedback(Vector2 screenPos) 
 	{
 		if (!booming)
 		{
 			StartCoroutine(Boom());
 			booming = true;
 		}
+        if (particleOnClick)
+        {
+            EmitParticle(screenPos);
+        }
 	}
 
 	public virtual void OnTouchBegin(Vector2 position) {}
@@ -52,4 +58,23 @@ public class Interactable : MonoBehaviour
 		}
 		booming = false;
 	}
+
+    void EmitParticle(Vector2 screenPos)
+    {
+        Vector3 worldPos = ScreenSpaceToWorldSpace(screenPos);
+        Vector3 direction = Camera.main.ScreenPointToRay(screenPos).direction;
+        particleOnClick.gameObject.transform.position = worldPos - direction;
+        particleOnClick.Emit(1);
+    }
+
+    Vector3 ScreenSpaceToWorldSpace(Vector2 xy)
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(xy);
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.point;
+        }
+        return new Vector3();
+    }
 }
