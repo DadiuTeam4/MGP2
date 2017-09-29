@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d47803593954db498a3ae46958582ab, type: 3}
-  m_Name: NumberFourPickedUp
+  m_Script: {fileID: 11500000, guid: 633c4256646be1548b75d397b4f67d95, type: 3}
+  m_Name: WalkToThree
   m_EditorClassIdentifier: 
-  eventName: 2
-  chanceOfReacting: 1
+  random: 0
+  waypointIndex: 2
