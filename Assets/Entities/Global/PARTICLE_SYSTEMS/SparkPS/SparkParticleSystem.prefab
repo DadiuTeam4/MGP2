@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4492284840911000
 Transform:
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064682233266582}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.8100002, z: 2.6400003}
+  m_LocalPosition: {x: 4.2329745, y: 9.466599e-17, z: 7.0816307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,9 +50,9 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 5
   simulationSpeed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 1
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -100,7 +100,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1805055131
+  randomSeed: -518070178
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -496,7 +496,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 20
+    maxNumParticles: 5
     size3D: 0
     rotation3D: 0
     gravityModifier:
