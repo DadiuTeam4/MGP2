@@ -136,6 +136,8 @@ public enum EventName
     InteractableClicked,
     ShowOnGamOptions,
     CalibrateCameraGyroscope,
-    EnableOrDisableOptionMenu
+    EnableOrDisableOptionMenu,
+    HugoParticleFeedbackOn,
+    HugoParticleFeedbackOff
 
 }
