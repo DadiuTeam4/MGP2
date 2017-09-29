@@ -66,6 +66,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4903678755174260}
+  - component: {fileID: 114438798833685844}
+  - component: {fileID: 65100476736458632}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -100,8 +102,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4153210566134620}
-  - component: {fileID: 114036233719085620}
-  - component: {fileID: 65045414459894854}
   m_Layer: 0
   m_Name: Faucet
   m_TagString: Untagged
@@ -115,8 +115,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420634635381904}
-  m_LocalRotation: {x: -0, y: -0, z: -0.032847624, w: 0.9994604}
-  m_LocalPosition: {x: -3.52, y: 1.437, z: 5.52}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4, y: 1.437, z: 6.069}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153210566134620}
@@ -284,24 +284,24 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65045414459894854
+--- !u!65 &65100476736458632
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762935738890210}
+  m_GameObject: {fileID: 1650221685713250}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.045197, z: 0.6785226}
   m_Center: {x: 0, y: 0.43232036, z: 0.013700724}
---- !u!114 &114036233719085620
+--- !u!114 &114438798833685844
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762935738890210}
+  m_GameObject: {fileID: 1650221685713250}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a1826f177bfc244ea7845621a9c48d6, type: 3}
