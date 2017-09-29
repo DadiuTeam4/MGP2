@@ -268,8 +268,10 @@ MonoBehaviour:
   boomMagnitude: 1.08
   boomTime: 0.1
   timeHeld: 0
-  eventToFire: 3
+  particleOnClick: {fileID: 0}
+  eventToFire: 4
   fireAfterSeconds: 1
+  shake: 1
   speed: 100
   shakeMagnitude: 0.068
 --- !u!136 &136163562242443562
