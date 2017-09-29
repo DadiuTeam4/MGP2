@@ -36,22 +36,23 @@ public class NumberFoundInteractable : Interactable
                 FireEvent();
                 fired = true;
                 transform.position = originalPosition;
-                if (particleOnHold.isEmitting)
+                if (particleOnHold != null && particleOnHold.isEmitting)
                 {
                     particleOnHold.Stop();
                 }
             }
         }
 
-        if (!particleOnHold.isEmitting && !fired)
+        if (particleOnHold != null && !particleOnHold.isEmitting && !fired)
         {
+            particleOnHold.transform.position = transform.position;
             particleOnHold.Play();
         }
     }
 
     public override void OnTouchReleased()
     {
-        if (particleOnHold.isEmitting)
+        if (particleOnHold != null && particleOnHold.isEmitting)
         {
             particleOnHold.Stop();
         }
