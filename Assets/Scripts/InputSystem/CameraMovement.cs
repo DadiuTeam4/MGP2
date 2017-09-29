@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
-	[Range(0.0f, 1.0f)]
-	public float deadZone = 0.1f;
+	[Range(0.0f, 5.0f)]
+	public float deadZone = 1.0f;
 
 	[Tooltip("The speed of which the camera will rotate")]
 	[Range(0.01f, 2.0f)]
@@ -28,15 +28,12 @@ public class CameraMovement : MonoBehaviour {
 	private float currentDeviceRotationX, currentDeviceRotationY;
 	private float minX, maxX, minY, maxY;
 
-	private Vector2 calibratedDevicePosition = Vector2.zero;
 	private Vector2 currentDirection = Vector2.zero;
 	private Vector3 startRotation;
 
 	void Awake () 
 	{
 		Input.gyro.enabled = true;
-
-		EventManager.StartListening(EventName.CalibrateCameraGyroscope, Calibrate);
 
 		startRotation = transform.rotation.eulerAngles;
 
@@ -48,6 +45,8 @@ public class CameraMovement : MonoBehaviour {
 		UpdateDeviceRotationValues();
 
 		UpdateTransformRotation();
+
+		Debug.Log("Orientation X: " + Input.gyro.rotationRate.x);
 	}
 
 	private void UpdateTransformRotation()
@@ -67,10 +66,9 @@ public class CameraMovement : MonoBehaviour {
 
 	private void UpdateDeviceRotationValues()
 	{
-		Vector2 calibratedInput = CalculateCalibratedRotationValues();
-		float inputX = calibratedInput.x;
-		float inputY = calibratedInput.y;
-
+		Vector2 gyroScopeInput = GetRotationValues();
+		float inputX = gyroScopeInput.x;
+		float inputY = gyroScopeInput.y;
 
 		if (inputX > deadZone || inputX < -deadZone)
 		{
@@ -93,20 +91,14 @@ public class CameraMovement : MonoBehaviour {
 		UpdateDirection();
 	}
 
-	public void Calibrate()
+	private Vector2 GetRotationValues()
 	{
-		calibratedDevicePosition.x = Input.gyro.attitude.x;
-		calibratedDevicePosition.y = Input.gyro.attitude.y;
-	}
+		Vector2 gyroScopeInput;
 
-	private Vector2 CalculateCalibratedRotationValues()
-	{
-		Vector2 calibratedInput;
+		gyroScopeInput.x = Input.gyro.rotationRateUnbiased.x;
+		gyroScopeInput.y = Input.gyro.rotationRateUnbiased.y;
 
-		calibratedInput.x = calibratedDevicePosition.x - Input.gyro.attitude.x;
-		calibratedInput.y = calibratedDevicePosition.y - Input.gyro.attitude.y;
-
-		return calibratedInput;
+		return gyroScopeInput;
 	}
 
 	private void UpdateDirection()
