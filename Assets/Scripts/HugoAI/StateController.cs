@@ -28,7 +28,12 @@ namespace HugoAI
 		private int eventNumber;
 		private UnityAction<int>[] eventOccurredCallbacks;
 
+		#region DEBUG
+		#if UNITY_EDITOR
+		public bool aiDebugging = false;
 		[HideInInspector] public string debugInfo;
+		#endif
+		#endregion
 
 		private void Awake()
 		{ 
@@ -101,8 +106,12 @@ namespace HugoAI
 
 		private void Update()
 		{
+			#region DEBUG
+			#if UNITY_EDITOR
 			debugInfo = "";
 			UpdateDebugInfo();
+			#endif
+			#endregion
 			if (!active) 
 			{
 				return;
@@ -126,6 +135,8 @@ namespace HugoAI
 			ResetStateTimer();
 		}
 
+		#region DEBUG
+		#if UNITY_EDITOR
 		private void UpdateDebugInfo()
 		{
 			debugInfo += ("State time elapsed:\t" + stateTimeElapsed + "\n");
@@ -141,7 +152,12 @@ namespace HugoAI
 
 		void OnGUI()
 		{
-			GUI.Box(new Rect(0, 0, Screen.width, Screen.height), debugInfo, "");
+			if (aiDebugging)
+			{
+				GUI.Box(new Rect(0, 0, Screen.width, Screen.height), debugInfo, "");
+			}
 		}
+		#endif
+		#endregion
 	}
 }
