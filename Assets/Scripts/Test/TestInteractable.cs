@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TestInteractable : Interactable 
 {
-	public override void OnTouchBegin(Vector2 position) 
+	public override void OnTouchBegin() 
 	{
 		print("Touch begin");
 	}

@@ -7,7 +7,7 @@ public class UpperCupboard : Interactable {
 	private bool isBeingPlayed = false;
 	private bool cupboardOpen = false; 
 
-	public override void OnTouchBegin(Vector2 position)
+	public override void OnTouchBegin()
 	{	
 		if (isBeingPlayed == false && cupboardOpen == false)
 		{
