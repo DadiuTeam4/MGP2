@@ -2021,8 +2021,7 @@ Prefab:
         type: 2}
       propertyPath: particleOnClick
       value: 
-      objectReference: {fileID: 198500707863003320, guid: 9e1421b60a0e82e49a97031d13f259f0,
-        type: 2}
+      objectReference: {fileID: 1915966767}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45e74388b8edb4812868017002805697, type: 2}
   m_IsPrefabParent: 0
@@ -2342,6 +2341,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4497195991255474, guid: aab9ed9c89cc74874951e20cc8e893c4,
     type: 2}
   m_PrefabInternal: {fileID: 1837872800}
+--- !u!198 &1915966767 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198149274130046738, guid: 259d837e1b42c4f2f91095b70b5238ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 254209037}
 --- !u!1001 &1920016908
 Prefab:
   m_ObjectHideFlags: 0
