@@ -76,7 +76,7 @@ public class ButtonController : MonoBehaviour {
 	public void OnPointerDown()
 	{
 		buttonHeld = true;
-
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOn);
 	}
 
 	public void SetOriginalPosition(Vector3 localOriginalPosition)
@@ -97,5 +97,6 @@ public class ButtonController : MonoBehaviour {
 	{
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
 	}
 }
