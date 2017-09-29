@@ -99,7 +99,7 @@ public class EventManager : Singleton<EventManager>
         }
         else
         {
-            Debug.LogError("The event name " + eventName + " does not exist");
+            Debug.LogError("The event name " + eventName + " does not have any listeners");
         }
     }
 
@@ -108,37 +108,37 @@ public class EventManager : Singleton<EventManager>
 //Add all the event names here.
 public enum EventName
 {
-    Test, 
-    NumberPickedUp,
-    NumberOnePickedUp,
-    NumberTwoPickedUp,
-    NumberThreePickedUp,
-    NumberFourPickedUp,
-    NumberFivePickedUp,
-    NumberSixPickedUp,
-    KitchenDoorClicked, 
-    HubDoorClicked, 
-    CookieJarTouched, 
-    KitchenSceneLoaded, 
-    HubSceneLoaded,
-    LangEnglish, 
-    LangDanish, 
-    LanguageSelected,
-    UIUpdate,
-    NumberOneClicked,
-    NumberTwoClicked,
-    NumberThreeClicked,
-    NumberFourClicked,
-    NumberFiveClicked,
-    NumberSixClicked,
-    FaucetRunning,
-    LightswitchClicked,
-    InteractableClicked,
-    ShowOnGamOptions,
-    InverseCameraGyroScopeX,
-    EnableOrDisableOptionMenu,
-    InverseCameraGyroScopeY,
-    HugoParticleFeedbackOn,
-    HugoParticleFeedbackOff
+    Test = 0, 
+    NumberPickedUp = 1,
+    NumberOnePickedUp = 2,
+    NumberTwoPickedUp = 3,
+    NumberThreePickedUp = 4,
+    NumberFourPickedUp = 5,
+    NumberFivePickedUp = 6,
+    NumberSixPickedUp = 7,
+    KitchenDoorClicked = 8, 
+    HubDoorClicked = 9, 
+    CookieJarTouched = 10, 
+    KitchenSceneLoaded = 11, 
+    HubSceneLoaded = 12,
+    LangEnglish = 13, 
+    LangDanish = 14, 
+    LanguageSelected = 15,
+    UIUpdate = 16,
+    NumberOneClicked = 17,
+    NumberTwoClicked = 18,
+    NumberThreeClicked = 19,
+    NumberFourClicked = 20,
+    NumberFiveClicked = 21,
+    NumberSixClicked = 22,
+    FaucetRunning = 23,
+    LightswitchClicked = 24,
+    InteractableClicked = 25,
+    ShowOnGamOptions = 26,
+    InverseCameraGyroScopeX = 27,
+    EnableOrDisableOptionMenu = 28,
+    InverseCameraGyroScopeY = 29,
+    HugoParticleFeedbackOn = 30,
+    HugoParticleFeedbackOff = 31
 
 }
