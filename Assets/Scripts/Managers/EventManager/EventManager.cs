@@ -103,6 +103,33 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
+    public static int NumberEventToInt(EventName numberEvent)
+    {
+        switch (numberEvent)
+        {
+            case EventName.NumberOnePickedUp:
+            case EventName.NumberOneClicked:
+                return 1;
+            case EventName.NumberTwoPickedUp:
+            case EventName.NumberTwoClicked:
+                return 2;
+            case EventName.NumberThreePickedUp:
+            case EventName.NumberThreeClicked:
+                return 3;
+            case EventName.NumberFourClicked:
+            case EventName.NumberFourPickedUp:
+                return 4;
+            case EventName.NumberFiveClicked:
+            case EventName.NumberFivePickedUp:
+                return 5;
+            case EventName.NumberSixClicked:
+            case EventName.NumberSixPickedUp:
+                return 6;
+            default:
+                Debug.LogError("Tried to convert a non-number event to int");
+                return -1;
+        }
+    }
 }
 
 //Add all the event names here.

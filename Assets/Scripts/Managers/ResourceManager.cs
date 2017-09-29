@@ -195,6 +195,11 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
 
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
+
     public static bool NumberCountedToGrandma(int nr)
     {
         int index = listOfPickedUpNumbers.FindIndex(x => x == nr);

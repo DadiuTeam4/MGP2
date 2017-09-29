@@ -22,6 +22,7 @@ public class NumberFoundInteractable : Interactable
 
     protected void Start()
     {
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
