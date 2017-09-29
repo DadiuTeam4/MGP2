@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HugoSpeak : Interactable {
+public class HugoSpeak : NumberFoundInteractable {
 
 	private bool isBeingPlayed = false; 
 
-	public override void OnTouchBegin(Vector2 pos)
+	public override void OnTouchBegin()
 	{
 		//EventManager.TriggerEvent(EventName.NumberOnePickedUp);
 		if (isBeingPlayed == false) 

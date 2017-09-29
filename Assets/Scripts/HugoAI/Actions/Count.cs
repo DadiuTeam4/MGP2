@@ -18,7 +18,7 @@ namespace HugoAI
 
 		private void CountItem(StateController controller) 
 		{
-			// Set and start animation
+			//Debug.Log("Counting");
 		}
 	}
 }

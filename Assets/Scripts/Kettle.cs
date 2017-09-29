@@ -8,7 +8,7 @@ public class Kettle : Interactable {
 
 	//public uint Play_MGP2_SD_VinylID; 
 
-	public override void OnTouchBegin(Vector2 position)
+	public override void OnTouchBegin()
 	{	
 		if (isBeingPlayed == false) 
 		{

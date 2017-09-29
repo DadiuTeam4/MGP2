@@ -19,7 +19,8 @@ public class ResourceUI : MonoBehaviour {
 	private int amountOfCollectedNumbers;
 	private float canvasRatio;
 	private GraphicRaycaster graphicRaycaster;
-	
+	public Sprite[] spriteForUI = new Sprite[6];
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -66,6 +67,22 @@ public class ResourceUI : MonoBehaviour {
         {
 			EventManager.TriggerEvent(EventName.NumberTwoPickedUp);
         }
+		if (Input.GetKeyDown("e"))
+        {
+			EventManager.TriggerEvent(EventName.NumberThreePickedUp);
+        }
+		if (Input.GetKeyDown("r"))
+        {
+			EventManager.TriggerEvent(EventName.NumberFourPickedUp);
+        }
+		if (Input.GetKeyDown("t"))
+        {
+			EventManager.TriggerEvent(EventName.NumberFivePickedUp);
+        }
+		if (Input.GetKeyDown("y"))
+        {
+			EventManager.TriggerEvent(EventName.NumberSixPickedUp);
+        }
 	}
 
 	private void GenerateButtons()
@@ -78,10 +95,13 @@ public class ResourceUI : MonoBehaviour {
 			g = Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
 			g.transform.SetParent(transform);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
+
+			Image myImageComponent = g.GetComponent<Image>(); 
+			myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
 			
 			rectTransform = g.GetComponent<RectTransform>();
 			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);
-			rectTransform.localPosition = new Vector3((i * widthOfButton - widthOfCanvas/2) + widthOfButton/2, heightOfCanvas/2 - heightOfButton/2, 0);
+			rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
 			
 			buttonController = g.GetComponent<ButtonController>();
 			buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
@@ -93,6 +113,43 @@ public class ResourceUI : MonoBehaviour {
 
 		currentButtonAmount = amountOfCollectedNumbers;
 	}
+
+	private Vector3 PositionGenerator(int currentNumber)
+	{
+
+		int randomLogicVariable = Random.Range(1,5);
+		int randomCornerX = 1;
+		int randomCornerY = 1;
+		int moveWithOrHeight = Random.Range(0,2);;
+
+		switch(randomLogicVariable)
+		{
+			case 1:
+				randomCornerX = 1;
+				randomCornerY = 1;
+				break;
+			case 2:
+				randomCornerX = -1;
+				randomCornerY = 1;
+				break;
+			case 3:
+				randomCornerX = 1;
+				randomCornerY = -1;
+				break;
+			case 4:
+            	randomCornerX = -1;
+				randomCornerY = -1;
+				break;
+
+		}
+
+	Vector3 myPosition = new Vector3(randomCornerX * widthOfCanvas/2 - randomCornerX * widthOfButton/2 - randomCornerX * moveWithOrHeight * ((currentNumber * widthOfButton)),
+									 randomCornerY * heightOfCanvas/2 - randomCornerY * heightOfButton/2 - randomCornerY * ((moveWithOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
+									0);
+
+	return myPosition;
+	}
+
 
 	private void CalculateButtonSize()
 	{
