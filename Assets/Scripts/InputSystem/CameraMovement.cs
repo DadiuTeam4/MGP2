@@ -25,6 +25,7 @@ public class CameraMovement : MonoBehaviour {
 	[Range(0.1f, 10.0f)]
 	public float rotaryBoundsY = 1.0f;
 
+	private bool inverseX, inverseY;
 	private float currentDeviceRotationX, currentDeviceRotationY;
 	private float minX, maxX, minY, maxY;
 
@@ -33,6 +34,9 @@ public class CameraMovement : MonoBehaviour {
 
 	void Awake () 
 	{
+		EventManager.StartListening(EventName.InverseCameraGyroScopeX, InverseX);
+		EventManager.StartListening(EventName.InverseCameraGyroScopeY, InverseY);
+
 		Input.gyro.enabled = true;
 
 		startRotation = transform.rotation.eulerAngles;
@@ -45,8 +49,16 @@ public class CameraMovement : MonoBehaviour {
 		UpdateDeviceRotationValues();
 
 		UpdateTransformRotation();
+	}
 
-		Debug.Log("Orientation X: " + Input.gyro.rotationRate.x);
+	private void InverseX()
+	{
+		inverseX = !inverseX;
+	}
+
+	private void InverseY()
+	{
+		inverseY = !inverseY;
 	}
 
 	private void UpdateTransformRotation()
@@ -105,11 +117,11 @@ public class CameraMovement : MonoBehaviour {
 	{
 		if (currentDeviceRotationX > 0.0f)
 		{
-			currentDirection.x = 1.0f;
+			currentDirection.x = inverseX ? 1.0f : -1.0f;
 		}
 		else if (currentDeviceRotationX < 0.0f)
 		{
-			currentDirection.x = -1.0f;
+			currentDirection.x = inverseX ? -1.0f : 1.0f;
 		}
 		else
 		{
@@ -118,11 +130,11 @@ public class CameraMovement : MonoBehaviour {
 
 		if (currentDeviceRotationY > 0.0f)
 		{
-			currentDirection.y = 1.0f;
+			currentDirection.y = inverseY ? 1.0f : -1.0f;
 		}
 		else if (currentDeviceRotationY < 0.0f)
 		{
-			currentDirection.y = -1.0f;
+			currentDirection.y = inverseY ? -1.0f : 1.0f;
 		}
 		else
 		{

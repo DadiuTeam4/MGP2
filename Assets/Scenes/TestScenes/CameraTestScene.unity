@@ -205,6 +205,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1703514403141400, guid: 27abd95baff16e74c8a9064f18500109, type: 2}
+      propertyPath: m_Name
+      value: InverseX
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646948436767634, guid: 27abd95baff16e74c8a9064f18500109,
+        type: 2}
+      propertyPath: m_Text
+      value: Inverse X
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27abd95baff16e74c8a9064f18500109, type: 2}
   m_IsPrefabParent: 0
@@ -766,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952fa7a82dbfad4384bcab2943d82a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: 0.3
+  deadZone: 1
   speed: 1
   sensitivity: 0.05
   rotaryBoundsX: 10
