@@ -13,7 +13,7 @@ public class Gramophone : Interactable {
 	public float elapsedTime = 0f; 
 	public float duration = 5f; 
 
-	public override void OnTouchBegin(Vector2 position)
+	public override void OnTouchBegin()
 	{	
 		if (isFaded == false)
 		{

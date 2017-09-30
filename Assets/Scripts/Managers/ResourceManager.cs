@@ -45,6 +45,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	public static bool doorToKitchenOpen;
 	public static bool kitchenSinkFull;
 	public static bool kitchenLightOn;
+	public static bool isFantasyObjectActivated;
 	static private string currentSceneName = "HubScene";
 	static public List<int> listOfPickedUpNumbers;
 	static public List<bool> listOfPickedUpNumbersState;
@@ -96,7 +97,9 @@ public class ResourceManager : Singleton<ResourceManager>
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
+		isFantasyObjectActivated = false;		
 	 }
+
 
 
 	public static string GetCurrentSceneName()
@@ -190,9 +193,24 @@ public class ResourceManager : Singleton<ResourceManager>
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
-	}	
+	}
 
-	private static void Number1Deactive()
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
+
+    public static bool NumberCountedToGrandma(int nr)
+    {
+        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
+        if (index != -1)
+        {
+            return !listOfPickedUpNumbersState[index];
+        }
+        return false;
+    }
+
+    private static void Number1Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 1);
 		listOfPickedUpNumbersState[index] = false;

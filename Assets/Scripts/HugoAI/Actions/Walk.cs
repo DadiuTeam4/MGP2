@@ -11,10 +11,6 @@ namespace HugoAI
 	{
 		[Tooltip("If set to random, Hugo will go to a random idle waypoint set in the state controller.")]
 		public bool random;
-		[Tooltip("Ignored if set to random")]
-		public int waypointIndex;
-
-		private Vector3 destination;
 
 		public override void Act(StateController controller)
 		{
@@ -23,16 +19,14 @@ namespace HugoAI
 
 		private void SetWaypoint(StateController controller) 
 		{
-			if (random) 
+			if (random)
 			{
-				int randomWayPoint = Random.Range(0, controller.idleWaypoints.Count);
-				destination = controller.idleWaypoints[randomWayPoint].position;
+				controller.navigator.SetRandomDestination(controller);
 			}
-			else 
+			else
 			{
-				destination = controller.purposeWaypoints[waypointIndex].position;
+				controller.navigator.SetDestination(controller.currentNumberWaypoint.position);
 			}
-			controller.navigator.SetDestination(destination);
 		}
 	}
 }

@@ -21,6 +21,7 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 
+
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
@@ -37,7 +38,7 @@ public class ButtonController : MonoBehaviour {
 
 	void Update()
 	{
-		if (buttonHeld && active)
+		if (buttonHeld)
 		{
 			pointerEventData.position = Input.mousePosition;
 			graphicRayCaster.Raycast(pointerEventData, raycastResults);
@@ -50,9 +51,11 @@ public class ButtonController : MonoBehaviour {
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
-				if (currentScene == nameOfSceneThatHugoCanCount)
+				if (currentScene == nameOfSceneThatHugoCanCount  && active)
 				{
 					active = false;
+					buttonHeld = false;
+
 					buttonRect.localPosition = originalPosition;
 					var color = GetComponent<Image> ().color;
 					color = Color.red;
@@ -72,11 +75,8 @@ public class ButtonController : MonoBehaviour {
 	
 	public void OnPointerDown()
 	{
-		if (active)
-		{
-			buttonHeld = true;
-		}
-        
+		buttonHeld = true;
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOn);
 	}
 
 	public void SetOriginalPosition(Vector3 localOriginalPosition)
@@ -96,6 +96,7 @@ public class ButtonController : MonoBehaviour {
 	public void OnPointerUp()
 	{
 		buttonHeld = false;
-		buttonRect.localPosition = originalPosition;
+		//buttonRect.localPosition = originalPosition;
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
 	}
 }

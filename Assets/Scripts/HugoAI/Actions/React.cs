@@ -11,6 +11,8 @@ namespace HugoAI
 	{
 		public Animation reactionAnimation;
 
+		private Vector3 pointToLookAt;
+
 		public override void Act(StateController controller)
 		{
 			ReactToEvent(controller);
@@ -18,7 +20,7 @@ namespace HugoAI
 
 		private void ReactToEvent(StateController controller) 
 		{
-			// Set and start animation
+			Vector3 pointToLookAt = InputManager.GetLastRayHit();
 		}
 	}
 }

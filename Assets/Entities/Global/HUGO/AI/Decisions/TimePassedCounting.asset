@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: TimePassedCounting
   m_EditorClassIdentifier: 
   time: 3
-  chanceOfReacting: 0.7
+  chanceOfReacting: 1

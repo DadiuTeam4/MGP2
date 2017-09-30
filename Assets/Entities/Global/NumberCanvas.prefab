@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 222426223299577638}
   - component: {fileID: 114855284538835596}
   - component: {fileID: 114096133149382822}
+  - component: {fileID: 114606490227485842}
+  - component: {fileID: 114214978455727294}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -160,7 +162,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224590497294448998}
   - component: {fileID: 223978099420168994}
-  - component: {fileID: 114617040684483892}
   - component: {fileID: 114638066760655600}
   m_Layer: 5
   m_Name: OnGameMenu
@@ -320,17 +321,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114082123248965046}
-        m_MethodName: EnableOrDisableOptions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 114331547344874990, guid: ff1777f9d12eba14290e0720ab4b65e3,
           type: 2}
         m_MethodName: OnClickSound
@@ -448,6 +438,53 @@ MonoBehaviour:
   m_Text: 'Exit
 
 '
+--- !u!114 &114214978455727294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122752685512994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114606490227485842}
+          m_MethodName: ButonClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114606490227485842}
+          m_MethodName: ButonReleased
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114265537736611274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -590,6 +627,13 @@ MonoBehaviour:
   button: {fileID: 1925236299203278, guid: e7d56d0dc3e16f6429c36b2576ca8f0e, type: 2}
   heightOfButton: 70
   widthOfButton: 70
+  spriteForUI:
+  - {fileID: 21300000, guid: 243fd3e9a3cee2e4e8019bb39d06e468, type: 3}
+  - {fileID: 21300000, guid: d59d6a699402a8947879eb164d5d310e, type: 3}
+  - {fileID: 21300000, guid: c8b148cf10bf48444afcf13cdad7924a, type: 3}
+  - {fileID: 21300000, guid: c8e4d1fe186078b41a0451c2a6c81cb3, type: 3}
+  - {fileID: 21300000, guid: 0cc027d3b92df5c419979c4e248674e4, type: 3}
+  - {fileID: 21300000, guid: ed6fb669111238e40bbfe79b2ea5466e, type: 3}
 --- !u!114 &114453466558012466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -692,27 +736,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Language
---- !u!114 &114617040684483892
+--- !u!114 &114606490227485842
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452047590871776}
+  m_GameObject: {fileID: 1122752685512994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: ab217ff9b56a12d42b1c8f1f74d34de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114638066760655600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1160,7 +1194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -107}
+  m_AnchoredPosition: {x: -48.5, y: -58}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &224475142333863650
@@ -1208,7 +1242,7 @@ RectTransform:
   m_GameObject: {fileID: 1452047590871776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224967519914698090}
   - {fileID: 224370290445250098}
@@ -1217,10 +1251,10 @@ RectTransform:
   m_Father: {fileID: 224055438560378102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -601.5, y: 454.5}
+  m_SizeDelta: {x: 1203, y: 908.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224722607120963358
 RectTransform:
@@ -1274,10 +1308,10 @@ RectTransform:
   m_Father: {fileID: 224590497294448998}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -333, y: 28}
+  m_SizeDelta: {x: 930, y: 378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224947508432193886
 RectTransform:

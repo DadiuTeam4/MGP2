@@ -28,7 +28,7 @@ namespace HugoAI
 
 		private void CheckTransitions(StateController controller)
     	{
-			foreach (Transition transition in transitions) 
+			foreach (Transition transition in transitions)
 			{
 				bool decisionSucceeded = transition.decision.Decide(controller);
 

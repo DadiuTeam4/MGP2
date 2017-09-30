@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Name: WalkToNumber
   m_EditorClassIdentifier: 
   random: 0
-  waypointIndex: 0
