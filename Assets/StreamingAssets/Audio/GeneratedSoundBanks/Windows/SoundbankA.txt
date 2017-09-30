@@ -6,12 +6,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	334444633	Play_MGP2_SD_CurtainOpen			\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainOpen	
 	447855483	Play_MGP2_SD_WindowClose			\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose	
 	452547817	Stop_All			\Default Work Unit\Stop_All	
+	534839454	Resume_MGP2_Music_throwout2piano_P__dirty			\Default Work Unit\Resume_MGP2_Music_throwout2piano_P__dirty	
 	803864683	Play_MGP2_SD_Herbs			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs	
 	967135245	Play_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair	
 	1000868684	Play_MGP2_Speak_SD_MumsSmaakager			\Default Work Unit\Speak\Play_MGP2_Speak_SD_MumsSmaakager	
 	1119214915	Play_MGP2_SD_TV			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV	
 	1477792038	Play_MGP2_SD_Bed			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed	
 	1710825164	Ambience_kitchen			\Default Work Unit\Ambience\Ambience_kitchen	
+	1795272170	Play_MGP2_Music_throwout2piano_P_			\Default Work Unit\Play_MGP2_Music_throwout2piano_P_	
 	1797766868	Play_MGP2_SD_Fryingpan1			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan1	
 	1797766870	Play_MGP2_SD_Fryingpan3			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan3	
 	1797766871	Play_MGP2_SD_Fryingpan2			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2	
@@ -21,6 +23,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2186198650	Break_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_RockingChair	
 	2300991670	Play_MGP2_SD_Cabinet_Open			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open	
 	2310237967	Play_MGP2_SD_Cookie			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cookie	
+	2332801419	Play_MGP2_Music_throwout2piano_P__dirty			\Default Work Unit\Play_MGP2_Music_throwout2piano_P__dirty	
 	2380106136	Stop_MGP2_SD_Garden			\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden	
 	2467296834	Play_MGP2_SD_Garden			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Garden	
 	2486577875	Play_MGP2_SD_Yarn			\Default Work Unit\Play_MGP2_SD_Yarn	
@@ -44,12 +47,19 @@ Event	ID	Name			Wwise Object Path	Notes
 	3938267759	Play_MMGP2_SD_Porcelain			\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain	
 	3991942870	Music			\Default Work Unit\Music\Music	
 	4096018196	Play_MGP2_SD_Kettle			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Kettle	
+	4102654701	Pause_MGP2_Music_throwout2piano_P__dirty			\Default Work Unit\Pause_MGP2_Music_throwout2piano_P__dirty	
 	4238747602	OnScreenClick			\Default Work Unit\SoundDesign\OnScreenClick	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_volume			\Default Work Unit\Music_volume	
+	2982772610	Vinyl_dirty			\Default Work Unit\Vinyl_dirty	
 	3014445900	Vinyl_pitch			\Default Work Unit\Vinyl_pitch	
 	3979854329	Deaf_parameter			\Default Work Unit\Deaf_parameter	
+
+Effect plug-ins	ID	Name	Type				Notes
+	418265525	Gentle_Program_Compressor_Minus_14dB_RMS	Wwise Compressor			
+	507630467	Wwise Guitar Distortion (Custom)	Wwise Guitar Distortion			
+	830631819	New_Wwise_Guitar_Distortion1	Wwise Guitar Distortion			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C02F82B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		35454
@@ -77,6 +87,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	475962076	MGP2_SD_Tinnitus	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Tinnitus_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Tinnitus		1920064
 	489143399	MGP2_SD_Fryingpan3	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Fryingpan3_54584653.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan3		83956
 	492814952	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Ambience_Kitchen.1(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		6635584
+	562988770	MGP2_Music_throwout2piano(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2piano(P)_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_throwout2piano(P)		9216064
 	571641950	MGP2_SD_CurtainClose	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\142301__fryzu82__curtain-opening_2A2FADE4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_CurtainClose		34082
 	591599028	MGP2_SD_Chandelier	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\320416__yadronoff__shivering-chandelier_4CD27AC0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Chandelier		982736
 	609955242	MGP2_Speak_SD_FnisKilder	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Speak_SD_FnisKilder_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_HugoTryk\MGP2_Speak_SD_FnisKilder		368704
@@ -96,4 +107,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1005144570	MGP2_SD_Fireplace	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\60568__robinhood76__00370-fireplace-1_D571E59E.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Fireplace		2220756
 	1070167829	MGP2_SD_DoorUnlock	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\158625__mrauralization__door-unlock_A3449B35.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_DoorUnlock		88408
 	1071497012	MGP2_Speak_Hehehe	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Speak_Hehehe_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_HugoTryk\MGP2_Speak_Hehehe		202396
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	248639778	MGP2_Music_throwout2piano(P)_dirty	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2piano(P)_96FA5F3B.wem	248639778.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_throwout2piano(P)_dirty	
 

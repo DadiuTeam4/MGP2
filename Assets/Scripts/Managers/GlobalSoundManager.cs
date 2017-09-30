@@ -14,6 +14,11 @@ public class GlobalSoundManager : MonoBehaviour {
 		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
 		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P_", gameObject); 
+		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 0); 
+
+
 	}
 
 	void Update () 
@@ -33,8 +38,10 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 0); 
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
 		AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_Fireplace", gameObject);
+		//AkSoundEngine.PostEvent ("Play_MGP2_SD_Fireplace", gameObject);
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
+		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 100); 
+
 	}
 
 	public void OnClickSound()

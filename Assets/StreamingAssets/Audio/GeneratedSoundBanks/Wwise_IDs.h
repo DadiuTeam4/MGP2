@@ -19,6 +19,9 @@ namespace AK
         static const AkUniqueID BREAK_MGP2_SD_ROCKINGCHAIR = 2186198650U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ONSCREENCLICK = 4238747602U;
+        static const AkUniqueID PAUSE_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 4102654701U;
+        static const AkUniqueID PLAY_MGP2_MUSIC_THROWOUT2PIANO_P_ = 1795272170U;
+        static const AkUniqueID PLAY_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 2332801419U;
         static const AkUniqueID PLAY_MGP2_SD_BED = 1477792038U;
         static const AkUniqueID PLAY_MGP2_SD_CABINET_CLOSE = 1943834466U;
         static const AkUniqueID PLAY_MGP2_SD_CABINET_OPEN = 2300991670U;
@@ -55,6 +58,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SPEAK_SD_FNISKILDER = 3279096707U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SD_MUMSSMAAKAGER = 1000868684U;
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
+        static const AkUniqueID RESUME_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 534839454U;
         static const AkUniqueID STOP_ALL = 452547817U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
@@ -78,6 +82,7 @@ namespace AK
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
         static const AkUniqueID TESTPARAMETER = 2010788230U;
+        static const AkUniqueID VINYL_DIRTY = 2982772610U;
         static const AkUniqueID VINYL_PITCH = 3014445900U;
     } // namespace GAME_PARAMETERS
 
