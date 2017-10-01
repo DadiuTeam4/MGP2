@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class GlobalSoundManager : MonoBehaviour {
 
+
 	void Start () 
 	{
-		//Ambience
-		AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject); 
-		AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject);
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_Fireplace", gameObject);
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
 
-		AkSoundEngine.PostEvent ("Ambience_livingroom", gameObject); 
+		//AkSoundEngine.PostEvent ("Ambience_livingroom", gameObject); 
 		//Ambience volume
-		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 0); 
-		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
 		//Music
-		AkSoundEngine.PostEvent ("Music", gameObject); 
+		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
+		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
 	}
 
 	void Update () 
@@ -32,4 +27,20 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.PostEvent ("Break_MGP2_SD_RockingChair", gameObject);
 
 	}
+
+	void SwitchToHub()
+	{
+		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 0); 
+		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
+		AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject); 
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_Fireplace", gameObject);
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
+	}
+
+	public void OnClickSound()
+	{
+		AkSoundEngine.PostEvent ("OnScreenClick", gameObject); 
+	}
+
+
 }

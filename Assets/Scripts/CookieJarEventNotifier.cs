@@ -4,10 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CookieJarEventNotifier : MonoBehaviour
 {
-
     private Text number2Text;
     private int number2Count;
     // Use this for initialization

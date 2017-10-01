@@ -1,7 +1,12 @@
 ﻿/*Author:Tilemachos
+Co-author: Jonathan (worked on this Wednesday)
 This script holds the current level the player is on,
 which number he/she has collected
 and which levels hae been complited
+
+NOTICE: The ResourceManager has been appointed the
+place for keeping ALL STATE, this is what is currently
+being implemented.
 
  */
 
@@ -14,67 +19,106 @@ using UnityEngine.SceneManagement;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-	
-	static private string currentSceneName = "IntroLevel";
-	static public List<int> listOfPickedUpNumbers;
-	static private List<string> listOfScenesCompleted;
+	//To do: Implement enums instead of string for CurrentSceneName
+
 	private UnityAction resourceManagerListenerForNumber1;
 	private UnityAction resourceManagerListenerForNumber2;
 	private UnityAction resourceManagerListenerForNumber3;
 	private UnityAction resourceManagerListenerForNumber4;
 	private UnityAction resourceManagerListenerForNumber5;
 	private UnityAction resourceManagerListenerForNumber6;
-	private UnityAction resourceManagerListenerForNumber7;
-	private UnityAction resourceManagerListenerForNumber8;
-	private UnityAction resourceManagerListenerForNumber9;
-	private UnityAction resourceManagerListenerForNumber10;
 
+
+
+	private UnityAction resourceManagerListenerForNumber1Clicked;
+	private UnityAction resourceManagerListenerForNumber2Clicked;
+	private UnityAction resourceManagerListenerForNumber3Clicked;
+	private UnityAction resourceManagerListenerForNumber4Clicked;
+	private UnityAction resourceManagerListenerForNumber5Clicked;
+	private UnityAction resourceManagerListenerForNumber6Clicked;
+
+
+    private UnityAction sceneTriggerListener;
+
+
+	// State holder variables.
+	public static bool doorToKitchenOpen;
+	public static bool kitchenSinkFull;
+	public static bool kitchenLightOn;
+	public static bool isFantasyObjectActivated;
+	static private string currentSceneName = "HubScene";
+	static public List<int> listOfPickedUpNumbers;
+	static public List<bool> listOfPickedUpNumbersState;
 
 	 void Start()
 	 {
 
 		 listOfPickedUpNumbers = new List<int>();
-		 listOfScenesCompleted = new List<string>();
-
+		 listOfPickedUpNumbersState = new List<bool>();
 
 		 resourceManagerListenerForNumber1 = new UnityAction(AddNumber1ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber2 = new UnityAction(AddNumber2ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber3 = new UnityAction(AddNumber3ToListOfPickedUpNumbers);
-		/* resourceManagerListenerForNumber4 = new UnityAction(AddNumber4ToListOfPickedUpNumbers);
+		 resourceManagerListenerForNumber4 = new UnityAction(AddNumber4ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber5 = new UnityAction(AddNumber5ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber6 = new UnityAction(AddNumber6ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber7 = new UnityAction(AddNumber7ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber8 = new UnityAction(AddNumber8ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber9 = new UnityAction(AddNumber9ToListOfPickedUpNumbers);
-		 resourceManagerListenerForNumber10 = new UnityAction(AddNumber10ToListOfPickedUpNumbers);*/
 
 
 		EventManager.StartListening(EventName.NumberOnePickedUp, resourceManagerListenerForNumber1);
 		EventManager.StartListening(EventName.NumberTwoPickedUp, resourceManagerListenerForNumber2);
 		EventManager.StartListening(EventName.NumberThreePickedUp, resourceManagerListenerForNumber3);
-		/*EventManager.StartListening("number4HasBeenPickedUp", resourceManagerListenerForNumber4);
-		EventManager.StartListening("number5HasBeenPickedUp", resourceManagerListenerForNumber5);
-		EventManager.StartListening("number6HasBeenPickedUp", resourceManagerListenerForNumber6);
-		EventManager.StartListening("number7HasBeenPickedUp", resourceManagerListenerForNumber7);
-		EventManager.StartListening("number8HasBeenPickedUp", resourceManagerListenerForNumber8);
-		EventManager.StartListening("number9HasBeenPickedUp", resourceManagerListenerForNumber9);
-		EventManager.StartListening("number10HasBeenPickedUp", resourceManagerListenerForNumber10);*/
+		EventManager.StartListening(EventName.NumberFourPickedUp, resourceManagerListenerForNumber4);
+		EventManager.StartListening(EventName.NumberFivePickedUp, resourceManagerListenerForNumber5);
+		EventManager.StartListening(EventName.NumberSixPickedUp, resourceManagerListenerForNumber6);
+
+
+		 resourceManagerListenerForNumber1Clicked = new UnityAction(Number1Deactive);
+		 resourceManagerListenerForNumber2Clicked = new UnityAction(Number2Deactive);
+		 resourceManagerListenerForNumber3Clicked = new UnityAction(Number3Deactive);
+		 resourceManagerListenerForNumber4Clicked = new UnityAction(Number4Deactive);
+		 resourceManagerListenerForNumber5Clicked = new UnityAction(Number5Deactive);
+		 resourceManagerListenerForNumber6Clicked = new UnityAction(Number6Deactive);
+
+		EventManager.StartListening(EventName.NumberOneClicked, resourceManagerListenerForNumber1Clicked);
+		EventManager.StartListening(EventName.NumberTwoClicked, resourceManagerListenerForNumber2Clicked);
+		EventManager.StartListening(EventName.NumberThreeClicked, resourceManagerListenerForNumber3Clicked);
+		EventManager.StartListening(EventName.NumberFourClicked, resourceManagerListenerForNumber4Clicked);
+		EventManager.StartListening(EventName.NumberFiveClicked, resourceManagerListenerForNumber5Clicked);
+		EventManager.StartListening(EventName.NumberSixClicked, resourceManagerListenerForNumber6Clicked);
+
+
+
+        EventManager.StartListening(EventName.HubDoorClicked, ChangeToKitchenScene);
+
+		EventManager.StartListening(EventName.KitchenDoorClicked, ChangeToHubScene);
+
+        EventManager.StartListening(EventName.LanguageSelected, ChangeToHubScene);
+
+		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
+		kitchenLightOn = true;
+		isFantasyObjectActivated = false;		
 	 }
+
 
 
 	public static string GetCurrentSceneName()
 	{
 		return currentSceneName;
 	}
+    void ChangeToKitchenScene()
+    {
+		currentSceneName = "KitchenScene";
+    }
 
-	public static void SetCurrentSceneName(string newSceneName)
+	void ChangeToHubScene()
+    {
+		currentSceneName = "HubScene";
+    }
+	public static List<bool> GetListOfPickedUpNumbersState()
 	{
-		currentSceneName = newSceneName;
+		return listOfPickedUpNumbersState;
 	}
-
-
-
-
 	public static List<int> GetListOfPickedUpNumbers()
 	{
 		return listOfPickedUpNumbers;
@@ -89,74 +133,111 @@ public class ResourceManager : Singleton<ResourceManager>
 	}
 	private static void AddNumber1ToListOfPickedUpNumbers()
 	{
-		//print(" 1 has been picked up");
-		listOfPickedUpNumbers.Add(1);
+		if (!listOfPickedUpNumbers.Contains(1))
+		{
+			listOfPickedUpNumbers.Add(1);
+			listOfPickedUpNumbersState.Add(true);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
-		//SceneManager.LoadScene("ResourceManagerTestScene2");
 	}
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(2);
+
+		if (!listOfPickedUpNumbers.Contains(2))
+		{
+			listOfPickedUpNumbers.Add(2);
+			listOfPickedUpNumbersState.Add(true);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(3);
+		if (!listOfPickedUpNumbers.Contains(3))
+		{
+			listOfPickedUpNumbers.Add(3);
+			listOfPickedUpNumbersState.Add(true);
+		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
-
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(4);
+
+		if (!listOfPickedUpNumbers.Contains(4))
+		{
+			listOfPickedUpNumbers.Add(4);
+			listOfPickedUpNumbersState.Add(true);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber5ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(5);
+
+		if (!listOfPickedUpNumbers.Contains(5))
+		{
+			listOfPickedUpNumbers.Add(5);
+			listOfPickedUpNumbersState.Add(true);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber6ToListOfPickedUpNumbers()
 	{
-		listOfPickedUpNumbers.Add(6);
-	}	
-	private static void AddNumber7ToListOfPickedUpNumbers()
-	{
-		listOfPickedUpNumbers.Add(7);
-	}	
-	private static void AddNumber8ToListOfPickedUpNumbers()
-	{
-		listOfPickedUpNumbers.Add(8);
-	}	
-	private static void AddNumber9ToListOfPickedUpNumbers()
-	{
-		listOfPickedUpNumbers.Add(9);
-	}	
-	private static void AddNumber10ToListOfPickedUpNumbers()
-	{
-		listOfPickedUpNumbers.Add(10);
+
+		if (!listOfPickedUpNumbers.Contains(6))
+		{
+			listOfPickedUpNumbers.Add(6);
+			listOfPickedUpNumbersState.Add(true);
+		}
+
+		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
 
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
 
+    public static bool NumberCountedToGrandma(int nr)
+    {
+        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
+        if (index != -1)
+        {
+            return !listOfPickedUpNumbersState[index];
+        }
+        return false;
+    }
 
-	public static List<string> GetListOfScenesCompleted()
+    private static void Number1Deactive()
 	{
-		return listOfScenesCompleted;
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 1);
+		listOfPickedUpNumbersState[index] = false;
 	}
-	public static void ClearListOfScenesCompleted()
+	private static void Number2Deactive()
 	{
-		listOfScenesCompleted.Clear();
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 2);
+		listOfPickedUpNumbersState[index] = false;
 	}
-	public static void DeleteLevelInListOfScenesCompleted(string deleteThisSceneFromTheList)
+	private static void Number3Deactive()
 	{
-		listOfScenesCompleted.Remove(deleteThisSceneFromTheList);
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 3);
+		listOfPickedUpNumbersState[index] = false;
 	}
-	public static void AddLevelToListOfScenesCompleted(string addThisScene)
+	private static void Number4Deactive()
 	{
-		listOfScenesCompleted.Add(addThisScene);
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 4);
+		listOfPickedUpNumbersState[index] = false;
 	}
-
-
-
-
-	
+	private static void Number5Deactive()
+	{
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 5);
+		listOfPickedUpNumbersState[index] = false;
+	}
+	private static void Number6Deactive()
+	{
+		int index = listOfPickedUpNumbers.FindIndex(x => x == 6);
+		listOfPickedUpNumbersState[index] = false;
+	}
 }

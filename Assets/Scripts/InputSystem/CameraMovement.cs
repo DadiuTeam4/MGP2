@@ -5,34 +5,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
+	[Tooltip("The minimum initial movement needed before any rotation happens. 0 = NO DEADZONE, 1 = NO MOVEMENT WILL BE ENOUGH")]
+	[Range(0.0f, 5.0f)]
+	public float deadZone = 1.0f;
+
+	[Tooltip("The speed of which the camera will rotate")]
+	[Range(0.01f, 2.0f)]
+	public float speed = 0.2f;
+
+	[Tooltip ("The minimum difference in movement read")]
+	[Range(0.0f, 1.0f)]
+	public float sensitivity = 0.05f;
+
 	[Tooltip("The allowed movement range for the camera in X")]
-	[Range(0.1f, 90.0f)]
-	public float rotaryBoundsX = 30.0f;
+	[Range(0.1f, 10.0f)]
+	public float rotaryBoundsX = 1.0f;
 
 	[Tooltip("The allowed movement range for the camera in Y")]
-	[Range(0.1f, 90.0f)]
-	public float rotaryBoundsY = 30.0f;
+	[Range(0.1f, 10.0f)]
+	public float rotaryBoundsY = 1.0f;
 
-	private Vector3 startRotation;
+	private bool inverseX, inverseY;
+	private float currentDeviceRotationX, currentDeviceRotationY;
 	private float minX, maxX, minY, maxY;
-	private float currentDeviceRotationX = 0.0f, currentDeviceRotationY = 0.0f;
 
-	private float lerpX = 0.5f;
-	private float lerpY = 0.5f;
-
-	private float[] movingAverageX = new float[5];
-	private float[] movingAverageY = new float[5];
+	private Vector2 currentDirection = Vector2.zero;
+	private Vector3 startRotation;
 
 	void Awake () 
 	{
+		EventManager.StartListening(EventName.InverseCameraGyroScopeX, InverseX);
+		EventManager.StartListening(EventName.InverseCameraGyroScopeY, InverseY);
+
+		Input.gyro.enabled = true;
+
 		startRotation = transform.rotation.eulerAngles;
 
-		minX = startRotation.x - rotaryBoundsX;
-		maxX = startRotation.x + rotaryBoundsX;
-
-		minY = startRotation.y - rotaryBoundsY;
-		maxY = startRotation.y + rotaryBoundsY;
-
+		CalculateBounds();
 	}
 	
 	void Update ()
@@ -42,78 +51,115 @@ public class CameraMovement : MonoBehaviour {
 		UpdateTransformRotation();
 	}
 
+	private void InverseX()
+	{
+		inverseX = !inverseX;
+	}
+
+	private void InverseY()
+	{
+		inverseY = !inverseY;
+	}
+
 	private void UpdateTransformRotation()
 	{
-		lerpX = ClampValueForLerp(currentDeviceRotationX);
-		lerpY = ClampValueForLerp(currentDeviceRotationY);
+		Quaternion currentRotation = transform.rotation;
 
-		float angleX, angleY;
+		float angleY = currentRotation.eulerAngles.y + (currentDirection.y * speed);
+		float angleX = currentRotation.eulerAngles.x + (currentDirection.x * speed);
 
-		angleX = Mathf.Lerp(minX, maxX, lerpX);
-		angleY = Mathf.Lerp(minY, maxY, lerpY);
-
+		angleY = AngleClamp(angleY, minY, maxY);
+		angleX = AngleClamp(angleX, minX, maxX);
+		
 		Quaternion resultantRotation = Quaternion.AngleAxis(angleY, Vector3.up) * Quaternion.AngleAxis(angleX, Vector3.right);
+
 		transform.rotation = resultantRotation;
 	}
 
 	private void UpdateDeviceRotationValues()
 	{
-		float flippedX, flippedY;
-		flippedX = Input.acceleration.y;
-		flippedY = Input.acceleration.x;
+		Vector2 gyroScopeInput = GetRotationValues();
+		float inputX = gyroScopeInput.x;
+		float inputY = gyroScopeInput.y;
 
-		currentDeviceRotationX = CalculateMovingAverage(flippedX, ref movingAverageX);			
-		currentDeviceRotationY = CalculateMovingAverage(flippedY, ref movingAverageY);
-		
-	}
-
-	private float CalculateMovingAverage(float value, ref float[] array)
-	{
-		array = PushBack(value, array);
-		return Average(array);
-	}
-
-	private float Average(float[] array)
-	{
-		float sum = 0;
-		for  (int i = 0; i < array.Length; i++)
+		if (inputX > deadZone || inputX < -deadZone)
 		{
-			sum += array[i];
+			currentDeviceRotationX = inputX;
+		}
+		else
+		{
+			currentDeviceRotationX = 0.0f;
 		}
 
-		return sum /= array.Length;
-	}
-
-	private float[] PushBack(float pushedBackValue, float[] array)
-	{
-		for (int i = array.Length-1; i > 0; i--)
+		if (inputY > deadZone || inputY < -deadZone)
 		{
-			array[i] = array[i - 1];
+			currentDeviceRotationY = inputY;
+		}
+		else
+		{
+			currentDeviceRotationY = 0.0f;
 		}
 
-		array[0] = pushedBackValue;
-
-		return array;
+		UpdateDirection();
 	}
 
-	private float ClampValueForLerp(float x)
+	private Vector2 GetRotationValues()
 	{
-		float result = 0;
-		result = (x + 1) / 2;
-		result = result > 1 ? 1 : result;
+		Vector2 gyroScopeInput;
 
-		return result;
+		gyroScopeInput.x = Input.gyro.rotationRateUnbiased.x;
+		gyroScopeInput.y = Input.gyro.rotationRateUnbiased.y;
+
+		return gyroScopeInput;
 	}
 
-	private void SingleLinePrintArray<T>(T[] array)
+	private void UpdateDirection()
 	{
-		string message = "";
-
-		for (int i = 0; i < array.Length; i++)
+		if (currentDeviceRotationX > 0.0f)
 		{
-			message += " " + i + ": " + array[i];
+			currentDirection.x = inverseX ? 1.0f : -1.0f;
+		}
+		else if (currentDeviceRotationX < 0.0f)
+		{
+			currentDirection.x = inverseX ? -1.0f : 1.0f;
+		}
+		else
+		{
+			currentDirection.x = 0.0f;
 		}
 
-		Debug.Log(message);
+		if (currentDeviceRotationY > 0.0f)
+		{
+			currentDirection.y = inverseY ? 1.0f : -1.0f;
+		}
+		else if (currentDeviceRotationY < 0.0f)
+		{
+			currentDirection.y = inverseY ? -1.0f : 1.0f;
+		}
+		else
+		{
+			currentDirection.y = 0.0f;
+		}
+	}
+
+	private float AngleClamp(float value, float min, float max)
+	{
+		value = value > 180 ? value - 360 : value;
+
+		value = Mathf.Clamp(value, min, max);
+
+		return value;
+	}
+
+	private void CalculateBounds()
+	{
+		float startX = startRotation.x > 180 ? startRotation.x - 360 : startRotation.x;
+		float startY = startRotation.y > 180 ? startRotation.y - 360 : startRotation.y;
+
+		minX = startX - rotaryBoundsX;
+		maxX = startX + rotaryBoundsX;
+
+		minY = startY - rotaryBoundsY;
+		maxY = startY + rotaryBoundsY;
 	}
 }

@@ -8,6 +8,7 @@ public class InputManager : Singleton<InputManager>
 {
 	private readonly List<Interactable> heldLastFrame = new List<Interactable>();
 	private readonly List<Interactable> heldThisFrame = new List<Interactable>();
+	private static Vector3 lastRaycastHit;
 
 	#region DEBUG
 	#if UNITY_EDITOR
@@ -16,7 +17,6 @@ public class InputManager : Singleton<InputManager>
 	bool mouseDownLastFrame;
 	#endif
 	#endregion
-
 
 	#region UPDATE_LOOP
 	private void Update()
@@ -75,6 +75,7 @@ public class InputManager : Singleton<InputManager>
 					if (!mouseDownLastFrame)
 					{
 						interactable.OnTouchBegin();
+						interactable.GiveTouchFeedback();
 					}
 				}
 			}
@@ -110,9 +111,10 @@ public class InputManager : Singleton<InputManager>
 	private void TouchBegan(Touch touch) 
 	{
 		Interactable interactable = CastRayFromTouch(touch);
-		if (interactable) 
+		if (interactable)
 		{
 			interactable.OnTouchBegin();
+			interactable.GiveTouchFeedback();
 		}
 	}
 
@@ -157,6 +159,7 @@ public class InputManager : Singleton<InputManager>
 		Ray ray = Camera.main.ScreenPointToRay(touch.position);
 		if (Physics.Raycast(ray, out hit)) 
 		{
+			lastRaycastHit = hit.point;
 			interactableHit = hit.collider.GetComponent<Interactable>();
 		}
 		return interactableHit;
@@ -188,6 +191,11 @@ public class InputManager : Singleton<InputManager>
 		heldThisFrame.Clear();
 	}
 
+	public static Vector3 GetLastRayHit()
+	{
+		return lastRaycastHit;
+	}
+
 	#region DEBUG
 	#if UNITY_EDITOR
 	// MOUSE DEBUGGING
@@ -199,6 +207,7 @@ public class InputManager : Singleton<InputManager>
 		Ray ray = Camera.main.ScreenPointToRay(pos);
 		if (Physics.Raycast(ray, out hit))
 		{
+			lastRaycastHit = hit.point;
 			interactableHit = hit.collider.GetComponent<Interactable>();
 		}
 		return interactableHit;
