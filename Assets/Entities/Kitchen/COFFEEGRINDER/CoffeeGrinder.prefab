@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 33991222952654824}
   - component: {fileID: 136260536970060860}
   - component: {fileID: 23840636528565942}
+  - component: {fileID: 114912266580360956}
   m_Layer: 0
   m_Name: PLACEHOLDER
   m_TagString: Untagged
@@ -2041,14 +2042,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389261593537656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.161, y: 1.573, z: 4.75}
+  m_LocalRotation: {x: 0.047383983, y: -0, z: -0, w: 0.99887675}
+  m_LocalPosition: {x: -3.137, y: 1.76, z: 1.268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4271066717176924}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.432, y: 0, z: 0}
 --- !u!4 &4778887180254436
 Transform:
   m_ObjectHideFlags: 1
@@ -2784,6 +2785,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114912266580360956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191999436708790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20da30bc203543af99232e1ea9bb82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualFeedback: 1
+  boomMagnitude: 1.08
+  boomTime: 0.1
+  particleSystem: {fileID: 0}
+  timeHeld: 0
 --- !u!136 &136260536970060860
 CapsuleCollider:
   m_ObjectHideFlags: 1
