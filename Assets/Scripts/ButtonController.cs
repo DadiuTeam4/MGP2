@@ -20,6 +20,8 @@ public class ButtonController : MonoBehaviour {
 	public Collider targetCollider;
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
+	private bool isBeingPlayed = false; 
+
 
 
 	void Start()
@@ -65,6 +67,10 @@ public class ButtonController : MonoBehaviour {
 				else
 				{
 					print(" Hey! Let me count it for grandma");
+					if (isBeingPlayed == false) 
+					{
+						FortaelleBedstemor (); 
+					}
 				}
 
 
@@ -99,4 +105,19 @@ public class ButtonController : MonoBehaviour {
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
 	}
+
+	void FortaelleBedstemor()
+	{
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FortaelleBedstemor", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		isBeingPlayed = true;
+	}
+
+	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
+	{
+		if (in_type == AkCallbackType.AK_EndOfEvent)
+		{
+			isBeingPlayed = false; 
+		}
+	}
+
 }

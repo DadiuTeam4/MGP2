@@ -10,11 +10,14 @@ public class LanguageController : MonoBehaviour
     {
 		Debug.Log("English");
 		EventManager.TriggerEvent(EventName.LangEnglish);
+		AkSoundEngine.SetState ("Language", "English"); 
+
     }
 
     public void setDanish()
     {
 		Debug.Log("Danish");
 		EventManager.TriggerEvent(EventName.LangDanish);
+		AkSoundEngine.SetState ("Language", "Dansk"); 
     }
 }

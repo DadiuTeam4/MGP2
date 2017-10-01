@@ -1,98 +1,65 @@
-﻿using System.Collections;
+﻿// Author: Kristian
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gramophone : Interactable {
 
-	// Use this for initialization
-
-	private float fadeValue = 100f; 
+	private float fadePitchValue = 100f;
 	private float fadeMax = 100f;
 	private float fadeMin = 0f; 
-	public bool isFaded = false; 
-	public float elapsedTime = 0f; 
-	public float duration = 5f; 
+	private float duration;  
+	private bool isFaded = false; 
+	private bool hasBeenPressed = false; 
+
+	public void Awake()
+	{
+		DontDestroyOnLoad (transform.gameObject);
+	}
 
 	public override void OnTouchBegin()
 	{	
-		if (isFaded == false)
+		if (isFaded == false && hasBeenPressed == false)
 		{
-			StartCoroutine (FadeIn ());
+			StartCoroutine (FadeIn ()); 
 		}
-		if (isFaded == true)
+		if (isFaded == true && hasBeenPressed == false)
 		{
-
-			StartCoroutine (FadeOut ());
+			StartCoroutine (FadeOut ()); 
 		}
 	}
 
 	public void Update()
 	{
-		AkSoundEngine.SetRTPCValue ("Vinyl_pitch", fadeValue);
-
-		if (fadeValue <= 0.7f) {
-			isFaded = true; 
-			//elapsedTime = 0f; 
-		}
-		if (fadeValue >= 99.3f) {
-			isFaded = false;
-			//elapsedTime = 0f; 
-		}
-		Debug.Log (fadeValue); 
+		AkSoundEngine.SetRTPCValue ("Vinyl_pitch", fadePitchValue);
 	}
 
 	IEnumerator FadeIn()
 	{
-		//while (elapsedTime < duration)
-		//{
-			//fadeValue = Mathf.Lerp(fadeValue, fadeMin, (elapsedTime/ duration));
-			//elapsedTime += Time.deltaTime;
-
-			fadeValue = Mathf.Lerp (100f, 0f, Time.time/5);
-			yield return new WaitForEndOfFrame ();
-
-
-		//}
+		hasBeenPressed = true;
+		duration = 20f * Time.deltaTime; 
+		while (fadePitchValue > fadeMin) 
+		{
+			fadePitchValue -= duration; 
+			yield return null; 
+		}
+		isFaded = true; 
+		hasBeenPressed = false;
+		AkSoundEngine.PostEvent("Pause_MGP2_Music_throwout2piano_P__dirty", gameObject); 
 	}
-
+		
 	IEnumerator FadeOut()
 	{
-		//while (elapsedTime < duration)
-		//{
-			//fadeValue = Mathf.Lerp(fadeValue, fadeMax, (elapsedTime/ duration));
-			//elapsedTime += Time.deltaTime;
-			yield return new WaitForEndOfFrame();
-
-			fadeValue = Mathf.Lerp (0f, 100f, Time.time/5);
-			yield return new WaitForEndOfFrame();
-
-
-		//}
-	}
-
-
-
-
-
-	IEnumerator FadeLightColor(Color endColor, float timeForEffect, Action callback)
-	{
-		Color startColor = light.color;        
-		float elapsed = 0f;
-
-		while (elapsed < timeForEffect)
+		AkSoundEngine.PostEvent("Resume_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+		hasBeenPressed = true;
+		duration = 20f * Time.deltaTime; 
+		while (fadePitchValue < fadeMax) 
 		{
-			light.color = Color.Lerp(startColor, endColor, elapsed / timeForEffect);
-			elapsed += Time.deltaTime;
-			yield return null;
+			fadePitchValue += duration; 
+			yield return null; 
 		}
-
-		light.color = endColor;
-
-		//Check callback wasn't set to null
-		//Unity/Mono doesn't support later versions of c# yet which make this easier
-		if (callback != null) 
-		{
-			callback();
-		}
+		isFaded = false;
+		hasBeenPressed = false;
 	}
 }
