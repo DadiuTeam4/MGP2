@@ -523,6 +523,42 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 243fd3e9a3cee2e4e8019bb39d06e468,
+        type: 3}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d59d6a699402a8947879eb164d5d310e,
+        type: 3}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c8b148cf10bf48444afcf13cdad7924a,
+        type: 3}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: c8e4d1fe186078b41a0451c2a6c81cb3,
+        type: 3}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cc027d3b92df5c419979c4e248674e4,
+        type: 3}
+    - target: {fileID: 114417486586608650, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: spriteForUI.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: ed6fb669111238e40bbfe79b2ea5466e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: feb7237d1ee1e4a77a5b59ed1f6b4122, type: 2}
   m_IsPrefabParent: 0
@@ -1503,7 +1539,7 @@ Prefab:
     - target: {fileID: 23016114327684064, guid: 414ba3c49b7f643368c3c848f3006fef,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4869850060235358, guid: 414ba3c49b7f643368c3c848f3006fef, type: 2}
       propertyPath: m_LocalPosition.x
