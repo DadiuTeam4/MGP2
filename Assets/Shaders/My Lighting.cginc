@@ -271,6 +271,7 @@ void InitializeFragmentNormal(inout Interpolators i) {
 
 float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 	InitializeFragmentNormal(i);
+    UnityLight light = CreateLight(i);
 
 	float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
 
@@ -280,7 +281,7 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		GetAlbedo(i), GetMetallic(i), specularTint, 
     oneMinusReflectivity);
     
-    half d = dot(i.normal, CreateLight(i).dir) * 0.5 + 0.5;
+    half d = dot(i.normal, light.dir) * 0.5 + 0.5;
     half3 ramp = tex2D(_Ramp, float2(d, d)).rgb;
 
     float4 finalRamp = float4(ramp.r, ramp.g, ramp.b, 1);
@@ -297,29 +298,37 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		albedo, specularTint,
 		oneMinusReflectivity, GetSmoothness(i),
 		i.normal, viewDir,
-		CreateLight(i), CreateIndirectLight(i, viewDir)
+		light, CreateIndirectLight(i, viewDir)
 	);
 
     float4 mask = UNITY_BRDF_PBS(
 		float4(1, 1, 1, 1), specularTint,
 		oneMinusReflectivity, GetSmoothness(i),
 		i.normal, viewDir,
-		CreateLight(i), CreateIndirectLight(i, viewDir)
+		light, CreateIndirectLight(i, viewDir)
 	);
 
     float4 orgColor = float4(albedo.r, albedo.g, albedo.b, 1);
     color.rgb += GetEmission(i);
+    float4 shadowColor;
+
+    //return saturate(atten * mask * 10)*finalRamp;
 
     #if defined(POINT) || defined(POINT_COOKIE) || defined(SPOT)
-    float4 shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * _ShadowBrightness, orgColor * atten, _ShadowBlend); 
+    shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * (_ShadowBrightness*1), orgColor * atten, _ShadowBlend); 
     shadowColor = shadowColor * shadow;
-    return lerp(shadowColor, color, saturate(atten * mask * 10));
-    
+    return lerp(shadowColor, finalRamp * color, saturate(atten * mask * 10)*finalRamp);
+    #endif    
+
+    #if defined (DIRECTIONAL) 
+    shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * _ShadowBrightness, orgColor * atten, _ShadowBlend); 
+    shadowColor = shadowColor * shadow;
+    return lerp(shadowColor, finalRamp * color, saturate(atten * mask * 10)*finalRamp);
+	
     #else
-    float4 shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * _ShadowBrightness, orgColor * atten, _ShadowBlend); 
-    shadowColor = shadowColor * shadow;
-    return lerp(shadowColor, color, saturate(atten * mask * 10));
-	#endif
+    return float4(1, 1, 1, 1);
+    
+    #endif
 
 
 
