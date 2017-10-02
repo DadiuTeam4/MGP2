@@ -7,6 +7,7 @@ public class GlobalSoundManager : MonoBehaviour {
 	private bool hasBeenIntroduced = false; 
 	private bool hasBeenRestarted; 
 	private bool grandmaHasCalled = false; 
+	private bool grandmaIsResponding = false; 
 	private bool areInKitchen = false; 
 	private float timeLeft = 10f;
 	private float curElapsedTime = 0f; 
@@ -15,6 +16,10 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void Start () 
 	{
+		//Ambience
+		AkSoundEngine.PostEvent ("Ambience_livingroom", gameObject);
+		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 0);
+
 		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
 		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
@@ -100,67 +105,133 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void GarnNoegleTaelle()
 	{
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FemGarnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
+		if (grandmaIsResponding == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpaendeHistorie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
+
+		}
+
+
+	void Hjemmesko ()
+	{
 		if (isBeingPlayed == false)
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FemGarnnoegler", gameObject); 
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpaendeHistorie", gameObject); 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		isBeingPlayed = true; 
 		}
-	}
-
-	void Hjemmesko()
-	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
+		if (grandmaIsResponding == false) {
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
 	}
 
 	void HjemmeskoTaelle()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_EnToTreHjemmesko", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EnToTreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
 	}
 
 	void CookieJar()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
+		if (isBeingPlayed == false)
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		isBeingPlayed = true; 
+	}
+		if (grandmaIsResponding) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
 	}
 
 	void CookieJarTaelle()
 	{
-		AkSoundEngine.PostEvent("Play_MGP2_SD_Cookie", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Smaakager", gameObject); 
+		if (isBeingPlayed == false)
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_Cookie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Smaakager",gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 	}
 
 	void Spoegelse()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject);
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
+		if (grandmaIsResponding) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
 	}
 
 	void SpoegelseTaelle()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtSpoegelse", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtSpoegelse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
 	}
 
 	void Badeaender()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
+		if (grandmaIsResponding)
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
 	}
 
 	void BadeaenderTaelle()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		}
+		isBeingPlayed = true; 
 	}
 
 	void EtBarnToBarn()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
+		if (grandmaIsResponding) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			grandmaIsResponding = true; 
+		}
 	}
 
 	void EtBarnToBarnTaelle()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBarn", gameObject); 
+		if (isBeingPlayed == false) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBarn", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
 	}
 
 	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
@@ -168,7 +239,12 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (in_type == AkCallbackType.AK_EndOfEvent)
 		{
 			isBeingPlayed = false; 
+			if (grandmaIsResponding == true) 
+			{
+				grandmaIsResponding = false; 
+			}
 		}
+
 	}
 
 	IEnumerator GrandmaCallTimer()

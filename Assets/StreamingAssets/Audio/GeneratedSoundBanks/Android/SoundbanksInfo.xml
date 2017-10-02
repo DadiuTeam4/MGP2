@@ -32,19 +32,18 @@
 			<IncludedEvents>
 				<Event Id="1710825164" Name="Ambience_kitchen" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_kitchen"/>
 				<Event Id="3642974746" Name="Ambience_livingroom" ObjectPath="\Events\Default Work Unit\Ambience\Ambience_livingroom"/>
-				<Event Id="18727311" Name="Break_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_Fireplace" MaxAttenuation="0.000000"/>
 				<Event Id="2186198650" Name="Break_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_RockingChair" MaxAttenuation="0.000000"/>
 				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music\Music"/>
 				<Event Id="4238747602" Name="OnScreenClick" ObjectPath="\Events\Default Work Unit\SoundDesign\OnScreenClick"/>
-				<Event Id="4102654701" Name="Pause_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Pause_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
-				<Event Id="1903483482" Name="Play_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_Mystery"/>
-				<Event Id="1795272170" Name="Play_MGP2_Music_throwout2piano_P_" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_throwout2piano_P_"/>
-				<Event Id="2332801419" Name="Play_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_throwout2piano_P__dirty"/>
+				<Event Id="4102654701" Name="Pause_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Music\Pause_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
+				<Event Id="1903483482" Name="Play_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Music\Play_MGP2_Music_Mystery"/>
+				<Event Id="1795272170" Name="Play_MGP2_Music_throwout2piano_P_" ObjectPath="\Events\Default Work Unit\Music\Play_MGP2_Music_throwout2piano_P_"/>
+				<Event Id="2332801419" Name="Play_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Music\Play_MGP2_Music_throwout2piano_P__dirty"/>
 				<Event Id="1477792038" Name="Play_MGP2_SD_Bed" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed"/>
 				<Event Id="1943834466" Name="Play_MGP2_SD_Cabinet_Close" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Close"/>
 				<Event Id="2300991670" Name="Play_MGP2_SD_Cabinet_Open" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open"/>
 				<Event Id="2814308616" Name="Play_MGP2_SD_Chandelier" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Chandelier"/>
-				<Event Id="70313548" Name="Play_MGP2_SD_CoffeeGrinder" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_CoffeeGrinder"/>
+				<Event Id="70313548" Name="Play_MGP2_SD_CoffeeGrinder" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_CoffeeGrinder"/>
 				<Event Id="2310237967" Name="Play_MGP2_SD_Cookie" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cookie"/>
 				<Event Id="2853539135" Name="Play_MGP2_SD_CurtainClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainClose"/>
 				<Event Id="334444633" Name="Play_MGP2_SD_CurtainOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_CurtainOpen"/>
@@ -52,7 +51,6 @@
 				<Event Id="3398036754" Name="Play_MGP2_SD_DrawerClose" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrawerClose"/>
 				<Event Id="230869702" Name="Play_MGP2_SD_DrawerOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrawerOpen"/>
 				<Event Id="314431553" Name="Play_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_DrippingWater"/>
-				<Event Id="2613328266" Name="Play_MGP2_SD_Fireplace" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Fireplace"/>
 				<Event Id="3148382178" Name="Play_MGP2_SD_Fridge" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fridge"/>
 				<Event Id="1797766868" Name="Play_MGP2_SD_Fryingpan1" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan1"/>
 				<Event Id="1797766871" Name="Play_MGP2_SD_Fryingpan2" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2"/>
@@ -62,49 +60,45 @@
 				<Event Id="3082250963" Name="Play_MGP2_SD_Glass" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Glass"/>
 				<Event Id="803864683" Name="Play_MGP2_SD_Herbs" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs"/>
 				<Event Id="4096018196" Name="Play_MGP2_SD_Kettle" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Kettle"/>
-				<Event Id="1787049636" Name="Play_MGP2_SD_Lantern1" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern1"/>
-				<Event Id="1787049639" Name="Play_MGP2_SD_Lantern2" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern2"/>
-				<Event Id="1787049638" Name="Play_MGP2_SD_Lantern3" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern3"/>
-				<Event Id="1787049633" Name="Play_MGP2_SD_Lantern4" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern4"/>
-				<Event Id="1787049632" Name="Play_MGP2_SD_Lantern5" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern5"/>
+				<Event Id="1787049636" Name="Play_MGP2_SD_Lantern1" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Lantern1"/>
+				<Event Id="1787049639" Name="Play_MGP2_SD_Lantern2" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Lantern2"/>
+				<Event Id="1787049638" Name="Play_MGP2_SD_Lantern3" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Lantern3"/>
+				<Event Id="1787049633" Name="Play_MGP2_SD_Lantern4" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Lantern4"/>
+				<Event Id="1787049632" Name="Play_MGP2_SD_Lantern5" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Lantern5"/>
 				<Event Id="2060405955" Name="Play_MGP2_SD_LightSwitch" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_LightSwitch"/>
 				<Event Id="967135245" Name="Play_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair"/>
 				<Event Id="3249430620" Name="Play_MGP2_SD_Rubberduck" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck"/>
 				<Event Id="304130839" Name="Play_MGP2_SD_SinkFill" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_SinkFill"/>
-				<Event Id="2569931419" Name="Play_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Tinnitus"/>
-				<Event Id="1119214915" Name="Play_MGP2_SD_TV" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV"/>
+				<Event Id="1196118088" Name="Play_MGP2_SD_TV1" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV1"/>
 				<Event Id="3735495899" Name="Play_MGP2_SD_Vinyl" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl"/>
-				<Event Id="3797089235" Name="Play_MGP2_SD_Voodoo" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo"/>
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
 				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
-				<Event Id="2486577875" Name="Play_MGP2_SD_Yarn" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Yarn"/>
-				<Event Id="2615010004" Name="Play_MGP2_Speak_1234Garnnoegler" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_1234Garnnoegler"/>
-				<Event Id="4236365560" Name="Play_MGP2_Speak_Bade_nder" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Bade_nder"/>
-				<Event Id="655949986" Name="Play_MGP2_Speak_BedstemorResponse" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_BedstemorResponse"/>
-				<Event Id="4214661402" Name="Play_MGP2_Speak_EnToTreHjemmesko" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_EnToTreHjemmesko"/>
-				<Event Id="529845861" Name="Play_MGP2_Speak_ErDuOgsaa" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_ErDuOgsaa"/>
-				<Event Id="3651293297" Name="Play_MGP2_Speak_ErDuOksaa" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_ErDuOksaa"/>
-				<Event Id="306174630" Name="Play_MGP2_Speak_EtBarnToBarn" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_EtBarnToBarn"/>
-				<Event Id="2312175161" Name="Play_MGP2_Speak_EtBarnToBoern" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_EtBarnToBoern"/>
-				<Event Id="243850124" Name="Play_MGP2_Speak_EtSpoegelse" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_EtSpoegelse"/>
-				<Event Id="1728860424" Name="Play_MGP2_Speak_FemGarnnoegler" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FemGarnnoegler"/>
-				<Event Id="862215493" Name="Play_MGP2_Speak_FireBadeaender" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FireBadeaender"/>
-				<Event Id="1531644717" Name="Play_MGP2_Speak_FortaelleBedstemor" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FortaelleBedstemor"/>
-				<Event Id="2272722235" Name="Play_MGP2_Speak_Hugooo" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Hugooo"/>
+				<Event Id="2615010004" Name="Play_MGP2_Speak_1234Garnnoegler" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_1234Garnnoegler"/>
+				<Event Id="4236365560" Name="Play_MGP2_Speak_Bade_nder" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Bade_nder"/>
+				<Event Id="655949986" Name="Play_MGP2_Speak_BedstemorResponse" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_BedstemorResponse"/>
+				<Event Id="4214661402" Name="Play_MGP2_Speak_EnToTreHjemmesko" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_EnToTreHjemmesko"/>
+				<Event Id="529845861" Name="Play_MGP2_Speak_ErDuOgsaa" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_ErDuOgsaa"/>
+				<Event Id="3651293297" Name="Play_MGP2_Speak_ErDuOksaa" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_ErDuOksaa"/>
+				<Event Id="306174630" Name="Play_MGP2_Speak_EtBarnToBarn" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_EtBarnToBarn"/>
+				<Event Id="2312175161" Name="Play_MGP2_Speak_EtBarnToBoern" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_EtBarnToBoern"/>
+				<Event Id="243850124" Name="Play_MGP2_Speak_EtSpoegelse" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_EtSpoegelse"/>
+				<Event Id="1728860424" Name="Play_MGP2_Speak_FemGarnnoegler" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FemGarnnoegler"/>
+				<Event Id="862215493" Name="Play_MGP2_Speak_FireBadeaender" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FireBadeaender"/>
+				<Event Id="1531644717" Name="Play_MGP2_Speak_FortaelleBedstemor" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FortaelleBedstemor"/>
+				<Event Id="2272722235" Name="Play_MGP2_Speak_Hugooo" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Hugooo"/>
 				<Event Id="3508605423" Name="Play_MGP2_Speak_HugoTryk" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_HugoTryk"/>
-				<Event Id="796657599" Name="Play_MGP2_Speak_SeksSmaakagerKrukken" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_SeksSmaakagerKrukken"/>
-				<Event Id="2825704606" Name="Play_MGP2_Speak_Smaakager" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Smaakager"/>
-				<Event Id="780878481" Name="Play_MGP2_Speak_SpaendeHistorie" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_SpaendeHistorie"/>
-				<Event Id="3381817408" Name="Play_MGP2_Speak_SpoegelseiKokkenet" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_SpoegelseiKokkenet"/>
-				<Event Id="3796942852" Name="Play_MGP2_Speak_TreHjemmesko" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_TreHjemmesko"/>
-				<Event Id="1807980291" Name="Play_MGP2_Speak_Wow" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Wow"/>
+				<Event Id="796657599" Name="Play_MGP2_Speak_SeksSmaakagerKrukken" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SeksSmaakagerKrukken"/>
+				<Event Id="2825704606" Name="Play_MGP2_Speak_Smaakager" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Smaakager"/>
+				<Event Id="780878481" Name="Play_MGP2_Speak_SpaendeHistorie" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SpaendeHistorie"/>
+				<Event Id="3381817408" Name="Play_MGP2_Speak_SpoegelseiKokkenet" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SpoegelseiKokkenet"/>
+				<Event Id="3796942852" Name="Play_MGP2_Speak_TreHjemmesko" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_TreHjemmesko"/>
+				<Event Id="1807980291" Name="Play_MGP2_Speak_Wow" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Wow"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
-				<Event Id="534839454" Name="Resume_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Resume_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
+				<Event Id="534839454" Name="Resume_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Music\Resume_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000"/>
-				<Event Id="1090101008" Name="Stop_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Stop_MGP2_Music_Mystery" MaxAttenuation="0.000000"/>
+				<Event Id="1090101008" Name="Stop_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Music\Stop_MGP2_Music_Mystery" MaxAttenuation="0.000000"/>
 				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
 				<Event Id="2380106136" Name="Stop_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden" MaxAttenuation="0.000000"/>
-				<Event Id="2932857561" Name="Stop_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Stop_MGP2_SD_Tinnitus" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<ReferencedStreamedFiles>
 				<File Id="180643768"/>
@@ -114,6 +108,18 @@
 				<File Id="7591784" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C593B509.wem</Path>
+				</File>
+				<File Id="9456237" Language="SFX">
+					<ShortName>WindowSlideClose_S08HS.1124.wav</ShortName>
+					<Path>SFX/WindowSlideClose_S08HS.1124_84EC0B40.wem</Path>
+				</File>
+				<File Id="21792370" Language="SFX">
+					<ShortName>MGP2_SD_TV_3.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_3_84EC0B40.wem</Path>
+				</File>
+				<File Id="25713745" Language="SFX">
+					<ShortName>MGP2_SD_TV_1.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_1_84EC0B40.wem</Path>
 				</File>
 				<File Id="39888352" Language="SFX">
 					<ShortName>MGP2_Speak_FemGarnnoegler.wav</ShortName>
@@ -126,6 +132,10 @@
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
 					<Path>SFX/197563__dheming__glass-bottles-02_9A55686C.wem</Path>
+				</File>
+				<File Id="84912551" Language="SFX">
+					<ShortName>MGP2_SD_Lawn_mower.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lawn_mower_5A343EFA.wem</Path>
 				</File>
 				<File Id="92169222" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
@@ -142,6 +152,14 @@
 				<File Id="147093774" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
 					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_96EE2134.wem</Path>
+				</File>
+				<File Id="163682755" Language="SFX">
+					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_E76DF60B.wem</Path>
+				</File>
+				<File Id="166854047" Language="SFX">
+					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_E5D3B9C2.wem</Path>
 				</File>
 				<File Id="169154954" Language="SFX">
 					<ShortName>MGP2_Speak_SpaendeHistorie.wav</ShortName>
@@ -179,6 +197,10 @@
 					<ShortName>MGP2_SD_Gramophone.wav</ShortName>
 					<Path>SFX/MGP2_SD_Gramophone_84EC0B40.wem</Path>
 				</File>
+				<File Id="270458806" Language="SFX">
+					<ShortName>MGP2_SD_Lawn_birds.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lawn_birds_5A343EFA.wem</Path>
+				</File>
 				<File Id="274286177" Language="SFX">
 					<ShortName>MGP2_Speak_IhHvorErDerMange_1.wav</ShortName>
 					<Path>SFX/MGP2_Speak_IhHvorErDerMange_1_84EC0B40.wem</Path>
@@ -190,10 +212,6 @@
 				<File Id="306863275" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_9FBE54B2.wem</Path>
-				</File>
-				<File Id="322261170" Language="SFX">
-					<ShortName>65705__noisecollector__voodoo-lp-loop3.wav</ShortName>
-					<Path>SFX/65705__noisecollector__voodoo-lp-loop3_3FEE772D.wem</Path>
 				</File>
 				<File Id="323848381" Language="SFX">
 					<ShortName>MGP2_Speak_TreHjemmesko.wav</ShortName>
@@ -207,13 +225,13 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_55ED4E63.wem</Path>
 				</File>
+				<File Id="334745303" Language="SFX">
+					<ShortName>MGP2_SD_TV_4.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_4_84EC0B40.wem</Path>
+				</File>
 				<File Id="350455730" Language="SFX">
 					<ShortName>MGP2_Speak_EnToTreHjemmesko.wav</ShortName>
 					<Path>SFX/MGP2_Speak_EnToTreHjemmesko_84EC0B40.wem</Path>
-				</File>
-				<File Id="368361044" Language="SFX">
-					<ShortName>242955__acollier123__garden-lawn-mower.wav</ShortName>
-					<Path>SFX/242955__acollier123__garden-lawn-mower_8A747FD0.wem</Path>
 				</File>
 				<File Id="386064980" Language="SFX">
 					<ShortName>201600__gutek__coffee-grinder.wav</ShortName>
@@ -237,7 +255,7 @@
 				</File>
 				<File Id="423764443" Language="SFX">
 					<ShortName>130014__ermfilm__ruber-duck-big-1.wav</ShortName>
-					<Path>SFX/130014__ermfilm__ruber-duck-big-1_55CD0C6E.wem</Path>
+					<Path>SFX/130014__ermfilm__ruber-duck-big-1_73178A1F.wem</Path>
 				</File>
 				<File Id="432721043" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
@@ -254,10 +272,6 @@
 				<File Id="450639001" Language="SFX">
 					<ShortName>366469__aliedsvwyk__kettle-boiling.wav</ShortName>
 					<Path>SFX/366469__aliedsvwyk__kettle-boiling_92972369.wem</Path>
-				</File>
-				<File Id="475962076" Language="SFX">
-					<ShortName>MGP2_SD_Tinnitus.wav</ShortName>
-					<Path>SFX/MGP2_SD_Tinnitus_84EC0B40.wem</Path>
 				</File>
 				<File Id="489143399" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
@@ -299,9 +313,9 @@
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
 					<Path>SFX/320416__yadronoff__shivering-chandelier_F3995FBA.wem</Path>
 				</File>
-				<File Id="623925728" Language="SFX">
-					<ShortName>60398__uwesoundboiz__window-open-double-glazed-001.wav</ShortName>
-					<Path>SFX/60398__uwesoundboiz__window-open-double-glazed-001_5B9F5FAE.wem</Path>
+				<File Id="611877970" Language="SFX">
+					<ShortName>MGP2_SD_TV_2.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_2_84EC0B40.wem</Path>
 				</File>
 				<File Id="626491883" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
@@ -359,25 +373,21 @@
 					<ShortName>MGP2_Speak_Mh.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Mh_84EC0B40.wem</Path>
 				</File>
-				<File Id="790497178" Language="SFX">
-					<ShortName>117296__swiftoid__fill-the-sink.wav</ShortName>
-					<Path>SFX/117296__swiftoid__fill-the-sink_8CB2AE76.wem</Path>
-				</File>
-				<File Id="806349091" Language="SFX">
-					<ShortName>360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor.wav</ShortName>
-					<Path>SFX/360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E418CCFF.wem</Path>
-				</File>
 				<File Id="825537596" Language="SFX">
 					<ShortName>MGP2_Speak_HvorErDerNogetJegKanTaelle.wav</ShortName>
 					<Path>SFX/MGP2_Speak_HvorErDerNogetJegKanTaelle_84EC0B40.wem</Path>
 				</File>
+				<File Id="848849926" Language="SFX">
+					<ShortName>SinkFillWater_SFXB.4822.wav</ShortName>
+					<Path>SFX/SinkFillWater_SFXB.4822_C39B8249.wem</Path>
+				</File>
+				<File Id="857766680" Language="SFX">
+					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_888093BF.wem</Path>
+				</File>
 				<File Id="899240743" Language="SFX">
 					<ShortName>MGP2_Speak_HugoooKom.wav</ShortName>
 					<Path>SFX/MGP2_Speak_HugoooKom_84EC0B40.wem</Path>
-				</File>
-				<File Id="908517910" Language="SFX">
-					<ShortName>MGP2_Speak_Strikketoej.wav</ShortName>
-					<Path>SFX/MGP2_Speak_Strikketoej_84EC0B40.wem</Path>
 				</File>
 				<File Id="925962079" Language="SFX">
 					<ShortName>MGP2_Speak_FireBadeaender.wav</ShortName>
@@ -391,9 +401,9 @@
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
 					<Path>SFX/mgp2_ambience_livingRoom(P)_5A343EFA.wem</Path>
 				</File>
-				<File Id="952484127" Language="SFX">
-					<ShortName>354019__kleber-kgf__tv-static-sound-by-kleber-kgf.wav</ShortName>
-					<Path>SFX/354019__kleber-kgf__tv-static-sound-by-kleber-kgf_1CE02442.wem</Path>
+				<File Id="936576490" Language="SFX">
+					<ShortName>WindowSlideOpen_S08HS.1125.wav</ShortName>
+					<Path>SFX/WindowSlideOpen_S08HS.1125_84EC0B40.wem</Path>
 				</File>
 				<File Id="953098255" Language="SFX">
 					<ShortName>MGP2_SD_Lantern1.wav</ShortName>
@@ -418,14 +428,6 @@
 				<File Id="994290101" Language="SFX">
 					<ShortName>MGP2_SD_Fridge.wav</ShortName>
 					<Path>SFX/MGP2_SD_Fridge_84EC0B40.wem</Path>
-				</File>
-				<File Id="1004531354" Language="SFX">
-					<ShortName>60399__uwesoundboiz__window-open-double-glazed-outside-noise-001.wav</ShortName>
-					<Path>SFX/60399__uwesoundboiz__window-open-double-glazed-outside-noise-001_8EC41D25.wem</Path>
-				</File>
-				<File Id="1005144570" Language="SFX">
-					<ShortName>60568__robinhood76__00370-fireplace-1.wav</ShortName>
-					<Path>SFX/60568__robinhood76__00370-fireplace-1_BF15E9F0.wem</Path>
 				</File>
 				<File Id="1056149139" Language="SFX">
 					<ShortName>239005__squashy555__kettle-boiling.wav</ShortName>
