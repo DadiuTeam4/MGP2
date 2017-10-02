@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(UIRaycaster))]
 public class MenuHoldingController : MonoBehaviour
 {
-	private UIRaycaster uIRaycaster;
     private bool buttonHeld;
     private Vector2 mouseOffSet;
     private RectTransform buttonRect;
+    private Vector2 mouseInCanvasPosition;
+    private RectTransform canvasRect;
 
     private float holdTime;
 
     void Start()
     {
         buttonHeld = false;
-        uIRaycaster = gameObject.GetComponent<UIRaycaster>();
+        canvasRect = transform.parent.GetComponent<RectTransform>();
         buttonRect = GetComponent<RectTransform>();
     }
 
@@ -25,7 +25,8 @@ public class MenuHoldingController : MonoBehaviour
     {
         if (buttonHeld)
         {
-            buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
         }
     }
 

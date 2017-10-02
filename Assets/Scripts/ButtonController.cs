@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(UIRaycaster))]
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
@@ -12,7 +11,6 @@ public class ButtonController : MonoBehaviour {
 	public int buttonIndex; 
 	[HideInInspector]
 	public RectTransform canvasRect;
-	private UIRaycaster uIRaycaster;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -21,10 +19,10 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
-
+	private Vector2 mouseInCanvasPosition;
+		
 	void Start()
 	{
-		uIRaycaster = GetComponent<UIRaycaster>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
@@ -50,7 +48,8 @@ public class ButtonController : MonoBehaviour {
 				
 		if (buttonHeld)
 		{
-			buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -119,7 +118,6 @@ public class ButtonController : MonoBehaviour {
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
-		Debug.Log("Should Remember the position");
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 
