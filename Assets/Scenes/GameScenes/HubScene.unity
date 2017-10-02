@@ -1155,6 +1155,15 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ed6fb669111238e40bbfe79b2ea5466e,
         type: 3}
+    - target: {fileID: 1122752685512994, guid: feb7237d1ee1e4a77a5b59ed1f6b4122, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223893742022252402, guid: feb7237d1ee1e4a77a5b59ed1f6b4122,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 227395136}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: feb7237d1ee1e4a77a5b59ed1f6b4122, type: 2}
   m_IsPrefabParent: 0
@@ -2058,6 +2067,11 @@ Prefab:
       propertyPath: getNumberFeedbackPS
       value: 
       objectReference: {fileID: 1915966767}
+    - target: {fileID: 199673686086614242, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f977a9be774ddc40886779f38a7da1b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
   m_IsPrefabParent: 0

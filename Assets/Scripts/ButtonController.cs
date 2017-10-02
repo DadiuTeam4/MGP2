@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(UIRaycaster))]
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
@@ -12,7 +11,6 @@ public class ButtonController : MonoBehaviour {
 	public int buttonIndex; 
 	[HideInInspector]
 	public RectTransform canvasRect;
-	private UIRaycaster uIRaycaster;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -21,10 +19,10 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
-
+	private Vector2 mouseInCanvasPosition;
+		
 	void Start()
 	{
-		uIRaycaster = GetComponent<UIRaycaster>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
@@ -36,11 +34,24 @@ public class ButtonController : MonoBehaviour {
 
 	void Update()
 	{
+		if (ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 1)
+		{
+			active = true;
+			var color = GetComponent<Image> ().color;
+			color = Color.white;
+			GetComponent<Image> ().color = color;
+		}
+		else if(ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 0)
+		{
+			active = false;			
+		}
+				
 		if (buttonHeld)
 		{
-			buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
@@ -79,13 +90,26 @@ public class ButtonController : MonoBehaviour {
 	{
 		originalPosition = localOriginalPosition;
 	}
-	public void SetActiveBool(bool myState)
+	public void SetState(int myState)
 	{
-		active = myState;
-		if (!active)
+		if (myState < 1)
+		{
+			active = false;
+		}
+		else
+		{
+			active = true;
+		}
+		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
 			color = Color.red;
+			GetComponent<Image> ().color = color;
+		}
+		else if (myState == -1)
+		{
+			var color = GetComponent<Image> ().color;
+			color = Color.black;
 			GetComponent<Image> ().color = color;
 		}
 	}
@@ -94,7 +118,6 @@ public class ButtonController : MonoBehaviour {
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
-		Debug.Log("Should Remember the position");
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 

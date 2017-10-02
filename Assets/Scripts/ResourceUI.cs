@@ -12,7 +12,7 @@ public class ResourceUI : MonoBehaviour
     public GameObject button;
     private int currentButtonAmount;
     private List<int> listOfPickedUpNumbers;
-    static public List<bool> listOfPickedUpNumbersState;
+    static public List<int> listOfPickedUpNumbersState;
     static public List<Vector3> listOfPickedUpNumbersPosition;
 
     private RectTransform canvasRectTransform;
@@ -93,7 +93,7 @@ public class ResourceUI : MonoBehaviour
         for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
         {
             g = Instantiate(button, transform);
-            g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
+            //g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
             Image myImageComponent = g.GetComponent<Image>();
             myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
@@ -115,7 +115,7 @@ public class ResourceUI : MonoBehaviour
 			buttonController.buttonIndex = i;
             buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
             buttonController.SetOriginalPosition(rectTransform.localPosition);
-            buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
+            buttonController.SetState(listOfPickedUpNumbersState[i]);
             buttonController.canvasRect = canvasRectTransform;
         }
 
