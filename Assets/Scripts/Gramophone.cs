@@ -41,7 +41,6 @@ public class Gramophone : Interactable {
 
 	IEnumerator FadeIn()
 	{
-		Debug.Log ("Fade in");
 		hasBeenPressed = true;
 		duration = 20f * Time.deltaTime; 
 		while (fadePitchValue > fadeMin) 
@@ -56,7 +55,6 @@ public class Gramophone : Interactable {
 		
 	IEnumerator FadeOut()
 	{
-		Debug.Log ("Fade in");
 		AkSoundEngine.PostEvent("Resume_MGP2_Music_throwout2piano_P__dirty", gameObject); 
 		hasBeenPressed = true;
 		duration = 20f * Time.deltaTime; 

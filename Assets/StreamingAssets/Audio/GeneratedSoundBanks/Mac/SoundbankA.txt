@@ -36,6 +36,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2060405955	Play_MGP2_SD_LightSwitch			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_LightSwitch	
 	2088074314	Play_MGP2_SD_Ghost			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Ghost	
 	2186198650	Break_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Break_MGP2_SD_RockingChair	
+	2272722235	Play_MGP2_Speak_Hugooo			\Default Work Unit\Play_MGP2_Speak_Hugooo	
 	2300991670	Play_MGP2_SD_Cabinet_Open			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Open	
 	2310237967	Play_MGP2_SD_Cookie			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cookie	
 	2312175161	Play_MGP2_Speak_EtBarnToBoern			\Default Work Unit\Play_MGP2_Speak_EtBarnToBoern	
@@ -157,6 +158,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	790497178	MGP2_SD_SinkFill	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\117296__swiftoid__fill-the-sink_8CB2AE76.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_SinkFill		54915
 	806349091	MGP2_SD_Porcelain	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\360585__ylearkisto__kuppi-rikki-porcelain-cup-falls-and-breaks-on-the-floor_E418CCFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Porcelain		27439
 	825537596	MGP2_Speak_HvorErDerNogetJegKanTaelle	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_HvorErDerNogetJegKanTaelle_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_HugoTryk\MGP2_Speak_HvorErDerNogetJegKanTaelle		26333
+	899240743	MGP2_Speak_Hugooo	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_HugoooKom_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugooo		75046
 	908517910	MGP2_SD_Yarn	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Strikketoej_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Yarn		18414
 	925962079	MGP2_Speak_FireBadeaender	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_FireBadeaender_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_FireBadeaender		67992
 	926057001	MGP2_Speak_NaaNaa	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_NaaNaa_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Bedstemor\MGP2_Speak_BedstemorResponse\MGP2_Speak_NaaNaa		12800
