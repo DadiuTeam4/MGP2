@@ -12,7 +12,7 @@ public class FantasyObject : MonoBehaviour
     void Start()
     {
         int fantasyNumber = EventManager.NumberEventToInt(spawnOnEvent);
-        if (!ResourceManager.NumberCountedToGrandma(fantasyNumber))
+        if (ResourceManager.NumberCountedToGrandma(fantasyNumber) > 0)
         {
             DeactivateFantasyObject();
             EventManager.StartListening(spawnOnEvent, ActivateFantasyObject);
