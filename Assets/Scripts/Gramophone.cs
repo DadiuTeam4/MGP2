@@ -13,9 +13,9 @@ public class Gramophone : Interactable {
 	private bool isFaded = false; 
 	private bool hasBeenPressed = false; 
 
-	public void Awake()
+	public void Start()
 	{
-		DontDestroyOnLoad (transform.gameObject);
+		EventManager.StartListening (EventName.KitchenSceneLoaded, KitchenSwitch); 
 	}
 
 	public override void OnTouchBegin()
@@ -28,6 +28,10 @@ public class Gramophone : Interactable {
 		{
 			StartCoroutine (FadeOut ()); 
 		}
+		if (isFaded == true && hasBeenPressed == true)
+		{
+			StartCoroutine (FadeOut ()); 
+		}
 	}
 
 	public void Update()
@@ -37,6 +41,7 @@ public class Gramophone : Interactable {
 
 	IEnumerator FadeIn()
 	{
+		Debug.Log ("Fade in");
 		hasBeenPressed = true;
 		duration = 20f * Time.deltaTime; 
 		while (fadePitchValue > fadeMin) 
@@ -51,6 +56,7 @@ public class Gramophone : Interactable {
 		
 	IEnumerator FadeOut()
 	{
+		Debug.Log ("Fade in");
 		AkSoundEngine.PostEvent("Resume_MGP2_Music_throwout2piano_P__dirty", gameObject); 
 		hasBeenPressed = true;
 		duration = 20f * Time.deltaTime; 
@@ -61,5 +67,14 @@ public class Gramophone : Interactable {
 		}
 		isFaded = false;
 		hasBeenPressed = false;
+	}
+
+	void KitchenSwitch()
+	{
+		if (hasBeenPressed == true && isFaded == true)
+		{
+			isFaded = false;
+			hasBeenPressed = true; 
+		}
 	}
 }
