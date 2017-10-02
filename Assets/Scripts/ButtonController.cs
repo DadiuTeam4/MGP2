@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(UIRaycaster))]
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
@@ -20,7 +19,8 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
-
+	private Vector2 mouseInCanvasPosition;
+		
 	void Start()
 	{
 		uIRaycaster = GetComponent<UIRaycaster>();
@@ -37,7 +37,8 @@ public class ButtonController : MonoBehaviour {
 	{
 		if (buttonHeld)
 		{
-			buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
