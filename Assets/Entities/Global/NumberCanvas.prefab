@@ -627,6 +627,13 @@ MonoBehaviour:
   button: {fileID: 1925236299203278, guid: e7d56d0dc3e16f6429c36b2576ca8f0e, type: 2}
   heightOfButton: 70
   widthOfButton: 70
+  spriteForUI:
+  - {fileID: 21300000, guid: 243fd3e9a3cee2e4e8019bb39d06e468, type: 3}
+  - {fileID: 21300000, guid: d59d6a699402a8947879eb164d5d310e, type: 3}
+  - {fileID: 21300000, guid: c8b148cf10bf48444afcf13cdad7924a, type: 3}
+  - {fileID: 21300000, guid: c8e4d1fe186078b41a0451c2a6c81cb3, type: 3}
+  - {fileID: 21300000, guid: 0cc027d3b92df5c419979c4e248674e4, type: 3}
+  - {fileID: 21300000, guid: ed6fb669111238e40bbfe79b2ea5466e, type: 3}
 --- !u!114 &114453466558012466
 MonoBehaviour:
   m_ObjectHideFlags: 1

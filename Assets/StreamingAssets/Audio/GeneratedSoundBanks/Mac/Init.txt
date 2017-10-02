@@ -1,3 +1,11 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	2441027675	Language			\Default Work Unit\Language	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Language			
+	2193233200	Dansk	Language			
+	3383237639	English	Language			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	

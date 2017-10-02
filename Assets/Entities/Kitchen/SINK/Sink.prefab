@@ -115,15 +115,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420634635381904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 1.437, z: 6.069}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -7.79, y: 1.58, z: 0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153210566134620}
   - {fileID: 4498914778255296}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.765}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4153210566134620
 Transform:
   m_ObjectHideFlags: 1
@@ -307,14 +307,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1826f177bfc244ea7845621a9c48d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}
-  eventToFire: 4
+  eventToFire: 5
   fireAfterSeconds: 1
+  shake: 1
   speed: 66
   shakeMagnitude: 0.013
+  onHoldParticleSystem: {fileID: 0}
 --- !u!114 &114784121877207156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,7 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935ae14c998c8174a8c155afdff64886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}

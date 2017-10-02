@@ -14,7 +14,7 @@ public class Ghost : MonoBehaviour
         render = gameObject.GetComponent<Renderer>();
         collider = gameObject.GetComponent<Collider>();
         collider.enabled = false;
-
+        RenderTheGhostOrNot();
         EventManager.StartListening(EventName.LightswitchClicked, RenderTheGhostOrNot);
 
     }

@@ -101,6 +101,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	 }
 
 
+
 	public static string GetCurrentSceneName()
 	{
 		return currentSceneName;
@@ -192,9 +193,24 @@ public class ResourceManager : Singleton<ResourceManager>
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
-	}	
+	}
 
-	private static void Number1Deactive()
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
+
+    public static bool NumberCountedToGrandma(int nr)
+    {
+        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
+        if (index != -1)
+        {
+            return !listOfPickedUpNumbersState[index];
+        }
+        return false;
+    }
+
+    private static void Number1Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 1);
 		listOfPickedUpNumbersState[index] = false;

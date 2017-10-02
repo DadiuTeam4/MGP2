@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lightswitch : Interactable
+public class Lightswitch : NumberFoundInteractable
 {
 	private Renderer render;
 
@@ -15,7 +15,7 @@ public class Lightswitch : Interactable
 	}
     public override void OnTouchBegin()
     {
-		Debug.Log("Lightswitch touched");
+        base.OnTouchBegin();
 		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;
 		renderLightswitch();
 		EventManager.TriggerEvent(EventName.LightswitchClicked);

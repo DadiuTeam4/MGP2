@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4929667533672564}
   m_Layer: 0
-  m_Name: CupBoard
+  m_Name: Cupboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba5e8c93512847aea26579be46be286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.06
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}
