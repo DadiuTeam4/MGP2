@@ -11,6 +11,7 @@ public class RubberDucksRise : Interactable
 	void Start ()
 	{ 
 		EventManager.StartListening(EventName.FaucetRunning, CommenceEpicRubberDuckJourney);
+		CheckSinkStatus();
 	}
 
 	void CommenceEpicRubberDuckJourney()
@@ -32,5 +33,14 @@ public class RubberDucksRise : Interactable
 		}
 
 		objectToMove.transform.position = end;
+	}
+
+	void CheckSinkStatus()
+	{
+		if (ResourceManager.kitchenSinkFull == true)
+		{
+			gameObject.transform.position = endMarker;
+		}
+
 	}
 }
