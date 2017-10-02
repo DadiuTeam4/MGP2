@@ -93,7 +93,6 @@ public class ButtonController : MonoBehaviour {
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
-		Debug.Log("Should Remember the position");
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 
