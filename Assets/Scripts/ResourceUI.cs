@@ -4,169 +4,193 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ResourceUI : MonoBehaviour {
+public class ResourceUI : MonoBehaviour
+{
 
-	private UnityAction UIListener;
+    private UnityAction UIListener;
 
-	public GameObject button;
-	private int currentButtonAmount;
-	private List<int> listOfPickedUpNumbers;
-	static public List<bool> listOfPickedUpNumbersState;
+    public GameObject button;
+    private int currentButtonAmount;
+    private List<int> listOfPickedUpNumbers;
+    static public List<bool> listOfPickedUpNumbersState;
+    static public List<Vector3> listOfPickedUpNumbersPosition;
 
-	private RectTransform canvasRectTransform;
-	private float heightOfCanvas, widthOfCanvas;
-	public float heightOfButton = 70, widthOfButton = 70;
-	private int amountOfCollectedNumbers;
-	private float canvasRatio;
+    private RectTransform canvasRectTransform;
+    private float heightOfCanvas, widthOfCanvas;
+    public float heightOfButton = 70, widthOfButton = 70;
+    private int amountOfCollectedNumbers;
+    private float canvasRatio;
 
-	public Sprite[] spriteForUI = new Sprite[6];
+    public Sprite[] spriteForUI = new Sprite[6];
 
-	// Use this for initialization
-	void Start ()
-	{
+    // Use this for initialization
+    void Start()
+    {
 
-		UIListener = new UnityAction(UpdateUI);
-		EventManager.StartListening(EventName.UIUpdate, UIListener);
+        UIListener = new UnityAction(UpdateUI);
+        EventManager.StartListening(EventName.UIUpdate, UIListener);
 
-		canvasRectTransform = GetComponent<RectTransform>();
+        canvasRectTransform = GetComponent<RectTransform>();
 
-		heightOfCanvas = canvasRectTransform.rect.height;
+        heightOfCanvas = canvasRectTransform.rect.height;
 
-		widthOfCanvas = canvasRectTransform.rect.width;
+        widthOfCanvas = canvasRectTransform.rect.width;
 
-		CalculateCanvasRatio();
+        CalculateCanvasRatio();
 
-		UpdateUI();
-	}
+        UpdateUI();
+    }
 
 
-	private void UpdateUI()
-	{
-		listOfPickedUpNumbers = ResourceManager.GetListOfPickedUpNumbers();
-		listOfPickedUpNumbersState = ResourceManager.GetListOfPickedUpNumbersState();
+    private void UpdateUI()
+    {
+        listOfPickedUpNumbers = ResourceManager.GetListOfPickedUpNumbers();
+        listOfPickedUpNumbersState = ResourceManager.GetListOfPickedUpNumbersState();
+        listOfPickedUpNumbersPosition = ResourceManager.GetListOfPickedUpPosition();
 
-		if (listOfPickedUpNumbers != null)
-		{
-			amountOfCollectedNumbers = listOfPickedUpNumbers.Count;
-		}
-
-		GenerateButtons();
-
-	}
-
-	void Update()
-	{
-		if (Input.GetKeyDown("q"))
+        if (listOfPickedUpNumbers != null)
         {
-			EventManager.TriggerEvent(EventName.NumberOnePickedUp);
+            amountOfCollectedNumbers = listOfPickedUpNumbers.Count;
         }
-		if (Input.GetKeyDown("w"))
+
+        GenerateButtons();
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("q"))
         {
-			EventManager.TriggerEvent(EventName.NumberTwoPickedUp);
+            EventManager.TriggerEvent(EventName.NumberOnePickedUp);
         }
-		if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("w"))
         {
-			EventManager.TriggerEvent(EventName.NumberThreePickedUp);
+            EventManager.TriggerEvent(EventName.NumberTwoPickedUp);
         }
-		if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("e"))
         {
-			EventManager.TriggerEvent(EventName.NumberFourPickedUp);
+            EventManager.TriggerEvent(EventName.NumberThreePickedUp);
         }
-		if (Input.GetKeyDown("t"))
+        if (Input.GetKeyDown("r"))
         {
-			EventManager.TriggerEvent(EventName.NumberFivePickedUp);
+            EventManager.TriggerEvent(EventName.NumberFourPickedUp);
         }
-		if (Input.GetKeyDown("y"))
+        if (Input.GetKeyDown("t"))
         {
-			EventManager.TriggerEvent(EventName.NumberSixPickedUp);
+            EventManager.TriggerEvent(EventName.NumberFivePickedUp);
         }
-	}
+        if (Input.GetKeyDown("y"))
+        {
+            EventManager.TriggerEvent(EventName.NumberSixPickedUp);
+        }
+    }
 
-	private void GenerateButtons()
-	{
-		GameObject g;
-		RectTransform rectTransform;
-		ButtonController buttonController;
-		for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
-		{
-			g = Instantiate(button, transform);
-			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
+    private void GenerateButtons()
+    {
+        GameObject g;
+        RectTransform rectTransform;
+        ButtonController buttonController;
+        for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
+        {
+            g = Instantiate(button, transform);
+            g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
-			Image myImageComponent = g.GetComponent<Image>(); 
-			myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
-			
-			rectTransform = g.GetComponent<RectTransform>();
-			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, widthOfButton);
-			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightOfButton);
-			rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
-			
-			buttonController = g.GetComponent<ButtonController>();
-			buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
-			buttonController.SetOriginalPosition(rectTransform.localPosition);
-			buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
-			buttonController.canvasRect = canvasRectTransform;
-		}
+            Image myImageComponent = g.GetComponent<Image>();
+            myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
 
-		currentButtonAmount = amountOfCollectedNumbers;
-	}
+            rectTransform = g.GetComponent<RectTransform>();
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, widthOfButton);
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightOfButton);
+            
+			if (TestIfIsFristTime(listOfPickedUpNumbersPosition[i]))
+            {
+                rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
+            }
+            else
+            {
+                rectTransform.anchoredPosition = listOfPickedUpNumbersPosition[i];
+            }
 
-	private Vector3 PositionGenerator(int currentNumber)
-	{
+            buttonController = g.GetComponent<ButtonController>();
+			buttonController.buttonIndex = i;
+            buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
+            buttonController.SetOriginalPosition(rectTransform.localPosition);
+            buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
+            buttonController.canvasRect = canvasRectTransform;
+        }
 
-		int randomLogicVariable = Random.Range(1,5);
-		int randomCornerX = 1;
-		int randomCornerY = 1;
-		int moveWithOrHeight = Random.Range(0,2);;
+        currentButtonAmount = amountOfCollectedNumbers;
+    }
 
-		switch(randomLogicVariable)
-		{
-			case 1:
-				randomCornerX = 1;
-				randomCornerY = 1;
-				break;
-			case 2:
-				randomCornerX = -1;
-				randomCornerY = 1;
-				break;
-			case 3:
-				randomCornerX = 1;
-				randomCornerY = -1;
-				break;
-			case 4:
-            	randomCornerX = -1;
-				randomCornerY = -1;
-				break;
+    private bool TestIfIsFristTime(Vector3 pos)
+    {
+        if (pos.x == 0 && pos.y == 0 && pos.z == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
-		}
+    private Vector3 PositionGenerator(int currentNumber)
+    {
 
-	Vector3 myPosition = new Vector3(randomCornerX * widthOfCanvas/2 - randomCornerX * widthOfButton/2 - randomCornerX * moveWithOrHeight * ((currentNumber * widthOfButton)),
-									 randomCornerY * heightOfCanvas/2 - randomCornerY * heightOfButton/2 - randomCornerY * ((moveWithOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
-									0);
+        int randomLogicVariable = Random.Range(1, 5);
+        int randomCornerX = 1;
+        int randomCornerY = 1;
+        int moveWithOrHeight = Random.Range(0, 2); ;
 
-	return myPosition;
-	}
+        switch (randomLogicVariable)
+        {
+            case 1:
+                randomCornerX = 1;
+                randomCornerY = 1;
+                break;
+            case 2:
+                randomCornerX = -1;
+                randomCornerY = 1;
+                break;
+            case 3:
+                randomCornerX = 1;
+                randomCornerY = -1;
+                break;
+            case 4:
+                randomCornerX = -1;
+                randomCornerY = -1;
+                break;
+
+        }
+
+        Vector3 myPosition = new Vector3(randomCornerX * widthOfCanvas / 2 - randomCornerX * widthOfButton / 2 - randomCornerX * moveWithOrHeight * ((currentNumber * widthOfButton)),
+                                         randomCornerY * heightOfCanvas / 2 - randomCornerY * heightOfButton / 2 - randomCornerY * ((moveWithOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
+                                        0);
+
+        return myPosition;
+    }
 
 
-	private void CalculateButtonSize()
-	{
-		widthOfButton *= canvasRatio;
-		heightOfButton = widthOfButton;
-	}
+    private void CalculateButtonSize()
+    {
+        widthOfButton *= canvasRatio;
+        heightOfButton = widthOfButton;
+    }
 
-	private void CalculateCanvasRatio()
-	{
-		canvasRatio = heightOfCanvas/widthOfCanvas;
-	}
+    private void CalculateCanvasRatio()
+    {
+        canvasRatio = heightOfCanvas / widthOfCanvas;
+    }
 
-	private EventName SetButtonEnum(int index)
-	{
-		switch(index)
-		{
-			case 1:
-				return EventName.NumberOneClicked;
-		
-			case 2:
-				return EventName.NumberTwoClicked;
+    private EventName SetButtonEnum(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                return EventName.NumberOneClicked;
+
+            case 2:
+                return EventName.NumberTwoClicked;
             case 3:
                 return EventName.NumberThreeClicked;
             case 4:
@@ -176,9 +200,9 @@ public class ResourceUI : MonoBehaviour {
             case 6:
                 return EventName.NumberSixClicked;
             default:
-				Debug.LogError("ResourceUI: INDEX OUT OF SWITCH CASE RANGE");
-				return EventName.Test;
-		}
-	}
+                Debug.LogError("ResourceUI: INDEX OUT OF SWITCH CASE RANGE");
+                return EventName.Test;
+        }
+    }
 
 }
