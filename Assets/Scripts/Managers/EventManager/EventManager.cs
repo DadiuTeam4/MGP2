@@ -166,6 +166,7 @@ public enum EventName
     EnableOrDisableOptionMenu = 28,
     InverseCameraGyroScopeY = 29,
     HugoParticleFeedbackOn = 30,
-    HugoParticleFeedbackOff = 31
+    HugoParticleFeedbackOff = 31,
+    HugoGetANumberFeedBack = 32
 
 }

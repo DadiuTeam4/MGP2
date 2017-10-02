@@ -8,9 +8,12 @@ public class OnGameMenuController : MonoBehaviour
 {
     private bool isOptionPanelActive;
     public GameObject optionPanel;
+	public GlobalSoundManager GSM;
 
     void Start()
     {
+		GSM = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
+
         EventManager.StartListening(EventName.EnableOrDisableOptionMenu, EnableOrDisableOptions);
         isOptionPanelActive = false;
     }
@@ -26,6 +29,8 @@ public class OnGameMenuController : MonoBehaviour
         optionPanel.SetActive(false);
         SceneManager.LoadScene(0);
 		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
+		RestartMusic (); 
+
     }
 
     public void EnableOrDisableOptions()
@@ -47,5 +52,11 @@ public class OnGameMenuController : MonoBehaviour
     {
         Debug.Log("Change language here");
     }
+
+	private void RestartMusic()
+	{
+		GSM.RestartMusicHub (); 
+	}
+
 
 }
