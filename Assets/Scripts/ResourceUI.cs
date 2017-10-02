@@ -36,8 +36,6 @@ public class ResourceUI : MonoBehaviour {
 
 		CalculateCanvasRatio();
 
-		CalculateButtonSize();
-
 		UpdateUI();
 	}
 
@@ -98,8 +96,8 @@ public class ResourceUI : MonoBehaviour {
 			myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
 			
 			rectTransform = g.GetComponent<RectTransform>();
-			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);
-			Debug.Log(widthOfButton + " - " + heightOfButton);
+			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, widthOfButton);
+			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightOfButton);
 			rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
 			
 			buttonController = g.GetComponent<ButtonController>();
