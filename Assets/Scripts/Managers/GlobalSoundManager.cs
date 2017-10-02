@@ -5,19 +5,18 @@ using UnityEngine;
 public class GlobalSoundManager : MonoBehaviour {
 	private bool isBeingPlayed = false;
 	private bool hasBeenIntroduced = false; 
-
+	private bool hasBeenRestarted; 
+	private bool areInKitchen = false; 
+	private float timeLeft = 10f; 
 
 	void Start () 
 	{
 
-		//AkSoundEngine.PostEvent ("Ambience_livingroom", gameObject); 
-		//Ambience volume
-		//Music
 		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
 		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
-
-		//SPEAK-MANAGEMENT
+	
+		//SPEAK-MANAGEMENT:
 		//Garnnøgle
 		EventManager.StartListening (EventName.NumberFiveClicked, GarnNoegleTaelle); 
 		EventManager.StartListening (EventName.NumberFivePickedUp, GarnNoegleSpeak);
@@ -36,27 +35,21 @@ public class GlobalSoundManager : MonoBehaviour {
 		//Barn
 		EventManager.StartListening (EventName.NumberTwoClicked, EtBarnToBarn); 
 		EventManager.StartListening (EventName.NumberTwoPickedUp, EtBarnToBarnTaelle); 
-
-
-
-
-
+		//Musik
 		AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P__dirty", gameObject); 
 		AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P_", gameObject); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 0); 
 	}
-
-	void Update () 
-	{
-	}
-			void SwitchToKitchen()
+		
+	void SwitchToKitchen()
 	{
 		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 100); 
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 0);
 		AkSoundEngine.PostEvent ("Break_MGP2_SD_Fireplace", gameObject);
 		AkSoundEngine.PostEvent ("Break_MGP2_SD_RockingChair", gameObject);
 		AkSoundEngine.SetRTPCValue ("Vinyl_kitchen", 100); 
-		//AkSoundEngine.SetRTPCValue ("HaveVolume", 0); 
+		StartCoroutine (GrandmaCallTimer ()); 
+		areInKitchen = true; 
 	}
 
 	void SwitchToHub()
@@ -67,10 +60,16 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 100); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_kitchen", 0);  
-
-		if (hasBeenIntroduced == false) {
+		areInKitchen = true; 
+		if (hasBeenIntroduced == false) 
+		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
 			hasBeenIntroduced = true; 
+		}
+		if (hasBeenRestarted == true) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+			hasBeenRestarted = false; 
 		}
 	}
 
@@ -78,7 +77,13 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("OnScreenClick", gameObject); 
 	}
-		
+
+	public void RestartMusicHub()
+	{
+			hasBeenRestarted = true; 
+
+	}
+
 	void GarnNoegleSpeak()
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_1234Garnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
@@ -91,7 +96,6 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FemGarnnoegler", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpaendeHistorie", gameObject); 
-
 		}
 	}
 
@@ -99,7 +103,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject); 
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
-
 	}
 
 	void HjemmeskoTaelle()
@@ -111,7 +114,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject); 
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
-
 	}
 
 	void CookieJarTaelle()
@@ -124,7 +126,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject);
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
-
 	}
 
 	void SpoegelseTaelle()
@@ -136,7 +137,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject); 
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject); 
-
 	}
 
 	void BadeaenderTaelle()
@@ -163,4 +163,16 @@ public class GlobalSoundManager : MonoBehaviour {
 		}
 	}
 
+	IEnumerator GrandmaCallTimer()
+	{
+		while (timeLeft > 0) 
+		{
+			timeLeft -= Time.deltaTime;
+			yield return null; 
+		}
+		if (timeLeft <0f) 
+		{
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Hugooo", gameObject); 
+		}
+	}
 }
