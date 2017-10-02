@@ -18,7 +18,7 @@ public class ResourceUI : MonoBehaviour {
 	public float heightOfButton = 70, widthOfButton = 70;
 	private int amountOfCollectedNumbers;
 	private float canvasRatio;
-	private GraphicRaycaster graphicRaycaster;
+
 	public Sprite[] spriteForUI = new Sprite[6];
 
 	// Use this for initialization
@@ -29,15 +29,12 @@ public class ResourceUI : MonoBehaviour {
 		EventManager.StartListening(EventName.UIUpdate, UIListener);
 
 		canvasRectTransform = GetComponent<RectTransform>();
-		graphicRaycaster = GetComponent<GraphicRaycaster>();
 
 		heightOfCanvas = canvasRectTransform.rect.height;
 
 		widthOfCanvas = canvasRectTransform.rect.width;
 
 		CalculateCanvasRatio();
-
-		CalculateButtonSize();
 
 		UpdateUI();
 	}
@@ -92,15 +89,15 @@ public class ResourceUI : MonoBehaviour {
 		ButtonController buttonController;
 		for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
 		{
-			g = Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
-			g.transform.SetParent(transform);
+			g = Instantiate(button, transform);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
 			Image myImageComponent = g.GetComponent<Image>(); 
 			myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
 			
 			rectTransform = g.GetComponent<RectTransform>();
-			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);
+			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, widthOfButton);
+			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightOfButton);
 			rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
 			
 			buttonController = g.GetComponent<ButtonController>();
@@ -108,7 +105,6 @@ public class ResourceUI : MonoBehaviour {
 			buttonController.SetOriginalPosition(rectTransform.localPosition);
 			buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
 			buttonController.canvasRect = canvasRectTransform;
-			buttonController.graphicRayCaster = graphicRaycaster;
 		}
 
 		currentButtonAmount = amountOfCollectedNumbers;
