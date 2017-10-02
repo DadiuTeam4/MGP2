@@ -48,13 +48,20 @@ public class ResourceManager : Singleton<ResourceManager>
 	public static bool isFantasyObjectActivated;
 	static private string currentSceneName = "HubScene";
 	static public List<int> listOfPickedUpNumbers;
-	static public List<bool> listOfPickedUpNumbersState;
+	static public List<int> listOfPickedUpNumbersState;
+	static public List<Vector3> listOfPickedUpNumbersPosition;
 
 	 void Start()
 	 {
 
-		 listOfPickedUpNumbers = new List<int>();
-		 listOfPickedUpNumbersState = new List<bool>();
+		 listOfPickedUpNumbers = new List<int>{ 1, 2, 3, 4, 5, 6 };
+		 listOfPickedUpNumbersState = new List<int>();
+		 listOfPickedUpNumbersPosition = new List<Vector3>();
+		 for (int i = 0; i < listOfPickedUpNumbers.Count; i++)
+		 {
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
+			listOfPickedUpNumbersState.Add(-1);
+		 }
 
 		 resourceManagerListenerForNumber1 = new UnityAction(AddNumber1ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber2 = new UnityAction(AddNumber2ToListOfPickedUpNumbers);
@@ -101,6 +108,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	 }
 
 
+
 	public static string GetCurrentSceneName()
 	{
 		return currentSceneName;
@@ -114,13 +122,18 @@ public class ResourceManager : Singleton<ResourceManager>
     {
 		currentSceneName = "HubScene";
     }
-	public static List<bool> GetListOfPickedUpNumbersState()
+	public static List<int> GetListOfPickedUpNumbersState()
 	{
 		return listOfPickedUpNumbersState;
 	}
 	public static List<int> GetListOfPickedUpNumbers()
 	{
 		return listOfPickedUpNumbers;
+	}
+
+	public static List<Vector3> GetListOfPickedUpPosition()
+	{
+		return listOfPickedUpNumbersPosition;
 	}
 	public static void ClearListOfPickedUpNumbers()
 	{
@@ -132,10 +145,12 @@ public class ResourceManager : Singleton<ResourceManager>
 	}
 	private static void AddNumber1ToListOfPickedUpNumbers()
 	{
-		if (!listOfPickedUpNumbers.Contains(1))
+		//if (!listOfPickedUpNumbers.Contains(1))
 		{
-			listOfPickedUpNumbers.Add(1);
+			/*listOfPickedUpNumbers.Add(1);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+			listOfPickedUpNumbersState[0] = 1;
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
@@ -143,30 +158,38 @@ public class ResourceManager : Singleton<ResourceManager>
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
 
-		if (!listOfPickedUpNumbers.Contains(2))
+		//if (!listOfPickedUpNumbers.Contains(2))
 		{
-			listOfPickedUpNumbers.Add(2);
+			/*listOfPickedUpNumbers.Add(2);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+
+			listOfPickedUpNumbersState[1] = 1;
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
-		if (!listOfPickedUpNumbers.Contains(3))
+		//if (!listOfPickedUpNumbers.Contains(3))
 		{
-			listOfPickedUpNumbers.Add(3);
+			/*listOfPickedUpNumbers.Add(3);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+			listOfPickedUpNumbersState[2] = 1;
+
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{
 
-		if (!listOfPickedUpNumbers.Contains(4))
+		//if (!listOfPickedUpNumbers.Contains(4))
 		{
-			listOfPickedUpNumbers.Add(4);
+			/*listOfPickedUpNumbers.Add(4);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+			listOfPickedUpNumbersState[3] = 1;
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
@@ -174,10 +197,12 @@ public class ResourceManager : Singleton<ResourceManager>
 	private static void AddNumber5ToListOfPickedUpNumbers()
 	{
 
-		if (!listOfPickedUpNumbers.Contains(5))
+		//if (!listOfPickedUpNumbers.Contains(5))
 		{
-			listOfPickedUpNumbers.Add(5);
+			/*listOfPickedUpNumbers.Add(5);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+			listOfPickedUpNumbersState[4] = 1;
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
@@ -185,43 +210,60 @@ public class ResourceManager : Singleton<ResourceManager>
 	private static void AddNumber6ToListOfPickedUpNumbers()
 	{
 
-		if (!listOfPickedUpNumbers.Contains(6))
+		//if (!listOfPickedUpNumbers.Contains(6))
 		{
-			listOfPickedUpNumbers.Add(6);
+			/*listOfPickedUpNumbers.Add(6);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
+			listOfPickedUpNumbersState[5] = 1;
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
-	}	
+	}
 
-	private static void Number1Deactive()
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
+
+    public static int NumberCountedToGrandma(int nr)
+    {
+        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
+        if (index != -1)
+        {
+            return listOfPickedUpNumbersState[index];
+        }
+        return 0;
+    }
+
+    private static void Number1Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 1);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 	private static void Number2Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 2);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 	private static void Number3Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 3);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 	private static void Number4Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 4);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 	private static void Number5Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 5);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 	private static void Number6Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 6);
-		listOfPickedUpNumbersState[index] = false;
+		listOfPickedUpNumbersState[index] = 0;
 	}
 }

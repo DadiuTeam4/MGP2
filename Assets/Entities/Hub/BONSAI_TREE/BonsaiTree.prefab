@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49ef314e7b1b844b8183b1bbbdc0881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnOnEvent: 4
+  spawnOnEvent: 19

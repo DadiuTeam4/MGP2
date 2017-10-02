@@ -12,9 +12,9 @@ public class Ghost : MonoBehaviour
     void Start()
     {
         render = gameObject.GetComponent<Renderer>();
-        collider = gameObject.GetComponent<Collider>();
-        collider.enabled = false;
-
+        //collider = gameObject.GetComponent<Collider>();
+        //collider.enabled = false;
+        RenderTheGhostOrNot();
         EventManager.StartListening(EventName.LightswitchClicked, RenderTheGhostOrNot);
 
     }
@@ -24,12 +24,12 @@ public class Ghost : MonoBehaviour
         if (ResourceManager.kitchenLightOn == true)
         {
             render.enabled = false;
-            collider.enabled = false;
+            //collider.enabled = false;
         }
         else
         {
             render.enabled = true;
-            collider.enabled = true;
+            //collider.enabled = true;
 
         }
     }
