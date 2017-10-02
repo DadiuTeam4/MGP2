@@ -27,33 +27,34 @@ public class NumberFoundInteractable : Interactable
     {
         fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
-        timeInterval = Random.Range(4.0f, 15.0f);
     }
 
     void Update()
     {
-        if (period > timeInterval)
+        if (!fired) 
         {
-            period = 0;
-            if (onHoldParticleSystem != null)
+            if (period > timeInterval)
             {
-                indicatorParticleSystem.Play();
-                indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + 0.52f, transform.position.z);
+                period = 0;
+                if (onHoldParticleSystem != null)
+                {
+                    indicatorParticleSystem.Play();
+                    indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + 0.52f, transform.position.z);
+                }
             }
-        }
-        if (period > stopParticlesTime)
-        {
-            
-            if (onHoldParticleSystem != null)
+            if (period > stopParticlesTime)
             {
-               
-                indicatorParticleSystem.Stop();
-                indicatorParticleSystem.Clear();
-            }
+                
+                if (onHoldParticleSystem != null)
+                {
+                
+                    indicatorParticleSystem.Stop();
+                    indicatorParticleSystem.Clear();
+                }
+            }          
+            period += UnityEngine.Time.deltaTime;
         }
-
         
-        period += UnityEngine.Time.deltaTime;
     }
 
 
@@ -99,6 +100,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Stop();
             onHoldParticleSystem.Clear();
         }
+        period = 0;
     }
 
     void FireEvent()
