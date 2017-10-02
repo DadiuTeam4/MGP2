@@ -9,6 +9,10 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
+		<File Id="180643768" Language="SFX">
+			<ShortName>MGP2_Music_throwout2.1(P).wav</ShortName>
+			<Path>SFX/MGP2_Music_throwout2.1(P)_5A343EFA.wem</Path>
+		</File>
 		<File Id="382228935" Language="SFX">
 			<ShortName>MGP2_Music_throwout2(P)piano_1.wav</ShortName>
 			<Path>SFX/MGP2_Music_throwout2(P)piano_1_5A343EFA.wem</Path>
@@ -33,6 +37,7 @@
 				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music\Music"/>
 				<Event Id="4238747602" Name="OnScreenClick" ObjectPath="\Events\Default Work Unit\SoundDesign\OnScreenClick"/>
 				<Event Id="4102654701" Name="Pause_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Pause_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
+				<Event Id="1903483482" Name="Play_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_Mystery"/>
 				<Event Id="1795272170" Name="Play_MGP2_Music_throwout2piano_P_" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_throwout2piano_P_"/>
 				<Event Id="2332801419" Name="Play_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Play_MGP2_Music_throwout2piano_P__dirty"/>
 				<Event Id="1477792038" Name="Play_MGP2_SD_Bed" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed"/>
@@ -96,11 +101,13 @@
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
 				<Event Id="534839454" Name="Resume_MGP2_Music_throwout2piano_P__dirty" ObjectPath="\Events\Default Work Unit\Resume_MGP2_Music_throwout2piano_P__dirty" MaxAttenuation="0.000000"/>
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000"/>
+				<Event Id="1090101008" Name="Stop_MGP2_Music_Mystery" ObjectPath="\Events\Default Work Unit\Stop_MGP2_Music_Mystery" MaxAttenuation="0.000000"/>
 				<Event Id="3922064915" Name="Stop_MGP2_SD_DrippingWater" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Stop_MGP2_SD_DrippingWater" MaxAttenuation="0.000000"/>
 				<Event Id="2380106136" Name="Stop_MGP2_SD_Garden" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Stop_MGP2_SD_Garden" MaxAttenuation="0.000000"/>
 				<Event Id="2932857561" Name="Stop_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Stop_MGP2_SD_Tinnitus" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<ReferencedStreamedFiles>
+				<File Id="180643768"/>
 				<File Id="382228935"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
@@ -128,6 +135,10 @@
 					<ShortName>AgoShaker2A.wav.wav</ShortName>
 					<Path>SFX/AgoShaker2A.wav_84EC0B40.wem</Path>
 				</File>
+				<File Id="132745067" Language="SFX">
+					<ShortName>CouchSqueak_S08HS.308.wav</ShortName>
+					<Path>SFX/CouchSqueak_S08HS.308_84EC0B40.wem</Path>
+				</File>
 				<File Id="147093774" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
 					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_96EE2134.wem</Path>
@@ -151,10 +162,6 @@
 				<File Id="211387590" Language="SFX">
 					<ShortName>387967__chrillz3r__opening-closing-cookie-jar-metal.wav</ShortName>
 					<Path>SFX/387967__chrillz3r__opening-closing-cookie-jar-metal_195CA8DF.wem</Path>
-				</File>
-				<File Id="226094369" Language="SFX">
-					<ShortName>mgp2_rockingChair(P).wav</ShortName>
-					<Path>SFX/mgp2_rockingChair(P)_ACCE8267.wem</Path>
 				</File>
 				<File Id="231098878" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
@@ -264,6 +271,10 @@
 					<ShortName>MGP2_Speak_Stokdoev.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Stokdoev_84EC0B40.wem</Path>
 				</File>
+				<File Id="501683604" Language="SFX">
+					<ShortName>MGP2_SD_RockingChair_1.wav</ShortName>
+					<Path>SFX/MGP2_SD_RockingChair_1_5A343EFA.wem</Path>
+				</File>
 				<File Id="529214472" Language="SFX">
 					<ShortName>MGP2_Speak_ErDuOgsaa.wav</ShortName>
 					<Path>SFX/MGP2_Speak_ErDuOgsaa_84EC0B40.wem</Path>
@@ -332,6 +343,10 @@
 					<ShortName>MGP2_Speak_ToBoern.wav</ShortName>
 					<Path>SFX/MGP2_Speak_ToBoern_84EC0B40.wem</Path>
 				</File>
+				<File Id="729132637" Language="SFX">
+					<ShortName>CouchSitSqueak_S08HS.306.wav</ShortName>
+					<Path>SFX/CouchSitSqueak_S08HS.306_84EC0B40.wem</Path>
+				</File>
 				<File Id="759411760" Language="SFX">
 					<ShortName>MGP2_Speak_Badeænder.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Badeænder_84EC0B40.wem</Path>
@@ -371,10 +386,6 @@
 				<File Id="926057001" Language="SFX">
 					<ShortName>MGP2_Speak_NaaNaa.wav</ShortName>
 					<Path>SFX/MGP2_Speak_NaaNaa_84EC0B40.wem</Path>
-				</File>
-				<File Id="932824895" Language="SFX">
-					<ShortName>344347__amholma__squeaking-bed.wav</ShortName>
-					<Path>SFX/344347__amholma__squeaking-bed_CEB1E9C5.wem</Path>
 				</File>
 				<File Id="933262447" Language="SFX">
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>

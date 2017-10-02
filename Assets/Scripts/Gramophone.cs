@@ -51,10 +51,13 @@ public class Gramophone : Interactable {
 		isFaded = true; 
 		hasBeenPressed = false;
 		AkSoundEngine.PostEvent("Pause_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+		AkSoundEngine.PostEvent ("Stop_MGP2_Music_Mystery", gameObject); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Music_Mystery", gameObject); 
 	}
 		
 	IEnumerator FadeOut()
 	{
+		AkSoundEngine.PostEvent ("Stop_MGP2_Music_Mystery", gameObject); 
 		AkSoundEngine.PostEvent("Resume_MGP2_Music_throwout2piano_P__dirty", gameObject); 
 		hasBeenPressed = true;
 		duration = 20f * Time.deltaTime; 
