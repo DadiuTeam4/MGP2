@@ -93,7 +93,7 @@ public class ResourceUI : MonoBehaviour
         for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
         {
             g = Instantiate(button, transform);
-            g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
+            //g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
             Image myImageComponent = g.GetComponent<Image>();
             myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
