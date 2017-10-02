@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ONSCREENCLICK = 4238747602U;
         static const AkUniqueID PAUSE_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 4102654701U;
+        static const AkUniqueID PLAY_MGP2_MUSIC_MYSTERY = 1903483482U;
         static const AkUniqueID PLAY_MGP2_MUSIC_THROWOUT2PIANO_P_ = 1795272170U;
         static const AkUniqueID PLAY_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 2332801419U;
         static const AkUniqueID PLAY_MGP2_SD_BED = 1477792038U;
@@ -83,6 +84,7 @@ namespace AK
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
         static const AkUniqueID RESUME_MGP2_MUSIC_THROWOUT2PIANO_P__DIRTY = 534839454U;
         static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_MGP2_MUSIC_MYSTERY = 1090101008U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
         static const AkUniqueID STOP_MGP2_SD_TINNITUS = 2932857561U;
@@ -110,6 +112,7 @@ namespace AK
         static const AkUniqueID KITCHEN_VOLUME = 4227318060U;
         static const AkUniqueID LIVINGROOM_VOLUME = 2602545984U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
+        static const AkUniqueID ROCKINGCHAIR = 1890436057U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;

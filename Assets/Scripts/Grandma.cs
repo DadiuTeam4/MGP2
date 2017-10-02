@@ -4,31 +4,59 @@ using UnityEngine;
 
 public class Grandma : Interactable {
 	private float fadeValue = 100f; 
-	private float fadeRate = 4.5f; 
+	private float fadeDeafValue = 100f;
+	private float fadeMax = 100f;
+	private float fadeMin = 0f; 
+	private float duration;  
+	private bool isFaded = false; 
+	private bool hasBeenPressed = false; 
+
+	public override void OnTouchBegin()
+	{	
+		if (isFaded == false && hasBeenPressed == false)
+		{
+			StartCoroutine (FadeInGranny()); 
+		}
+		if (isFaded == true && hasBeenPressed == false)
+		{
+			StartCoroutine (FadeOutGranny ()); 
+		}
+		if (isFaded == true && hasBeenPressed == true)
+		{
+			StartCoroutine (FadeOutGranny ()); 
+		}
+	}
 
 	public void Update()
 	{
-		AkSoundEngine.SetRTPCValue ("Deaf_parameter", fadeValue); 
+		AkSoundEngine.SetRTPCValue ("Deaf_parameter", fadeDeafValue); 
+		Debug.Log (fadeDeafValue); 
 	}
-
-	public override void OnTouchHold()
+		
+	IEnumerator FadeInGranny()
 	{
-		FadeIn (); 
-	}
-
-	public override void OnTouchReleased()
-	{
-		fadeValue = 100f; 
-		AkSoundEngine.PostEvent ("Stop_MGP2_SD_Tinnitus", gameObject); 
-
-	}
-
-	void FadeIn()	
-	{
-		if (fadeValue > 0) 
+		print ("fader"); 
+		hasBeenPressed = true;
+		duration = 50f * Time.deltaTime; 
+		while (fadeDeafValue > fadeMin) 
 		{
-		 fadeValue -= fadeRate;
-			AkSoundEngine.PostEvent ("Play_MGP2_SD_Tinnitus", gameObject); 
+			fadeDeafValue -= duration; 
+			yield return null; 
 		}
+		isFaded = true; 
+		hasBeenPressed = false;
+	}
+
+	IEnumerator FadeOutGranny()
+	{
+		hasBeenPressed = true;
+		duration = 50f * Time.deltaTime; 
+		while (fadeDeafValue < fadeMax) 
+		{
+			fadeDeafValue += duration; 
+			yield return null; 
+		}
+		isFaded = false;
+		hasBeenPressed = false;
 	}
 }
