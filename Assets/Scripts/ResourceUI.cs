@@ -92,8 +92,7 @@ public class ResourceUI : MonoBehaviour {
 		ButtonController buttonController;
 		for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
 		{
-			g = Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
-			g.transform.SetParent(transform);
+			g = Instantiate(button, transform);
 			g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
 			Image myImageComponent = g.GetComponent<Image>(); 
