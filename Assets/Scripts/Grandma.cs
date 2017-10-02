@@ -30,7 +30,6 @@ public class Grandma : Interactable {
 	public void Update()
 	{
 		AkSoundEngine.SetRTPCValue ("Deaf_parameter", fadeDeafValue); 
-		Debug.Log (fadeDeafValue); 
 	}
 		
 	IEnumerator FadeInGranny()
