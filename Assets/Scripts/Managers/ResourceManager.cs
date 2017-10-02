@@ -145,95 +145,59 @@ public class ResourceManager : Singleton<ResourceManager>
 	}
 	private static void AddNumber1ToListOfPickedUpNumbers()
 	{
-		//if (!listOfPickedUpNumbers.Contains(1))
-		{
-			/*listOfPickedUpNumbers.Add(1);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-			listOfPickedUpNumbersState[0] = 1;
-		}
+
+		listOfPickedUpNumbersState[0] = 1;
+		
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}
 	private static void AddNumber2ToListOfPickedUpNumbers()
 	{
 
-		//if (!listOfPickedUpNumbers.Contains(2))
-		{
-			/*listOfPickedUpNumbers.Add(2);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-
-			listOfPickedUpNumbersState[1] = 1;
-		}
+		listOfPickedUpNumbersState[1] = 1;
+		
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
 	}	
 	private static void AddNumber3ToListOfPickedUpNumbers()
 	{
-		//if (!listOfPickedUpNumbers.Contains(3))
-		{
-			/*listOfPickedUpNumbers.Add(3);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-			listOfPickedUpNumbersState[2] = 1;
 
-		}
+		listOfPickedUpNumbersState[2] = 1;
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
 	private static void AddNumber4ToListOfPickedUpNumbers()
 	{
 
-		//if (!listOfPickedUpNumbers.Contains(4))
-		{
-			/*listOfPickedUpNumbers.Add(4);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-			listOfPickedUpNumbersState[3] = 1;
-		}
+
+		listOfPickedUpNumbersState[3] = 1;
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber5ToListOfPickedUpNumbers()
 	{
 
-		//if (!listOfPickedUpNumbers.Contains(5))
-		{
-			/*listOfPickedUpNumbers.Add(5);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-			listOfPickedUpNumbersState[4] = 1;
-		}
+
+		listOfPickedUpNumbersState[4] = 1;
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}	
 	private static void AddNumber6ToListOfPickedUpNumbers()
 	{
 
-		//if (!listOfPickedUpNumbers.Contains(6))
-		{
-			/*listOfPickedUpNumbers.Add(6);
-			listOfPickedUpNumbersState.Add(true);
-			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));*/
-			listOfPickedUpNumbersState[5] = 1;
-		}
+
+		listOfPickedUpNumbersState[5] = 1;
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
 
     public static bool NumberFound(int nr)
     {
-        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+        return listOfPickedUpNumbers[nr] == 1;
     }
 
-    public static int NumberCountedToGrandma(int nr)
+    public static bool NumberCountedToGrandma(int nr)
     {
-        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
-        if (index != -1)
-        {
-            return listOfPickedUpNumbersState[index];
-        }
-        return 0;
+		return listOfPickedUpNumbers[nr] == 0;
     }
 
     private static void Number1Deactive()
