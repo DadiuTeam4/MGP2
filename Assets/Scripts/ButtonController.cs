@@ -36,11 +36,23 @@ public class ButtonController : MonoBehaviour {
 
 	void Update()
 	{
+		if (ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 1)
+		{
+			active = true;
+			var color = GetComponent<Image> ().color;
+			color = Color.white;
+			GetComponent<Image> ().color = color;
+		}
+		else if(ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 0)
+		{
+			active = false;			
+		}
+				
 		if (buttonHeld)
 		{
 			buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
@@ -79,13 +91,26 @@ public class ButtonController : MonoBehaviour {
 	{
 		originalPosition = localOriginalPosition;
 	}
-	public void SetActiveBool(bool myState)
+	public void SetState(int myState)
 	{
-		active = myState;
-		if (!active)
+		if (myState < 1)
+		{
+			active = false;
+		}
+		else
+		{
+			active = true;
+		}
+		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
 			color = Color.red;
+			GetComponent<Image> ().color = color;
+		}
+		else if (myState == -1)
+		{
+			var color = GetComponent<Image> ().color;
+			color = Color.black;
 			GetComponent<Image> ().color = color;
 		}
 	}

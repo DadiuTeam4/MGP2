@@ -12,7 +12,7 @@ public class ResourceUI : MonoBehaviour
     public GameObject button;
     private int currentButtonAmount;
     private List<int> listOfPickedUpNumbers;
-    static public List<bool> listOfPickedUpNumbersState;
+    static public List<int> listOfPickedUpNumbersState;
     static public List<Vector3> listOfPickedUpNumbersPosition;
 
     private RectTransform canvasRectTransform;
@@ -115,7 +115,7 @@ public class ResourceUI : MonoBehaviour
 			buttonController.buttonIndex = i;
             buttonController.eventName = SetButtonEnum(listOfPickedUpNumbers[i]);
             buttonController.SetOriginalPosition(rectTransform.localPosition);
-            buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
+            buttonController.SetState(listOfPickedUpNumbersState[i]);
             buttonController.canvasRect = canvasRectTransform;
         }
 
