@@ -636,8 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1925236299203278, guid: e7d56d0dc3e16f6429c36b2576ca8f0e, type: 2}
-  heightOfButton: 140
-  widthOfButton: 140
+  heightOfButton: 70
+  widthOfButton: 70
   spriteForUI:
   - {fileID: 21300000, guid: 243fd3e9a3cee2e4e8019bb39d06e468, type: 3}
   - {fileID: 21300000, guid: d59d6a699402a8947879eb164d5d310e, type: 3}
