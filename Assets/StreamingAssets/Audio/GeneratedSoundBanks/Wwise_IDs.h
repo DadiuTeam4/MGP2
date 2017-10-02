@@ -44,6 +44,11 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_GLASS = 3082250963U;
         static const AkUniqueID PLAY_MGP2_SD_HERBS = 803864683U;
         static const AkUniqueID PLAY_MGP2_SD_KETTLE = 4096018196U;
+        static const AkUniqueID PLAY_MGP2_SD_LANTERN1 = 1787049636U;
+        static const AkUniqueID PLAY_MGP2_SD_LANTERN2 = 1787049639U;
+        static const AkUniqueID PLAY_MGP2_SD_LANTERN3 = 1787049638U;
+        static const AkUniqueID PLAY_MGP2_SD_LANTERN4 = 1787049633U;
+        static const AkUniqueID PLAY_MGP2_SD_LANTERN5 = 1787049632U;
         static const AkUniqueID PLAY_MGP2_SD_LIGHTSWITCH = 2060405955U;
         static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
         static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
@@ -67,6 +72,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SPEAK_FEMGARNNOEGLER = 1728860424U;
         static const AkUniqueID PLAY_MGP2_SPEAK_FIREBADEAENDER = 862215493U;
         static const AkUniqueID PLAY_MGP2_SPEAK_FORTAELLEBEDSTEMOR = 1531644717U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_HUGOOO = 2272722235U;
         static const AkUniqueID PLAY_MGP2_SPEAK_HUGOTRYK = 3508605423U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SEKSSMAAKAGERKRUKKEN = 796657599U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SMAAKAGER = 2825704606U;
