@@ -8,8 +8,9 @@ public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	[HideInInspector]
+	public int buttonIndex; 
+	[HideInInspector]
 	public RectTransform canvasRect;
-	
 	private UIRaycaster uIRaycaster;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
@@ -49,7 +50,6 @@ public class ButtonController : MonoBehaviour {
 					active = false;
 					buttonHeld = false;
 
-					buttonRect.localPosition = originalPosition;
 					var color = GetComponent<Image> ().color;
 					color = Color.red;
 					GetComponent<Image> ().color = color;
@@ -95,6 +95,8 @@ public class ButtonController : MonoBehaviour {
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
+		Debug.Log("Should Remember the position");
+		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 
 	void FortaelleBedstemor()
