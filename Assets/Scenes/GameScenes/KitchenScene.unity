@@ -2890,12 +2890,12 @@ Prefab:
     - target: {fileID: 114934443856304466, guid: 9931e68a486734ba6a7b0f38a698d398,
         type: 2}
       propertyPath: shakeMagnitude
-      value: 0.0258
+      value: 0.0883
       objectReference: {fileID: 0}
     - target: {fileID: 114934443856304466, guid: 9931e68a486734ba6a7b0f38a698d398,
         type: 2}
       propertyPath: shake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114934443856304466, guid: 9931e68a486734ba6a7b0f38a698d398,
         type: 2}
