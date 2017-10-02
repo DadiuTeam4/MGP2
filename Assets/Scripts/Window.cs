@@ -7,10 +7,17 @@ public class Window : Interactable {
 	private bool isBeingPlayed = false;
 	private bool windowsOpen = false; 
 
+
+	void Start ()
+	{
+		EventManager.StartListening (EventName.KitchenSceneLoaded, KitchenSwitch); 
+	}
+
 	public override void OnTouchBegin()
 	{	
 		if (isBeingPlayed == false && windowsOpen == false)
 		{
+			//AkSoundEngine.SetRTPCValue ("HaveVolume", 100); 
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_WindowOpen", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1); 
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_Garden", gameObject); 
 			isBeingPlayed = true;
@@ -32,4 +39,10 @@ public class Window : Interactable {
 			isBeingPlayed = false; 
 		}
 	}
+
+	void KitchenSwitch()
+	{
+		AkSoundEngine.PostEvent ("Stop_MGP2_SD_Garden", gameObject); 
+	}
+
 }

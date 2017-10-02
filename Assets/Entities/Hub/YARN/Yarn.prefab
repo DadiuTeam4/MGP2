@@ -762,14 +762,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a01e188179961b46a68c3147019f7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
   timeHeld: 0
   particleOnClick: {fileID: 0}
-  eventToFire: 5
+  eventToFire: 6
   fireAfterSeconds: 1
+  shake: 1
   speed: 100
   shakeMagnitude: 0.086
+  onHoldParticleSystem: {fileID: 0}
 --- !u!135 &135025516530933964
 SphereCollider:
   m_ObjectHideFlags: 1

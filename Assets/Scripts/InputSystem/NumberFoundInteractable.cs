@@ -8,6 +8,7 @@ public class NumberFoundInteractable : Interactable
     public float fireAfterSeconds;
 
     [Header("Shake values")]
+    public bool shake = true;
     [Range(0, 100)]
     public float speed = 60;
     [Range(0.0f, 0.1f)]
@@ -21,6 +22,7 @@ public class NumberFoundInteractable : Interactable
 
     protected void Start()
     {
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
@@ -33,9 +35,12 @@ public class NumberFoundInteractable : Interactable
     {
         if (!fired) 
         {
-            float progress = timeHeld / fireAfterSeconds;
-            Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
-            transform.position = newPos;
+            if (shake)
+            {
+                float progress = timeHeld / fireAfterSeconds;
+                Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
+                transform.position = newPos;
+            }
 
             if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
             {
@@ -47,7 +52,10 @@ public class NumberFoundInteractable : Interactable
             {
                 FireEvent();
                 fired = true;
-                transform.position = originalPosition;
+                if (shake)
+                {
+                    transform.position = originalPosition;
+                }
             }
         }
     }

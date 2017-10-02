@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198413465624760946}
   - component: {fileID: 199046477826951862}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: HoldRingParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
