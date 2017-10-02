@@ -2944,6 +2944,11 @@ MonoBehaviour:
   speed: 60
   shakeMagnitude: 0.01
   onHoldParticleSystem: {fileID: 0}
+  indicatorParticleSystem: {fileID: 0}
+  timeInterval: 3
+  period: 0
+  stopParticlesTime: 1
+  offsetOnYParticleSystem: 0.52
 --- !u!114 &114190128072537318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3152,7 +3157,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -970057649
+  randomSeed: -435836946
   InitialModule:
     serializedVersion: 3
     enabled: 1

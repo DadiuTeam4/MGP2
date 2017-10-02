@@ -340,7 +340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4006697275507782, guid: b3849583c2b114c2eb235f66c27537a4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5.03
+      value: 6.16
       objectReference: {fileID: 0}
     - target: {fileID: 4006697275507782, guid: b3849583c2b114c2eb235f66c27537a4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -379,7 +379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &165260941
 Transform:
   m_ObjectHideFlags: 0
@@ -448,7 +448,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4412469921991694, guid: af78faff6ca2e4ae4870ce77b852d2c0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.86
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 4412469921991694, guid: af78faff6ca2e4ae4870ce77b852d2c0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2053,6 +2053,11 @@ Prefab:
       propertyPath: idleWaypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1541326322}
+    - target: {fileID: 114787547424315808, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: getNumberFeedbackPS
+      value: 
+      objectReference: {fileID: 1915966767}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
   m_IsPrefabParent: 0
@@ -3896,7 +3901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4467750106334336, guid: f4931d3bef7964214aabe029b7d929f2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5.69
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4467750106334336, guid: f4931d3bef7964214aabe029b7d929f2, type: 2}
       propertyPath: m_LocalRotation.x
