@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207d08540b7af4159b875ab9895dc70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePath: Audio/GeneratedSoundBanks
+  basePath: Audio\GeneratedSoundBanks
   language: English(US)
   defaultPoolSize: 4096
   lowerPoolSize: 2048
@@ -1025,11 +1025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952fa7a82dbfad4384bcab2943d82a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: 0.1
-  speed: 1
-  sensitivity: 0.05
-  rotaryBoundsX: 5
-  rotaryBoundsY: 5
+  deadZone: 0.54
+  speed: 0.11
+  sensitivity: 0.019
+  rotaryBoundsX: 0
+  rotaryBoundsY: 1.22
 --- !u!1 &255147013
 GameObject:
   m_ObjectHideFlags: 0
