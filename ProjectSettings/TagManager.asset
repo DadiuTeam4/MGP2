@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ManagerHolder
   - DestinationChecker
+  - UIPanel
   layers:
   - Default
   - TransparentFX

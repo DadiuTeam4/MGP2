@@ -8,11 +8,9 @@ public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	[HideInInspector]
-	public RectTransform canvasRect;
+	public int buttonIndex; 
 	[HideInInspector]
-	public GraphicRaycaster graphicRayCaster;
-	private PointerEventData pointerEventData = new PointerEventData(null);
-	private List<RaycastResult> raycastResults = new List<RaycastResult>();
+	public RectTransform canvasRect;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -21,44 +19,35 @@ public class ButtonController : MonoBehaviour {
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
-
-
-
+	private Vector2 mouseInCanvasPosition;
+		
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
 		targetCollider = targetGameObject.GetComponent<Collider>();
-		//getcomponent<collider>();
 
 		currentScene = ResourceManager.GetCurrentSceneName();
 
 	}
 
-
-
 	void Update()
 	{
 		if (buttonHeld)
 		{
-			pointerEventData.position = Input.mousePosition;
-			graphicRayCaster.Raycast(pointerEventData, raycastResults);
-			for (int i = 0; i < raycastResults.Count; i++)
-			{
-				buttonRect.anchoredPosition = new Vector2(raycastResults[i].screenPosition.x, raycastResults[i].screenPosition.y - canvasRect.rect.height);
-			}
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
-				if (currentScene == nameOfSceneThatHugoCanCount  && active)
+				if (currentScene == nameOfSceneThatHugoCanCount && active)
 				{
 					active = false;
 					buttonHeld = false;
 
-					buttonRect.localPosition = originalPosition;
 					var color = GetComponent<Image> ().color;
 					color = Color.red;
 					GetComponent<Image> ().color = color;
@@ -67,7 +56,6 @@ public class ButtonController : MonoBehaviour {
 				}
 				else
 				{
-					print(" Hey! Let me count it for grandma");
 					if (isBeingPlayed == false) 
 					{
 						FortaelleBedstemor (); 
@@ -105,6 +93,8 @@ public class ButtonController : MonoBehaviour {
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
+		Debug.Log("Should Remember the position");
+		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 
 	void FortaelleBedstemor()

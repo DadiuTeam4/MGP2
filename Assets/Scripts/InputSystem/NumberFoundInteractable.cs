@@ -22,6 +22,7 @@ public class NumberFoundInteractable : Interactable
     public float timeInterval = 3.0f;
     public float period = 0.0f;
     public float stopParticlesTime = 1.0f;
+    public float offsetOnYParticleSystem = 0.52f;
 
     protected void Start()
     {
@@ -39,7 +40,7 @@ public class NumberFoundInteractable : Interactable
                 if (onHoldParticleSystem != null)
                 {
                     indicatorParticleSystem.Play();
-                    indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + 0.52f, transform.position.z);
+                    indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + offsetOnYParticleSystem, transform.position.z);
                 }
             }
             if (period > stopParticlesTime)
