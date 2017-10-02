@@ -2053,6 +2053,11 @@ Prefab:
       propertyPath: idleWaypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1541326322}
+    - target: {fileID: 114787547424315808, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: getNumberFeedbackPS
+      value: 
+      objectReference: {fileID: 1915966767}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
   m_IsPrefabParent: 0
