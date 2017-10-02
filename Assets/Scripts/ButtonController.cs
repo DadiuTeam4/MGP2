@@ -11,7 +11,6 @@ public class ButtonController : MonoBehaviour {
 	public int buttonIndex; 
 	[HideInInspector]
 	public RectTransform canvasRect;
-	private UIRaycaster uIRaycaster;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -24,7 +23,6 @@ public class ButtonController : MonoBehaviour {
 		
 	void Start()
 	{
-		uIRaycaster = GetComponent<UIRaycaster>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
