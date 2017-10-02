@@ -266,4 +266,12 @@ public class ResourceManager : Singleton<ResourceManager>
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 6);
 		listOfPickedUpNumbersState[index] = 0;
 	}
+
+	public static void ResetState()
+	{
+		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
+		kitchenLightOn = true;
+		isFantasyObjectActivated = false;	
+	}
 }
