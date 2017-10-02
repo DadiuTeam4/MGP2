@@ -27,6 +27,7 @@ public class OnGameMenuController : MonoBehaviour
     public void RestartGame()
     {
         optionPanel.SetActive(false);
+        ResourceManager.ResetState();
         SceneManager.LoadScene(0);
 		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
 		RestartMusic (); 
