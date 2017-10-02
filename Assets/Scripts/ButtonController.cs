@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(UIRaycaster))]
 public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	[HideInInspector]
 	public RectTransform canvasRect;
-	[HideInInspector]
-	public GraphicRaycaster graphicRayCaster;
-	private PointerEventData pointerEventData = new PointerEventData(null);
-	private List<RaycastResult> raycastResults = new List<RaycastResult>();
+	
+	private UIRaycaster uIRaycaster;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -22,38 +21,29 @@ public class ButtonController : MonoBehaviour {
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
 
-
-
 	void Start()
 	{
+		uIRaycaster = GetComponent<UIRaycaster>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
 		targetCollider = targetGameObject.GetComponent<Collider>();
-		//getcomponent<collider>();
 
 		currentScene = ResourceManager.GetCurrentSceneName();
 
 	}
 
-
-
 	void Update()
 	{
 		if (buttonHeld)
 		{
-			pointerEventData.position = Input.mousePosition;
-			graphicRayCaster.Raycast(pointerEventData, raycastResults);
-			for (int i = 0; i < raycastResults.Count; i++)
-			{
-				buttonRect.anchoredPosition = new Vector2(raycastResults[i].screenPosition.x, raycastResults[i].screenPosition.y - canvasRect.rect.height);
-			}
+			buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
-				if (currentScene == nameOfSceneThatHugoCanCount  && active)
+				if (currentScene == nameOfSceneThatHugoCanCount && active)
 				{
 					active = false;
 					buttonHeld = false;
@@ -66,7 +56,6 @@ public class ButtonController : MonoBehaviour {
 				}
 				else
 				{
-					print(" Hey! Let me count it for grandma");
 					if (isBeingPlayed == false) 
 					{
 						FortaelleBedstemor (); 

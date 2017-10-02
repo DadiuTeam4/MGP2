@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(UIRaycaster))]
 public class MenuHoldingController : MonoBehaviour
 {
+	private UIRaycaster uIRaycaster;
     private bool buttonHeld;
     private Vector2 mouseOffSet;
 
@@ -13,6 +15,7 @@ public class MenuHoldingController : MonoBehaviour
 
     void Start()
     {
+        uIRaycaster = gameObject.GetComponent<UIRaycaster>();
         Rect buttonRect = gameObject.GetComponent<RectTransform>().rect;
         buttonHeld = false;
         mouseOffSet = new Vector2(buttonRect.width / 2, buttonRect.height / 2);
@@ -22,7 +25,7 @@ public class MenuHoldingController : MonoBehaviour
     {
         if (buttonHeld)
         {
-            transform.position = new Vector2(Input.mousePosition.x + mouseOffSet.x, Input.mousePosition.y + mouseOffSet.y);
+            transform.position = uIRaycaster.GetRaycastedPositionOnCanvas();
         }
     }
 

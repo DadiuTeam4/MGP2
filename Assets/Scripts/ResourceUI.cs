@@ -18,7 +18,7 @@ public class ResourceUI : MonoBehaviour {
 	public float heightOfButton = 70, widthOfButton = 70;
 	private int amountOfCollectedNumbers;
 	private float canvasRatio;
-	private GraphicRaycaster graphicRaycaster;
+
 	public Sprite[] spriteForUI = new Sprite[6];
 
 	// Use this for initialization
@@ -29,7 +29,6 @@ public class ResourceUI : MonoBehaviour {
 		EventManager.StartListening(EventName.UIUpdate, UIListener);
 
 		canvasRectTransform = GetComponent<RectTransform>();
-		graphicRaycaster = GetComponent<GraphicRaycaster>();
 
 		heightOfCanvas = canvasRectTransform.rect.height;
 
@@ -107,7 +106,6 @@ public class ResourceUI : MonoBehaviour {
 			buttonController.SetOriginalPosition(rectTransform.localPosition);
 			buttonController.SetActiveBool(listOfPickedUpNumbersState[i]);
 			buttonController.canvasRect = canvasRectTransform;
-			buttonController.graphicRayCaster = graphicRaycaster;
 		}
 
 		currentButtonAmount = amountOfCollectedNumbers;
