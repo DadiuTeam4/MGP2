@@ -56,6 +56,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
         static const AkUniqueID PLAY_MGP2_SD_TINNITUS = 2569931419U;
         static const AkUniqueID PLAY_MGP2_SD_TV = 1119214915U;
+        static const AkUniqueID PLAY_MGP2_SD_TV1 = 1196118088U;
         static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
         static const AkUniqueID PLAY_MGP2_SD_VOODOO = 3797089235U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;

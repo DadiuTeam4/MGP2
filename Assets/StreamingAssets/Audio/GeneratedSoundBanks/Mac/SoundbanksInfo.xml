@@ -73,6 +73,7 @@
 				<Event Id="304130839" Name="Play_MGP2_SD_SinkFill" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_SinkFill"/>
 				<Event Id="2569931419" Name="Play_MGP2_SD_Tinnitus" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Tinnitus"/>
 				<Event Id="1119214915" Name="Play_MGP2_SD_TV" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV"/>
+				<Event Id="1196118088" Name="Play_MGP2_SD_TV1" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_TV1"/>
 				<Event Id="3735495899" Name="Play_MGP2_SD_Vinyl" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl"/>
 				<Event Id="3797089235" Name="Play_MGP2_SD_Voodoo" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Voodoo"/>
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
@@ -114,6 +115,14 @@
 				<File Id="7591784" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C593B509.wem</Path>
+				</File>
+				<File Id="21792370" Language="SFX">
+					<ShortName>MGP2_SD_TV_3.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_3_84EC0B40.wem</Path>
+				</File>
+				<File Id="25713745" Language="SFX">
+					<ShortName>MGP2_SD_TV_1.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_1_84EC0B40.wem</Path>
 				</File>
 				<File Id="39888352" Language="SFX">
 					<ShortName>MGP2_Speak_FemGarnnoegler.wav</ShortName>
@@ -207,6 +216,10 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_55ED4E63.wem</Path>
 				</File>
+				<File Id="334745303" Language="SFX">
+					<ShortName>MGP2_SD_TV_4.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_4_84EC0B40.wem</Path>
+				</File>
 				<File Id="350455730" Language="SFX">
 					<ShortName>MGP2_Speak_EnToTreHjemmesko.wav</ShortName>
 					<Path>SFX/MGP2_Speak_EnToTreHjemmesko_84EC0B40.wem</Path>
@@ -298,6 +311,10 @@
 				<File Id="591599028" Language="SFX">
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
 					<Path>SFX/320416__yadronoff__shivering-chandelier_F3995FBA.wem</Path>
+				</File>
+				<File Id="611877970" Language="SFX">
+					<ShortName>MGP2_SD_TV_2.wav</ShortName>
+					<Path>SFX/MGP2_SD_TV_2_84EC0B40.wem</Path>
 				</File>
 				<File Id="623925728" Language="SFX">
 					<ShortName>60398__uwesoundboiz__window-open-double-glazed-001.wav</ShortName>
