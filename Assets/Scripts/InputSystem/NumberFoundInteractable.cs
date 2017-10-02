@@ -15,16 +15,48 @@ public class NumberFoundInteractable : Interactable
     public float shakeMagnitude = 0.01f;
     
     public ParticleSystem onHoldParticleSystem;
-
+    public ParticleSystem indicatorParticleSystem;
     private bool fired;
     private Vector3 originalPosition;
     private Vector2 mousePositionOnTouchBegin;
+    public float timeInterval = 3.0f;
+    public float period = 0.0f;
+    public float stopParticlesTime = 1.0f;
 
     protected void Start()
     {
         fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
+        timeInterval = Random.Range(4.0f, 15.0f);
     }
+
+    void Update()
+    {
+        if (period > timeInterval)
+        {
+            period = 0;
+            if (onHoldParticleSystem != null)
+            {
+                indicatorParticleSystem.Play();
+                indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + 0.52f, transform.position.z);
+            }
+        }
+        if (period > stopParticlesTime)
+        {
+            
+            if (onHoldParticleSystem != null)
+            {
+               
+                indicatorParticleSystem.Stop();
+                indicatorParticleSystem.Clear();
+            }
+        }
+
+        
+        period += UnityEngine.Time.deltaTime;
+    }
+
+
 
     public override void OnTouchBegin()
     {
