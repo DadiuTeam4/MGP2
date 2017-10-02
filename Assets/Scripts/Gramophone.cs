@@ -13,9 +13,9 @@ public class Gramophone : Interactable {
 	private bool isFaded = false; 
 	private bool hasBeenPressed = false; 
 
-	public void Awake()
+	public void Start()
 	{
-		DontDestroyOnLoad (transform.gameObject);
+		EventManager.StartListening (EventName.KitchenSceneLoaded, KitchenSwitch); 
 	}
 
 	public override void OnTouchBegin()
@@ -25,6 +25,10 @@ public class Gramophone : Interactable {
 			StartCoroutine (FadeIn ()); 
 		}
 		if (isFaded == true && hasBeenPressed == false)
+		{
+			StartCoroutine (FadeOut ()); 
+		}
+		if (isFaded == true && hasBeenPressed == true)
 		{
 			StartCoroutine (FadeOut ()); 
 		}
@@ -61,5 +65,14 @@ public class Gramophone : Interactable {
 		}
 		isFaded = false;
 		hasBeenPressed = false;
+	}
+
+	void KitchenSwitch()
+	{
+		if (hasBeenPressed == true && isFaded == true)
+		{
+			isFaded = false;
+			hasBeenPressed = true; 
+		}
 	}
 }

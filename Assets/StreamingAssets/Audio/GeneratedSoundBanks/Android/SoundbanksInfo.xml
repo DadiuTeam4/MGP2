@@ -57,6 +57,11 @@
 				<Event Id="3082250963" Name="Play_MGP2_SD_Glass" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Glass"/>
 				<Event Id="803864683" Name="Play_MGP2_SD_Herbs" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs"/>
 				<Event Id="4096018196" Name="Play_MGP2_SD_Kettle" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Kettle"/>
+				<Event Id="1787049636" Name="Play_MGP2_SD_Lantern1" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern1"/>
+				<Event Id="1787049639" Name="Play_MGP2_SD_Lantern2" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern2"/>
+				<Event Id="1787049638" Name="Play_MGP2_SD_Lantern3" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern3"/>
+				<Event Id="1787049633" Name="Play_MGP2_SD_Lantern4" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern4"/>
+				<Event Id="1787049632" Name="Play_MGP2_SD_Lantern5" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Lantern5"/>
 				<Event Id="2060405955" Name="Play_MGP2_SD_LightSwitch" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_LightSwitch"/>
 				<Event Id="967135245" Name="Play_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair"/>
 				<Event Id="3249430620" Name="Play_MGP2_SD_Rubberduck" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck"/>
@@ -80,6 +85,7 @@
 				<Event Id="1728860424" Name="Play_MGP2_Speak_FemGarnnoegler" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FemGarnnoegler"/>
 				<Event Id="862215493" Name="Play_MGP2_Speak_FireBadeaender" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FireBadeaender"/>
 				<Event Id="1531644717" Name="Play_MGP2_Speak_FortaelleBedstemor" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_FortaelleBedstemor"/>
+				<Event Id="2272722235" Name="Play_MGP2_Speak_Hugooo" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Hugooo"/>
 				<Event Id="3508605423" Name="Play_MGP2_Speak_HugoTryk" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_HugoTryk"/>
 				<Event Id="796657599" Name="Play_MGP2_Speak_SeksSmaakagerKrukken" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_SeksSmaakagerKrukken"/>
 				<Event Id="2825704606" Name="Play_MGP2_Speak_Smaakager" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Smaakager"/>
@@ -186,6 +192,10 @@
 					<ShortName>MGP2_Speak_TreHjemmesko.wav</ShortName>
 					<Path>SFX/MGP2_Speak_TreHjemmesko_84EC0B40.wem</Path>
 				</File>
+				<File Id="327783280" Language="SFX">
+					<ShortName>MGP2_SD_Lantern4.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern4_84EC0B40.wem</Path>
+				</File>
 				<File Id="329108900" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_55ED4E63.wem</Path>
@@ -209,6 +219,10 @@
 				<File Id="394976216" Language="SFX">
 					<ShortName>MGP2_Speak_Wooow.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Wooow_84EC0B40.wem</Path>
+				</File>
+				<File Id="404207154" Language="SFX">
+					<ShortName>MGP2_SD_Lantern3.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern3_84EC0B40.wem</Path>
 				</File>
 				<File Id="418147390" Language="SFX">
 					<ShortName>MGP2_Speak_Nynne_1.wav</ShortName>
@@ -282,6 +296,10 @@
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
 					<Path>SFX/120329__cemagar__kitchen-cabinet_3A7E382B.wem</Path>
 				</File>
+				<File Id="630206413" Language="SFX">
+					<ShortName>MGP2_SD_Lantern5.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern5_84EC0B40.wem</Path>
+				</File>
 				<File Id="633937394" Language="SFX">
 					<ShortName>MGP2_Speak_Suk.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Suk_84EC0B40.wem</Path>
@@ -289,6 +307,10 @@
 				<File Id="636675681" Language="SFX">
 					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
 					<Path>SFX/MGP2_SD_Fryingpan1_18B2AEC1.wem</Path>
+				</File>
+				<File Id="639258859" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_84EC0B40.wem</Path>
 				</File>
 				<File Id="688450962" Language="SFX">
 					<ShortName>MGP2_Speak_AreYouAltso.wav</ShortName>
@@ -334,6 +356,10 @@
 					<ShortName>MGP2_Speak_HvorErDerNogetJegKanTaelle.wav</ShortName>
 					<Path>SFX/MGP2_Speak_HvorErDerNogetJegKanTaelle_84EC0B40.wem</Path>
 				</File>
+				<File Id="899240743" Language="SFX">
+					<ShortName>MGP2_Speak_HugoooKom.wav</ShortName>
+					<Path>SFX/MGP2_Speak_HugoooKom_84EC0B40.wem</Path>
+				</File>
 				<File Id="908517910" Language="SFX">
 					<ShortName>MGP2_Speak_Strikketoej.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Strikketoej_84EC0B40.wem</Path>
@@ -357,6 +383,10 @@
 				<File Id="952484127" Language="SFX">
 					<ShortName>354019__kleber-kgf__tv-static-sound-by-kleber-kgf.wav</ShortName>
 					<Path>SFX/354019__kleber-kgf__tv-static-sound-by-kleber-kgf_1CE02442.wem</Path>
+				</File>
+				<File Id="953098255" Language="SFX">
+					<ShortName>MGP2_SD_Lantern1.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern1_84EC0B40.wem</Path>
 				</File>
 				<File Id="976005905" Language="SFX">
 					<ShortName>MGP2_Speak_1234Garnnoegler.wav</ShortName>
