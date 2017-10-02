@@ -25,7 +25,7 @@ public class UIRaycaster : MonoBehaviour {
 		{
 			if (raycastResults[i].gameObject.tag == "UIPanel")
 			{
-				result = raycastResults[i].screenPosition * 2;
+				result = new Vector2(raycastResults[i].screenPosition.x - Screen.width/2, raycastResults[i].screenPosition.y - Screen.height/2);
 			}
 		}
 		return result;

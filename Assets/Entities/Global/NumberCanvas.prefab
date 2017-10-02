@@ -636,8 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1925236299203278, guid: e7d56d0dc3e16f6429c36b2576ca8f0e, type: 2}
-  heightOfButton: 70
-  widthOfButton: 70
+  heightOfButton: 140
+  widthOfButton: 140
   spriteForUI:
   - {fileID: 21300000, guid: 243fd3e9a3cee2e4e8019bb39d06e468, type: 3}
   - {fileID: 21300000, guid: d59d6a699402a8947879eb164d5d310e, type: 3}
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
@@ -1130,7 +1130,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122752685512994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00043853724}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224947508432193886}
@@ -1139,8 +1139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48.49878, y: -49.005127}
-  m_SizeDelta: {x: -1440, y: -870}
+  m_AnchoredPosition: {x: -25, y: -16}
+  m_SizeDelta: {x: -547.4, y: -333}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &224475142333863650
 RectTransform:

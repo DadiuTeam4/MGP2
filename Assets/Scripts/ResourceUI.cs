@@ -99,6 +99,7 @@ public class ResourceUI : MonoBehaviour {
 			
 			rectTransform = g.GetComponent<RectTransform>();
 			rectTransform.sizeDelta = new Vector2(widthOfButton, heightOfButton);
+			Debug.Log(widthOfButton + " - " + heightOfButton);
 			rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
 			
 			buttonController = g.GetComponent<ButtonController>();

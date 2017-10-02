@@ -10,22 +10,22 @@ public class MenuHoldingController : MonoBehaviour
 	private UIRaycaster uIRaycaster;
     private bool buttonHeld;
     private Vector2 mouseOffSet;
+    private RectTransform buttonRect;
 
     private float holdTime;
 
     void Start()
     {
-        uIRaycaster = gameObject.GetComponent<UIRaycaster>();
-        Rect buttonRect = gameObject.GetComponent<RectTransform>().rect;
         buttonHeld = false;
-        mouseOffSet = new Vector2(buttonRect.width / 2, buttonRect.height / 2);
+        uIRaycaster = gameObject.GetComponent<UIRaycaster>();
+        buttonRect = GetComponent<RectTransform>();
     }
 
     void Update()
     {
         if (buttonHeld)
         {
-            transform.position = uIRaycaster.GetRaycastedPositionOnCanvas();
+            buttonRect.anchoredPosition = uIRaycaster.GetRaycastedPositionOnCanvas();
         }
     }
 
