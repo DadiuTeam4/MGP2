@@ -12,7 +12,7 @@ public class Door : Interactable
     void Start()
     {
         getDoorState();
-        rotationVector = new Vector3(0f, 60f, 0f);
+        rotationVector = new Vector3(0f, -60f, 0f);
         EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
 
     }
