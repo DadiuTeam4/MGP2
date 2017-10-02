@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 199673686086614242}
   - component: {fileID: 198525209148226396}
   - component: {fileID: 114190128072537318}
+  - component: {fileID: 114787547424315808}
   m_Layer: 0
   m_Name: Hugo
   m_TagString: Untagged
@@ -2980,6 +2981,18 @@ MonoBehaviour:
   currentNumberWaypoint: {fileID: 0}
   aiDebugging: 0
   debugInfo: 
+--- !u!114 &114787547424315808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140761801968062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8432acea0ee828b48ad598d3c13c8f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getNumberFeedbackPS: {fileID: 0}
 --- !u!137 &137781855740342888
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3139,7 +3152,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 773759289
+  randomSeed: 967203831
   InitialModule:
     serializedVersion: 3
     enabled: 1

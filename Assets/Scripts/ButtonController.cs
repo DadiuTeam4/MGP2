@@ -63,6 +63,7 @@ public class ButtonController : MonoBehaviour {
 					color = Color.red;
 					GetComponent<Image> ().color = color;
 					EventManager.TriggerEvent(eventName);
+					EventManager.TriggerEvent(EventName.HugoGetANumberFeedBack);
 				}
 				else
 				{
