@@ -7,14 +7,29 @@ public class Door : Interactable
     public EventName triggeredEvent = EventName.HubDoorClicked;
 
     public GameObject doorHinge;
-    public Vector3 rotationVector;
+    private bool isOpeningTheDoor;
+    public float rotatingYAngle = 60;
+    public float rotaingSpeed = 5;
 
     void Start()
     {
         getDoorState();
-        rotationVector = new Vector3(0f, -60f, 0f);
+        isOpeningTheDoor = false;
         EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
 
+    }
+
+    void Update()
+    {
+        if (isOpeningTheDoor && doorHinge != null && rotatingYAngle > 0)
+        {
+            doorHinge.transform.Rotate(0f, -Time.deltaTime * rotaingSpeed, 0);
+            rotatingYAngle = rotatingYAngle - Time.deltaTime * rotaingSpeed;
+            if (rotatingYAngle <= 0)
+            {
+                isOpeningTheDoor = false;
+            }
+        }
     }
 
     public override void OnTouchBegin()
@@ -52,11 +67,7 @@ public class Door : Interactable
     {
         ResourceManager.doorToKitchenOpen = true;
         getDoorState();
-        if (doorHinge != null)
-        {
-            doorHinge.transform.Rotate(rotationVector);
-        }
-
+        isOpeningTheDoor = true;
         AkSoundEngine.PostEvent("Play_MGP2_SD_DoorUnlock", gameObject);
 
     }

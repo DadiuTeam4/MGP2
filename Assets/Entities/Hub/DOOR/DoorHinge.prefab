@@ -197,4 +197,5 @@ MonoBehaviour:
   timeHeld: 0
   triggeredEvent: 9
   doorHinge: {fileID: 1491479777879838}
-  rotationVector: {x: 0, y: 0, z: 0}
+  rotatingYAngle: 60
+  rotaingSpeed: 5

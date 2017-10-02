@@ -18,11 +18,11 @@ public class CameraMovement : MonoBehaviour {
 	public float sensitivity = 0.05f;
 
 	[Tooltip("The allowed movement range for the camera in X")]
-	[Range(0.1f, 10.0f)]
+	[Range(0.0f, 10.0f)]
 	public float rotaryBoundsX = 1.0f;
 
 	[Tooltip("The allowed movement range for the camera in Y")]
-	[Range(0.1f, 10.0f)]
+	[Range(0.0f, 10.0f)]
 	public float rotaryBoundsY = 1.0f;
 
 	private bool inverseX, inverseY;
