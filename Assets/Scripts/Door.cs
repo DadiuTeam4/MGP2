@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : Interactable 
+public class Door : Interactable
 {
     public EventName triggeredEvent = EventName.HubDoorClicked;
 
- 	void Start()
+    public GameObject doorHinge;
+    public Vector3 rotationVector;
+
+    void Start()
     {
         getDoorState();
+        rotationVector = new Vector3(0f, 60f, 0f);
         EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
 
-	}
+    }
 
     public override void OnTouchBegin()
     {
@@ -25,7 +29,7 @@ public class Door : Interactable
         if (ResourceManager.doorToKitchenOpen == true)
         {
             EventManager.TriggerEvent(triggeredEvent);
-        } 
+        }
         else
         {
         }
@@ -38,7 +42,8 @@ public class Door : Interactable
             Debug.Log("Kitchen door state is: Open");
             GetComponent<Renderer>().material.color = Color.green;
         }
-        else{
+        else
+        {
             Debug.Log("Kitchen door state is: Closed");
         }
     }
@@ -47,7 +52,12 @@ public class Door : Interactable
     {
         ResourceManager.doorToKitchenOpen = true;
         getDoorState();
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_DoorUnlock", gameObject); 
+        if (doorHinge != null)
+        {
+            doorHinge.transform.Rotate(rotationVector);
+        }
+
+        AkSoundEngine.PostEvent("Play_MGP2_SD_DoorUnlock", gameObject);
 
     }
 }
