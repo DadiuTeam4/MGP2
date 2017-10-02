@@ -45,15 +45,18 @@ public class ResourceManager : Singleton<ResourceManager>
 	public static bool doorToKitchenOpen;
 	public static bool kitchenSinkFull;
 	public static bool kitchenLightOn;
+	public static bool isFantasyObjectActivated;
 	static private string currentSceneName = "HubScene";
 	static public List<int> listOfPickedUpNumbers;
 	static public List<bool> listOfPickedUpNumbersState;
+	static public List<Vector3> listOfPickedUpNumbersPosition;
 
 	 void Start()
 	 {
 
 		 listOfPickedUpNumbers = new List<int>();
 		 listOfPickedUpNumbersState = new List<bool>();
+		 listOfPickedUpNumbersPosition = new List<Vector3>();
 
 		 resourceManagerListenerForNumber1 = new UnityAction(AddNumber1ToListOfPickedUpNumbers);
 		 resourceManagerListenerForNumber2 = new UnityAction(AddNumber2ToListOfPickedUpNumbers);
@@ -96,7 +99,9 @@ public class ResourceManager : Singleton<ResourceManager>
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
+		isFantasyObjectActivated = false;		
 	 }
+
 
 
 	public static string GetCurrentSceneName()
@@ -120,6 +125,11 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		return listOfPickedUpNumbers;
 	}
+
+	public static List<Vector3> GetListOfPickedUpPosition()
+	{
+		return listOfPickedUpNumbersPosition;
+	}
 	public static void ClearListOfPickedUpNumbers()
 	{
 		listOfPickedUpNumbers.Clear();
@@ -134,6 +144,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(1);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
@@ -145,6 +156,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(2);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 
@@ -155,6 +167,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(3);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 		EventManager.TriggerEvent(EventName.UIUpdate);
 	}
@@ -165,6 +178,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(4);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
@@ -176,6 +190,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(5);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
@@ -187,12 +202,28 @@ public class ResourceManager : Singleton<ResourceManager>
 		{
 			listOfPickedUpNumbers.Add(6);
 			listOfPickedUpNumbersState.Add(true);
+			listOfPickedUpNumbersPosition.Add(new Vector3(0f, 0f, 0f));
 		}
 
 		EventManager.TriggerEvent(EventName.UIUpdate);
-	}	
+	}
 
-	private static void Number1Deactive()
+    public static bool NumberFound(int nr)
+    {
+        return -1 != listOfPickedUpNumbers.FindIndex(x => x == nr);
+    }
+
+    public static bool NumberCountedToGrandma(int nr)
+    {
+        int index = listOfPickedUpNumbers.FindIndex(x => x == nr);
+        if (index != -1)
+        {
+            return !listOfPickedUpNumbersState[index];
+        }
+        return false;
+    }
+
+    private static void Number1Deactive()
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 1);
 		listOfPickedUpNumbersState[index] = false;

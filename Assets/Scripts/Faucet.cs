@@ -16,7 +16,7 @@ public class Faucet : NumberFoundInteractable
 
     void Update()
     {
-        if(timeHeld > 2)
+        if(timeHeld > fireAfterSeconds)
         {
             changeColor();
             EventManager.TriggerEvent(EventName.FaucetRunning);

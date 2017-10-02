@@ -14,6 +14,9 @@ sampler2D _ShadowTex;
 sampler2D _ShadowNoise;
 float _ShadowTiling;
 float _ShadowInMainTex;
+//float _ShadowInMainTexBrightness;
+float _ShadowBrightness;
+float _ShadowBlend;
 
 sampler2D _NormalMap, _DetailNormalMap;
 float _BumpScale, _DetailBumpScale;
@@ -27,6 +30,8 @@ float _OcclusionStrength;
 
 sampler2D _EmissionMap;
 float3 _Emission;
+
+sampler2D _Ramp;
 
 struct VertexData {
 	float4 vertex : POSITION;
@@ -176,8 +181,6 @@ UnityLight CreateLight (Interpolators i) {
 
 	UNITY_LIGHT_ATTENUATION(attenuation, i, i.worldPos);
 
-    float noise = tex2D(_ShadowNoise, i.uv.xy * 10);
-
     light.color = _LightColor0.rgb * attenuation;
 	light.ndotl = DotClamped(i.normal, light.dir);
 	return light;
@@ -268,6 +271,7 @@ void InitializeFragmentNormal(inout Interpolators i) {
 
 float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 	InitializeFragmentNormal(i);
+    UnityLight light = CreateLight(i);
 
 	float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
 
@@ -277,26 +281,81 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		GetAlbedo(i), GetMetallic(i), specularTint, 
     oneMinusReflectivity);
     
-    float4 orginalAlbedo = tex2D(_MainTex, i.uv.xy);
+    half d = dot(i.normal, light.dir) * 0.5 + 0.5;
+    half3 ramp = tex2D(_Ramp, float2(d, d)).rgb;
+
+    float4 finalRamp = float4(ramp.r, ramp.g, ramp.b, 1);
+
     float4 shadow = tex2D(_ShadowTex, i.uv.xy * _ShadowTiling);
-    float noise = tex2D(_ShadowNoise, i.uv.xy*10);
+    float4 noise = tex2D(_ShadowNoise, i.uv.xy * 10);
 
-    shadow = shadow * noise + shadow;
 
+    shadow = 1 - shadow;
+    shadow = shadow * noise.r + shadow;
     fixed4 atten = SHADOW_ATTENUATION(i);
     
 	float4 color = UNITY_BRDF_PBS(
 		albedo, specularTint,
 		oneMinusReflectivity, GetSmoothness(i),
 		i.normal, viewDir,
-		CreateLight(i), CreateIndirectLight(i, viewDir)
+		light, CreateIndirectLight(i, viewDir)
 	);
-	color.rgb += GetEmission(i);
-    color = color * (shadow * _ShadowInMainTex) + (color * (1 - _ShadowInMainTex));
-    
-    float4 shadowColor = orginalAlbedo * (1 - atten) - (shadow * (1 - atten) * 0.65); //=(shadow * 0.2) * (1 - atten);
 
-    return shadowColor + color;
+    float4 mask = UNITY_BRDF_PBS(
+		float4(1, 1, 1, 1), specularTint,
+		oneMinusReflectivity, GetSmoothness(i),
+		i.normal, viewDir,
+		light, CreateIndirectLight(i, viewDir)
+	);
+
+    float4 orgColor = float4(albedo.r, albedo.g, albedo.b, 1);
+    color.rgb += GetEmission(i);
+    float4 shadowColor;
+
+    //return saturate(atten * mask * 10)*finalRamp;
+
+    #if defined(POINT) || defined(POINT_COOKIE) || defined(SPOT)
+    shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * (_ShadowBrightness*1), orgColor * atten, _ShadowBlend); 
+    shadowColor = shadowColor * shadow;
+    return lerp(shadowColor, finalRamp * color, saturate(atten * mask * 10)*finalRamp);
+    #endif    
+
+    #if defined (DIRECTIONAL) 
+    shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * _ShadowBrightness, orgColor * atten, _ShadowBlend); 
+    shadowColor = shadowColor * shadow;
+    return lerp(shadowColor, finalRamp * color, saturate(atten * mask * 10)*finalRamp);
+	
+    #else
+    return float4(1, 1, 1, 1);
+    
+    #endif
+
+
+
+    
+    //color = color; // * (shadow * _ShadowInMainTex) + (color * (1 - _ShadowInMainTex));
+    //float4 shadowColor = orgColor * ((1 - atten) * (1 - orgColo)) - (shadow * (1 - atten) * (1 - _ShadowBrightness));
+
+
+
+    //float4 shadowColor = lerp(float4(0.1, 0.1, 0.1, 1) * orgColor * (1 - atten) * _ShadowBrightness, orgColor * atten, _ShadowBlend); // * (1 - shadow));
+    //shadowColor = lerp(shadowColor, 0, shadow);
+    //float4 shadowColor = shadow * orgColor * _ShadowBrightness;
+    //shadowColor = shadowColor * shadow;
+
+    //return min(saturate(atten), saturate(mask));
+   // float4 fuckme = min(lerp(1 - saturate(atten), mask, 0.5), 0.05);
+    //return shadowColor;
+   // return saturate(1 - atten);
+
+    //return saturate(1-atten);
+   //return saturate(atten * mask * 10);
+    //return shadowColor;
+    //return color * finalRamp;
+
+    //return lerp(shadowColor, color, saturate(atten * mask * 10));
+    
+
 }
 
 #endif

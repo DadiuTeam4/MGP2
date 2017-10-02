@@ -99,42 +99,74 @@ public class EventManager : Singleton<EventManager>
         }
         else
         {
-            Debug.LogError("The event name " + eventName + " does not exist");
+            Debug.LogError("The event name " + eventName + " does not have any listeners");
         }
     }
 
+    public static int NumberEventToInt(EventName numberEvent)
+    {
+        switch (numberEvent)
+        {
+            case EventName.NumberOnePickedUp:
+            case EventName.NumberOneClicked:
+                return 1;
+            case EventName.NumberTwoPickedUp:
+            case EventName.NumberTwoClicked:
+                return 2;
+            case EventName.NumberThreePickedUp:
+            case EventName.NumberThreeClicked:
+                return 3;
+            case EventName.NumberFourClicked:
+            case EventName.NumberFourPickedUp:
+                return 4;
+            case EventName.NumberFiveClicked:
+            case EventName.NumberFivePickedUp:
+                return 5;
+            case EventName.NumberSixClicked:
+            case EventName.NumberSixPickedUp:
+                return 6;
+            default:
+                Debug.LogError("Tried to convert a non-number event to int");
+                return -1;
+        }
+    }
 }
 
 //Add all the event names here.
 public enum EventName
 {
-    Test, 
-    NumberPickedUp,
-    NumberOnePickedUp,
-    NumberTwoPickedUp,
-    NumberThreePickedUp,
-    NumberFourPickedUp,
-    NumberFivePickedUp,
-    NumberSixPickedUp,
-    KitchenDoorClicked, 
-    HubDoorClicked, 
-    CookieJarTouched, 
-    KitchenSceneLoaded, 
-    HubSceneLoaded,
-    LangEnglish, 
-    LangDanish, 
-    LanguageSelected,
-    UIUpdate,
-    NumberOneClicked,
-    NumberTwoClicked,
-    NumberThreeClicked,
-    NumberFourClicked,
-    NumberFiveClicked,
-    NumberSixClicked,
-    FaucetRunning,
-    LightswitchClicked,
-    InteractableClicked,
-    ShowOnGamOptions,
-    CalibrateCameraGyroscope
+    Test = 0, 
+    NumberPickedUp = 1,
+    NumberOnePickedUp = 2,
+    NumberTwoPickedUp = 3,
+    NumberThreePickedUp = 4,
+    NumberFourPickedUp = 5,
+    NumberFivePickedUp = 6,
+    NumberSixPickedUp = 7,
+    KitchenDoorClicked = 8, 
+    HubDoorClicked = 9, 
+    CookieJarTouched = 10, 
+    KitchenSceneLoaded = 11, 
+    HubSceneLoaded = 12,
+    LangEnglish = 13, 
+    LangDanish = 14, 
+    LanguageSelected = 15,
+    UIUpdate = 16,
+    NumberOneClicked = 17,
+    NumberTwoClicked = 18,
+    NumberThreeClicked = 19,
+    NumberFourClicked = 20,
+    NumberFiveClicked = 21,
+    NumberSixClicked = 22,
+    FaucetRunning = 23,
+    LightswitchClicked = 24,
+    InteractableClicked = 25,
+    ShowOnGamOptions = 26,
+    InverseCameraGyroScopeX = 27,
+    EnableOrDisableOptionMenu = 28,
+    InverseCameraGyroScopeY = 29,
+    HugoParticleFeedbackOn = 30,
+    HugoParticleFeedbackOff = 31,
+    HugoGetANumberFeedBack = 32
 
 }

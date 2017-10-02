@@ -8,38 +8,77 @@ public class NumberFoundInteractable : Interactable
     public float fireAfterSeconds;
 
     [Header("Shake values")]
+    public bool shake = true;
     [Range(0, 100)]
     public float speed = 60;
     [Range(0.0f, 0.1f)]
     public float shakeMagnitude = 0.01f;
     
     public ParticleSystem onHoldParticleSystem;
-
+    public ParticleSystem indicatorParticleSystem;
     private bool fired;
     private Vector3 originalPosition;
     private Vector2 mousePositionOnTouchBegin;
+    public float timeInterval = 3.0f;
+    public float period = 0.0f;
+    public float stopParticlesTime = 1.0f;
+    public float offsetOnYParticleSystem = 0.52f;
 
     protected void Start()
     {
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
-    public override void OnTouchBegin(Vector2 position)
+    void Update()
     {
-        mousePositionOnTouchBegin = position;
+        if (!fired) 
+        {
+            if (period > timeInterval)
+            {
+                period = 0;
+                if (onHoldParticleSystem != null)
+                {
+                    indicatorParticleSystem.Play();
+                    indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + offsetOnYParticleSystem, transform.position.z);
+                }
+            }
+            if (period > stopParticlesTime)
+            {
+                
+                if (onHoldParticleSystem != null)
+                {
+                
+                    indicatorParticleSystem.Stop();
+                    indicatorParticleSystem.Clear();
+                }
+            }          
+            period += UnityEngine.Time.deltaTime;
+        }
+        
+    }
+
+
+
+    public override void OnTouchBegin()
+    {
+        mousePositionOnTouchBegin = InputManager.GetLastRayHit();
     }
 
     public override void OnTouchHold()
     {
         if (!fired) 
         {
-            float progress = timeHeld / fireAfterSeconds;
-            Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
-            transform.position = newPos;
+            if (shake)
+            {
+                float progress = timeHeld / fireAfterSeconds;
+                Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
+                transform.position = newPos;
+            }
 
             if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
             {
-                onHoldParticleSystem.transform.position = ScreenSpaceToWorldSpace(mousePositionOnTouchBegin);
+                onHoldParticleSystem.transform.position = InputManager.GetLastRayHit();
                 onHoldParticleSystem.Play();
             }
 
@@ -47,7 +86,10 @@ public class NumberFoundInteractable : Interactable
             {
                 FireEvent();
                 fired = true;
-                transform.position = originalPosition;
+                if (shake)
+                {
+                    transform.position = originalPosition;
+                }
             }
         }
     }
@@ -59,6 +101,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Stop();
             onHoldParticleSystem.Clear();
         }
+        period = 0;
     }
 
     void FireEvent()
