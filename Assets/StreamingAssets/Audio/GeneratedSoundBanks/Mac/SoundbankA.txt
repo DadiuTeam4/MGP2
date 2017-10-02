@@ -17,6 +17,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	803864683	Play_MGP2_SD_Herbs			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs	
 	862215493	Play_MGP2_Speak_FireBadeaender			\Default Work Unit\Play_MGP2_Speak_FireBadeaender	
 	967135245	Play_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair	
+	1090101008	Stop_MGP2_Music_Mystery			\Default Work Unit\Stop_MGP2_Music_Mystery	
 	1119214915	Play_MGP2_SD_TV			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV	
 	1477792038	Play_MGP2_SD_Bed			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed	
 	1531644717	Play_MGP2_Speak_FortaelleBedstemor			\Default Work Unit\Play_MGP2_Speak_FortaelleBedstemor	
@@ -32,6 +33,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1797766870	Play_MGP2_SD_Fryingpan3			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan3	
 	1797766871	Play_MGP2_SD_Fryingpan2			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Fryingpan2	
 	1807980291	Play_MGP2_Speak_Wow			\Default Work Unit\Play_MGP2_Speak_Wow	
+	1903483482	Play_MGP2_Music_Mystery			\Default Work Unit\Play_MGP2_Music_Mystery	
 	1943834466	Play_MGP2_SD_Cabinet_Close			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Cabinet_Close	
 	2060405955	Play_MGP2_SD_LightSwitch			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_LightSwitch	
 	2088074314	Play_MGP2_SD_Ghost			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Ghost	
@@ -83,6 +85,7 @@ State	ID	Name	State Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_volume			\Default Work Unit\Music_volume	
+	1890436057	RockingChair			\Default Work Unit\RockingChair	
 	2982772610	Vinyl_dirty			\Default Work Unit\Vinyl_dirty	
 	3014445900	Vinyl_pitch			\Default Work Unit\Vinyl_pitch	
 	3193796234	Vinyl_kitchen			\Default Work Unit\Vinyl_kitchen	
@@ -101,13 +104,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	82622083	MGP2_SD_Glass	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\197563__dheming__glass-bottles-02_9A55686C.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Glass\MGP2_SD_Glass		11062
 	92169222	MGP2_SD_OnScreenClick(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_25549D66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)		4702
 	132533713	MGP2_SD_Herbs	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\AgoShaker2A.wav_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Herbs		2886
+	132745067	CouchSqueak_S08HS_308	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\CouchSqueak_S08HS.308_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Bed\CouchSqueak_S08HS_308		19148
 	147093774	MGP2_SD_DrawerClose	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\167171__ultradust__drawers-in-the-kitchen_96EE2134.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_DrawerClose		44794
 	169154954	MGP2_Speak_SpaendeHistorie	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_SpaendeHistorie_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Bedstemor\MGP2_Speak_SpaendeHistorie		77179
 	179487888	MGP2_Speak_EtSpoegelse	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_EtSpoegelse_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_EtSpoegelse		31348
 	180643768	MGP2_music_throwout2(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Music_throwout2.1(P)_5A343EFA.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MGP2_music_throwout1(P)\MGP2_music_throwout2(P)		249386
 	184239998	MGP2_Speak_oooooh	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_oooooh_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_HugoTryk\MGP2_Speak_oooooh		16689
 	211387590	MGP2_SD_Cookie	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\387967__chrillz3r__opening-closing-cookie-jar-metal_195CA8DF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Cookie		43111
-	226094369	MGP2_SD_RockingChair	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\mgp2_rockingChair(P)_ACCE8267.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_RockingChair		106089
 	231098878	MGP2_SD_DrawerOpen	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\167171__ultradust__drawers-in-the-kitchen_09F510A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_DrawerOpen		44755
 	234777605	MGP2_Speak_Smaakager	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Smaakager_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_Smaakager		53468
 	237440743	MGP2_Speak_SpoegelseiKokkenet	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_SpoegelseiKokkenet_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_SpoegelseiKokkenet		32121
@@ -135,6 +138,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	489143399	MGP2_SD_Fryingpan3	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_SD_Fryingpan3_D0F446CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fryingpan3		4196
 	492814952	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Ambience_Kitchen.1(P)_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		495078
 	501490312	MGP2_Speak_Stokdoev	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Stokdoev_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_HugoTryk\MGP2_Speak_Stokdoev		31806
+	501683604	MGP2_SD_RockingChair	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_SD_RockingChair_1_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_RockingChair		124599
 	529214472	MGP2_Speak_ErDuOgsaa	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_ErDuOgsaa_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_ErDuOksaa\MGP2_Speak_ErDuOgsaa		27323
 	571641950	MGP2_SD_CurtainClose	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\142301__fryzu82__curtain-opening_3A4D753A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\MGP2_SD_CurtainClose		6290
 	576755344	MGP2_Speak_Kilder	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Kilder_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_HugoTryk\MGP2_Speak_Kilder		16757
@@ -152,6 +156,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	710609675	MGP2_Speak_FortaelleBedstemor	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_FortaelleBedstemor_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_FortaelleBedstemor\MGP2_Speak_FortaelleBedstemor		38852
 	721586580	MGP2_Speak_SeksSmaakagerKrukken	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_SeksSmaakagerKrukken_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_SeksSmaakagerKrukken		37322
 	724140417	MGP2_Speak_EtBarnToBoern	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_ToBoern_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_EtBarnToBoern		21342
+	729132637	CouchSitSqueak_S08HS_306	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\CouchSitSqueak_S08HS.306_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Bed\CouchSitSqueak_S08HS_306		12290
 	759411760	MGP2_Speak_Badeænder	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Badeænder_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_Badeænder		38471
 	771422714	MGP2_SD_LightSwitch	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\50634__cbakos__newwallswitchoff_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_LightSwitch		8180
 	785837254	MGP2_Speak_Mh	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Mh_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Bedstemor\MGP2_Speak_BedstemorResponse\MGP2_Speak_Mh		11641
@@ -162,7 +167,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	908517910	MGP2_SD_Yarn	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_Strikketoej_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Yarn		18414
 	925962079	MGP2_Speak_FireBadeaender	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_FireBadeaender_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_FireBadeaender		67992
 	926057001	MGP2_Speak_NaaNaa	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Speak_NaaNaa_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Bedstemor\MGP2_Speak_BedstemorResponse\MGP2_Speak_NaaNaa		12800
-	932824895	MGP2_SD_Bed	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\344347__amholma__squeaking-bed_CEB1E9C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Bed\MGP2_SD_Bed		14908
 	933262447	mgp2_ambience_livingRoom(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\mgp2_ambience_livingRoom(P)_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_livingRoom(P)		1460266
 	952484127	MGP2_SD_TV	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\354019__kleber-kgf__tv-static-sound-by-kleber-kgf_1CE02442.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_TV		30517
 	953098255	MGP2_SD_Lantern1	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_SD_Lantern1_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_Lantern1		18900
@@ -177,5 +181,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1070167829	MGP2_SD_DoorUnlock	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\158625__mrauralization__door-unlock_A837F577.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_DoorUnlock		9069
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	180643768	MGP2_Music_Mystery	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Music_throwout2.1(P)_5A343EFA.wem	180643768.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_Mystery	
 	382228935	MGP2_Music_throwout2piano(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Mac\SFX\MGP2_Music_throwout2(P)piano_1_5A343EFA.wem	382228935.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_throwout2piano(P)	
 

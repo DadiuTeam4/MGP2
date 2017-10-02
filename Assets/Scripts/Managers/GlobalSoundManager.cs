@@ -6,12 +6,15 @@ public class GlobalSoundManager : MonoBehaviour {
 	private bool isBeingPlayed = false;
 	private bool hasBeenIntroduced = false; 
 	private bool hasBeenRestarted; 
+	private bool grandmaHasCalled = false; 
 	private bool areInKitchen = false; 
-	private float timeLeft = 10f; 
+	private float timeLeft = 10f;
+	private float curElapsedTime = 0f; 
+	private float duration = 10f; 
+	private float rockingChairFadeValue = 100f; 
 
 	void Start () 
 	{
-
 		//SceneManagement
 		EventManager.StartListening (EventName.KitchenSceneLoaded, SwitchToKitchen); 
 		EventManager.StartListening (EventName.HubSceneLoaded, SwitchToHub); 
@@ -40,6 +43,11 @@ public class GlobalSoundManager : MonoBehaviour {
 		AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P_", gameObject); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 0); 
 	}
+	public void Update()
+	{
+		AkSoundEngine.SetRTPCValue ("RockingChair", rockingChairFadeValue);  
+	}
+
 		
 	void SwitchToKitchen()
 	{
@@ -54,13 +62,14 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void SwitchToHub()
 	{
+		StartCoroutine (RockingChairFade ()); 
 		AkSoundEngine.SetRTPCValue ("Kitchen_volume", 0); 
 		AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
 		AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject); 
 		AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 100); 
 		AkSoundEngine.SetRTPCValue ("Vinyl_kitchen", 0);  
-		areInKitchen = true; 
+		areInKitchen = false; 
 		if (hasBeenIntroduced == false) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
@@ -81,7 +90,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	public void RestartMusicHub()
 	{
 			hasBeenRestarted = true; 
-
 	}
 
 	void GarnNoegleSpeak()
@@ -165,14 +173,26 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	IEnumerator GrandmaCallTimer()
 	{
+		timeLeft = 10f; 
 		while (timeLeft > 0) 
 		{
-			timeLeft -= Time.deltaTime;
+			curElapsedTime = 1f * Time.deltaTime; 
+			timeLeft -= curElapsedTime;
 			yield return null; 
 		}
-		if (timeLeft <0f) 
+		if (timeLeft <0f && areInKitchen == true && grandmaHasCalled == false) 
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Hugooo", gameObject); 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Hugooo", gameObject);
+			grandmaHasCalled = true; 
+		}
+	}
+
+	IEnumerator RockingChairFade()
+	{
+		duration = 3f * Time.deltaTime; 
+				while (rockingChairFadeValue > 30f) {
+					rockingChairFadeValue -= duration; 
+			yield return null; 
 		}
 	}
 }
