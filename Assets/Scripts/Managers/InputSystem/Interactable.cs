@@ -66,6 +66,6 @@ public class Interactable : MonoBehaviour
     void EmitParticle(Vector3 position)
     {
         particleSystem.gameObject.transform.position = position;
-        particleSystem.Emit(1);
+        particleSystem.Play();
     }
 }
