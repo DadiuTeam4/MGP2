@@ -140,7 +140,7 @@ public class ResourceUI : MonoBehaviour
         int randomLogicVariable = Random.Range(1, 5);
         int randomCornerX = 1;
         int randomCornerY = 1;
-        int moveWithOrHeight = Random.Range(0, 2); ;
+        int moveWidthOrHeight = Random.Range(0, 2); 
 
         switch (randomLogicVariable)
         {
@@ -163,9 +163,10 @@ public class ResourceUI : MonoBehaviour
 
         }
 
-        Vector3 myPosition = new Vector3(randomCornerX * widthOfCanvas / 2 - randomCornerX * widthOfButton / 2 - randomCornerX * moveWithOrHeight * ((currentNumber * widthOfButton)),
-                                         randomCornerY * heightOfCanvas / 2 - randomCornerY * heightOfButton / 2 - randomCornerY * ((moveWithOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
-                                        0);
+        Vector3 myPosition = new Vector3(
+            randomCornerX * widthOfCanvas / 2 - randomCornerX * widthOfButton / 2 - randomCornerX * moveWidthOrHeight * ((currentNumber * widthOfButton)),
+            randomCornerY * heightOfCanvas / 2 - randomCornerY * heightOfButton / 2 - randomCornerY * ((moveWidthOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
+            0);
 
         return myPosition;
     }

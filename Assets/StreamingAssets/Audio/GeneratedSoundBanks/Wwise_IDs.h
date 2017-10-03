@@ -15,7 +15,6 @@ namespace AK
     {
         static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
         static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
-        static const AkUniqueID BREAK_MGP2_SD_FIREPLACE = 18727311U;
         static const AkUniqueID BREAK_MGP2_SD_ROCKINGCHAIR = 2186198650U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ONSCREENCLICK = 4238747602U;
@@ -35,7 +34,6 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_DRAWERCLOSE = 3398036754U;
         static const AkUniqueID PLAY_MGP2_SD_DRAWEROPEN = 230869702U;
         static const AkUniqueID PLAY_MGP2_SD_DRIPPINGWATER = 314431553U;
-        static const AkUniqueID PLAY_MGP2_SD_FIREPLACE = 2613328266U;
         static const AkUniqueID PLAY_MGP2_SD_FRIDGE = 3148382178U;
         static const AkUniqueID PLAY_MGP2_SD_FRYINGPAN1 = 1797766868U;
         static const AkUniqueID PLAY_MGP2_SD_FRYINGPAN2 = 1797766871U;
@@ -54,13 +52,10 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
         static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
         static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
-        static const AkUniqueID PLAY_MGP2_SD_TINNITUS = 2569931419U;
-        static const AkUniqueID PLAY_MGP2_SD_TV = 1119214915U;
+        static const AkUniqueID PLAY_MGP2_SD_TV1 = 1196118088U;
         static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
-        static const AkUniqueID PLAY_MGP2_SD_VOODOO = 3797089235U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
-        static const AkUniqueID PLAY_MGP2_SD_YARN = 2486577875U;
         static const AkUniqueID PLAY_MGP2_SPEAK_1234GARNNOEGLER = 2615010004U;
         static const AkUniqueID PLAY_MGP2_SPEAK_BADE_NDER = 4236365560U;
         static const AkUniqueID PLAY_MGP2_SPEAK_BEDSTEMORRESPONSE = 655949986U;
@@ -87,7 +82,6 @@ namespace AK
         static const AkUniqueID STOP_MGP2_MUSIC_MYSTERY = 1090101008U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
-        static const AkUniqueID STOP_MGP2_SD_TINNITUS = 2932857561U;
     } // namespace EVENTS
 
     namespace STATES
