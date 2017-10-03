@@ -13,6 +13,8 @@ public class GlobalSoundManager : MonoBehaviour {
 	private float curElapsedTime = 0f; 
 	private float duration = 10f; 
 	private float rockingChairFadeValue = 100f; 
+	public bool allreadyTalking = false; 
+	public HugoSpeak hS; 
 
 	void Start () 
 	{
@@ -52,7 +54,6 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.SetRTPCValue ("RockingChair", rockingChairFadeValue);  
 	}
-
 		
 	void SwitchToKitchen()
 	{
@@ -115,9 +116,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpaendeHistorie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			grandmaIsResponding = true; 
 		}
-
 		}
-
 
 	void Hjemmesko ()
 	{
@@ -227,10 +226,11 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void EtBarnToBarnTaelle()
 	{
-		if (isBeingPlayed == false) 
+		if (isBeingPlayed == false && hS.isBeingPlayed == false) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBarn", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			allreadyTalking = true; 
 		}
 	}
 
@@ -239,12 +239,12 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (in_type == AkCallbackType.AK_EndOfEvent)
 		{
 			isBeingPlayed = false; 
+			allreadyTalking = false; 
 			if (grandmaIsResponding == true) 
 			{
 				grandmaIsResponding = false; 
 			}
 		}
-
 	}
 
 	IEnumerator GrandmaCallTimer()
