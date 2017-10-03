@@ -66,6 +66,6 @@ public class Door : Interactable
 
     private void KeepDoorOpenAtStart()
     {
-        doorHinge.Rotate(0f, rotatingYAngle, 0f);
+        doorHinge.Rotate(0f, -rotatingYAngle, 0f);
     }
 }
