@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391665108439124}
   m_LocalRotation: {x: -0, y: 0.31292695, z: -0, w: 0.9497772}
-  m_LocalPosition: {x: -7.32, y: 0.54, z: 15.92}
+  m_LocalPosition: {x: -6.4000006, y: 0.15999997, z: 15.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903719449442652}
@@ -176,7 +176,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 998de5dc016d6744c80819d6f12ecd40, type: 2}
+  - {fileID: 2100000, guid: c77fc207a7bc448a3afbbd81981b2d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +208,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585333313660190}
-  m_Mesh: {fileID: 4300000, guid: 3203a6adbb5f7744192504c8a9681790, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f586cde4bb339744ea285bbde0d5df44, type: 3}
 --- !u!64 &64386614122794216
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -222,4 +222,4 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 3203a6adbb5f7744192504c8a9681790, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f586cde4bb339744ea285bbde0d5df44, type: 3}
