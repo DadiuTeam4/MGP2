@@ -3463,15 +3463,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140761801968062}
-  m_LocalRotation: {x: -0, y: 0.3168089, z: -0, w: 0.9484894}
-  m_LocalPosition: {x: 8.17, y: 0.39, z: 12.7}
+  m_LocalRotation: {x: -0, y: 0.99982744, z: -0, w: -0.018579533}
+  m_LocalPosition: {x: -8.96, y: 0, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947404368251802}
   - {fileID: 4358126659037944}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 182.129, z: 0}
 --- !u!4 &4690014265925208
 Transform:
   m_ObjectHideFlags: 1
@@ -4091,6 +4091,9 @@ MonoBehaviour:
   period: 0
   stopParticlesTime: 1
   offsetOnYParticleSystem: 0.52
+  hasAnimation: 0
+  isBeingPlayed: 0
+  GSM: {fileID: 0}
 --- !u!114 &114190128072537318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4118,8 +4121,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  numberEvents: 0200000003000000040000000500000006000000070000000100000019000000
+  - {fileID: 0}
+  numberEvents: 0200000005000000070000001900000001000000
   purposeWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   currentState: {fileID: 11400000, guid: 8601d6a2556a940429bceda468c7e481, type: 2}
   active: 1
@@ -4328,7 +4334,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1921643132
+  randomSeed: 982094001
   InitialModule:
     serializedVersion: 3
     enabled: 1
