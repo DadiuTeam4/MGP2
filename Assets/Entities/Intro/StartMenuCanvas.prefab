@@ -446,6 +446,8 @@ MonoBehaviour:
   ToColor: {r: 0, g: 0, b: 0, a: 1}
   fadeSpeed: 0.05
   fadeInterval: 0.1
+  onFadeEndTrigger: 33
+  listeners: 0d0000000e000000
 --- !u!114 &114891368913892902
 MonoBehaviour:
   m_ObjectHideFlags: 1
