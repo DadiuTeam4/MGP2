@@ -2898,7 +2898,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b450e17763d64445a994d553bf33c71b, type: 2}
+      objectReference: {fileID: 2100000, guid: ed99bf65dfc8f1b45b283dfa324d16a5, type: 2}
     - target: {fileID: 1302814241883108, guid: 9152b33191efc4d39af4c88ab35248dc, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 8
@@ -3550,7 +3550,7 @@ Prefab:
     - target: {fileID: 114221250077101840, guid: a0f1f9b03209945048f995e23ea2f6c8,
         type: 2}
       propertyPath: basePath
-      value: Audio/GeneratedSoundBanks
+      value: Audio\GeneratedSoundBanks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0f1f9b03209945048f995e23ea2f6c8, type: 2}
