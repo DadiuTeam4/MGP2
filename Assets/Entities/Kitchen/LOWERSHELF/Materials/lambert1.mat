@@ -83,9 +83,9 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.05
     - _Parallax: 0.02
-    - _ShadowBlend: 0.349
-    - _ShadowBrightness: 8.29
-    - _ShadowTiling: 2.82
+    - _ShadowBlend: 0.501
+    - _ShadowBrightness: 10
+    - _ShadowTiling: 5
     - _Smoothness: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
