@@ -236,6 +236,11 @@ public class ResourceManager : Singleton<ResourceManager>
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
-		isFantasyObjectActivated = false;	
+		isFantasyObjectActivated = false;
+
+		for (int i = 0; i < listOfPickedUpNumbers.Count; i++)
+		{
+			listOfPickedUpNumbersState[i] = -1;
+		}
 	}
 }
