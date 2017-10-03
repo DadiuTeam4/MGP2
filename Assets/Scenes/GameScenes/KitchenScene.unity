@@ -1081,11 +1081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gyroscopeState: 0
-  deadZone: 0.54
+  deadZone: 0.3
   speed: 0.11
   sensitivity: 0.019
-  inverseX: 0
-  inverseY: 0
+  inverseX: 1
+  inverseY: 1
   rotaryBoundsX: 0
   rotaryBoundsY: 1.22
   panningBoundsX: 1
