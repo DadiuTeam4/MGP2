@@ -79,7 +79,7 @@ public class NumberFoundInteractable : Interactable
                 transform.position = newPos;
             }
 
-            if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
+            if (onHoldParticleSystem != null)
             {
                 onHoldParticleSystem.transform.position = InputManager.GetLastRayHit();
                 onHoldParticleSystem.Play();
