@@ -16,6 +16,8 @@ public class Gramophone : Interactable {
 	public void Start()
 	{
 		EventManager.StartListening (EventName.KitchenSceneLoaded, KitchenSwitch); 
+		EventManager.StartListening (EventName.HubSceneLoaded, HubSwitch); 
+
 	}
 
 	public override void OnTouchBegin()
@@ -71,6 +73,14 @@ public class Gramophone : Interactable {
 	}
 
 	void KitchenSwitch()
+	{
+		if (hasBeenPressed == true && isFaded == true)
+		{
+			isFaded = false;
+			hasBeenPressed = true; 
+		}
+	}
+	void HubSwitch()
 	{
 		if (hasBeenPressed == true && isFaded == true)
 		{

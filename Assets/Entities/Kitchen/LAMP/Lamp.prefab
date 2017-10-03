@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506774539118816}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -3.37, z: -0.27}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4745861332393912}
@@ -158,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503365176776998}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4520547117343546}
@@ -184,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811961633624194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.72, y: 5.86, z: 7.89}
+  m_LocalPosition: {x: -2.86, y: 2.9, z: 10.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4856129337499694}
@@ -270,7 +270,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1f8b53dad875f824f959ce1a6743467e, type: 2}
+  - {fileID: 2100000, guid: d6b3956a92256499785a8eecb0954eea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,7 +309,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503365176776998}
-  m_Mesh: {fileID: 4300000, guid: de7f13da696bacf4c918acc6c62a9e3a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 82d0d9cc2a874bf40b678434d514011e, type: 3}
 --- !u!114 &114906568160067104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,14 +321,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5803ea891bda5499cc47e6ded67828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}
   eventToFire: 0
   fireAfterSeconds: 0
+  shake: 1
   speed: 60
   shakeMagnitude: 0.01
+  onHoldParticleSystem: {fileID: 0}
+  indicatorParticleSystem: {fileID: 0}
+  timeInterval: 3
+  period: 0
+  stopParticlesTime: 1
+  offsetOnYParticleSystem: 0.52
 --- !u!135 &135222788557356608
 SphereCollider:
   m_ObjectHideFlags: 1
