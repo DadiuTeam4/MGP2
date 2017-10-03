@@ -10,7 +10,7 @@ public class Television : Interactable {
 	{	
 		if (isBeingPlayed == false) 
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_SD_TV", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1); 
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_TV1", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1); 
 			isBeingPlayed = true;
 		}
 	}

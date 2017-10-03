@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 4903678755174260}
   - component: {fileID: 114438798833685844}
   - component: {fileID: 65100476736458632}
+  - component: {fileID: 114753431615490980}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -115,15 +116,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420634635381904}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.88, y: 1.22, z: 0.23}
+  m_LocalRotation: {x: -0, y: -0.62539726, z: -0, w: 0.7803065}
+  m_LocalPosition: {x: -6.0406256, y: 1.22, z: 0.21353894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153210566134620}
   - {fileID: 4498914778255296}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -77.423004, z: 0}
 --- !u!4 &4153210566134620
 Transform:
   m_ObjectHideFlags: 1
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650221685713250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.00000017881393, y: 0.000000014901161, z: 0.00000064074993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4518670765465312}
@@ -237,7 +238,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d957424e53ea56e47bce1cf59c0791d8, type: 2}
+  - {fileID: 2100000, guid: 5e34766d43d90443e870a383a109ecd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -311,13 +312,38 @@ MonoBehaviour:
   boomMagnitude: 1.08
   boomTime: 0.1
   particleSystem: {fileID: 0}
-  timeHeld: 0
+  timeHeld: 1.3923906
   eventToFire: 5
   fireAfterSeconds: 1
   shake: 1
-  speed: 66
-  shakeMagnitude: 0.013
+  speed: 61.4
+  shakeMagnitude: 0.1
   onHoldParticleSystem: {fileID: 0}
+  indicatorParticleSystem: {fileID: 0}
+  timeInterval: 3
+  period: 0
+  stopParticlesTime: 1
+  offsetOnYParticleSystem: 0.52
+--- !u!114 &114753431615490980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650221685713250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cd35d6f71c345509dc6bb009dbd51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_listeners:
+    initialListenerList: []
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!114 &114784121877207156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualFeedback: 1
-  boomMagnitude: 1.08
+  boomMagnitude: 1.176
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0

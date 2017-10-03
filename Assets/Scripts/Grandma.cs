@@ -8,22 +8,13 @@ public class Grandma : Interactable {
 	private float fadeMax = 100f;
 	private float fadeMin = 0f; 
 	private float duration;  
-	private bool isFaded = false; 
 	private bool hasBeenPressed = false; 
 
 	public override void OnTouchBegin()
 	{	
-		if (isFaded == false && hasBeenPressed == false)
+		if (hasBeenPressed == false)
 		{
 			StartCoroutine (FadeInGranny()); 
-		}
-		if (isFaded == true && hasBeenPressed == false)
-		{
-			StartCoroutine (FadeOutGranny ()); 
-		}
-		if (isFaded == true && hasBeenPressed == true)
-		{
-			StartCoroutine (FadeOutGranny ()); 
 		}
 	}
 
@@ -42,8 +33,9 @@ public class Grandma : Interactable {
 			fadeDeafValue -= duration; 
 			yield return null; 
 		}
-		isFaded = true; 
 		hasBeenPressed = false;
+		//yield return new WaitForSeconds (1f); 
+		StartCoroutine (FadeOutGranny ()); 
 	}
 
 	IEnumerator FadeOutGranny()
@@ -55,7 +47,6 @@ public class Grandma : Interactable {
 			fadeDeafValue += duration; 
 			yield return null; 
 		}
-		isFaded = false;
 		hasBeenPressed = false;
 	}
 }

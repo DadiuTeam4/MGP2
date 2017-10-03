@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*Author:Tilemachos
+Co: Itai */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +17,7 @@ public class ResourceUI : MonoBehaviour
     private int currentButtonAmount;
     private List<int> listOfPickedUpNumbers;
     static public List<int> listOfPickedUpNumbersState;
+    //-1 black never picked up, 1 normal color has been picked up, 0 red has been counted
     static public List<Vector3> listOfPickedUpNumbersPosition;
 
     private RectTransform canvasRectTransform;
@@ -57,33 +62,6 @@ public class ResourceUI : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("q"))
-        {
-            EventManager.TriggerEvent(EventName.NumberOnePickedUp);
-        }
-        if (Input.GetKeyDown("w"))
-        {
-            EventManager.TriggerEvent(EventName.NumberTwoPickedUp);
-        }
-        if (Input.GetKeyDown("e"))
-        {
-            EventManager.TriggerEvent(EventName.NumberThreePickedUp);
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            EventManager.TriggerEvent(EventName.NumberFourPickedUp);
-        }
-        if (Input.GetKeyDown("t"))
-        {
-            EventManager.TriggerEvent(EventName.NumberFivePickedUp);
-        }
-        if (Input.GetKeyDown("y"))
-        {
-            EventManager.TriggerEvent(EventName.NumberSixPickedUp);
-        }
-    }
 
     private void GenerateButtons()
     {
@@ -93,7 +71,6 @@ public class ResourceUI : MonoBehaviour
         for (int i = currentButtonAmount; i < amountOfCollectedNumbers; i++)
         {
             g = Instantiate(button, transform);
-            //g.transform.GetChild(0).GetComponent<Text>().text = listOfPickedUpNumbers[i].ToString();
 
             Image myImageComponent = g.GetComponent<Image>();
             myImageComponent.sprite = spriteForUI[listOfPickedUpNumbers[i] - 1];
@@ -105,6 +82,7 @@ public class ResourceUI : MonoBehaviour
 			if (TestIfIsFristTime(listOfPickedUpNumbersPosition[i]))
             {
                 rectTransform.localPosition = PositionGenerator(listOfPickedUpNumbers[i]);
+                listOfPickedUpNumbersPosition[i] = rectTransform.localPosition;
             }
             else
             {
@@ -140,7 +118,10 @@ public class ResourceUI : MonoBehaviour
         int randomLogicVariable = Random.Range(1, 5);
         int randomCornerX = 1;
         int randomCornerY = 1;
-        int moveWithOrHeight = Random.Range(0, 2); ;
+        int moveWidthOrHeight = Random.Range(0, 2); 
+        float offsetWidth;
+        float offsetHeight;
+
 
         switch (randomLogicVariable)
         {
@@ -162,10 +143,33 @@ public class ResourceUI : MonoBehaviour
                 break;
 
         }
+        if (currentNumber * widthOfButton > widthOfCanvas / 2)
+        {
+            offsetWidth = Random.Range(0, 3) * widthOfButton;
+        }
+        else
+        {
+            offsetWidth = currentNumber * widthOfButton;
+        }
 
-        Vector3 myPosition = new Vector3(randomCornerX * widthOfCanvas / 2 - randomCornerX * widthOfButton / 2 - randomCornerX * moveWithOrHeight * ((currentNumber * widthOfButton)),
-                                         randomCornerY * heightOfCanvas / 2 - randomCornerY * heightOfButton / 2 - randomCornerY * ((moveWithOrHeight + 1) % 2) * ((currentNumber * heightOfButton)),
-                                        0);
+        if (currentNumber * heightOfButton > heightOfCanvas / 2)
+        {
+            offsetHeight = Random.Range(0, 3) * heightOfButton;
+        }
+        else
+        {
+            offsetHeight = currentNumber * heightOfButton;
+        }
+
+        Vector3 myPosition = new Vector3(
+            randomCornerX * widthOfCanvas / 2 - randomCornerX * widthOfButton / 2 - randomCornerX * moveWidthOrHeight * ((offsetWidth)),
+            randomCornerY * heightOfCanvas / 2 - randomCornerY * heightOfButton / 2 - randomCornerY * ((moveWidthOrHeight + 1) % 2) * ((offsetHeight)),
+            0);
+
+        if (listOfPickedUpNumbersPosition.Contains(myPosition))
+        {
+            return PositionGenerator(currentNumber);
+        }
 
         return myPosition;
     }
