@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 114418359715485034}
   - component: {fileID: 114310849609755098}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,12 +423,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FromColor: {r: 0, g: 0, b: 0, a: 0}
-  ToColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeSpeed: 0
-  fadeInterval: 0
+  ToColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeSpeed: 0.01
+  fadeInterval: 0.05
   waitTillTrigger: 3
-  onFadeEndTrigger: 35
-  listeners: 22000000
+  listeners: 23000000
+  onFadeEndTrigger: 34
 --- !u!114 &114367779977638896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -770,7 +770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114082123248965046}
-        m_MethodName: ExitGame
+        m_MethodName: TriggerCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

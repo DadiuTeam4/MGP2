@@ -12,11 +12,11 @@ public class FadeOnTrigger : MonoBehaviour
 
 	[Tooltip("Amount faded per interval")]
 	[Range(0.01f, 1.0f)]
-	public float fadeSpeed;
+	public float fadeSpeed = 0.05f;
 
 	[Tooltip("Time in between fade intervals, in seconds")]
 	[Range(0.01f, 1.0f)]
-	public float fadeInterval;
+	public float fadeInterval = 0.05f;
 
 	[Tooltip("The amount of seconds waited till end trigger, in seconds")]
 	[Range(0.0f, 10.0f)]
@@ -24,8 +24,8 @@ public class FadeOnTrigger : MonoBehaviour
 
 	private Image fadeImage;
 	
-	public EventName onFadeEndTrigger;
 	public EventName[] listeners;
+	public EventName onFadeEndTrigger;
 
 	void Start () 
 	{

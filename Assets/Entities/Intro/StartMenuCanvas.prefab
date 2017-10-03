@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114980518805856236}
   - component: {fileID: 114823678795653830}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,6 +446,7 @@ MonoBehaviour:
   ToColor: {r: 0, g: 0, b: 0, a: 1}
   fadeSpeed: 0.05
   fadeInterval: 0.1
+  waitTillTrigger: 0
   onFadeEndTrigger: 33
   listeners: 0d0000000e000000
 --- !u!114 &114891368913892902
