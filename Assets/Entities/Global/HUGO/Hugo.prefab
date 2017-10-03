@@ -4134,7 +4134,7 @@ MonoBehaviour:
   navigator: {fileID: 0}
   animator: {fileID: 0}
   currentNumberWaypoint: {fileID: 0}
-  aiDebugging: 1
+  aiDebugging: 0
   debugInfo: 
 --- !u!114 &114787547424315808
 MonoBehaviour:
@@ -4336,7 +4336,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -971408923
+  randomSeed: 2109366748
   InitialModule:
     serializedVersion: 3
     enabled: 1
