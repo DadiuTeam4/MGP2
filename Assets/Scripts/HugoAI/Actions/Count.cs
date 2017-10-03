@@ -9,8 +9,7 @@ namespace HugoAI
 	[CreateAssetMenu (menuName = "HugoAI/Actions/Count")]
 	public class Count : Action
 	{
-		public Animation countingAnimation;
-
+		public float maxHeight = 2.0f;
 		public override void Act(StateController controller)
 		{
 			CountItem(controller);
@@ -18,7 +17,10 @@ namespace HugoAI
 
 		private void CountItem(StateController controller) 
 		{
-			//Debug.Log("Counting");
+			controller.animator.SetBool("counting", true);
+			float worldHeight = controller.GetDestination().position.y;
+			float normalizedHeight = ((worldHeight / maxHeight) * 2.0f) - 1.0f;
+			controller.animator.SetFloat("height", normalizedHeight);
 		}
 	}
 }
