@@ -192,12 +192,12 @@ public class ResourceManager : Singleton<ResourceManager>
 
     public static bool NumberFound(int nr)
     {
-        return listOfPickedUpNumbers[nr-1] == 1;
+        return listOfPickedUpNumbersState[nr-1] == 1;
     }
 
     public static bool NumberCountedToGrandma(int nr)
     {
-		return listOfPickedUpNumbers[nr-1] == 0;
+		return listOfPickedUpNumbersState[nr-1] == 0;
     }
 
     private static void Number1Deactive()
@@ -229,5 +229,18 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		int index = listOfPickedUpNumbers.FindIndex(x => x == 6);
 		listOfPickedUpNumbersState[index] = 0;
+	}
+
+	public static void ResetState()
+	{
+		doorToKitchenOpen = false;
+		kitchenSinkFull = false;
+		kitchenLightOn = true;
+		isFantasyObjectActivated = false;
+
+		for (int i = 0; i < listOfPickedUpNumbers.Count; i++)
+		{
+			listOfPickedUpNumbersState[i] = -1;
+		}
 	}
 }
