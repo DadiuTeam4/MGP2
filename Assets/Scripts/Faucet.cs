@@ -20,7 +20,6 @@ public class Faucet : NumberFoundInteractable
         {
             changeColor();
             EventManager.TriggerEvent(EventName.FaucetRunning);
-            //Fire a event here
 			AkSoundEngine.PostEvent ("Stop_MGP2_SD_DrippingWater", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_SinkFill", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
         }
