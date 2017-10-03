@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: cd7437cd975f2584289455f3764572c0
-timeCreated: 1506429864
+timeCreated: 1506674858
 licenseType: Free
 ShaderImporter:
-  defaultTextures: []
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _NormalMap: {instanceID: 0}
+  - _ShadowTex: {fileID: 2800000, guid: 4a1b28b31a4e3d644be367987d4b460b, type: 3}
+  - _ShadowNoise: {fileID: 2800000, guid: 73c1968cea499084d98d95110c9442e7, type: 3}
+  - _Ramp: {fileID: 2800000, guid: 50c578914b7d3374aa4ba95488fc14fb, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
