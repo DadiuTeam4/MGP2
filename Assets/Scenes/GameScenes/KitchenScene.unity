@@ -324,7 +324,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4683089798650964, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.96
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4683089798650964, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -332,7 +332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4683089798650964, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -5.46
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 4683089798650964, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -394,6 +394,32 @@ Prefab:
       propertyPath: purposeWaypoints.Array.data[2]
       value: 
       objectReference: {fileID: 905633445}
+    - target: {fileID: 114687134265660832, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: numberEvents.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687134265660832, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: numberEvents.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687134265660832, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: numberEvents.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687134265660832, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: aiDebugging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687134265660832, guid: b58eb0c15f61541ca96dac1403ee4ae6,
+        type: 2}
+      propertyPath: currentState
+      value: 
+      objectReference: {fileID: 11400000, guid: 8601d6a2556a940429bceda468c7e481,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58eb0c15f61541ca96dac1403ee4ae6, type: 2}
   m_IsPrefabParent: 0
@@ -2925,7 +2951,7 @@ Prefab:
     - target: {fileID: 114221250077101840, guid: a0f1f9b03209945048f995e23ea2f6c8,
         type: 2}
       propertyPath: basePath
-      value: Audio\GeneratedSoundBanks
+      value: Audio/GeneratedSoundBanks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0f1f9b03209945048f995e23ea2f6c8, type: 2}
