@@ -15,14 +15,14 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
 
         EventManager.StartListening(EventName.LanguageSelected, ChangeToHubScene);
 	}
-	
-    void ChangeToKitchenScene()
+
+    public static void ChangeToKitchenScene()
     {
         SceneManager.LoadScene("KitchenScene");
         EventManager.TriggerEvent(EventName.KitchenSceneLoaded);
     }
 
-	void ChangeToHubScene()
+	public static void ChangeToHubScene()
     {
         SceneManager.LoadScene("HubScene");
         EventManager.TriggerEvent(EventName.HubSceneLoaded);
