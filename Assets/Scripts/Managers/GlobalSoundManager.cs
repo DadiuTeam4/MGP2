@@ -225,7 +225,6 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void EtBarnToBarn()
 	{
-		if (isBeingPlayed == false) 
 		{
 			hugoIsTalking = true;
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
