@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GlobalSoundManager : MonoBehaviour {
 	private bool isBeingPlayed = false;
+	public bool hugoIsTalking = false; 
 	private bool hasBeenIntroduced = false; 
 	private bool hasBeenRestarted; 
 	private bool grandmaHasCalled = false; 
@@ -102,6 +103,7 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		AkSoundEngine.PostEvent ("Play_MGP2_Speak_1234Garnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 		isBeingPlayed = true; 
+		hugoIsTalking = true; 
 	}
 
 	void GarnNoegleTaelle()
@@ -110,6 +112,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FemGarnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking = true;
 		}
 		if (grandmaIsResponding == false) 
 		{
@@ -124,6 +127,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 		isBeingPlayed = true; 
+			hugoIsTalking; 
 		}
 		if (grandmaIsResponding == false) {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
@@ -137,6 +141,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EnToTreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking; 
 		}
 	}
 
@@ -146,6 +151,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 		isBeingPlayed = true; 
+			hugoIsTalking; 
 	}
 		if (grandmaIsResponding) 
 		{
@@ -159,9 +165,11 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (isBeingPlayed == false)
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_Cookie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Smaakager",gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			hugoIsTalking;
 			isBeingPlayed = true; 
+			hugoIsTalking;
 		}
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Smaakager",gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 	}
 
 	void Spoegelse()
@@ -170,6 +178,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding) 
 		{
@@ -184,6 +193,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtSpoegelse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking = true; 
 		}
 	}
 
@@ -193,6 +203,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding)
 		{
@@ -206,8 +217,9 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (isBeingPlayed == false) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			hugoIsTalking = true; 
+			isBeingPlayed = true; 
 		}
-		isBeingPlayed = true; 
 	}
 
 	void EtBarnToBarn()
@@ -216,6 +228,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
+			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding) 
 		{
@@ -231,6 +244,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBarn", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 			allreadyTalking = true; 
+			hugoIsTalking = true; 
 		}
 	}
 
@@ -240,6 +254,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		{
 			isBeingPlayed = false; 
 			allreadyTalking = false; 
+			hugoIsTalking = false; 
 			if (grandmaIsResponding == true) 
 			{
 				grandmaIsResponding = false; 
