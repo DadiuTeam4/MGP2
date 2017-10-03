@@ -16,7 +16,7 @@ namespace HugoAI
 
 		private void CountItem(StateController controller) 
 		{
-			// controller.animator.
+			// controller.animator.counting = true;
 		}
 	}
 }
