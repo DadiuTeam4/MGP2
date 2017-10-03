@@ -7,7 +7,7 @@ public class OvenDoor : Interactable
 {
 
     // Use this for initialization
-    private bool isOvenDoorOpen = false;
+    private bool isOvenDoorOpen;
     private bool isOpeningOvenDoor = false;
     private bool isClosingOvenDoor = false;
     private Transform ovenHingeTransform;
@@ -23,6 +23,10 @@ public class OvenDoor : Interactable
         ovenHingeTransform = gameObject.GetComponentInChildren<Transform>();
         currentDoorOpenXAngle = doorOpenXAngle;
         timeLeftToCloseOvenDoor = timeToCloseOvenDoor;
+        if (ResourceManager.isOvenDoorOpen)
+        {
+            OpenOvenDoorAtStart();
+        }
     }
 
     void Update()
@@ -37,6 +41,7 @@ public class OvenDoor : Interactable
                 isOvenDoorOpen = true;
                 isOpeningOvenDoor = false;
                 currentDoorOpenXAngle = doorOpenXAngle;
+                ResourceManager.isOvenDoorOpen = true;
                 StartTimerForAutoCloseTheDoor();
             }
         }
@@ -51,6 +56,7 @@ public class OvenDoor : Interactable
                 isOvenDoorOpen = false;
                 isClosingOvenDoor = false;
                 currentDoorOpenXAngle = doorOpenXAngle;
+                ResourceManager.isOvenDoorOpen = false;
             }
         }
 
@@ -93,5 +99,14 @@ public class OvenDoor : Interactable
     private void StartTimerForAutoCloseTheDoor()
     {
         isCloseDoorTimerStarted = true;
+    }
+
+    private void OpenOvenDoorAtStart()
+    {
+        ovenHingeTransform.Rotate(doorOpenXAngle, 0f, 0f);
+        isOvenDoorOpen = true;
+        isOpeningOvenDoor = false;
+        currentDoorOpenXAngle = doorOpenXAngle;
+        StartTimerForAutoCloseTheDoor();
     }
 }
