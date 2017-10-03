@@ -24,6 +24,7 @@ public class NumberFoundInteractable : Interactable
     public float stopParticlesTime = 1.0f;
     public float offsetOnYParticleSystem = 0.52f;
     public bool hasAnimation;
+	public bool hasAnimator;
 
     protected void Start()
     {
@@ -75,6 +76,7 @@ public class NumberFoundInteractable : Interactable
                 float progress = timeHeld / fireAfterSeconds;
                 Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
                 transform.position = newPos;
+				Debug.Log ("Shake now");
             }
 
             if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
@@ -117,6 +119,10 @@ public class NumberFoundInteractable : Interactable
         {
             PlayAnimation();
         }
+		if (hasAnimator) 
+		{
+			StartAnimator();
+		}
 
     }
 
@@ -129,6 +135,12 @@ public class NumberFoundInteractable : Interactable
     private void PlayAnimation()
     {
         Animation ani = GetComponent<Animation>();
-        ani.Play(ani.clip.name);
+		ani.Play(ani.clip.name);
     }
+	private void StartAnimator()
+	{
+		Animator animator = GetComponent<Animator>();
+		animator.SetBool ("HereWeGo", true);
+	}
+
 }
