@@ -75,6 +75,7 @@
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
 				<Event Id="3711983261" Name="Play_MGP2_SD_WindowOpen" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowOpen"/>
 				<Event Id="2615010004" Name="Play_MGP2_Speak_1234Garnnoegler" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_1234Garnnoegler"/>
+				<Event Id="2730126340" Name="Play_MGP2_Speak_47Edderkopper" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_47Edderkopper"/>
 				<Event Id="4236365560" Name="Play_MGP2_Speak_Bade_nder" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Bade_nder"/>
 				<Event Id="655949986" Name="Play_MGP2_Speak_BedstemorResponse" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_BedstemorResponse"/>
 				<Event Id="4214661402" Name="Play_MGP2_Speak_EnToTreHjemmesko" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_EnToTreHjemmesko"/>
@@ -86,12 +87,14 @@
 				<Event Id="1728860424" Name="Play_MGP2_Speak_FemGarnnoegler" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FemGarnnoegler"/>
 				<Event Id="862215493" Name="Play_MGP2_Speak_FireBadeaender" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FireBadeaender"/>
 				<Event Id="1531644717" Name="Play_MGP2_Speak_FortaelleBedstemor" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_FortaelleBedstemor"/>
+				<Event Id="1925559451" Name="Play_MGP2_Speak_Frikadeller" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Frikadeller"/>
 				<Event Id="2272722235" Name="Play_MGP2_Speak_Hugooo" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Hugooo"/>
 				<Event Id="3508605423" Name="Play_MGP2_Speak_HugoTryk" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_HugoTryk"/>
 				<Event Id="796657599" Name="Play_MGP2_Speak_SeksSmaakagerKrukken" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SeksSmaakagerKrukken"/>
 				<Event Id="2825704606" Name="Play_MGP2_Speak_Smaakager" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Smaakager"/>
 				<Event Id="780878481" Name="Play_MGP2_Speak_SpaendeHistorie" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SpaendeHistorie"/>
 				<Event Id="3381817408" Name="Play_MGP2_Speak_SpoegelseiKokkenet" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_SpoegelseiKokkenet"/>
+				<Event Id="963930103" Name="Play_MGP2_Speak_Stokdoev" ObjectPath="\Events\Default Work Unit\Play_MGP2_Speak_Stokdoev"/>
 				<Event Id="3796942852" Name="Play_MGP2_Speak_TreHjemmesko" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_TreHjemmesko"/>
 				<Event Id="1807980291" Name="Play_MGP2_Speak_Wow" ObjectPath="\Events\Default Work Unit\Speak\Play_MGP2_Speak_Wow"/>
 				<Event Id="3938267759" Name="Play_MMGP2_SD_Porcelain" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MMGP2_SD_Porcelain"/>
@@ -367,6 +370,10 @@
 				<File Id="785837254" Language="SFX">
 					<ShortName>MGP2_Speak_Mh.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Mh_84EC0B40.wem</Path>
+				</File>
+				<File Id="812710030" Language="SFX">
+					<ShortName>MGP2_Speak_Frikadeller.wav</ShortName>
+					<Path>SFX/MGP2_Speak_Frikadeller_84EC0B40.wem</Path>
 				</File>
 				<File Id="825537596" Language="SFX">
 					<ShortName>MGP2_Speak_HvorErDerNogetJegKanTaelle.wav</ShortName>

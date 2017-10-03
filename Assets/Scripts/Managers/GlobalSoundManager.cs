@@ -77,8 +77,7 @@ public class GlobalSoundManager : MonoBehaviour {
 		areInKitchen = false; 
 		if (hasBeenIntroduced == false) 
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
-			hasBeenIntroduced = true; 
+			StartCoroutine (IntroSpeak ()); 
 		}
 		if (hasBeenRestarted == true) 
 		{
@@ -293,4 +292,21 @@ public class GlobalSoundManager : MonoBehaviour {
 			yield return null; 
 		}
 	}
+
+	IEnumerator IntroSpeak()
+	{
+		hasBeenIntroduced = true; 
+		isBeingPlayed = true; 
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
+		yield return new WaitForSeconds (3.9f);
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_47Edderkopper", gameObject); 
+		yield return new WaitForSeconds (4f); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Frikadeller", gameObject); 
+		yield return new WaitForSeconds (2.9f); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Stokdoev", gameObject); 
+		yield return null; 
+		isBeingPlayed = false;
+	}
 }
+
+
