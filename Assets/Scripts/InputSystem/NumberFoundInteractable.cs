@@ -77,7 +77,6 @@ public class NumberFoundInteractable : Interactable
                 float progress = timeHeld / fireAfterSeconds;
                 Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
                 transform.position = newPos;
-				Debug.Log ("Shake now");
             }
 
             if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
@@ -116,6 +115,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Clear();
         }
         EventManager.TriggerEvent(eventToFire);
+        EventManager.TriggerEvent(EventName.NumberPickedUp);
         if (hasAnimation)
         {
             PlayAnimation();
