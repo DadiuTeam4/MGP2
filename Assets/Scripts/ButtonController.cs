@@ -21,7 +21,7 @@ public class ButtonController : MonoBehaviour {
 	private bool isBeingPlayed = false; 
 	private Vector2 mouseInCanvasPosition;
 	public float alphaOnDark = 0.5f;
-
+	public float alphaWhenDeactivate = 0.5f;
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
@@ -62,14 +62,14 @@ public class ButtonController : MonoBehaviour {
 					buttonHeld = false;
 
 					var color = GetComponent<Image> ().color;
-					color = Color.red;
-					GetComponent<Image> ().color = color;
+					GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
+
 					EventManager.TriggerEvent(eventName);
 					EventManager.TriggerEvent(EventName.HugoGetANumberFeedBack);
 				}
 				else
 				{
-					if (isBeingPlayed == false) 
+					if (isBeingPlayed == false && currentScene == "KitchenScene") 
 					{
 						FortaelleBedstemor (); 
 					}
@@ -104,8 +104,7 @@ public class ButtonController : MonoBehaviour {
 		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
-			color = Color.red;
-			GetComponent<Image> ().color = color;
+			GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
 		}
 		else if (myState == -1)
 		{
@@ -136,4 +135,5 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 
+}
 }
