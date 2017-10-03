@@ -93,7 +93,7 @@ public class EventManager : Singleton<EventManager>
         {
             thisEvent.Invoke();
         }
-        else if (Instance.intEventDictionary.TryGetValue(eventName, out thisIntEvent)) 
+        if (Instance.intEventDictionary.TryGetValue(eventName, out thisIntEvent)) 
         {
             thisIntEvent.Invoke(thisIntEvent.parameter);
         }
