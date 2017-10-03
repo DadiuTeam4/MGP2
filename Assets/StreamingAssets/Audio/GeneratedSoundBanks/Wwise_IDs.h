@@ -82,6 +82,7 @@ namespace AK
         static const AkUniqueID STOP_MGP2_MUSIC_MYSTERY = 1090101008U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
+        static const AkUniqueID STOP_MGP2_SPEAK_HUGOTRYK = 717474857U;
     } // namespace EVENTS
 
     namespace STATES

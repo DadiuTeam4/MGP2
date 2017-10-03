@@ -11,6 +11,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	529845861	Play_MGP2_Speak_ErDuOgsaa			\Default Work Unit\Speak\Play_MGP2_Speak_ErDuOgsaa	
 	534839454	Resume_MGP2_Music_throwout2piano_P__dirty			\Default Work Unit\Music\Resume_MGP2_Music_throwout2piano_P__dirty	
 	655949986	Play_MGP2_Speak_BedstemorResponse			\Default Work Unit\Speak\Play_MGP2_Speak_BedstemorResponse	
+	717474857	Stop_MGP2_Speak_HugoTryk			\Default Work Unit\Stop_MGP2_Speak_HugoTryk	
 	780878481	Play_MGP2_Speak_SpaendeHistorie			\Default Work Unit\Speak\Play_MGP2_Speak_SpaendeHistorie	
 	796657599	Play_MGP2_Speak_SeksSmaakagerKrukken			\Default Work Unit\Speak\Play_MGP2_Speak_SeksSmaakagerKrukken	
 	803864683	Play_MGP2_SD_Herbs			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs	
