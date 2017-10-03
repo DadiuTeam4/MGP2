@@ -12,22 +12,27 @@ public class FadeOnTrigger : MonoBehaviour
 
 	[Tooltip("Amount faded per interval")]
 	[Range(0.01f, 1.0f)]
-	public float fadeSpeed;
+	public float fadeSpeed = 0.05f;
 
 	[Tooltip("Time in between fade intervals, in seconds")]
 	[Range(0.01f, 1.0f)]
-	public float fadeInterval;
+	public float fadeInterval = 0.05f;
+
+	[Tooltip("The amount of seconds waited till end trigger, in seconds")]
+	[Range(0.0f, 10.0f)]
+	public float waitTillTrigger;
 
 	private Image fadeImage;
 	
-	private EventName onFadeEndTrigger = EventName.StartGame;
-	private EventName onListenerStartOptionOne = EventName.LangDanish;
-	private EventName onListenerStartOptionTwo = EventName.LangEnglish;
+	public EventName[] listeners;
+	public EventName onFadeEndTrigger;
 
 	void Start () 
 	{
-		EventManager.StartListening(onListenerStartOptionOne, StartColorLerp);
-		EventManager.StartListening(onListenerStartOptionTwo, StartColorLerp);
+		for(int i = 0; i < listeners.Length; i ++)
+		{
+			EventManager.StartListening(listeners[i], StartColorLerp);
+		}
 		fadeImage = transform.GetComponent<Image>();
 	}
 
@@ -47,6 +52,7 @@ public class FadeOnTrigger : MonoBehaviour
 			yield return new WaitForSeconds(fadeInterval);
 		}
 		
+		yield return new WaitForSeconds(waitTillTrigger);
 		EventManager.TriggerEvent(onFadeEndTrigger);
 	}
 }
