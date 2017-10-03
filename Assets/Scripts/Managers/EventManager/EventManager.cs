@@ -167,6 +167,8 @@ public enum EventName
     InverseCameraGyroScopeY = 29,
     HugoParticleFeedbackOn = 30,
     HugoParticleFeedbackOff = 31,
-    HugoGetANumberFeedBack = 32
-
+    HugoGetANumberFeedBack = 32,
+    StartGame,
+    EndGame,
+    ShowCredits
 }

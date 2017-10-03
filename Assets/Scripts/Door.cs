@@ -15,8 +15,14 @@ public class Door : Interactable
     {
         getDoorState();
         isOpeningTheDoor = false;
-        EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
-
+        if (ResourceManager.doorToKitchenOpen)
+        {
+            KeepDoorOpenAtStart();
+        }
+        else
+        {
+            EventManager.StartListening(EventName.NumberFiveClicked, OpenDoor);
+        }
     }
 
     void Update()
@@ -54,12 +60,7 @@ public class Door : Interactable
     {
         if (ResourceManager.doorToKitchenOpen == true)
         {
-            Debug.Log("Kitchen door state is: Open");
             GetComponent<Renderer>().material.color = Color.green;
-        }
-        else
-        {
-            Debug.Log("Kitchen door state is: Closed");
         }
     }
 
@@ -69,6 +70,10 @@ public class Door : Interactable
         getDoorState();
         isOpeningTheDoor = true;
         AkSoundEngine.PostEvent("Play_MGP2_SD_DoorUnlock", gameObject);
+    }
 
+    void KeepDoorOpenAtStart()
+    {
+        doorHinge.transform.Rotate(0f, -rotatingYAngle, 0f);
     }
 }
