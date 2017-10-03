@@ -13,7 +13,7 @@ public class NumberFoundInteractable : Interactable
     public float speed = 60;
     [Range(0.0f, 0.1f)]
     public float shakeMagnitude = 0.01f;
-    
+
     public ParticleSystem onHoldParticleSystem;
     public ParticleSystem indicatorParticleSystem;
     private bool fired;
@@ -23,22 +23,22 @@ public class NumberFoundInteractable : Interactable
     public float period = 0.0f;
     public float stopParticlesTime = 1.0f;
     public float offsetOnYParticleSystem = 0.52f;
+    public bool hasAnimation;
 
     protected void Start()
     {
-        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire))
-                || ResourceManager.NumberCountedToGrandma(EventManager.NumberEventToInt(eventToFire));
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
     void Update()
     {
-        if (!fired) 
+        if (!fired)
         {
             if (period > timeInterval)
             {
                 period = 0;
-                if (onHoldParticleSystem != null)
+                if (indicatorParticleSystem != null)
                 {
                     indicatorParticleSystem.Play();
                     indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + offsetOnYParticleSystem, transform.position.z);
@@ -46,17 +46,17 @@ public class NumberFoundInteractable : Interactable
             }
             if (period > stopParticlesTime)
             {
-                
-                if (onHoldParticleSystem != null)
+
+                if (indicatorParticleSystem != null)
                 {
-                
+
                     indicatorParticleSystem.Stop();
                     indicatorParticleSystem.Clear();
                 }
-            }          
+            }
             period += UnityEngine.Time.deltaTime;
         }
-        
+
     }
 
 
@@ -68,7 +68,7 @@ public class NumberFoundInteractable : Interactable
 
     public override void OnTouchHold()
     {
-        if (!fired) 
+        if (!fired)
         {
             if (shake)
             {
@@ -113,11 +113,22 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Clear();
         }
         EventManager.TriggerEvent(eventToFire);
+        if (hasAnimation)
+        {
+            PlayAnimation();
+        }
+
     }
 
     private Vector3 ShakeSimple(float time, float speed, float magnitude)
     {
         float newZ = originalPosition.z + Mathf.Sin(time * speed) * magnitude;
         return new Vector3(originalPosition.x, originalPosition.y, newZ);
+    }
+
+    private void PlayAnimation()
+    {
+        Animation ani = GetComponent<Animation>();
+        ani.Play(ani.clip.name);
     }
 }

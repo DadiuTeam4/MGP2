@@ -9,30 +9,15 @@ public class Sink : Interactable
 
 	void Start ()
 	{
-		GetSinkState();
-        EventManager.StartListening(EventName.FaucetRunning, FillSink);
-		
+        EventManager.StartListening(EventName.NumberFourPickedUp, FillSink);		
 	}
 	
 	void Update () {
 		
 	}
 
-	void GetSinkState()
-    {
-        if (ResourceManager.kitchenSinkFull == true)
-        {
-            Debug.Log("Kitchen sink state is: Full");
-        }
-        else{
-            Debug.Log("Kitchen sink state is: Empty");
-        }
-    }
-
     void FillSink()
     {
         ResourceManager.kitchenSinkFull = true;
-        GetSinkState();
-
     }
 }
