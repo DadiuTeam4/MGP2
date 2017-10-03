@@ -95,6 +95,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		EventManager.StartListening(EventName.NumberSixClicked, resourceManagerListenerForNumber6Clicked);
 
 
+        EventManager.StartListening(EventName.HubSceneLoaded, ChangeToHubScene);
 
         EventManager.StartListening(EventName.HubDoorClicked, ChangeToKitchenScene);
 
