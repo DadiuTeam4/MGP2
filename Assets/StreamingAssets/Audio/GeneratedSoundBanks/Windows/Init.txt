@@ -27,6 +27,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
 	1710825164	Ambience_kitchen			\Default Work Unit\Master Audio Bus\Ambience_kitchen	
+	2395568919	LanternBus			\Default Work Unit\Master Audio Bus\LanternBus	
 	3642974746	Ambience_livingroom			\Default Work Unit\Master Audio Bus\Ambience_livingroom	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
@@ -37,4 +38,5 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	1159390747	Room_Medium_Tiled	Wwise RoomVerb			
 	1990128658	Room_Medium	Wwise RoomVerb			
+	3851006675	Secret_message_Distant	Wwise Harmonizer			
 
