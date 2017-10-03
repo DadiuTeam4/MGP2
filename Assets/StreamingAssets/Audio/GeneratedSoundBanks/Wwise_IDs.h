@@ -52,10 +52,12 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
         static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
         static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
+        static const AkUniqueID PLAY_MGP2_SD_SPOEGELSE = 1169134056U;
         static const AkUniqueID PLAY_MGP2_SD_TV1 = 1196118088U;
         static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWOPEN = 3711983261U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_47EDDERKOPPER = 2730126340U;
         static const AkUniqueID PLAY_MGP2_SPEAK_1234GARNNOEGLER = 2615010004U;
         static const AkUniqueID PLAY_MGP2_SPEAK_BADE_NDER = 4236365560U;
         static const AkUniqueID PLAY_MGP2_SPEAK_BEDSTEMORRESPONSE = 655949986U;
@@ -68,12 +70,14 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SPEAK_FEMGARNNOEGLER = 1728860424U;
         static const AkUniqueID PLAY_MGP2_SPEAK_FIREBADEAENDER = 862215493U;
         static const AkUniqueID PLAY_MGP2_SPEAK_FORTAELLEBEDSTEMOR = 1531644717U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_FRIKADELLER = 1925559451U;
         static const AkUniqueID PLAY_MGP2_SPEAK_HUGOOO = 2272722235U;
         static const AkUniqueID PLAY_MGP2_SPEAK_HUGOTRYK = 3508605423U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SEKSSMAAKAGERKRUKKEN = 796657599U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SMAAKAGER = 2825704606U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SPAENDEHISTORIE = 780878481U;
         static const AkUniqueID PLAY_MGP2_SPEAK_SPOEGELSEIKOKKENET = 3381817408U;
+        static const AkUniqueID PLAY_MGP2_SPEAK_STOKDOEV = 963930103U;
         static const AkUniqueID PLAY_MGP2_SPEAK_TREHJEMMESKO = 3796942852U;
         static const AkUniqueID PLAY_MGP2_SPEAK_WOW = 1807980291U;
         static const AkUniqueID PLAY_MMGP2_SD_PORCELAIN = 3938267759U;
@@ -82,6 +86,7 @@ namespace AK
         static const AkUniqueID STOP_MGP2_MUSIC_MYSTERY = 1090101008U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
+        static const AkUniqueID STOP_MGP2_SPEAK_HUGOTRYK = 717474857U;
     } // namespace EVENTS
 
     namespace STATES
@@ -133,6 +138,7 @@ namespace AK
     {
         static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
         static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
+        static const AkUniqueID LANTERNBUS = 2395568919U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MASTER_SECONDARY_BUS = 805203703U;
     } // namespace BUSSES

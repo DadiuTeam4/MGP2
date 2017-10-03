@@ -28,7 +28,8 @@ public class NumberFoundInteractable : Interactable
 
     protected void Start()
     {
-        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire))
+               || ResourceManager.NumberCountedToGrandma(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
@@ -76,10 +77,9 @@ public class NumberFoundInteractable : Interactable
                 float progress = timeHeld / fireAfterSeconds;
                 Vector3 newPos = ShakeSimple(timeHeld, speed, shakeMagnitude);
                 transform.position = newPos;
-				Debug.Log ("Shake now");
             }
 
-            if (onHoldParticleSystem != null && !onHoldParticleSystem.isPlaying)
+            if (onHoldParticleSystem != null)
             {
                 onHoldParticleSystem.transform.position = InputManager.GetLastRayHit();
                 onHoldParticleSystem.Play();
@@ -115,6 +115,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Clear();
         }
         EventManager.TriggerEvent(eventToFire);
+        EventManager.TriggerEvent(EventName.NumberPickedUp);
         if (hasAnimation)
         {
             PlayAnimation();

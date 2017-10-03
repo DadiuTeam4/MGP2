@@ -14,6 +14,7 @@ namespace HugoAI
 
 		public override void Act(StateController controller)
 		{
+			controller.animator.SetBool("counting", false);
 			SetWaypoint(controller);
 		}
 
@@ -25,7 +26,7 @@ namespace HugoAI
 			}
 			else
 			{
-				controller.navigator.SetDestination(controller.currentNumberWaypoint.position);
+				controller.navigator.SetDestination(controller.currentNumberWaypoint);
 			}
 		}
 	}

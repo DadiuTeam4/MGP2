@@ -46,6 +46,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	public static bool kitchenSinkFull;
 	public static bool kitchenLightOn;
 	public static bool isFantasyObjectActivated;
+	public static bool isOvenDoorOpen;
 	static private string currentSceneName = "HubScene";
 	static public List<int> listOfPickedUpNumbers;
 	static public List<int> listOfPickedUpNumbersState;
@@ -104,7 +105,8 @@ public class ResourceManager : Singleton<ResourceManager>
 		doorToKitchenOpen = false;
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
-		isFantasyObjectActivated = false;		
+		isFantasyObjectActivated = false;
+		isOvenDoorOpen = false;		
 	 }
 
 
@@ -237,6 +239,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		kitchenSinkFull = false;
 		kitchenLightOn = true;
 		isFantasyObjectActivated = false;
+		isOvenDoorOpen = false;
 
 		for (int i = 0; i < listOfPickedUpNumbers.Count; i++)
 		{
