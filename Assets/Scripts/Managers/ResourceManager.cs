@@ -192,12 +192,12 @@ public class ResourceManager : Singleton<ResourceManager>
 
     public static bool NumberFound(int nr)
     {
-        return listOfPickedUpNumbers[nr-1] == 1;
+        return listOfPickedUpNumbersState[nr-1] == 1;
     }
 
     public static bool NumberCountedToGrandma(int nr)
     {
-		return listOfPickedUpNumbers[nr-1] == 0;
+		return listOfPickedUpNumbersState[nr-1] == 0;
     }
 
     private static void Number1Deactive()
