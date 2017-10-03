@@ -9,13 +9,13 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
-		<File Id="180643768" Language="SFX">
-			<ShortName>MGP2_Music_throwout2.1(P).wav</ShortName>
-			<Path>SFX/MGP2_Music_throwout2.1(P)_5A343EFA.wem</Path>
-		</File>
 		<File Id="382228935" Language="SFX">
 			<ShortName>MGP2_Music_throwout2(P)piano_1.wav</ShortName>
 			<Path>SFX/MGP2_Music_throwout2(P)piano_1_5A343EFA.wem</Path>
+		</File>
+		<File Id="440481978" Language="SFX">
+			<ShortName>MGP2_Music_throwout2(P)slower.wav</ShortName>
+			<Path>SFX/MGP2_Music_throwout2(P)slower_5A343EFA.wem</Path>
 		</File>
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
@@ -69,6 +69,7 @@
 				<Event Id="967135245" Name="Play_MGP2_SD_RockingChair" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair"/>
 				<Event Id="3249430620" Name="Play_MGP2_SD_Rubberduck" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Rubberduck"/>
 				<Event Id="304130839" Name="Play_MGP2_SD_SinkFill" ObjectPath="\Events\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_SinkFill"/>
+				<Event Id="1169134056" Name="Play_MGP2_SD_Spoegelse" ObjectPath="\Events\Default Work Unit\Play_MGP2_SD_Spoegelse"/>
 				<Event Id="1196118088" Name="Play_MGP2_SD_TV1" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV1"/>
 				<Event Id="3735495899" Name="Play_MGP2_SD_Vinyl" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Vinyl"/>
 				<Event Id="447855483" Name="Play_MGP2_SD_WindowClose" ObjectPath="\Events\Default Work Unit\SoundDesign\LivingRoom\Window\Play_MGP2_SD_WindowClose"/>
@@ -102,8 +103,8 @@
 				<Event Id="717474857" Name="Stop_MGP2_Speak_HugoTryk" ObjectPath="\Events\Default Work Unit\Stop_MGP2_Speak_HugoTryk" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<ReferencedStreamedFiles>
-				<File Id="180643768"/>
 				<File Id="382228935"/>
+				<File Id="440481978"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
 				<File Id="7591784" Language="SFX">
@@ -262,6 +263,11 @@
 					<ShortName>142301__fryzu82__curtain-opening.wav</ShortName>
 					<Path>SFX/142301__fryzu82__curtain-opening_1FD931B9.wem</Path>
 				</File>
+				<File Id="440481978" Language="SFX">
+					<ShortName>MGP2_Music_throwout2(P)slower.wav</ShortName>
+					<Path>SFX/MGP2_Music_throwout2(P)slower_5A343EFA.wem</Path>
+					<PrefetchSize>2432</PrefetchSize>
+				</File>
 				<File Id="448724314" Language="SFX">
 					<ShortName>124202__robinhood76__02408-chair-stone-floor-brawl.wav</ShortName>
 					<Path>SFX/124202__robinhood76__02408-chair-stone-floor-brawl_3BFB32E3.wem</Path>
@@ -269,6 +275,10 @@
 				<File Id="450639001" Language="SFX">
 					<ShortName>366469__aliedsvwyk__kettle-boiling.wav</ShortName>
 					<Path>SFX/366469__aliedsvwyk__kettle-boiling_92972369.wem</Path>
+				</File>
+				<File Id="454482592" Language="SFX">
+					<ShortName>spoegelse.wav</ShortName>
+					<Path>SFX/spoegelse_E8506C64.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
@@ -436,7 +446,7 @@
 				</File>
 				<File Id="1063305411" Language="SFX">
 					<ShortName>MGP2_SD_Herbbb1.wav</ShortName>
-					<Path>SFX/MGP2_SD_Herbbb1_1325CB68.wem</Path>
+					<Path>SFX/MGP2_SD_Herbbb1_D90050CE.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
