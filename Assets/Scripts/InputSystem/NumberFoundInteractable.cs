@@ -26,8 +26,7 @@ public class NumberFoundInteractable : Interactable
 
     protected void Start()
     {
-        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire))
-                || ResourceManager.NumberCountedToGrandma(EventManager.NumberEventToInt(eventToFire));
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
@@ -113,6 +112,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Clear();
         }
         EventManager.TriggerEvent(eventToFire);
+		StartCoroutine (PlayAnimation ());
     }
 
     private Vector3 ShakeSimple(float time, float speed, float magnitude)
@@ -120,4 +120,11 @@ public class NumberFoundInteractable : Interactable
         float newZ = originalPosition.z + Mathf.Sin(time * speed) * magnitude;
         return new Vector3(originalPosition.x, originalPosition.y, newZ);
     }
+
+	IEnumerator PlayAnimation()
+	{
+		Animation ani = GetComponent<Animation>();
+		ani.Play (ani.clip.name);
+		yield return new WaitForSeconds(ani.clip.length);
+	}
 }
