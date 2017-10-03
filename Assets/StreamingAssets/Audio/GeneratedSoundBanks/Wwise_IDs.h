@@ -52,6 +52,7 @@ namespace AK
         static const AkUniqueID PLAY_MGP2_SD_ROCKINGCHAIR = 967135245U;
         static const AkUniqueID PLAY_MGP2_SD_RUBBERDUCK = 3249430620U;
         static const AkUniqueID PLAY_MGP2_SD_SINKFILL = 304130839U;
+        static const AkUniqueID PLAY_MGP2_SD_SPOEGELSE = 1169134056U;
         static const AkUniqueID PLAY_MGP2_SD_TV1 = 1196118088U;
         static const AkUniqueID PLAY_MGP2_SD_VINYL = 3735495899U;
         static const AkUniqueID PLAY_MGP2_SD_WINDOWCLOSE = 447855483U;
@@ -82,6 +83,7 @@ namespace AK
         static const AkUniqueID STOP_MGP2_MUSIC_MYSTERY = 1090101008U;
         static const AkUniqueID STOP_MGP2_SD_DRIPPINGWATER = 3922064915U;
         static const AkUniqueID STOP_MGP2_SD_GARDEN = 2380106136U;
+        static const AkUniqueID STOP_MGP2_SPEAK_HUGOTRYK = 717474857U;
     } // namespace EVENTS
 
     namespace STATES
@@ -133,6 +135,7 @@ namespace AK
     {
         static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
         static const AkUniqueID AMBIENCE_LIVINGROOM = 3642974746U;
+        static const AkUniqueID LANTERNBUS = 2395568919U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MASTER_SECONDARY_BUS = 805203703U;
     } // namespace BUSSES
