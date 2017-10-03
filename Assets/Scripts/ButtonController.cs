@@ -20,7 +20,8 @@ public class ButtonController : MonoBehaviour {
 	private string nameOfSceneThatHugoCanCount = "HubScene";
 	private bool isBeingPlayed = false; 
 	private Vector2 mouseInCanvasPosition;
-		
+	public float alphaOnDark = 0.5f;
+
 	void Start()
 	{
 		buttonRect = GetComponent<RectTransform>();
@@ -68,7 +69,7 @@ public class ButtonController : MonoBehaviour {
 				}
 				else
 				{
-					if (isBeingPlayed == false) 
+					if (isBeingPlayed == false && currentScene == "KitchenScene") 
 					{
 						FortaelleBedstemor (); 
 					}
@@ -109,7 +110,7 @@ public class ButtonController : MonoBehaviour {
 		else if (myState == -1)
 		{
 			var color = GetComponent<Image> ().color;
-			color = Color.black;
+			color = new Color (0, 0, 0, alphaOnDark);
 			GetComponent<Image> ().color = color;
 		}
 	}
