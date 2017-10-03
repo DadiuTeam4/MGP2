@@ -25,7 +25,6 @@ public class Grandma : Interactable {
 		
 	IEnumerator FadeInGranny()
 	{
-		print ("fader"); 
 		hasBeenPressed = true;
 		duration = 50f * Time.deltaTime; 
 		while (fadeDeafValue > fadeMin) 
