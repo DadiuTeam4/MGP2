@@ -96,6 +96,13 @@ public class GlobalSoundManager : MonoBehaviour {
 			hasBeenRestarted = true; 
 	}
 
+	public void FortaelleBedstemor()
+	{
+		hugoIsTalking = true;
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FortaelleBedstemor", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		isBeingPlayed = true;
+	}
+
 	void GarnNoegleSpeak()
 	{
 		if (isBeingPlayed == false) 
@@ -217,7 +224,6 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (isBeingPlayed == false) 
 		{
 			hugoIsTalking = true;
-			AkSoundEngine.PostEvent ("Stop_MGP2_Speak_HugoTryk", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
@@ -251,6 +257,7 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_HugoTryk", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
