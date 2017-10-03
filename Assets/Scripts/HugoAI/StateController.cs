@@ -117,7 +117,7 @@ namespace HugoAI
 			UpdateDebugInfo();
 			#endif
 			#endregion
-			animator.speed = navigator.GetSpeed();
+			animator.SetFloat("speed", navigator.GetSpeed());
 			currentState.UpdateState(this);
 		}
 
@@ -135,6 +135,11 @@ namespace HugoAI
 		private void OnExitState()
 		{
 			ResetStateTimer();
+		}
+
+		public Transform GetDestination()
+		{
+			return navigator.GetDestination();
 		}
 
 		#region DEBUG

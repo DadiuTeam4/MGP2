@@ -9,9 +9,9 @@ namespace HugoAI
 {
 	public class Navigator : MonoBehaviour 
 	{
+		[HideInInspector] public Transform currentWaypoint; 
+
 		private NavMeshAgent navMeshAgent;
-		private GameObject checker;
-		private bool checkerSpawned;
 		private bool destinationReached;
 		private bool randomSet;
 		private int randomWayPoint;
@@ -26,20 +26,21 @@ namespace HugoAI
 			if (!randomSet) 
 			{
 				randomWayPoint = Random.Range(0, controller.idleWaypoints.Length);
-				Vector3 destination = controller.idleWaypoints[randomWayPoint].position;
+				Transform destination = controller.idleWaypoints[randomWayPoint];
 				SetDestination(destination);
 				randomSet = true;
 			}
 		}
 
-		public void SetDestination(Vector3 destination) 
+		public void SetDestination(Transform destination) 
 		{
-			navMeshAgent.SetDestination(destination);
+			currentWaypoint = destination;
+			navMeshAgent.SetDestination(destination.position);
 		}
 
-		public Vector3 GetDestination()
+		public Transform GetDestination()
 		{
-			return navMeshAgent.destination;
+			return currentWaypoint;
 		}
 
 		public float GetSpeed()
