@@ -6,15 +6,17 @@ public class Door : Interactable
 {
     public EventName triggeredEvent = EventName.HubDoorClicked;
 
-    public GameObject doorHinge;
+    private Transform doorHinge;
     private bool isOpeningTheDoor;
-    public float rotatingYAngle = 60;
-    public float rotaingSpeed = 5;
+    public float rotatingYAngle = 80;
+    private float currentRotatingYAngle;
+    public float rotaingSpeed = 10;
 
     void Start()
     {
-        getDoorState();
+        doorHinge = GetComponentInParent<Transform>();
         isOpeningTheDoor = false;
+        currentRotatingYAngle = rotatingYAngle;
         if (ResourceManager.doorToKitchenOpen)
         {
             KeepDoorOpenAtStart();
@@ -27,11 +29,11 @@ public class Door : Interactable
 
     void Update()
     {
-        if (isOpeningTheDoor && doorHinge != null && rotatingYAngle > 0)
+        if (isOpeningTheDoor)
         {
-            doorHinge.transform.Rotate(0f, -Time.deltaTime * rotaingSpeed, 0);
-            rotatingYAngle = rotatingYAngle - Time.deltaTime * rotaingSpeed;
-            if (rotatingYAngle <= 0)
+            doorHinge.Rotate(0f, -Time.deltaTime * rotaingSpeed, 0);
+            currentRotatingYAngle -= Time.deltaTime * rotaingSpeed;
+            if (currentRotatingYAngle <= 0)
             {
                 isOpeningTheDoor = false;
             }
@@ -46,7 +48,6 @@ public class Door : Interactable
             EventManager.TriggerEvent(EventName.KitchenDoorClicked);
         }
 
-
         if (ResourceManager.doorToKitchenOpen == true)
         {
             EventManager.TriggerEvent(triggeredEvent);
@@ -56,24 +57,15 @@ public class Door : Interactable
         }
     }
 
-    void getDoorState()
-    {
-        if (ResourceManager.doorToKitchenOpen == true)
-        {
-            GetComponent<Renderer>().material.color = Color.green;
-        }
-    }
-
-    void OpenDoor()
+    private void OpenDoor()
     {
         ResourceManager.doorToKitchenOpen = true;
-        getDoorState();
         isOpeningTheDoor = true;
         AkSoundEngine.PostEvent("Play_MGP2_SD_DoorUnlock", gameObject);
     }
 
-    void KeepDoorOpenAtStart()
+    private void KeepDoorOpenAtStart()
     {
-        doorHinge.transform.Rotate(0f, -rotatingYAngle, 0f);
+        doorHinge.Rotate(0f, rotatingYAngle, 0f);
     }
 }
