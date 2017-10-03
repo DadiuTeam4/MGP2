@@ -168,5 +168,7 @@ public enum EventName
     HugoParticleFeedbackOn = 30,
     HugoParticleFeedbackOff = 31,
     HugoGetANumberFeedBack = 32,
-    StartGame
+    StartGame,
+    EndGame,
+    ShowCredits
 }
