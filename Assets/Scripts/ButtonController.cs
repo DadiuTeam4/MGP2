@@ -68,7 +68,7 @@ public class ButtonController : MonoBehaviour {
 				}
 				else
 				{
-					if (isBeingPlayed == false) 
+					if (isBeingPlayed == false && currentScene == "KitchenScene") 
 					{
 						FortaelleBedstemor (); 
 					}
