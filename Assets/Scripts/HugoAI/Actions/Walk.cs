@@ -14,6 +14,7 @@ namespace HugoAI
 
 		public override void Act(StateController controller)
 		{
+			controller.animator.speed = controller.navigator.GetSpeed();
 			SetWaypoint(controller);
 		}
 

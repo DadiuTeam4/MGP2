@@ -37,7 +37,7 @@ namespace HugoAI
 
 		private void Awake()
 		{ 
-			//animator = GetComponent<Animator>();
+			animator = GetComponent<Animator>();
 			navigator = GetComponent<Navigator>();
 		}
 
@@ -55,6 +55,7 @@ namespace HugoAI
 				eventOccurredCallbacks[i] = action;
 				EventManager.StartListening(numberEvents[i], action, i);
 			}
+			string breakPoint;
 		}
 
 		public bool CheckEventOccured(EventName eventName) 
@@ -67,7 +68,7 @@ namespace HugoAI
 		private void EventCallback(int number)
 		{
 			EventName triggeredEvent;
-			if (eventIndexes.TryGetValue(number, out triggeredEvent)) 
+			if (eventIndexes.TryGetValue(number, out triggeredEvent))
 			{
 				bool eventValue;
 				if (triggeredEvents.TryGetValue(triggeredEvent, out eventValue)) 
@@ -106,16 +107,17 @@ namespace HugoAI
 
 		private void Update()
 		{
+			if (!active) 
+			{
+				return;
+			}
 			#region DEBUG
 			#if UNITY_EDITOR
 			debugInfo = "";
 			UpdateDebugInfo();
 			#endif
 			#endregion
-			if (!active) 
-			{
-				return;
-			}
+			animator.speed = navigator.GetSpeed();
 			currentState.UpdateState(this);
 		}
 

@@ -115,6 +115,7 @@ public class NumberFoundInteractable : Interactable
             onHoldParticleSystem.Clear();
         }
         EventManager.TriggerEvent(eventToFire);
+        EventManager.TriggerEvent(EventName.NumberPickedUp);
         if (hasAnimation)
         {
             PlayAnimation();

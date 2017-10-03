@@ -42,6 +42,11 @@ namespace HugoAI
 			return navMeshAgent.destination;
 		}
 
+		public float GetSpeed()
+		{
+			return navMeshAgent.velocity.magnitude;
+		}
+
 		public bool CheckDestinationReached() 
 		{
 			if (!navMeshAgent.pathPending)

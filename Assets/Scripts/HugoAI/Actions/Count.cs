@@ -9,8 +9,6 @@ namespace HugoAI
 	[CreateAssetMenu (menuName = "HugoAI/Actions/Count")]
 	public class Count : Action
 	{
-		public Animation countingAnimation;
-
 		public override void Act(StateController controller)
 		{
 			CountItem(controller);
@@ -18,7 +16,7 @@ namespace HugoAI
 
 		private void CountItem(StateController controller) 
 		{
-			//Debug.Log("Counting");
+			// controller.animator.
 		}
 	}
 }
