@@ -2887,7 +2887,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1966480466460622}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.825474e-14, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4690014265925208}
@@ -3463,8 +3463,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140761801968062}
-  m_LocalRotation: {x: -0, y: 0.99982744, z: -0, w: -0.018579533}
-  m_LocalPosition: {x: -8.96, y: 0, z: -5.46}
+  m_LocalRotation: {x: -0, y: 0.3168089, z: -0, w: 0.9484894}
+  m_LocalPosition: {x: 8.17, y: 0.39, z: 12.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947404368251802}
@@ -3479,7 +3479,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153787027454036}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -692.4834, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4367680607473634}
@@ -4124,9 +4124,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  numberEvents: 0200000005000000070000001900000001000000
+  numberEvents: 0300000004000000060000001900000001000000
   purposeWaypoints:
-  - {fileID: 0}
+  - {fileID: 4358126659037944}
   - {fileID: 0}
   - {fileID: 0}
   currentState: {fileID: 11400000, guid: 8601d6a2556a940429bceda468c7e481, type: 2}
@@ -4265,7 +4265,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -4274,7 +4274,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!198 &198525209148226396
@@ -4336,7 +4336,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2109366748
+  randomSeed: 668059818
   InitialModule:
     serializedVersion: 3
     enabled: 1
