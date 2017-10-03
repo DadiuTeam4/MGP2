@@ -98,18 +98,21 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	void GarnNoegleSpeak()
 	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_1234Garnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-		isBeingPlayed = true; 
-		hugoIsTalking = true; 
+		if (isBeingPlayed == false) 
+		{
+			hugoIsTalking = true; 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_1234Garnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
+		}
 	}
 
 	void GarnNoegleTaelle()
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FemGarnnoegler", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true;
 		}
 		if (grandmaIsResponding == false) 
 		{
@@ -122,9 +125,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false)
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-		isBeingPlayed = true; 
 			hugoIsTalking = true; 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_TreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
 		}
 		if (grandmaIsResponding == false) {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
@@ -136,9 +139,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EnToTreHjemmesko", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true; 
 		}
 	}
 
@@ -146,9 +149,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false)
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-		isBeingPlayed = true; 
 			hugoIsTalking = true; 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+			isBeingPlayed = true; 
 	}
 		if (grandmaIsResponding) 
 		{
@@ -161,9 +164,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false)
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_SD_Cookie", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Smaakager",gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-			hugoIsTalking = true;
 			isBeingPlayed = true; 
 			hugoIsTalking = true;
 		}
@@ -173,9 +176,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding) 
 		{
@@ -187,20 +190,20 @@ public class GlobalSoundManager : MonoBehaviour {
 	void SpoegelseTaelle()
 	{
 		if (isBeingPlayed == false) 
-		{
+		{	
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtSpoegelse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true; 
 		}
 	}
 
 	void Badeaender()
 	{
 		if (isBeingPlayed == false) 
-		{
+		{	
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding)
 		{
@@ -213,9 +216,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true;
 			AkSoundEngine.PostEvent ("Stop_MGP2_Speak_HugoTryk", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-			hugoIsTalking = true; 
 			isBeingPlayed = true; 
 		}
 	}
@@ -224,9 +227,9 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true;
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
-			hugoIsTalking = true; 
 		}
 		if (grandmaIsResponding) 
 		{
@@ -239,7 +242,7 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false)
 		{
-			hugoIsTalking = true; 
+			hugoIsTalking = true;
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBarn", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
@@ -295,18 +298,26 @@ public class GlobalSoundManager : MonoBehaviour {
 
 	IEnumerator IntroSpeak()
 	{
-		hasBeenIntroduced = true; 
-		isBeingPlayed = true; 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
-		yield return new WaitForSeconds (3.9f);
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_47Edderkopper", gameObject); 
-		yield return new WaitForSeconds (4f); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Frikadeller", gameObject); 
-		yield return new WaitForSeconds (2.9f); 
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_Stokdoev", gameObject); 
+		{
+			isBeingPlayed = true; 
+			hasBeenIntroduced = true; 
+			hugoIsTalking = true;
+
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_ErDuOksaa", gameObject); 
+			yield return new WaitForSeconds (3.9f);
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_47Edderkopper", gameObject); 
+			yield return new WaitForSeconds (4f); 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Frikadeller", gameObject); 
+			yield return new WaitForSeconds (2.9f); 
+			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Stokdoev", gameObject); 
+		}
 		yield return null; 
 		isBeingPlayed = false;
+		hugoIsTalking = false;
+
 	}
+
+
 }
 
 
