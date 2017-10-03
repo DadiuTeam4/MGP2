@@ -113,6 +113,10 @@
 					<ShortName>WindowSlideClose_S08HS.1124.wav</ShortName>
 					<Path>SFX/WindowSlideClose_S08HS.1124_84EC0B40.wem</Path>
 				</File>
+				<File Id="9617067" Language="SFX">
+					<ShortName>MGP2_SD_FryPan3_3.wav</ShortName>
+					<Path>SFX/MGP2_SD_FryPan3_3_84EC0B40.wem</Path>
+				</File>
 				<File Id="21792370" Language="SFX">
 					<ShortName>MGP2_SD_TV_3.wav</ShortName>
 					<Path>SFX/MGP2_SD_TV_3_84EC0B40.wem</Path>
@@ -125,9 +129,9 @@
 					<ShortName>MGP2_Speak_FemGarnnoegler.wav</ShortName>
 					<Path>SFX/MGP2_Speak_FemGarnnoegler_84EC0B40.wem</Path>
 				</File>
-				<File Id="73123222" Language="SFX">
-					<ShortName>MGP2_SD_Fryingpan2.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan2_2067BC0E.wem</Path>
+				<File Id="39909794" Language="SFX">
+					<ShortName>DoorGlassUnlock_S08OF.170.wav</ShortName>
+					<Path>SFX/DoorGlassUnlock_S08OF.170_84EC0B40.wem</Path>
 				</File>
 				<File Id="82622083" Language="SFX">
 					<ShortName>197563__dheming__glass-bottles-02.wav</ShortName>
@@ -141,10 +145,6 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_25549D66.wem</Path>
 				</File>
-				<File Id="132533713" Language="SFX">
-					<ShortName>AgoShaker2A.wav.wav</ShortName>
-					<Path>SFX/AgoShaker2A.wav_84EC0B40.wem</Path>
-				</File>
 				<File Id="132745067" Language="SFX">
 					<ShortName>CouchSqueak_S08HS.308.wav</ShortName>
 					<Path>SFX/CouchSqueak_S08HS.308_84EC0B40.wem</Path>
@@ -155,15 +155,11 @@
 				</File>
 				<File Id="163682755" Language="SFX">
 					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
-					<Path>SFX/DebrisCeramicFall_SFXB.2255_E76DF60B.wem</Path>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_179112C8.wem</Path>
 				</File>
 				<File Id="166854047" Language="SFX">
 					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
-					<Path>SFX/DebrisCeramicFall_SFXB.2255_E5D3B9C2.wem</Path>
-				</File>
-				<File Id="169154954" Language="SFX">
-					<ShortName>MGP2_Speak_SpaendeHistorie.wav</ShortName>
-					<Path>SFX/MGP2_Speak_SpaendeHistorie_84EC0B40.wem</Path>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_BB4B9FC2.wem</Path>
 				</File>
 				<File Id="179487888" Language="SFX">
 					<ShortName>MGP2_Speak_EtSpoegelse.wav</ShortName>
@@ -177,9 +173,9 @@
 					<ShortName>MGP2_Speak_oooooh.wav</ShortName>
 					<Path>SFX/MGP2_Speak_oooooh_84EC0B40.wem</Path>
 				</File>
-				<File Id="211387590" Language="SFX">
-					<ShortName>387967__chrillz3r__opening-closing-cookie-jar-metal.wav</ShortName>
-					<Path>SFX/387967__chrillz3r__opening-closing-cookie-jar-metal_195CA8DF.wem</Path>
+				<File Id="215709963" Language="SFX">
+					<ShortName>MGP2_Speak_SpaendeHistorie1.wav</ShortName>
+					<Path>SFX/MGP2_Speak_SpaendeHistorie1_84EC0B40.wem</Path>
 				</File>
 				<File Id="231098878" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
@@ -205,6 +201,10 @@
 					<ShortName>MGP2_Speak_IhHvorErDerMange_1.wav</ShortName>
 					<Path>SFX/MGP2_Speak_IhHvorErDerMange_1_84EC0B40.wem</Path>
 				</File>
+				<File Id="289877790" Language="SFX">
+					<ShortName>MGP2_SD_FryPan2_1.wav</ShortName>
+					<Path>SFX/MGP2_SD_FryPan2_1_84EC0B40.wem</Path>
+				</File>
 				<File Id="298752938" Language="SFX">
 					<ShortName>MGP2_Speak_47Edderkopper.wav</ShortName>
 					<Path>SFX/MGP2_Speak_47Edderkopper_84EC0B40.wem</Path>
@@ -213,13 +213,13 @@
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
 					<Path>SFX/329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_9FBE54B2.wem</Path>
 				</File>
+				<File Id="313101527" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2_2.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_2_84EC0B40.wem</Path>
+				</File>
 				<File Id="323848381" Language="SFX">
 					<ShortName>MGP2_Speak_TreHjemmesko.wav</ShortName>
 					<Path>SFX/MGP2_Speak_TreHjemmesko_84EC0B40.wem</Path>
-				</File>
-				<File Id="327783280" Language="SFX">
-					<ShortName>MGP2_SD_Lantern4.wav</ShortName>
-					<Path>SFX/MGP2_SD_Lantern4_84EC0B40.wem</Path>
 				</File>
 				<File Id="329108900" Language="SFX">
 					<ShortName>329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg.wav</ShortName>
@@ -245,17 +245,13 @@
 					<ShortName>MGP2_Speak_Wooow.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Wooow_84EC0B40.wem</Path>
 				</File>
-				<File Id="404207154" Language="SFX">
-					<ShortName>MGP2_SD_Lantern3.wav</ShortName>
-					<Path>SFX/MGP2_SD_Lantern3_84EC0B40.wem</Path>
-				</File>
 				<File Id="418147390" Language="SFX">
 					<ShortName>MGP2_Speak_Nynne_1.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Nynne_1_84EC0B40.wem</Path>
 				</File>
 				<File Id="423764443" Language="SFX">
 					<ShortName>130014__ermfilm__ruber-duck-big-1.wav</ShortName>
-					<Path>SFX/130014__ermfilm__ruber-duck-big-1_73178A1F.wem</Path>
+					<Path>SFX/130014__ermfilm__ruber-duck-big-1_5ED94C63.wem</Path>
 				</File>
 				<File Id="432721043" Language="SFX">
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
@@ -272,10 +268,6 @@
 				<File Id="450639001" Language="SFX">
 					<ShortName>366469__aliedsvwyk__kettle-boiling.wav</ShortName>
 					<Path>SFX/366469__aliedsvwyk__kettle-boiling_92972369.wem</Path>
-				</File>
-				<File Id="489143399" Language="SFX">
-					<ShortName>MGP2_SD_Fryingpan3.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan3_D0F446CD.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
@@ -313,6 +305,10 @@
 					<ShortName>320416__yadronoff__shivering-chandelier.wav</ShortName>
 					<Path>SFX/320416__yadronoff__shivering-chandelier_F3995FBA.wem</Path>
 				</File>
+				<File Id="593251227" Language="SFX">
+					<ShortName>MGP2_SD_FryPan2_2.wav</ShortName>
+					<Path>SFX/MGP2_SD_FryPan2_2_84EC0B40.wem</Path>
+				</File>
 				<File Id="611877970" Language="SFX">
 					<ShortName>MGP2_SD_TV_2.wav</ShortName>
 					<Path>SFX/MGP2_SD_TV_2_84EC0B40.wem</Path>
@@ -321,21 +317,9 @@
 					<ShortName>120329__cemagar__kitchen-cabinet.wav</ShortName>
 					<Path>SFX/120329__cemagar__kitchen-cabinet_3A7E382B.wem</Path>
 				</File>
-				<File Id="630206413" Language="SFX">
-					<ShortName>MGP2_SD_Lantern5.wav</ShortName>
-					<Path>SFX/MGP2_SD_Lantern5_84EC0B40.wem</Path>
-				</File>
 				<File Id="633937394" Language="SFX">
 					<ShortName>MGP2_Speak_Suk.wav</ShortName>
 					<Path>SFX/MGP2_Speak_Suk_84EC0B40.wem</Path>
-				</File>
-				<File Id="636675681" Language="SFX">
-					<ShortName>MGP2_SD_Fryingpan1.wav</ShortName>
-					<Path>SFX/MGP2_SD_Fryingpan1_18B2AEC1.wem</Path>
-				</File>
-				<File Id="639258859" Language="SFX">
-					<ShortName>MGP2_SD_Lantern2.wav</ShortName>
-					<Path>SFX/MGP2_SD_Lantern2_84EC0B40.wem</Path>
 				</File>
 				<File Id="688450962" Language="SFX">
 					<ShortName>MGP2_Speak_AreYouAltso.wav</ShortName>
@@ -379,15 +363,23 @@
 				</File>
 				<File Id="848849926" Language="SFX">
 					<ShortName>SinkFillWater_SFXB.4822.wav</ShortName>
-					<Path>SFX/SinkFillWater_SFXB.4822_D6D7C806.wem</Path>
+					<Path>SFX/SinkFillWater_SFXB.4822_00008812.wem</Path>
 				</File>
 				<File Id="857766680" Language="SFX">
 					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
-					<Path>SFX/DebrisCeramicFall_SFXB.2255_888093BF.wem</Path>
+					<Path>SFX/DebrisCeramicFall_SFXB.2255_D5A31E5A.wem</Path>
+				</File>
+				<File Id="860334626" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2_3.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_3_84EC0B40.wem</Path>
+				</File>
+				<File Id="872693812" Language="SFX">
+					<ShortName>CookieJarOpenLid_SFXB.1770.wav</ShortName>
+					<Path>SFX/CookieJarOpenLid_SFXB.1770_84EC0B40.wem</Path>
 				</File>
 				<File Id="899240743" Language="SFX">
 					<ShortName>MGP2_Speak_HugoooKom.wav</ShortName>
-					<Path>SFX/MGP2_Speak_HugoooKom_8CF1F9DC.wem</Path>
+					<Path>SFX/MGP2_Speak_HugoooKom_3FC11F1D.wem</Path>
 				</File>
 				<File Id="925962079" Language="SFX">
 					<ShortName>MGP2_Speak_FireBadeaender.wav</ShortName>
@@ -401,13 +393,17 @@
 					<ShortName>mgp2_ambience_livingRoom(P).wav</ShortName>
 					<Path>SFX/mgp2_ambience_livingRoom(P)_5A343EFA.wem</Path>
 				</File>
+				<File Id="936066604" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2_4.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_4_84EC0B40.wem</Path>
+				</File>
 				<File Id="936576490" Language="SFX">
 					<ShortName>WindowSlideOpen_S08HS.1125.wav</ShortName>
 					<Path>SFX/WindowSlideOpen_S08HS.1125_84EC0B40.wem</Path>
 				</File>
-				<File Id="953098255" Language="SFX">
-					<ShortName>MGP2_SD_Lantern1.wav</ShortName>
-					<Path>SFX/MGP2_SD_Lantern1_84EC0B40.wem</Path>
+				<File Id="966459862" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2_5.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_5_84EC0B40.wem</Path>
 				</File>
 				<File Id="976005905" Language="SFX">
 					<ShortName>MGP2_Speak_1234Garnnoegler.wav</ShortName>
@@ -421,6 +417,10 @@
 					<ShortName>MGP2_SD_DrippingWater.wav</ShortName>
 					<Path>SFX/MGP2_SD_DrippingWater_84EC0B40.wem</Path>
 				</File>
+				<File Id="987207892" Language="SFX">
+					<ShortName>MGP2_SD_Lantern2_1.wav</ShortName>
+					<Path>SFX/MGP2_SD_Lantern2_1_84EC0B40.wem</Path>
+				</File>
 				<File Id="988600871" Language="SFX">
 					<ShortName>MGP2_Speak_EtBarnToBarn.wav</ShortName>
 					<Path>SFX/MGP2_Speak_EtBarnToBarn_84EC0B40.wem</Path>
@@ -433,9 +433,9 @@
 					<ShortName>239005__squashy555__kettle-boiling.wav</ShortName>
 					<Path>SFX/239005__squashy555__kettle-boiling_047EDBAD.wem</Path>
 				</File>
-				<File Id="1070167829" Language="SFX">
-					<ShortName>158625__mrauralization__door-unlock.wav</ShortName>
-					<Path>SFX/158625__mrauralization__door-unlock_A837F577.wem</Path>
+				<File Id="1063305411" Language="SFX">
+					<ShortName>MGP2_SD_Herbbb1.wav</ShortName>
+					<Path>SFX/MGP2_SD_Herbbb1_1325CB68.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
