@@ -35,7 +35,6 @@ public class OnGameMenuController : MonoBehaviour
         optionPanel.SetActive(false);
         ResourceManager.ResetState();
         SceneTransitionManager.ChangeToHubScene();
-		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
 		RestartMusic (); 
 
     }
@@ -64,6 +63,7 @@ public class OnGameMenuController : MonoBehaviour
 	{
 		GSM.RestartMusicHub (); 
 	}
+
 
 
 }

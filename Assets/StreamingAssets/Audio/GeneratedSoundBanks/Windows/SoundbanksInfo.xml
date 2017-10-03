@@ -156,7 +156,7 @@
 				</File>
 				<File Id="147093774" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
-					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_96EE2134.wem</Path>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_263FC860.wem</Path>
 				</File>
 				<File Id="163682755" Language="SFX">
 					<ShortName>DebrisCeramicFall_SFXB.2255.wav</ShortName>
@@ -170,10 +170,6 @@
 					<ShortName>MGP2_Speak_EtSpoegelse.wav</ShortName>
 					<Path>SFX/MGP2_Speak_EtSpoegelse_84EC0B40.wem</Path>
 				</File>
-				<File Id="180643768" Language="SFX">
-					<ShortName>MGP2_Music_throwout2.1(P).wav</ShortName>
-					<Path>SFX/MGP2_Music_throwout2.1(P)_5A343EFA.wem</Path>
-				</File>
 				<File Id="184239998" Language="SFX">
 					<ShortName>MGP2_Speak_oooooh.wav</ShortName>
 					<Path>SFX/MGP2_Speak_oooooh_84EC0B40.wem</Path>
@@ -184,7 +180,7 @@
 				</File>
 				<File Id="231098878" Language="SFX">
 					<ShortName>167171__ultradust__drawers-in-the-kitchen.wav</ShortName>
-					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_09F510A3.wem</Path>
+					<Path>SFX/167171__ultradust__drawers-in-the-kitchen_545749F5.wem</Path>
 				</File>
 				<File Id="234777605" Language="SFX">
 					<ShortName>MGP2_Speak_Smaakager.wav</ShortName>
@@ -281,7 +277,7 @@
 				</File>
 				<File Id="454482592" Language="SFX">
 					<ShortName>spoegelse.wav</ShortName>
-					<Path>SFX/spoegelse_E8506C64.wem</Path>
+					<Path>SFX/spoegelse_92EEA33D.wem</Path>
 				</File>
 				<File Id="492814952" Language="SFX">
 					<ShortName>MGP2_Ambience_Kitchen.1(P).wav</ShortName>
@@ -338,10 +334,6 @@
 				<File Id="688450962" Language="SFX">
 					<ShortName>MGP2_Speak_AreYouAltso.wav</ShortName>
 					<Path>SFX/MGP2_Speak_AreYouAltso_84EC0B40.wem</Path>
-				</File>
-				<File Id="691176650" Language="SFX">
-					<ShortName>MGP2_Speak_Oooh.wav</ShortName>
-					<Path>SFX/MGP2_Speak_Oooh_84EC0B40.wem</Path>
 				</File>
 				<File Id="710609675" Language="SFX">
 					<ShortName>MGP2_Speak_FortaelleBedstemor.wav</ShortName>
