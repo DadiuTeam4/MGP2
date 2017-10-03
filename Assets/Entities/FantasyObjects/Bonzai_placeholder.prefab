@@ -214,8 +214,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299020390138876}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2000003}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
@@ -226,8 +226,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244378436625198}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2000003}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
@@ -238,8 +238,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901235468060340}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2000003}
   m_Center: {x: -0.0000009536743, y: 0, z: 0.0000019073486}
@@ -250,8 +250,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729442475020382}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2000003}
   m_Center: {x: -0.0000009536743, y: 0, z: 0.0000019073486}
@@ -262,8 +262,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781410840356324}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2000003}
   m_Center: {x: -0.0000009536743, y: 0, z: 0.0000019073486}
@@ -307,7 +307,7 @@ MonoBehaviour:
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventName: MGP2_SD_Lantern3
+  eventName: Play_MGP2_SD_Lantern5
 --- !u!114 &114532702905000094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,7 +336,7 @@ MonoBehaviour:
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventName: MGP2_SD_Lantern4
+  eventName: Play_MGP2_SD_Lantern2
 --- !u!114 &114572395866393752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,7 +377,7 @@ MonoBehaviour:
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventName: MGP2_SD_Lantern1
+  eventName: Play_MGP2_SD_Lantern3
 --- !u!114 &114839296942297142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,7 +406,7 @@ MonoBehaviour:
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventName: MGP2_SD_Lantern2
+  eventName: Play_MGP2_SD_Lantern1
 --- !u!114 &114852625616738162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -435,7 +435,7 @@ MonoBehaviour:
   boomTime: 0.1
   particleSystem: {fileID: 0}
   timeHeld: 0
-  eventName: MGP2_SD_Lantern5
+  eventName: Play_MGP2_SD_Lantern4
 --- !u!212 &212049665603908428
 SpriteRenderer:
   m_ObjectHideFlags: 1
