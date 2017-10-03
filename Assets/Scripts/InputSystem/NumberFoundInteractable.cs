@@ -28,7 +28,8 @@ public class NumberFoundInteractable : Interactable
 
     protected void Start()
     {
-        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire));
+        fired = ResourceManager.NumberFound(EventManager.NumberEventToInt(eventToFire))
+               || ResourceManager.NumberCountedToGrandma(EventManager.NumberEventToInt(eventToFire));
         originalPosition = transform.position;
     }
 
