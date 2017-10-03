@@ -15,11 +15,17 @@ public class OnGameMenuController : MonoBehaviour
 		GSM = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
 
         EventManager.StartListening(EventName.EnableOrDisableOptionMenu, EnableOrDisableOptions);
+        EventManager.StartListening(EventName.EndGame, ExitGame);
         isOptionPanelActive = false;
     }
+
+    public void TriggerCredits()
+    {
+        EventManager.TriggerEvent(EventName.ShowCredits);
+    }
+
     public void ExitGame()
     {
-        Debug.Log("Exit the game");
         Application.Quit();
 		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
     }
