@@ -21,9 +21,11 @@ public class ButtonController : MonoBehaviour {
 	private bool isBeingPlayed = false; 
 	private Vector2 mouseInCanvasPosition;
 	public float alphaOnDark = 0.5f;
+	public GlobalSoundManager globalSoundManager; 
 
 	void Start()
 	{
+		globalSoundManager = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
@@ -69,15 +71,13 @@ public class ButtonController : MonoBehaviour {
 				}
 				else
 				{
-					if (isBeingPlayed == false && currentScene == "KitchenScene") 
+					if (isBeingPlayed == false && currentScene == "KitchenScene" && globalSoundManager.hugoIsTalking == false) 
 					{
-						FortaelleBedstemor (); 
+						globalSoundManager.FortaelleBedstemor (); 
+
 					}
 				}
-
-
 			}
-
 		}
 	}
 	
@@ -121,19 +121,4 @@ public class ButtonController : MonoBehaviour {
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
-
-	void FortaelleBedstemor()
-	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FortaelleBedstemor", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-		isBeingPlayed = true;
-	}
-
-	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
-	{
-		if (in_type == AkCallbackType.AK_EndOfEvent)
-		{
-			isBeingPlayed = false; 
-		}
-	}
-
 }
