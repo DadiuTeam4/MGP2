@@ -20,7 +20,6 @@ namespace HugoAI
 			controller.animator.SetBool("counting", true);
 			float worldHeight = controller.GetDestination().position.y;
 			float normalizedHeight = ((worldHeight / maxHeight) * 2.0f) - 1.0f;
-			Debug.Log(normalizedHeight);
 			controller.animator.SetFloat("height", normalizedHeight);
 		}
 	}
