@@ -17,6 +17,7 @@ ModelImporter:
     3300002: hugo_mouth
     4300000: hugo_mouth
     4300002: hugo_eyes
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
