@@ -16,6 +16,7 @@ public class Plant : Interactable
 
 	public override void GiveTouchFeedback()
 	{
+        base.GiveTouchFeedback();
 		if (!growing)
 		{
 			originalScale = transform.localScale;
