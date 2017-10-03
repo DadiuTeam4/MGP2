@@ -54,12 +54,7 @@ public class Door : Interactable
     {
         if (ResourceManager.doorToKitchenOpen == true)
         {
-            Debug.Log("Kitchen door state is: Open");
             GetComponent<Renderer>().material.color = Color.green;
-        }
-        else
-        {
-            Debug.Log("Kitchen door state is: Closed");
         }
     }
 

@@ -10,7 +10,7 @@ public class RubberDucksRise : Interactable
 
 	void Start ()
 	{ 
-		EventManager.StartListening(EventName.FaucetRunning, CommenceEpicRubberDuckJourney);
+		EventManager.StartListening(EventName.NumberFourPickedUp, CommenceEpicRubberDuckJourney);
 		CheckSinkStatus();
 	}
 
@@ -21,8 +21,6 @@ public class RubberDucksRise : Interactable
 	
 	IEnumerator riseMyDucksRise(GameObject objectToMove, Vector3 end, float journeySeconds)
 	{
-		Debug.Log("Onwards and upwards!");
-
 		float elapsedTime = 0;
 		Vector3 startingPos = objectToMove.transform.position;
 		while (elapsedTime < journeySeconds)
