@@ -21,6 +21,7 @@ public class ButtonController : MonoBehaviour {
 	private bool isBeingPlayed = false; 
 	private Vector2 mouseInCanvasPosition;
 	public float alphaOnDark = 0.5f;
+	public float alphaWhenDeactivate = 0.5f;
 	public GlobalSoundManager globalSoundManager; 
 
 	void Start()
@@ -64,8 +65,8 @@ public class ButtonController : MonoBehaviour {
 					buttonHeld = false;
 
 					var color = GetComponent<Image> ().color;
-					color = Color.red;
-					GetComponent<Image> ().color = color;
+					GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
+
 					EventManager.TriggerEvent(eventName);
 					EventManager.TriggerEvent(EventName.HugoGetANumberFeedBack);
 				}
@@ -104,8 +105,7 @@ public class ButtonController : MonoBehaviour {
 		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
-			color = Color.red;
-			GetComponent<Image> ().color = color;
+			GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
 		}
 		else if (myState == -1)
 		{
@@ -122,3 +122,4 @@ public class ButtonController : MonoBehaviour {
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 }
+
