@@ -11,12 +11,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	529845861	Play_MGP2_Speak_ErDuOgsaa			\Default Work Unit\Speak\Play_MGP2_Speak_ErDuOgsaa	
 	534839454	Resume_MGP2_Music_throwout2piano_P__dirty			\Default Work Unit\Music\Resume_MGP2_Music_throwout2piano_P__dirty	
 	655949986	Play_MGP2_Speak_BedstemorResponse			\Default Work Unit\Speak\Play_MGP2_Speak_BedstemorResponse	
+	717474857	Stop_MGP2_Speak_HugoTryk			\Default Work Unit\Stop_MGP2_Speak_HugoTryk	
 	780878481	Play_MGP2_Speak_SpaendeHistorie			\Default Work Unit\Speak\Play_MGP2_Speak_SpaendeHistorie	
 	796657599	Play_MGP2_Speak_SeksSmaakagerKrukken			\Default Work Unit\Speak\Play_MGP2_Speak_SeksSmaakagerKrukken	
 	803864683	Play_MGP2_SD_Herbs			\Default Work Unit\SoundDesign\Kitchen\Play_MGP2_SD_Herbs	
 	862215493	Play_MGP2_Speak_FireBadeaender			\Default Work Unit\Speak\Play_MGP2_Speak_FireBadeaender	
 	967135245	Play_MGP2_SD_RockingChair			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_RockingChair	
 	1090101008	Stop_MGP2_Music_Mystery			\Default Work Unit\Music\Stop_MGP2_Music_Mystery	
+	1169134056	Play_MGP2_SD_Spoegelse			\Default Work Unit\Play_MGP2_SD_Spoegelse	
 	1196118088	Play_MGP2_SD_TV1			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_TV1	
 	1477792038	Play_MGP2_SD_Bed			\Default Work Unit\SoundDesign\LivingRoom\Play_MGP2_SD_Bed	
 	1531644717	Play_MGP2_Speak_FortaelleBedstemor			\Default Work Unit\Speak\Play_MGP2_Speak_FortaelleBedstemor	
@@ -91,6 +93,8 @@ Effect plug-ins	ID	Name	Type				Notes
 	830631819	New_Wwise_Guitar_Distortion1	Wwise Guitar Distortion			
 	935714592	nyeq	Wwise Parametric EQ			
 	1568083719	tv	Wwise Guitar Distortion			
+	2394809124	Very_Slow_Modulation	Wwise Tremolo			
+	2568359573	Secret_message	Wwise Harmonizer			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7591784	MGP2_SD_OnScreenClick(P)_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\329553__luiiiiiiii__lightswitch-tv-studio-close-on-off-vari-ssg_C593B509.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\OnScreenClick\MGP2_SD_OnScreenClick(P)_01		4940
@@ -132,8 +136,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	423764443	MGP2_SD_Rubberduck	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\130014__ermfilm__ruber-duck-big-1_5ED94C63.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Rubberduck		9427
 	432721043	120329__cemagar__kitchen-cabinet	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\120329__cemagar__kitchen-cabinet_92D881A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Cabinet_Open\120329__cemagar__kitchen-cabinet		12069
 	436613960	MGP2_SD_CurtainOpen	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\142301__fryzu82__curtain-opening_1FD931B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Window\Window\MGP2_SD_CurtainOpen		7360
+	440481978	MGP2_Music_Mystery	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2(P)slower_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_Mystery		2432
 	448724314	124202__robinhood76__02408-chair-stone-floor-brawl	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\124202__robinhood76__02408-chair-stone-floor-brawl_3BFB32E3.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Ghost\124202__robinhood76__02408-chair-stone-floor-brawl		20677
 	450639001	MGP2_SD_Kettle	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\366469__aliedsvwyk__kettle-boiling_92972369.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Kettle		47180
+	454482592	MGP2_SD_Spoegelse	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\spoegelse_E8506C64.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Spoegelse		63350
 	492814952	mgp2_ambience_kitchen(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Ambience_Kitchen.1(P)_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\mgp2_ambience_kitchen(P)		495078
 	501490312	MGP2_Speak_Stokdoev	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Speak_Stokdoev_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_HugoTryk\MGP2_Speak_Stokdoev		31806
 	501683604	MGP2_SD_RockingChair	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_RockingChair_1_5A343EFA.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_SD_RockingChair		124599
@@ -175,9 +181,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	988600871	MGP2_Speak_EtBarnToBarn	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Speak_EtBarnToBarn_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\Speak\MGP2_Speak_Hugo\MGP2_Speak_EtBarnToBarn		38551
 	994290101	MGP2_SD_Fridge	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Fridge_84EC0B40.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Fridge		365545
 	1056149139	MGP2_SD_Kettle_01	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\239005__squashy555__kettle-boiling_047EDBAD.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Kettle_01		57913
-	1063305411	MGP2_SD_Herbs	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Herbbb1_1325CB68.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Herbs		6268
+	1063305411	MGP2_SD_Herbs	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_SD_Herbbb1_D90050CE.wem		\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\Kitchen\MGP2_SD_Herbs		6268
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	180643768	MGP2_Music_Mystery	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2.1(P)_5A343EFA.wem	180643768.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_Mystery	
 	382228935	MGP2_Music_throwout2piano(P)	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2(P)piano_1_5A343EFA.wem	382228935.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_throwout2piano(P)	
+	440481978	MGP2_Music_Mystery	Y:\Desktop\DADIU\MGP2\MGP2\MGP2wwise\.cache\Windows\SFX\MGP2_Music_throwout2(P)slower_5A343EFA.wem	440481978.wem	\Actor-Mixer Hierarchy\Default Work Unit\SoundDesign\LivingRoom\LivingRoom\MGP2_Music_Mystery	
 
