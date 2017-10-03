@@ -113,13 +113,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176470020624338}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4160150826013288}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4211481588343668
 Transform:
   m_ObjectHideFlags: 1
@@ -232,7 +232,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176470020624338}
-  m_Mesh: {fileID: 4300000, guid: 94085786fadbc284caf9cd3451b83dda, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 95b2a90b24815a74dbc44ceba10b1750, type: 3}
 --- !u!33 &33920219425833100
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -250,8 +250,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5865011, z: 1.9785919}
-  m_Center: {x: 0, y: -0.6296582, z: -0.0053243637}
+  m_Size: {x: 1.1916642, y: 1.5865011, z: 1.9785919}
+  m_Center: {x: 0.09583211, y: -0.6296582, z: -0.0053243637}
 --- !u!95 &95716975910512402
 Animator:
   serializedVersion: 3
@@ -280,7 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cdbbc8c3819433cb4144f89aa9a5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.06
+  particleSystem: {fileID: 0}
   timeHeld: 0
-  particleOnClick: {fileID: 0}
