@@ -89,15 +89,20 @@ public class EventManager : Singleton<EventManager>
     {
         IntUnityEvent thisIntEvent = null;
         UnityEvent thisEvent = null;
+        bool eventTriggered = false; 
+
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke();
+            eventTriggered = true;
         }
         if (Instance.intEventDictionary.TryGetValue(eventName, out thisIntEvent)) 
         {
             thisIntEvent.Invoke(thisIntEvent.parameter);
+            eventTriggered = true;
         }
-        else
+
+        if (!eventTriggered)
         {
             Debug.LogError("The event name " + eventName + " does not have any listeners");
         }
