@@ -21,9 +21,12 @@ public class ButtonController : MonoBehaviour {
 	private bool isBeingPlayed = false; 
 	private Vector2 mouseInCanvasPosition;
 	public float alphaOnDark = 0.5f;
+	public float alphaWhenDeactivate = 0.5f;
+	public GlobalSoundManager globalSoundManager; 
 
 	void Start()
 	{
+		globalSoundManager = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
@@ -62,22 +65,20 @@ public class ButtonController : MonoBehaviour {
 					buttonHeld = false;
 
 					var color = GetComponent<Image> ().color;
-					color = Color.red;
-					GetComponent<Image> ().color = color;
+					GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
+
 					EventManager.TriggerEvent(eventName);
 					EventManager.TriggerEvent(EventName.HugoGetANumberFeedBack);
 				}
 				else
 				{
-					if (isBeingPlayed == false && currentScene == "KitchenScene") 
+					if (isBeingPlayed == false && currentScene == "KitchenScene" && globalSoundManager.hugoIsTalking == false) 
 					{
-						FortaelleBedstemor (); 
+						globalSoundManager.FortaelleBedstemor (); 
+
 					}
 				}
-
-
 			}
-
 		}
 	}
 	
@@ -104,8 +105,7 @@ public class ButtonController : MonoBehaviour {
 		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
-			color = Color.red;
-			GetComponent<Image> ().color = color;
+			GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
 		}
 		else if (myState == -1)
 		{
@@ -121,19 +121,5 @@ public class ButtonController : MonoBehaviour {
 		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
 		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
-
-	void FortaelleBedstemor()
-	{
-		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FortaelleBedstemor", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
-		isBeingPlayed = true;
-	}
-
-	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
-	{
-		if (in_type == AkCallbackType.AK_EndOfEvent)
-		{
-			isBeingPlayed = false; 
-		}
-	}
-
 }
+
