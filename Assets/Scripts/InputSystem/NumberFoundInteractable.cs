@@ -39,7 +39,7 @@ public class NumberFoundInteractable : Interactable
             if (period > timeInterval)
             {
                 period = 0;
-                if (onHoldParticleSystem != null && indicatorParticleSystem != null)
+                if (indicatorParticleSystem != null)
                 {
                     indicatorParticleSystem.Play();
                     indicatorParticleSystem.transform.position = new Vector3(transform.position.x, transform.position.y + offsetOnYParticleSystem, transform.position.z);
@@ -48,7 +48,7 @@ public class NumberFoundInteractable : Interactable
             if (period > stopParticlesTime)
             {
 
-                if (onHoldParticleSystem != null && indicatorParticleSystem != null)
+                if (indicatorParticleSystem != null)
                 {
 
                     indicatorParticleSystem.Stop();

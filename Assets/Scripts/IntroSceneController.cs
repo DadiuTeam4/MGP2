@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class IntroSceneController : MonoBehaviour
 {
-
-    // Use this for initialization
     void Start()
     {
-        EventManager.StartListening(EventName.LangEnglish, StartGame);
-        EventManager.StartListening(EventName.LangDanish, StartGame);
+        EventManager.StartListening(EventName.StartGame, StartGame);
     }
+
     private void StartGame()
     {
 		Debug.Log("Game Should Start Now");
 		EventManager.TriggerEvent(EventName.LanguageSelected);
     }
-
 }
