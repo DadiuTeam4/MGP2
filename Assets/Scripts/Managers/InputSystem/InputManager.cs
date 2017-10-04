@@ -1,5 +1,6 @@
 ﻿// Author: Mathias Dam Hedelund
-// Contributors:
+// Contributors: Itai Yavin
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,9 +79,25 @@ public class InputManager : Singleton<InputManager>
 						interactable.GiveTouchFeedback();
 					}
 				}
+
+				foreach (Interactable lastFrameInteractable in heldLastFrame)
+				{
+					if (!lastFrameInteractable.Equals(interactable))
+					{
+						lastFrameInteractable.OnTouchReleased();
+					}
+				}
+			}		
+			else
+			{
+				foreach (Interactable lastFrameInteractable in heldLastFrame)
+				{
+					lastFrameInteractable.OnTouchReleased();
+				}
 			}
 			mouseDownLastFrame = true;
 		}
+
 		else if (Input.GetMouseButtonUp(0))
 		{
 			Vector2 mousePos = Input.mousePosition;
@@ -89,6 +106,8 @@ public class InputManager : Singleton<InputManager>
 			{
 				interactable.OnTouchReleased();
 				mouseDownLastFrame = false;
+
+
 			}
 		}
 		#endif
@@ -133,6 +152,14 @@ public class InputManager : Singleton<InputManager>
 		if (interactable) 
 		{
 			heldThisFrame.Add(interactable);
+
+			foreach (Interactable lastFrameInteractable in heldLastFrame)
+			{
+				if (!lastFrameInteractable.Equals(interactable))
+				{
+					lastFrameInteractable.OnTouchReleased();
+				}
+			}
 		}
 	}
 

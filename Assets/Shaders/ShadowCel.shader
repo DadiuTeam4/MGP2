@@ -26,11 +26,14 @@ Shader "Custom/Shadow and Cel" {
 
 		_ShadowTex		("Shadow", 2D) = "white" {}
 		_ShadowNoise	("Shadow Noise", 2D) = "white" {}
-		_ShadowTiling	("Shadow Tiling", Range (0.1,100)) = 10
-		_ShadowInMainTex ("Shadow in Albedo", Range (0,1)) = 0.1
+		_ShadowTiling	("Shadow Tiling", Range (0.1,10)) = 1
+		//_ShadowInMainTex ("Shadow in Albedo", Range (0,1)) = 0.1
+		_ShadowBrightness ("Shadow Brightness", Range (-2,10)) = 1
+		_ShadowBlend	("Shadow/Albedo Blend", Range (0,1)) = 0.1
 
 		_OutlineColor	("Outline Color", Color) = (0,0,0,1)
 		_Outline		("Outline width", Range (0.0, 0.1)) = .05
+		_Ramp			("Toon Ramp (RGB)", 2D) = "gray" {}
 	}
 
 	CGINCLUDE
@@ -177,5 +180,5 @@ Shader "Custom/Shadow and Cel" {
 	}
 
 
-	CustomEditor "MyLightingShaderGUI"
+	//CustomEditor "MyLightingShaderGUI"
 }

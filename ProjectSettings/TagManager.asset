@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ManagerHolder
   - DestinationChecker
+  - UIPanel
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - IgnoredByCanvas
   - 
   - 
   - 

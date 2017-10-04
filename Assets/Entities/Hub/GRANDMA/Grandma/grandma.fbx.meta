@@ -1,16 +1,45 @@
 fileFormatVersion: 2
-guid: 297a72312944f4e0eba96cb34bdc4eed
-timeCreated: 1505127051
+guid: fcbd877546a45e94da57d3d40f1d3975
+timeCreated: 1507042362
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: grandma_mesh
+    100000: bj_chest
+    100002: bj_hair
+    100004: bj_hairbun
+    100006: bj_head
+    100008: bj_hips
+    100010: bj_knee
+    100012: bj_l_foot
+    100014: bj_neck
+    100016: bj_r_foot
+    100018: bj_spine
+    100020: chair
+    100022: //RootNode
+    100024: grandma_body
+    100026: uj_root
+    400000: bj_chest
+    400002: bj_hair
+    400004: bj_hairbun
+    400006: bj_head
+    400008: bj_hips
+    400010: bj_knee
+    400012: bj_l_foot
+    400014: bj_neck
+    400016: bj_r_foot
+    400018: bj_spine
+    400020: chair
+    400022: //RootNode
+    400024: grandma_body
+    400026: uj_root
+    2300000: chair
+    3300000: chair
+    4300000: chair
+    4300002: grandma_body
+    7400000: rocking
     9500000: //RootNode
+    13700000: grandma_body
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +63,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rocking
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -8,15 +8,24 @@ public class OnGameMenuController : MonoBehaviour
 {
     private bool isOptionPanelActive;
     public GameObject optionPanel;
+	public GlobalSoundManager GSM;
 
     void Start()
     {
+		GSM = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
+
         EventManager.StartListening(EventName.EnableOrDisableOptionMenu, EnableOrDisableOptions);
+        EventManager.StartListening(EventName.EndGame, ExitGame);
         isOptionPanelActive = false;
     }
+
+    public void TriggerCredits()
+    {
+        EventManager.TriggerEvent(EventName.ShowCredits);
+    }
+
     public void ExitGame()
     {
-        Debug.Log("Exit the game");
         Application.Quit();
 		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
     }
@@ -24,8 +33,10 @@ public class OnGameMenuController : MonoBehaviour
     public void RestartGame()
     {
         optionPanel.SetActive(false);
-        SceneManager.LoadScene(0);
-		AkSoundEngine.PostEvent ("Stop_all", gameObject); 
+        ResourceManager.ResetState();
+        SceneTransitionManager.ChangeToHubScene();
+		RestartMusic (); 
+
     }
 
     public void EnableOrDisableOptions()
@@ -47,5 +58,12 @@ public class OnGameMenuController : MonoBehaviour
     {
         Debug.Log("Change language here");
     }
+
+	private void RestartMusic()
+	{
+		GSM.RestartMusicHub (); 
+	}
+
+
 
 }

@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4091276441062352}
   - component: {fileID: 95178951050362272}
-  - component: {fileID: 114830053674170112}
-  - component: {fileID: 65671268269455630}
   m_Layer: 0
   m_Name: Gramophone
   m_TagString: Untagged
@@ -29,9 +27,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1703700359588322
+--- !u!1 &1374195315787598
 GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4547270861639986}
+  - component: {fileID: 114135518827860466}
+  - component: {fileID: 65397630817971210}
+  m_Layer: 0
+  m_Name: Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1703700359588322
+GameObject:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -52,27 +67,41 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1295679894878298}
-  m_LocalRotation: {x: -0, y: -0.9982711, z: -0, w: -0.058778156}
-  m_LocalPosition: {x: -2.8, y: 0.9, z: 2.9}
+  m_LocalRotation: {x: -0, y: -0.7207638, z: -0, w: 0.69318086}
+  m_LocalPosition: {x: -2.769169, y: 0.9, z: 2.8666456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4547270861639986}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -92.235, z: 0}
+--- !u!4 &4547270861639986
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374195315787598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4850120944240440}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4091276441062352}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -186.739, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4850120944240440
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703700359588322}
-  m_LocalRotation: {x: -0, y: 0.78622097, z: -0, w: 0.6179455}
-  m_LocalPosition: {x: -0, y: 0.83, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.83000004, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 4091276441062352}
+  m_Father: {fileID: 4547270861639986}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 103.66701, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23505300962101748
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -112,18 +141,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703700359588322}
   m_Mesh: {fileID: 4300000, guid: 59b8ced80d3b05a42b78f1cedf7505d9, type: 3}
---- !u!65 &65671268269455630
+--- !u!65 &65397630817971210
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
+  m_GameObject: {fileID: 1374195315787598}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5634124, y: 1.8455449, z: 0.66369057}
-  m_Center: {x: -0.041822877, y: 0.9633978, z: 0.16815549}
+  m_Size: {x: 0.97132605, y: 3.2384028, z: 1.1807799}
+  m_Center: {x: 0.014804811, y: 0.78063655, z: 0.03201592}
 --- !u!95 &95178951050362272
 Animator:
   serializedVersion: 3
@@ -141,17 +170,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114830053674170112
+--- !u!114 &114135518827860466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295679894878298}
+  m_GameObject: {fileID: 1374195315787598}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48ad86bf092f544bab2177d9bf3c9137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.06
+  particleSystem: {fileID: 0}
   timeHeld: 0

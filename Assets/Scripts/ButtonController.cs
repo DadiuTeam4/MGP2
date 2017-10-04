@@ -8,11 +8,9 @@ public class ButtonController : MonoBehaviour {
 	[HideInInspector]
 	public EventName eventName;
 	[HideInInspector]
-	public RectTransform canvasRect;
+	public int buttonIndex; 
 	[HideInInspector]
-	public GraphicRaycaster graphicRayCaster;
-	private PointerEventData pointerEventData = new PointerEventData(null);
-	private List<RaycastResult> raycastResults = new List<RaycastResult>();
+	public RectTransform canvasRect;
 	private RectTransform buttonRect;
 	private bool buttonHeld;
 	private bool active;
@@ -20,77 +18,99 @@ public class ButtonController : MonoBehaviour {
 	public Collider targetCollider;
 	private string currentScene;
 	private string nameOfSceneThatHugoCanCount = "HubScene";
-
+	private bool isBeingPlayed = false; 
+	private Vector2 mouseInCanvasPosition;
+	public float alphaOnDark = 0.5f;
+	public float alphaWhenDeactivate = 0.5f;
+	public GlobalSoundManager globalSoundManager; 
 
 	void Start()
 	{
+		globalSoundManager = GameObject.Find ("GlobalSoundManager").GetComponent<GlobalSoundManager>();
 		buttonRect = GetComponent<RectTransform>();
 		GameObject targetGameObject;
 		targetGameObject = GameObject.Find("Hugo");
 		targetCollider = targetGameObject.GetComponent<Collider>();
-		//getcomponent<collider>();
 
 		currentScene = ResourceManager.GetCurrentSceneName();
 
 	}
 
-
-
 	void Update()
 	{
-		if (buttonHeld && active)
+		if (ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 1)
 		{
-			pointerEventData.position = Input.mousePosition;
-			graphicRayCaster.Raycast(pointerEventData, raycastResults);
-			for (int i = 0; i < raycastResults.Count; i++)
-			{
-				buttonRect.anchoredPosition = new Vector2(raycastResults[i].screenPosition.x, raycastResults[i].screenPosition.y - canvasRect.rect.height);
-			}
+			active = true;
+			var color = GetComponent<Image> ().color;
+			color = Color.white;
+			GetComponent<Image> ().color = color;
+		}
+		else if(ResourceManager.listOfPickedUpNumbersState[buttonIndex] == 0)
+		{
+			active = false;			
+		}
+				
+		if (buttonHeld)
+		{
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (targetCollider.Raycast(ray, out hit, 100.0F))
 			{
-				if (currentScene == nameOfSceneThatHugoCanCount)
+				if (currentScene == nameOfSceneThatHugoCanCount && active)
 				{
 					active = false;
-					buttonRect.localPosition = originalPosition;
+					buttonHeld = false;
+
 					var color = GetComponent<Image> ().color;
-					color = Color.red;
-					GetComponent<Image> ().color = color;
+					GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
+
 					EventManager.TriggerEvent(eventName);
+					EventManager.TriggerEvent(EventName.HugoGetANumberFeedBack);
 				}
 				else
 				{
-					print(" Hey! Let me count it for grandma");
+					if (isBeingPlayed == false && currentScene == "KitchenScene" && globalSoundManager.hugoIsTalking == false) 
+					{
+						globalSoundManager.FortaelleBedstemor (); 
+
+					}
 				}
-
-
 			}
-
 		}
 	}
 	
 	public void OnPointerDown()
 	{
-		if (active)
-		{
-			buttonHeld = true;
-		}
-        
+		buttonHeld = true;
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOn);
 	}
 
 	public void SetOriginalPosition(Vector3 localOriginalPosition)
 	{
 		originalPosition = localOriginalPosition;
 	}
-	public void SetActiveBool(bool myState)
+	public void SetState(int myState)
 	{
-		active = myState;
-		if (!active)
+		if (myState < 1)
+		{
+			active = false;
+		}
+		else
+		{
+			active = true;
+		}
+		if (myState == 0)
 		{
 			var color = GetComponent<Image> ().color;
-			color = Color.red;
+			GetComponent<Image> ().color = new Color (color.r, color.b, color.g, 0.5f);
+		}
+		else if (myState == -1)
+		{
+			var color = GetComponent<Image> ().color;
+			color = new Color (0, 0, 0, alphaOnDark);
 			GetComponent<Image> ().color = color;
 		}
 	}
@@ -98,5 +118,8 @@ public class ButtonController : MonoBehaviour {
 	{
 		buttonHeld = false;
 		//buttonRect.localPosition = originalPosition;
+		EventManager.TriggerEvent(EventName.HugoParticleFeedbackOff);
+		ResourceManager.listOfPickedUpNumbersPosition[buttonIndex] = buttonRect.anchoredPosition;
 	}
 }
+

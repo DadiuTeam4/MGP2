@@ -2,33 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Lightswitch : Interactable
+public class Lightswitch : NumberFoundInteractable
 {
-	private Renderer render;
+	public GameObject lightCanvas;
 
-	void Start ()
+	public override void OnTouchBegin()
 	{
-		render = GetComponent<Renderer>();
-		renderLightswitch();
-		
-	}
-    public override void OnTouchBegin()
-    {
-		Debug.Log("Lightswitch touched");
+		lightCanvas.SetActive(!lightCanvas.activeSelf);
 		ResourceManager.kitchenLightOn = !ResourceManager.kitchenLightOn;
-		renderLightswitch();
-		EventManager.TriggerEvent(EventName.LightswitchClicked);
-		AkSoundEngine.PostEvent ("Play_MGP2_SD_LightSwitch", gameObject); 
-    }
-
-	private void renderLightswitch()
-	{
-		if (ResourceManager.kitchenLightOn == true) {
-			render.material.color = Color.green;
-		} else {
-			render.material.color = Color.red;
-		}
+		EventManager.TriggerEvent(EventName.LightswitchClicked); 
+		AkSoundEngine.PostEvent ("Play_MGP2_SD_LightSwitch", gameObject);
 	}
 }
 

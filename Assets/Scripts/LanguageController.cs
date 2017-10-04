@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class LanguageController : MonoBehaviour
 {
-
-    public void setEnglish()
+    public void SetEnglish()
     {
-		Debug.Log("English");
-		EventManager.TriggerEvent(EventName.LangEnglish);
+      Debug.Log("English");
+      EventManager.TriggerEvent(EventName.LangEnglish);
+      AkSoundEngine.SetState ("Language", "English"); 
     }
 
-    public void setDanish()
+    public void SetDanish()
     {
-		Debug.Log("Danish");
-		EventManager.TriggerEvent(EventName.LangDanish);
+      Debug.Log("Danish");
+      EventManager.TriggerEvent(EventName.LangDanish);
+      AkSoundEngine.SetState ("Language", "Dansk"); 
     }
 }

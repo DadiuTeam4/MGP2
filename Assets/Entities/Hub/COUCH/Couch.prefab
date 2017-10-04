@@ -27,8 +27,8 @@ GameObject:
   m_Name: CouchRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1659526967575610
 GameObject:
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659526967575610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: 1.32, z: 16.32}
+  m_LocalPosition: {x: 3.04, y: 1.32, z: 15.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4623071992034686}
@@ -110,7 +110,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514268130790032}
-  m_Mesh: {fileID: 4300000, guid: 1860b4c2a5dc46f499992b55ce1cad52, type: 3}
+  m_Mesh: {fileID: 4300000, guid: eab2e559484867942bad0e93b10b9217, type: 3}
 --- !u!65 &65141492030456454
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -121,8 +121,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.283278, y: 0.9055082, z: 1.0628107}
-  m_Center: {x: 0.104823835, y: -0.04724589, z: -0.03140536}
+  m_Size: {x: 3.2609653, y: 1.1504129, z: 1.2247703}
+  m_Center: {x: 0.09366747, y: 0.07520654, z: -0.112385266}
 --- !u!114 &114870217147289150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81fd45c257e5e249992050f590b67c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualFeedback: 1
   boomMagnitude: 1.08
   boomTime: 0.1
+  particleSystem: {fileID: 0}
   timeHeld: 0

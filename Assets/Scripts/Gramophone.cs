@@ -1,31 +1,91 @@
-﻿using System.Collections;
+﻿// Author: Kristian
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gramophone : Interactable {
 
-	// Use this for initialization
+	private float fadePitchValue = 100f;
+	private float fadeMax = 100f;
+	private float fadeMin = 0f; 
+	private float duration;  
+	private bool isFaded = false; 
+	private bool hasBeenPressed = false; 
 
-	private bool isBeingPlayed = false;
+	public void Start()
+	{
+		EventManager.StartListening (EventName.KitchenSceneLoaded, KitchenSwitch); 
+		EventManager.StartListening (EventName.HubSceneLoaded, HubSwitch); 
 
-	//public uint Play_MGP2_SD_VinylID; 
+	}
 
 	public override void OnTouchBegin()
 	{	
-		if (isBeingPlayed == false) 
+		if (isFaded == false && hasBeenPressed == false)
 		{
-			AkSoundEngine.PostEvent ("Play_MGP2_SD_Vinyl", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1); 
-			isBeingPlayed = true;
+			StartCoroutine (FadeIn ()); 
+		}
+		if (isFaded == true && hasBeenPressed == false)
+		{
+			StartCoroutine (FadeOut ()); 
+		}
+		if (isFaded == true && hasBeenPressed == true)
+		{
+			StartCoroutine (FadeOut ()); 
 		}
 	}
 
-	void EventHasStopped(object in_cookie, AkCallbackType in_type, object in_info)
+	public void Update()
 	{
-		if (in_type == AkCallbackType.AK_EndOfEvent)
+		AkSoundEngine.SetRTPCValue ("Vinyl_pitch", fadePitchValue);
+	}
+
+	IEnumerator FadeIn()
+	{
+		hasBeenPressed = true;
+		duration = 20f * Time.deltaTime; 
+		while (fadePitchValue > fadeMin) 
 		{
-			isBeingPlayed = false; 
+			fadePitchValue -= duration; 
+			yield return null; 
+		}
+		isFaded = true; 
+		hasBeenPressed = false;
+		AkSoundEngine.PostEvent("Pause_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+		AkSoundEngine.PostEvent ("Stop_MGP2_Music_Mystery", gameObject); 
+		AkSoundEngine.PostEvent ("Play_MGP2_Music_Mystery", gameObject); 
+	}
+		
+	IEnumerator FadeOut()
+	{
+		AkSoundEngine.PostEvent ("Stop_MGP2_Music_Mystery", gameObject); 
+		AkSoundEngine.PostEvent("Resume_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+		hasBeenPressed = true;
+		duration = 20f * Time.deltaTime; 
+		while (fadePitchValue < fadeMax) 
+		{
+			fadePitchValue += duration; 
+			yield return null; 
+		}
+		isFaded = false;
+		hasBeenPressed = false;
+	}
+
+	void KitchenSwitch()
+	{
+		if (hasBeenPressed == true && isFaded == true)
+		{
+			isFaded = false;
+			hasBeenPressed = true; 
+		}
+	}
+	void HubSwitch()
+	{
+		if (hasBeenPressed == true && isFaded == true)
+		{
+			isFaded = false;
+			hasBeenPressed = true; 
 		}
 	}
 }
-
-	

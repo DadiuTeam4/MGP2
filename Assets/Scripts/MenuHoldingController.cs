@@ -8,21 +8,25 @@ public class MenuHoldingController : MonoBehaviour
 {
     private bool buttonHeld;
     private Vector2 mouseOffSet;
+    private RectTransform buttonRect;
+    private Vector2 mouseInCanvasPosition;
+    private RectTransform canvasRect;
 
     private float holdTime;
 
     void Start()
     {
-        Rect buttonRect = gameObject.GetComponent<RectTransform>().rect;
         buttonHeld = false;
-        mouseOffSet = new Vector2(buttonRect.width / 2, buttonRect.height / 2);
+        canvasRect = transform.parent.GetComponent<RectTransform>();
+        buttonRect = GetComponent<RectTransform>();
     }
 
     void Update()
     {
         if (buttonHeld)
         {
-            transform.position = new Vector2(Input.mousePosition.x + mouseOffSet.x, Input.mousePosition.y + mouseOffSet.y);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out mouseInCanvasPosition);
+			buttonRect.localPosition = mouseInCanvasPosition;
         }
     }
 
