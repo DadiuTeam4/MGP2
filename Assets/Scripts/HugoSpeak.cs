@@ -16,6 +16,7 @@ public class HugoSpeak : NumberFoundInteractable {
 
 	public override void OnTouchReleased()
 	{
+        base.OnTouchReleased();
 		//EventManager.TriggerEvent(EventName.NumberOnePickedUp);
 		if (GSM.hugoIsTalking == false) 
 		{
