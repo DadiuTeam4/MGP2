@@ -51,6 +51,8 @@ public class GlobalSoundManager : MonoBehaviour {
 	}
 	public void Update()
 	{
+		HugoAI.StateController.animator.SetBool("talk", hugoIsTalking);
+		Grandma.animator.SetBool("grandmaTalk", grandmaIsResponding);
 		AkSoundEngine.SetRTPCValue ("RockingChair", rockingChairFadeValue);  
 	}
 		
