@@ -173,7 +173,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SeksSmaakagerKrukken", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 	}
-		if (grandmaIsResponding) 
+		if (!grandmaIsResponding) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			grandmaIsResponding = true; 
@@ -200,7 +200,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_SpoegelseiKokkenet", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
-		if (grandmaIsResponding) 
+		if (!grandmaIsResponding) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			grandmaIsResponding = true; 
@@ -225,7 +225,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_FireBadeaender", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
-		if (grandmaIsResponding)
+		if (!grandmaIsResponding)
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			grandmaIsResponding = true; 
@@ -249,7 +249,7 @@ public class GlobalSoundManager : MonoBehaviour {
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_EtBarnToBoern", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
-		if (grandmaIsResponding) 
+		if (!grandmaIsResponding) 
 		{
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_BedstemorResponse", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			grandmaIsResponding = true; 
