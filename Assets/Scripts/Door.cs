@@ -17,7 +17,7 @@ public class Door : Interactable
         doorHinge = GetComponentInParent<Transform>();
         isOpeningTheDoor = false;
         currentRotatingYAngle = rotatingYAngle;
-        if (ResourceManager.doorToKitchenOpen)
+        if (ResourceManager.doorToKitchenOpen && SceneTransitionManager.currentScene == Scene.Hub)
         {
             KeepDoorOpenAtStart();
         }

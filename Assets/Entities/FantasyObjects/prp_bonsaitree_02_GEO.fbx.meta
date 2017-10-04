@@ -1,52 +1,39 @@
 fileFormatVersion: 2
-guid: 7616a58355a054b508ed29cb3a857ba9
-timeCreated: 1505127051
+guid: ff9d9f0d88ec38e4c8059ec99cddb771
+timeCreated: 1507049759
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: group1
-    100004: hugo_mesh4
-    100006: pCube22
-    100008: polySurface22
-    100010: polySurface24
-    100012: polySurface25
-    100014: polySurface26
-    100016: polySurface27
-    100018: polySurface28
-    400000: //RootNode
-    400002: group1
-    400004: hugo_mesh4
-    400006: pCube22
-    400008: polySurface22
-    400010: polySurface24
-    400012: polySurface25
-    400014: polySurface26
-    400016: polySurface27
-    400018: polySurface28
-    2300000: hugo_mesh4
-    2300002: pCube22
-    2300004: polySurface24
-    2300006: polySurface25
-    2300008: polySurface26
-    2300010: polySurface27
-    2300012: polySurface28
-    3300000: hugo_mesh4
-    3300002: pCube22
-    3300004: polySurface24
-    3300006: polySurface25
-    3300008: polySurface26
-    3300010: polySurface27
-    3300012: polySurface28
-    4300000: pCube22
-    4300002: polySurface24
-    4300004: polySurface25
-    4300006: polySurface26
-    4300008: polySurface27
-    4300010: polySurface28
-    4300012: hugo_mesh4
-    9500000: //RootNode
+    100000: geo_branch01
+    100002: geo_branch02
+    100004: geo_branch03
+    100006: geo_branch04
+    100008: geo_trunk
+    100010: grp_branches
+    100012: //RootNode
+    400000: geo_branch01
+    400002: geo_branch02
+    400004: geo_branch03
+    400006: geo_branch04
+    400008: geo_trunk
+    400010: grp_branches
+    400012: //RootNode
+    2300000: geo_branch01
+    2300002: geo_branch02
+    2300004: geo_branch03
+    2300006: geo_branch04
+    2300008: geo_trunk
+    3300000: geo_branch01
+    3300002: geo_branch02
+    3300004: geo_branch03
+    3300006: geo_branch04
+    3300008: geo_trunk
+    4300000: geo_trunk
+    4300002: geo_branch01
+    4300004: geo_branch02
+    4300006: geo_branch03
+    4300008: geo_branch04
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +61,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.6
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -116,7 +103,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

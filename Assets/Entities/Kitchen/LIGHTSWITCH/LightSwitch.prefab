@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 23643138023300910}
   - component: {fileID: 114629620665929816}
   - component: {fileID: 65432964171995438}
-  m_Layer: 0
+  - component: {fileID: 65507821492871816}
+  m_Layer: 8
   m_Name: PLACEHOLDER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836563790679498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.19, y: 2.21, z: 0.053}
+  m_LocalPosition: {x: -1.2, y: 2.07, z: -0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4491855520831024}
@@ -66,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999651139700632}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.624, y: -0.07, z: 0.097}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.03}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 4067927823291410}
   m_RootOrder: 0
@@ -85,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 77e1943d34b724c05886c5ec415991eb, type: 2}
+  - {fileID: 2100000, guid: f84312371ebfd4b2fa63d73e49c1f326, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,6 +124,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32885236, y: 0.51995957, z: 0.079716}
   m_Center: {x: -0.00000013411045, y: -0.152646, z: -0.023402452}
+--- !u!65 &65507821492871816
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999651139700632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32885236, y: 0.51995957, z: 0.079716}
+  m_Center: {x: -0.00000013411045, y: -0.152646, z: -0.023402452}
 --- !u!114 &114629620665929816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,3 +158,11 @@ MonoBehaviour:
   speed: 60
   shakeMagnitude: 0.01
   onHoldParticleSystem: {fileID: 0}
+  indicatorParticleSystem: {fileID: 0}
+  timeInterval: 3
+  period: 0
+  stopParticlesTime: 1
+  offsetOnYParticleSystem: 0.52
+  hasAnimation: 0
+  hasAnimator: 0
+  lightCanvas: {fileID: 0}

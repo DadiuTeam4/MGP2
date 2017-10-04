@@ -81,7 +81,18 @@ public class GlobalSoundManager : MonoBehaviour {
 		}
 		if (hasBeenRestarted == true) 
 		{
+			StartCoroutine (RockingChairFade ()); 
+
+			AkSoundEngine.PostEvent ("Stop_all", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P__dirty", gameObject); 
+			AkSoundEngine.PostEvent ("Play_MGP2_Music_throwout2piano_P_", gameObject); 
+			AkSoundEngine.SetRTPCValue ("Vinyl_dirty", 100); 
+			AkSoundEngine.PostEvent ("Ambience_livingroom", gameObject);
+			AkSoundEngine.PostEvent ("Ambience_kitchen", gameObject);
+			AkSoundEngine.PostEvent ("Play_MGP2_SD_RockingChair", gameObject); 
+			AkSoundEngine.SetRTPCValue ("Kitchen_volume", 0); 
+			AkSoundEngine.SetRTPCValue ("Livingroom_volume", 100);
+
 			hasBeenRestarted = false; 
 		}
 	}
@@ -94,6 +105,13 @@ public class GlobalSoundManager : MonoBehaviour {
 	public void RestartMusicHub()
 	{
 			hasBeenRestarted = true; 
+	}
+
+	public void FortaelleBedstemor()
+	{
+		hugoIsTalking = true;
+		AkSoundEngine.PostEvent ("Play_MGP2_Speak_FortaelleBedstemor", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
+		isBeingPlayed = true;
 	}
 
 	void GarnNoegleSpeak()
@@ -217,7 +235,6 @@ public class GlobalSoundManager : MonoBehaviour {
 		if (isBeingPlayed == false) 
 		{
 			hugoIsTalking = true;
-			AkSoundEngine.PostEvent ("Stop_MGP2_Speak_HugoTryk", gameObject); 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_Bade_nder", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
@@ -251,6 +268,7 @@ public class GlobalSoundManager : MonoBehaviour {
 	{
 		if (isBeingPlayed == false) 
 		{
+			hugoIsTalking = true; 
 			AkSoundEngine.PostEvent ("Play_MGP2_Speak_HugoTryk", gameObject, (uint)AkCallbackType.AK_EndOfEvent, EventHasStopped, 1);
 			isBeingPlayed = true; 
 		}
