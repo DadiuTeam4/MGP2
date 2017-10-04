@@ -9,6 +9,12 @@ public class Grandma : Interactable {
 	private float fadeMin = 0f; 
 	private float duration;  
 	private bool hasBeenPressed = false; 
+	[HideInInspector] public static Animator animator; 
+
+	private void Start()
+	{
+		animator = GetComponent<Animator>();
+	}
 
 	public override void OnTouchBegin()
 	{	

@@ -14,7 +14,7 @@ namespace HugoAI
 
 		public override void Act(StateController controller)
 		{
-			controller.animator.SetBool("counting", false);
+			StateController.animator.SetBool("counting", false);
 			SetWaypoint(controller);
 		}
 

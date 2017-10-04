@@ -18,7 +18,7 @@ namespace HugoAI
 		public bool active = true;
 
 		[HideInInspector] public Navigator navigator;
-		[HideInInspector] public Animator animator;
+		[HideInInspector] public static Animator animator;
 		[HideInInspector] public Dictionary<EventName, bool> triggeredEvents;
 		[HideInInspector] public Transform currentNumberWaypoint;
 

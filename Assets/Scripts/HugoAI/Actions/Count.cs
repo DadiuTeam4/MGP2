@@ -17,10 +17,10 @@ namespace HugoAI
 
 		private void CountItem(StateController controller) 
 		{
-			controller.animator.SetBool("counting", true);
+			StateController.animator.SetBool("counting", true);
 			float worldHeight = controller.GetDestination().position.y;
 			float normalizedHeight = ((worldHeight / maxHeight) * 2.0f) - 1.0f;
-			controller.animator.SetFloat("height", normalizedHeight);
+			StateController.animator.SetFloat("height", normalizedHeight);
 		}
 	}
 }
